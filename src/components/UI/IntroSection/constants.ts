@@ -2,40 +2,33 @@ import ic_document_duplicate from '../../../../public/svgs/ic_document_duplicate
 import ic_identification from '../../../../public/svgs/ic_identification.svg';
 import ic_lock_closed from '../../../../public/svgs/ic_lock_closed.svg';
 
-// For desktop
-export const desktopHeaderPhrase = ["Introducing RAFT's Next-", 'Gen Cards'];
+export const desktopHeaderPhrase = ['Our 10-Week', 'Program Structure'];
 export const desktopParagraphPhrase = [
-  " Discover RAFT's latest innovation – our new cards. Elevate your banking",
-  'experience with cutting-edge features, security, and unprecedented',
-  'convenience.',
+  'Learn venture capital fundamentals and gain hands-on experience',
+  'working with startups and VCs through our structured program.',
 ];
 
-// For mobile
-export const mobileHeaderPhrase = ["Introducing RAFT's", 'Next-Gen Cards'];
+export const mobileHeaderPhrase = ['Our 10-Week', 'Program'];
 export const mobileParagraphPhrase = [
-  " Discover RAFT's latest innovation – our new cards.",
-  ' Elevate your banking experience with cutting-edge',
-  'features, security, and unprecedented',
-  'convenience.',
+  'Learn venture capital fundamentals and',
+  'gain hands-on experience working with',
+  'startups and VCs.',
 ];
 
 export const edges = [
   {
-    point: 'Contactless Technology',
-    details:
-      'Our new cards come equipped with contactless technology, allowing you to make swift, secure payments with a simple tap.',
+    point: 'Weeks 1-3: VC Fundamentals',
+    details: 'Learn about venture capital, funding stages, startup evaluation, and market analysis through workshops and real cases.',
     icon: ic_document_duplicate,
   },
   {
-    point: 'Personalization',
-    details:
-      'Customize your card to reflect your unique style. Choose from a range of designs that suit your personality.',
+    point: 'Weeks 4-7: Hands-on Projects',
+    details: 'Work directly with startups and VCs on real projects. Apply your skills in engineering, design, or market research.',
     icon: ic_identification,
   },
   {
-    point: 'Enhanced Security',
-    details:
-      'Your peace of mind is our priority. Our cards feature advanced security measures to protect your transactions and data.',
+    point: 'Weeks 8-10: Deal Analysis',
+    details: 'Deep dive into deal sourcing, due diligence, and investment analysis. Present your findings to VC partners.',
     icon: ic_lock_closed,
   },
 ];

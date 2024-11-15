@@ -4,44 +4,41 @@ import wealth_management from '../../../../public/images/wealth_management.png';
 import financial_planning from '../../../../public/images/financial_planning.png';
 // For desktop
 export const desktopHeaderPhrases = [
-  'Elevate Your Financial',
-  'Journey with RAFT',
+  'What You Will',
+  'Learn & Do',
 ];
 export const desktopParagraphPhrase = [
-  'RAFT offers a world of financial possibilities. From investments to payments,',
-  "we've got you covered. Join us and unlock your potential today.",
+  'Our 10-week program combines hands-on experience with structured learning.',
+  'Work on real projects while building your knowledge and network.',
 ];
 
 // For mobile
 export const mobileParagraphPhrase = [
-  'RAFT offers a world of financial possibilities. From',
-  "investments to payments, we've got you covered.",
-  'Join us and unlock your potential today.',
+  'Our 10-week program combines hands-on',
+  'experience with structured learning.',
+  'Work on real projects while building',
+  'your knowledge and network.',
 ];
 
 export const offers = [
   {
     illustration: seamless_payments,
-    title: 'Seamless Payments',
-    details:
-      'Enjoy secure, seamless transactions that make managing your money a breeze.',
+    title: 'VC Fundamentals',
+    details: 'Learn about venture capital, funding stages, startup evaluation, and market analysis through structured workshops and real cases.',
   },
   {
     illustration: smart_investing,
-    title: 'Smart Investing',
-    details:
-      'Grow your wealth confidently with our personalized investment solutions, tailored to your financial goals.',
+    title: 'Startup Projects',
+    details: 'Work directly with early-stage startups on engineering, design, or marketing projects. Get hands-on experience in your area of interest.',
   },
   {
     illustration: wealth_management,
-    title: 'Wealth Management',
-    details:
-      'Make informed decisions for your financial future with our wealth management expertise.',
+    title: 'Deal Flow & Analysis',
+    details: 'Help VC firms with deal sourcing, startup research, and investment analysis. Learn how VCs evaluate opportunities.',
   },
   {
     illustration: financial_planning,
-    title: 'Financial Planning',
-    details:
-      'Achieve your financial dreams with our comprehensive financial planning services, guiding you toward a secure future.',
+    title: 'Network Building',
+    details: 'Connect with VCs, founders, and fellow members through events, projects, and our alumni network. Build lasting relationships.',
   },
 ];

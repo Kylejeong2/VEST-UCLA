@@ -19,23 +19,19 @@ export const animate = {
 
 export const faqData: FAQItem[] = [
   {
-    question: 'How do I create an account with RAFT?',
-    answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    question: 'What is BVL?',
+    answer: "We are a community of entrepreneurial students that work tightly together with VC firms & startups.",
   },
   {
-    question: 'How does RAFT ensure the security of my financial data?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: 'What do you do?',
+    answer: "We work with VC firms to help with scouting, research, and analysis on companies. We also work with early stage startups in (but not limited to) engineering, design, and marketing roles.",
   },
   {
-    question: 'What types of transactions can I perform with RAFT?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: 'How can I join & what are the benefits?',
+    answer: "You get to learn about tech startups and the world of vc through hands-on career experience through a community that is composed of entrepreneur devoted & creative students.",
   },
   {
-    question: 'What benefits does RAFT offer for wealth management?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: 'What is the application process?',
+    answer: "The process includes submitting an application form with your resume and answering a few questions, followed by a casual interview with two executives. Selected candidates will receive an email invitation to join.",
   },
 ];

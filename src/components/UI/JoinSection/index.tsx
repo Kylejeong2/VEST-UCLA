@@ -55,7 +55,7 @@ const JoinSection = () => {
               <UserInfo>
                 <Name>
                   <MaskText phrases={new Array(t.person)} tag="h3" />
-                  <MaskText phrases={new Array('Happy RAFT User')} tag="p" />
+                  <MaskText phrases={new Array(t.role)} tag="p" />
                 </Name>
                 <Avatar>
                   <Image src={t.avatar} alt="user avatar" />

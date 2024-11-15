@@ -11,35 +11,25 @@ export type Props = {
 
 export const testimonials = [
   {
-    testimony:
-      "RAFT has transformed my approach to finance. Their smart investing options have helped me grow my wealth, and their user-friendly platform makes managing my money a breeze. I've never felt more confident about my financial future.",
-    person: 'Robert Fox',
-    avatar: robert_fox,
+    testimony: "Leading BVL's operations and ensuring our members get hands-on experience with VCs and startups.",
+    person: 'Kyle & Tony',
+    role: 'Presidents'
   },
   {
-    testimony:
-      "I can't express how grateful I am to RAFT. Their wealth management services have been a game-changer for my family's financial security. The expert guidance and personalized strategies have given us peace of mind, knowing that our future is in capable hands.",
-    person: 'Cameron Williamson',
-    avatar: cameron_williamson,
+    testimony: "Structuring and developing BVL's future while creating impactful learning experiences.",
+    person: 'Mergen',
+    role: 'Director of Operations'
   },
   {
-    testimony:
-      "RAFT's financial planning services have been a lifeline for me. I always struggled with managing my money, but their team crafted a tailored plan that addressed my goals and concerns. It's been a game-changer in achieving my financial dreams",
-    person: 'Esther Howard',
-    avatar: esther_howard,
+    testimony: "Managing club logistics and legal requirements to establish BVL as an official UCLA organization.",
+    person: 'Jake',
+    role: 'Director of Logistics & Legal'
   },
   {
-    testimony:
-      "I can't express how grateful I am to RAFT. Their wealth management services have been a game-changer for my family's financial security. The expert guidance and personalized strategies have given us peace of mind, knowing that our future is in capable hands.",
-    person: 'Cameron Williamson',
-    avatar: cameron_williamson,
-  },
-  {
-    testimony:
-      "RAFT has transformed my approach to finance. Their smart investing options have helped me grow my wealth, and their user-friendly platform makes managing my money a breeze. I've never felt more confident about my financial future.",
-    person: 'Robert Fox',
-    avatar: robert_fox,
-  },
+    testimony: "Overseeing financial operations and maintaining our technical infrastructure.",
+    person: 'Sam',
+    role: 'Director of Finances'
+  }
 ];
 
-export const desktopHeaderPhrase = ['Join over 3 million', 'members'];
+export const desktopHeaderPhrase = ['Meet Our Leadership', 'Team'];

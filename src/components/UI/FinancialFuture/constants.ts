@@ -2,56 +2,54 @@ import ic_money_send from '../../../../public/svgs/ic_money_send.svg';
 import ic_wallet_minus from '../../../../public/svgs/ic_wallet_minus.svg';
 export const cardsInfo = [
   {
-    title: 'Spend Better',
-    details:
-      'Set and achieve financial goals with ease, automate your savings, and watch your money grow without the stress.',
+    title: 'Venture Capital',
+    details: 'Learn VC fundamentals, funding stages, and startup ecosystems. Work directly with firms on scouting, research, and analysis.',
     icon: ic_money_send,
   },
   {
-    title: 'Invest Better',
-    details:
-      'Set and achieve financial goals with ease, automate your savings, and watch your money grow without the stress.',
+    title: 'Startup Experience',
+    details: 'Gain hands-on experience working with early-stage startups in engineering, design, and marketing roles.',
     icon: ic_wallet_minus,
   },
 ];
 
 export const stats = [
   {
-    number: '50+',
-    subtitle: 'cities',
+    number: '4+',
+    subtitle: 'VC Partners',
   },
   {
-    number: '50,000+',
-    subtitle: 'transactions',
+    number: '10+',
+    subtitle: 'Startup Projects',
   },
   {
-    number: '3M+',
-    subtitle: 'users',
+    number: '20+',
+    subtitle: 'Members',
   },
   {
-    number: '5+',
-    subtitle: 'user ratings',
+    number: '100%',
+    subtitle: 'Hands-on',
   },
 ];
 
 // For desktop
 export const desktopHeaderPhrase = [
-  'Confidently Shape Your',
-  'Financial Future',
+  'Learn & Work with VCs',
+  'and Startups',
 ];
 export const desktopParagraphPhrase = [
-  'At RAFT, we empower you to confidently shape your financial future. Our modern',
-  'approach simplifies saving and investing, making it easier than ever.',
+  'Get real experience in venture capital and startups through hands-on projects.',
+  'Work directly with VCs and founders while building your network.',
 ];
 
 // For mobile
 export const mobileHeaderPhrase = [
-  'Confidently Shape',
-  ' Your Financial Future',
+  'Learn & Work with',
+  'VCs and Startups',
 ];
 export const mobileParagraphPhrase = [
-  'At RAFT, we empower you to confidently shape',
-  'your financial future. Our modern approach',
-  'simplifies saving and investing, making it easier',
-  'than ever.',
+  'Get real experience in venture capital',
+  'and startups through hands-on projects.',
+  'Work directly with VCs and founders',
+  'while building your network.',
 ];
