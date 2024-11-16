@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'BVL',
+  title: 'Bruin Venture Lab',
   description: 'Building the future of entrepreneurship',
 };
 

@@ -101,11 +101,21 @@ export const CallToActions = styled.div`
   align-items: center;
   gap: 1rem;
 
-  div {
-    span {
-      color: var(--white);
-      font-size: 1rem;
-      font-weight: 600;
+  .discord-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6.25rem;
+    background: #5865F2;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #4752C4;
     }
   }
 

@@ -40,6 +40,14 @@ const Header = () => {
           ))}
         </Nav>
         <CallToActions className={isOpen ? 'active' : ''}>
+          <a 
+            href="https://discord.gg/PTGgbFvm9t" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="discord-btn"
+          >
+            Join Discord
+          </a>
           <GetStartedButton padding="0.5rem 0.75rem" />
         </CallToActions>
       </Inner>
