@@ -28,7 +28,7 @@ const HeroSection = () => {
         <ContentContainer>
           <div className="left-content">
             <Pill>
-              <span>Introducing UCLA's premier VC/Startup Club</span>
+              <span>Introducing UCLA&apos;s premier VC/Startup Club</span>
               <Image src={ic_chevron_right} alt="chevron-right" />
             </Pill>
             <HeroTextContainer>
