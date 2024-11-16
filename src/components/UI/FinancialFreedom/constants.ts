@@ -2,7 +2,7 @@ import ic_banknotes from '../../../../public/svgs/ic_banknotes.svg';
 import ic_circle_stack from '../../../../public/svgs/ic_circle_stack.svg';
 import ic_arrows_left_right from '../../../../public/svgs/ic_arrows_right_left.svg';
 
-export const desktopHeaderPhrase = ['Building Future VCs', 'and Founders'];
+export const desktopHeaderPhrase = ['Building Future VCs and Founders'];
 export const desktopParagraphPhrase = [
   'We connect ambitious UCLA students with venture capital firms and startups,',
   'providing hands-on experience and real-world learning.',
@@ -15,7 +15,7 @@ export const desktopBriefNotePhrase = [
   'startups.',
 ];
 
-export const mobileHeaderPhrase = ['Building Future', 'VCs and Founders'];
+export const mobileHeaderPhrase = ['Building Future VCs and Founders'];
 export const mobileParagraphPhrase = [
   'We connect ambitious UCLA students with venture',
   'capital firms and startups, providing hands-on',

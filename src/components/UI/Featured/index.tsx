@@ -25,14 +25,15 @@ const Featured = () => {
   const isMobile = useIsMobile();
   return (
     <Wrapper>
-      <Inner>
-        <h2>Featured and Seen in</h2>
+      {/* add when we get vc connections */}
+      {/* <Inner>
+        <h2>Worked with</h2>
         <ParallaxImages>
           <ParallaxText baseVelocity={-4}>
             <Image src={companies_image} alt="companies" />
           </ParallaxText>
         </ParallaxImages>
-      </Inner>
+      </Inner> */}
     </Wrapper>
   );
 };

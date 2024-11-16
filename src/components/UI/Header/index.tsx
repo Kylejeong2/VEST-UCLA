@@ -24,7 +24,7 @@ const Header = () => {
     <Wrapper>
       <Inner>
         <LogoContainer>
-          <Image src={raft_logo} alt="raft_logo" priority />
+          <Image src="/Bruin_Venture_Lab_Submark_Bold.png" width={50} height={50} alt="bvl logo" priority />
           <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
             <motion.div
               variants={menu}
@@ -40,7 +40,6 @@ const Header = () => {
           ))}
         </Nav>
         <CallToActions className={isOpen ? 'active' : ''}>
-          <AnimatedLink title="Login" />
           <GetStartedButton padding="0.5rem 0.75rem" />
         </CallToActions>
       </Inner>

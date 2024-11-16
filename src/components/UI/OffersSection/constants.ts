@@ -4,17 +4,16 @@ import wealth_management from '../../../../public/images/wealth_management.png';
 import financial_planning from '../../../../public/images/financial_planning.png';
 // For desktop
 export const desktopHeaderPhrases = [
-  'What You Will',
-  'Learn & Do',
+  'What You Will Learn & Do',
 ];
 export const desktopParagraphPhrase = [
-  'Our 10-week program combines hands-on experience with structured learning.',
+  'Our 4-week program combines hands-on experience with structured learning.',
   'Work on real projects while building your knowledge and network.',
 ];
 
 // For mobile
 export const mobileParagraphPhrase = [
-  'Our 10-week program combines hands-on',
+  'Our 4-week program combines hands-on',
   'experience with structured learning.',
   'Work on real projects while building',
   'your knowledge and network.',

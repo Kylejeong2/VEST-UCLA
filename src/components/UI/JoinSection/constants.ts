@@ -1,34 +1,40 @@
-import { StaticImageData } from 'next/image';
-import robert_fox from '../../../../public/images/robert_fox.png';
-import cameron_williamson from '../../../../public/images/cameron_williamson.png';
-import esther_howard from '../../../../public/images/esther_howard.png';
-
 export type Props = {
   testimony: string;
   person: string;
-  avatar: StaticImageData;
+  role: string;
+  avatar: string;
 };
 
 export const testimonials = [
   {
-    testimony: "Leading BVL's operations and ensuring our members get hands-on experience with VCs and startups.",
-    person: 'Kyle & Tony',
-    role: 'Presidents'
+    testimony: "Gloriously Leading BVL's operations, creating websites, and ensuring our members get hands-on experience with VCs and startups.",
+    person: 'Kyle',
+    role: 'President',
+    avatar: '/images/avatars/kyle.jpg'
   },
   {
-    testimony: "Structuring and developing BVL's future while creating impactful learning experiences.",
-    person: 'Mergen',
-    role: 'Director of Operations'
+    testimony: "He's from Peru.",
+    person: 'Tony',
+    role: 'President',
+    avatar: '/images/avatars/tony.jpg'
   },
   {
     testimony: "Managing club logistics and legal requirements to establish BVL as an official UCLA organization.",
     person: 'Jake',
-    role: 'Director of Logistics & Legal'
+    role: 'Director of Logistics & Legal',
+    avatar: '/images/avatars/jake.jpg'
   },
   {
     testimony: "Overseeing financial operations and maintaining our technical infrastructure.",
     person: 'Sam',
-    role: 'Director of Finances'
+    role: 'Director of Finance & Accounting',
+    avatar: '/images/avatars/sam.jpg'
+  },
+  {
+    testimony: "Leading marketing initiatives and managing our social media presence.",
+    person: 'Mergen',
+    role: 'Director of Operations',
+    avatar: '/images/avatars/mergen.jpg'
   }
 ];
 

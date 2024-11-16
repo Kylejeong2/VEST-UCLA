@@ -7,9 +7,9 @@ const GetStartedButton = ({ padding }: { padding: string }) => {
       style={{
         padding: padding,
       }}
-      href="/"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdq-_RVgDjN3ePFlqIbCoAJEy6Msy7YZ2MTPIItZgR5oji3Tw/viewform"
     >
-      Get Started
+      Apply Here
     </LinkTo>
   );
 };

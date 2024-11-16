@@ -37,93 +37,99 @@ export const Header = styled.header`
 
 export const TestimonialWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &:nth-child(2) {
+    margin-top: 2.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    &:nth-child(2) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
 export const Testimonial = styled.div`
   display: flex;
-  max-width: 26rem;
-  padding: 1.5rem 2rem;
+  padding: 3rem 2rem;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  border-left: 2px solid var(--Background, #070606);
-
-  @media (max-width: 768px) {
-    border-left: none;
-  }
-`;
-
-export const Testimony = styled.p`
-  color: #292929;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 2rem;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    line-height: 1.75rem;
-  }
-`;
-
-export const UserInfo = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(12px);
+  gap: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+  height: 100%;
+  min-height: 24rem;
+  
+  &:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+`;
+
+export const Avatar = styled.div`
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 8rem;
+    height: 8rem;
+  }
 `;
 
 export const Name = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 4;
   gap: 0.5rem;
-  width: 100%;
+  text-align: center;
 
   h3 {
     color: var(--Background, #070606);
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   p {
     color: #292929;
-    font-size: 0.875rem;
-    font-weight: 400;
-  }
-
-  @media (max-width: 768px) {
-    gap: 0.25rem;
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: normal;
-    }
-
-    p {
-      font-size: 0.75rem;
-    }
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 `;
 
-export const Avatar = styled.div`
-  margin-left: auto;
+export const Testimony = styled.p`
+  color: #292929;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  max-width: 90%;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
-    width: 2.5rem;
-    height: 2.5rem;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 `;
 
@@ -166,5 +172,38 @@ export const Next = styled.div`
       width: 100%;
       height: 100%;
     }
+  }
+`;
+
+export const CardGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+export const TopRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  width: 66.67%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const BottomRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 `;

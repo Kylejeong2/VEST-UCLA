@@ -15,27 +15,22 @@ export const cardsInfo = [
 
 export const stats = [
   {
-    number: '4+',
-    subtitle: 'VC Partners',
-  },
-  {
-    number: '10+',
-    subtitle: 'Startup Projects',
+    number: '2+',
+    subtitle: 'Startup Internships',
   },
   {
     number: '20+',
     subtitle: 'Members',
   },
   {
-    number: '100%',
-    subtitle: 'Hands-on',
+    number: '4+',
+    subtitle: 'VC Partnerships',
   },
 ];
 
 // For desktop
 export const desktopHeaderPhrase = [
-  'Learn & Work with VCs',
-  'and Startups',
+  'Learn & Work with VCs and Startups',
 ];
 export const desktopParagraphPhrase = [
   'Get real experience in venture capital and startups through hands-on projects.',
@@ -44,8 +39,7 @@ export const desktopParagraphPhrase = [
 
 // For mobile
 export const mobileHeaderPhrase = [
-  'Learn & Work with',
-  'VCs and Startups',
+  'Learn & Work with VCs and Startups',
 ];
 export const mobileParagraphPhrase = [
   'Get real experience in venture capital',

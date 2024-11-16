@@ -152,11 +152,11 @@ export const Stat = styled.div`
 
   @media (max-width: 768px) {
     h1 {
-      font-size: 1.25rem;
+      font-size: 2.5rem;
     }
 
     p {
-      font-size: 0.75rem;
+      font-size: 0.875rem;
     }
   }
 `;

@@ -14,9 +14,10 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 2rem;
 `;
 
 export const Header = styled.header`
@@ -109,5 +110,63 @@ export const RightImage = styled(Image)`
   &.active {
     transform: rotate(-70.281deg) translate(50%, 60%);
     top: 60%;
+  }
+`;
+
+export const Edges = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+`;
+
+export const Edge = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+
+  p {
+    font-size: 0.925rem;
+    line-height: 1.5;
+    color: var(--link-color);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+export const Title = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
   }
 `;
