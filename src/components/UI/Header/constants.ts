@@ -22,15 +22,15 @@ export const menu = {
 };
 export const links = [
   {
-    url: '/',
-    linkTo: 'Solutions',
+    url: '#intro',
+    linkTo: 'Program',
   },
   {
-    url: '/',
-    linkTo: 'Learn',
+    url: '#timeline',
+    linkTo: 'Timeline',
   },
   {
-    url: '/',
-    linkTo: 'About',
+    url: '#faq',
+    linkTo: 'FAQ',
   },
 ];

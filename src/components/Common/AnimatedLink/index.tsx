@@ -2,18 +2,9 @@
 import { useState } from 'react';
 import { Div, Word, Span, AbsoluteContainer } from './styles';
 
-type AnimationProps = {
-  rest: {
-    y: number;
-  };
-  hover: {
-    y: number;
-    transition: {
-      duration: number;
-      ease: number[];
-      type: string;
-    };
-  };
+type Props = {
+  title: string;
+  url: string;
 };
 
 const titleAnimation = {
@@ -57,53 +48,42 @@ const letterAnimationTwo = {
   },
 };
 
-const AnimatedLink = ({ title }: { title: string }) => {
+const AnimatedLink = ({ title, url }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.querySelector(url);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <Div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
     >
-      <AnimatedWord
-        title={title}
-        animations={letterAnimation}
-        isHovered={isHovered}
-      />
+      <Word
+        animate={isHovered ? 'hover' : 'rest'}
+        variants={titleAnimation}
+      >
+        <Span>{title}</Span>
+      </Word>
       <AbsoluteContainer>
-        <AnimatedWord
-          title={title}
-          animations={letterAnimationTwo}
-          isHovered={isHovered}
-        />
+        <Word
+          animate={isHovered ? 'hover' : 'rest'}
+          variants={titleAnimation}
+        >
+          <Span>{title}</Span>
+        </Word>
       </AbsoluteContainer>
     </Div>
   );
 };
 
 export default AnimatedLink;
-
-const AnimatedWord = ({
-  title,
-  animations,
-  isHovered,
-}: {
-  title: string;
-  animations: AnimationProps;
-  isHovered: boolean;
-}) => (
-  <Word
-    variants={titleAnimation}
-    initial="rest"
-    animate={isHovered ? 'hover' : 'rest'}
-  >
-    {title.split('').map((char, i) =>
-      char === ' ' ? (
-        <Span key={i}>&nbsp;</Span>
-      ) : (
-        <Span variants={animations} key={i}>
-          {char}
-        </Span>
-      )
-    )}
-  </Word>
-);
