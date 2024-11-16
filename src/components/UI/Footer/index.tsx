@@ -1,19 +1,18 @@
 import Image from 'next/image';
-import ic_chevron_down from '../../../../public/svgs/ic_chevron_down.svg';
 import ic_copyright from '../../../../public/svgs/ic_copyright.svg';
 
 const linksArr = [
   {
-    title: 'About us',
-    links: ['Our Company', 'Careers', 'Press kits'],
+    title: 'About',
+    links: ['Program', 'Team', 'Mission'],
   },
   {
-    title: 'Legal',
-    links: ['Terms of use', 'Privacy policy', 'About us'],
+    title: 'Resources',
+    links: ['Timeline', 'FAQ', 'Apply Now'],
   },
   {
-    title: 'About us',
-    links: ['Contact us', 'FAQ'],
+    title: 'Contact',
+    links: ['Join Us', 'Email', 'LinkedIn'],
   },
 ];
 
@@ -23,10 +22,6 @@ import {
   FooterLogo,
   FooterMainContent,
   FooterMiddle,
-  QRContainer,
-  QRImageCtn,
-  TextCtn,
-  IconCtn,
   FooterNavigation,
   GridColumn,
   LinksContainer,
@@ -36,22 +31,45 @@ import {
 } from './styles';
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const linkMap: { [key: string]: string } = {
+    'Program': 'intro',
+    'Timeline': 'timeline',
+    'FAQ': 'faq',
+    'Join Us': 'join',
+    'Apply Now': 'hero'
+  };
+
   return (
     <Wrapper>
       <Inner>
         <FooterLogo>
-          <Image src="/Bruin_Venture_Lab_Submark_Bold.png" width={150} height={150} alt="raft_footer_logo" />
+          <Image src="/Bruin_Venture_Lab_Submark_Bold.png" width={150} height={150} alt="bvl_footer_logo" />
         </FooterLogo>
         <FooterMainContent>
           <FooterMiddle>
-           
             <FooterNavigation>
               {linksArr.map((l, i) => (
                 <GridColumn key={i}>
                   <h3>{l.title}</h3>
                   <LinksContainer>
                     {l.links.map((link, i) => (
-                      <li key={i}>{link}</li>
+                      <li 
+                        key={i} 
+                        onClick={() => linkMap[link] && scrollToSection(linkMap[link])}
+                        className={linkMap[link] ? 'clickable' : ''}
+                      >
+                        {link}
+                      </li>
                     ))}
                   </LinksContainer>
                 </GridColumn>
@@ -59,10 +77,6 @@ const Footer = () => {
             </FooterNavigation>
           </FooterMiddle>
           <FooterBottom>
-            <Translator>
-              <h3>English </h3>
-              <Image src={ic_chevron_down} alt="chevron down" />
-            </Translator>
             <CopyRight>
               <Image src={ic_copyright} alt="copyright svg" />
               Bruin Venture Lab.

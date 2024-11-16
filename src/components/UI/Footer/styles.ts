@@ -114,12 +114,17 @@ export const LinksContainer = styled.ul`
   flex-direction: column;
   gap: 0.75rem;
 
-  li {
+  li.clickable {
+    cursor: pointer;
     color: #efefef;
     font-size: 1rem;
     font-weight: 400;
-    cursor: pointer;
     position: relative;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
 
     &::after {
       position: absolute;
@@ -130,15 +135,12 @@ export const LinksContainer = styled.ul`
       left: 0;
       bottom: -5px;
       transform: scaleX(0);
-      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
       transform-origin: center;
     }
 
-    &:hover {
-      &::after {
-        width: 100%;
-        transform: scaleX(1);
-      }
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
 `;

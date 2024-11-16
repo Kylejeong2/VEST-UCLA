@@ -13,15 +13,25 @@ import {
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <div id="hero">
+        <HeroSection />
+      </div>
       <Featured />
       <OffersSection />
       <FinancilaFreedom />
       <FinancialFuture />
-      <IntroSection />
-      <JoinSection />
-      <Timeline />
-      <FAQ />
+      <div id="intro">
+        <IntroSection />
+      </div>
+      <div id="join">
+        <JoinSection />
+      </div>
+      <div id="timeline">
+        <Timeline />
+      </div>
+      <div id="faq">
+        <FAQ />
+      </div>
     </main>
   );
 }
