@@ -68,9 +68,9 @@ const FinancialFuture = () => {
       </Inner>
       <Banner>
         {isMobile ? (
-          <Image src={future_mobile_banner} alt="future_banner" fill />
+          <Image src="/gang.png" alt="future_banner" fill />
         ) : (
-          <Image src={future_banner} alt="future_banner" fill />
+          <Image src="/gang.png" alt="future_banner" fill />
         )}
       </Banner>
     </Wrapper>

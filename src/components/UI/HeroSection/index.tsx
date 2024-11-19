@@ -52,7 +52,7 @@ const HeroSection = () => {
           <ImageContainer>
             {/* Add your hero image here */}
             <Image 
-              src="/path-to-your-hero-image.jpg"
+              src="/gang.png"
               alt="Hero Image"
               fill
               style={{ objectFit: 'cover' }}
