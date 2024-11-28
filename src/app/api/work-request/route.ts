@@ -20,7 +20,14 @@ export async function POST(req: Request) {
       },
     });
 
-    // Send to Discord
+    if (DISCORD_WEBHOOK_URL && !DISCORD_WEBHOOK_URL.startsWith('https://discord.com/api/webhooks/')) {
+      console.error('Invalid Discord webhook URL');
+      return NextResponse.json(
+        { success: false, error: 'Invalid webhook configuration' },
+        { status: 500 }
+      );
+    }
+
     if (DISCORD_WEBHOOK_URL) {
       const discordMessage = {
         embeds: [{

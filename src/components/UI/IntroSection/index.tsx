@@ -29,7 +29,7 @@ import {
 
 const IntroSection = () => {
   const isMobile = useIsMobile();
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  // const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
     <Wrapper>

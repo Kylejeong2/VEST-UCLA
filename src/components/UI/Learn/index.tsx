@@ -1,7 +1,5 @@
 'use client';
 import Image from 'next/image';
-import future_banner from '../../../../public/images/future_banner.png';
-import future_mobile_banner from '../../../../public/images/future_mobile_banner.png';
 import {
   Wrapper,
   Inner,
@@ -25,7 +23,7 @@ import {
   stats,
 } from './constants';
 
-const FinancialFuture = () => {
+const Learn = () => {
   const isMobile = useIsMobile();
 
   return (
@@ -77,4 +75,4 @@ const FinancialFuture = () => {
   );
 };
 
-export default FinancialFuture;
+export default Learn;

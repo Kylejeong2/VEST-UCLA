@@ -27,7 +27,7 @@ import {
   mobileParagraphPhrase,
 } from './constants';
 
-const FinancialFreedom = () => {
+const Building = () => {
   const isMobile = useIsMobile();
 
   return (
@@ -84,4 +84,4 @@ const FinancialFreedom = () => {
   );
 };
 
-export default FinancialFreedom;
+export default Building;

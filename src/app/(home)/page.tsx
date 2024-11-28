@@ -1,13 +1,13 @@
 import {
   FAQ,
   Featured,
-  FinancialFuture,
-  FinancilaFreedom,
+  Building,
   HeroSection,
   IntroSection,
   JoinSection,
-  OffersSection,
+  WhatYouDo,
   Timeline,
+  Learn,
 } from '@/components';
 
 export default function Home() {
@@ -17,9 +17,9 @@ export default function Home() {
         <HeroSection />
       </div>
       <Featured />
-      <OffersSection />
-      <FinancilaFreedom />
-      <FinancialFuture />
+      <WhatYouDo />
+      <Building />
+      <Learn />
       <div id="intro">
         <IntroSection />
       </div>

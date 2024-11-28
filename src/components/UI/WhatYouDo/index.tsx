@@ -18,7 +18,7 @@ import {
   offers,
 } from './constants';
 
-const OffersSection = () => {
+const WhatYouDo = () => {
   const isMobile = useIsMobile();
   return (
     <Wrapper>
@@ -63,4 +63,4 @@ const OffersSection = () => {
   );
 };
 
-export default OffersSection;
+export default WhatYouDo;
