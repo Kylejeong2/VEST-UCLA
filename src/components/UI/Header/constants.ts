@@ -33,4 +33,12 @@ export const links = [
     url: '#faq',
     linkTo: 'FAQ',
   },
+  {
+    url: '/case-studies',
+    linkTo: 'Case Studies',
+  },
+  {
+    url: '/blog',
+    linkTo: 'Blog',
+  },
 ];

@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Div, Word, Span, AbsoluteContainer } from './styles';
 
 type Props = {
@@ -50,15 +51,20 @@ const letterAnimationTwo = {
 
 const AnimatedLink = ({ title, url }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.querySelector(url);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (url.startsWith('#')) {
+      const element = document.querySelector(url);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      router.push(url);
     }
   };
 

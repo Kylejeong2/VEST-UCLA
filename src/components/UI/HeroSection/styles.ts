@@ -3,10 +3,14 @@ import { styled } from 'styled-components';
 import hero_background from '../../../../public/images/grid_background.png';
 
 export const Wrapper = styled.section`
-  margin-top: 6.25rem;
+  margin-top: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  min-height: calc(100vh - 6.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const Inner = styled.div`
@@ -14,6 +18,11 @@ export const Inner = styled.div`
   width: 100%;
   background-position: top center;
   background-size: cover;
+  padding: 4rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 export const Pill = styled.div`
@@ -42,14 +51,14 @@ export const HeroTextContainer = styled.div`
   padding-bottom: 2rem;
 
   h1 {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 400;
   }
 
   p {
     max-width: 41.75rem;
     color: #bdbdbd;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
     margin: 0 auto;
   }
@@ -58,13 +67,13 @@ export const HeroTextContainer = styled.div`
     gap: 1rem;
     padding-bottom: 1.5rem;
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 400;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
   }
 `;
@@ -73,6 +82,7 @@ export const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 14.5rem);
   
   .left-content {
     width: 50vw;
@@ -80,14 +90,18 @@ export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
+    min-height: auto;
     
     .left-content {
       width: 100%;
-      padding: 0 2rem;
+      padding: 2rem;
+      align-items: center;
+      text-align: center;
     }
   }
 `;
@@ -108,7 +122,7 @@ export const Divider = styled.div`
 export const ImageContainer = styled.div`
   width: 50vw;
   position: relative;
-  height: 80vh;
+  height: calc(100vh - 14.5rem);
   
   img {
     width: 100%;

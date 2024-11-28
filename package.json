@@ -1,12 +1,13 @@
 {
-  "name": "chatbot",
+  "name": "bvl-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:generate": "npm prisma generate && npm prisma db push"
   },
   "dependencies": {
     "@motionone/utils": "^10.16.3",

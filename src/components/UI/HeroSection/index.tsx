@@ -28,7 +28,7 @@ const HeroSection = () => {
         <ContentContainer>
           <div className="left-content">
             <Pill>
-              <span>Introducing UCLA&apos;s premier VC/Startup Club</span>
+              <span>Introducing UCLA&apos;s Premier VC/Startup Club</span>
               <Image src={ic_chevron_right} alt="chevron-right" />
             </Pill>
             <HeroTextContainer>
@@ -52,7 +52,7 @@ const HeroSection = () => {
           <ImageContainer>
             {/* Add your hero image here */}
             <Image 
-              src="/gang.png"
+              src="/hero.png"
               alt="Hero Image"
               fill
               style={{ objectFit: 'cover' }}
