@@ -25,9 +25,8 @@ const Timeline = () => {
           )}
         </Header>
         <TimelineContainer>
-          {/* Your timeline image will go here */}
           <Image 
-            src="/path-to-your-timeline-image.png"
+            src="/BVL_Recruiting.png"
             alt="BVL Timeline"
             fill
             style={{ objectFit: 'contain' }}

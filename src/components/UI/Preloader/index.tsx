@@ -22,39 +22,37 @@ const Preloader = ({
     const tl = gsap.timeline();
     tl.to(imageRef.current, {
       rotate: '360deg',
-      ease: 'back.out(1.7)', // Easing function
-      duration: 1.4,
+      ease: 'back.out(1.7)',
+      duration: 0.7,
     });
     tl.to(imageRef.current, {
-      y: '-100%', // Move the spans up
-      ease: 'back.out(1.7)', // Easing function
+      y: '-100%',
+      ease: 'back.out(1.7)',
+      duration: 0.5,
     });
-    // Iterate through the span elements and animate them
     tl.to(spans.current, {
-      y: '-100%', // Move the spans up
-      ease: 'back.out(1.7)', // Easing function
-      duration: 1.4, // Animation duration
-      stagger: 0.05, // Stagger duration (0.2 seconds delay between each span)
+      y: '-100%',
+      ease: 'back.out(1.7)',
+      duration: 0.7,
+      stagger: 0.03,
     });
-    // Animate both the wrapper and the second overlay almost at the same time
     tl.to([wrapperRef.current, secondOverlayRef.current], {
       scaleY: 0,
       transformOrigin: 'top',
       ease: 'back.out(1.7)',
-      duration: 1,
-      stagger: 0.2,
+      duration: 0.5,
+      stagger: 0.1,
       onComplete: () => {
         setComplete(true);
       },
     });
 
-    // Apply a small delay to one of the elements (adjust as needed)
     tl.to(secondOverlayRef.current, {
       scaleY: 0,
       transformOrigin: 'top',
       ease: [0.83, 0, 0.17, 1] as any,
-      duration: 1,
-      delay: -0.9, // Adjust this delay as needed to fine-tune the timing
+      duration: 0.5,
+      delay: -0.4,
     });
   }, [setComplete]);
 

@@ -56,19 +56,19 @@ export const ImageContainer = styled.div`
 export const ParallaxImages = styled.div`
   position: relative;
   max-width: 53.7rem;
-  margin: 3rem auto 0;
+  margin: 2rem auto 0;
 `;
 
 export const Div = styled(motion.div)`
   position: relative;
-  height: 35rem;
+  height: 25rem;
   overflow: hidden;
 
   @media (max-width: 599px) {
-    height: 23.75rem;
+    height: 17rem;
     
-     img {
+    img {
       object-fit: cover;
-     }
+    }
   }
 `;

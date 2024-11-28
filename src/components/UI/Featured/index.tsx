@@ -1,12 +1,8 @@
 'use client';
 import Image from 'next/image';
-import big_banner from '../../../../public/images/big_banner.png';
-import featured_mobile_banner from '../../../../public/images/featured_mobile_banner.png';
 import ParallaxText from '@/components/Common/ParallaxImages';
 import companies_image from '../../../../public/images/companies.png';
-import { Wrapper, Inner, ImageContainer, ParallaxImages, Div } from './styles';
-import RevealCover from '@/components/Common/RevealCover';
-import { useIsMobile } from '../../../../libs/useIsMobile';
+import { Wrapper, Inner, ParallaxImages } from './styles';
 export const imageVariants = {
   hidden: {
     scale: 1.6,
@@ -22,18 +18,18 @@ export const imageVariants = {
 };
 
 const Featured = () => {
-  const isMobile = useIsMobile();
   return (
     <Wrapper>
       {/* add when we get vc connections */}
-      {/* <Inner>
-        <h2>Worked with</h2>
+      {/* https://pixlr.com/editor/ */}
+      <Inner>
+        <h2>Companies We've Worked With</h2>
         <ParallaxImages>
           <ParallaxText baseVelocity={-4}>
             <Image src={companies_image} alt="companies" />
           </ParallaxText>
         </ParallaxImages>
-      </Inner> */}
+      </Inner>
     </Wrapper>
   );
 };

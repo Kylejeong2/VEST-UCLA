@@ -123,15 +123,20 @@ export const ImageContainer = styled.div`
   width: 50vw;
   position: relative;
   height: calc(100vh - 14.5rem);
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 1;
+  margin: auto;
   
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  // Make container smaller but keep spline large
+  > div {
+    transform: scale(1.5);
+    width: 100% !important;
+    height: 100% !important;
   }
   
   @media (max-width: 768px) {
-    width: 100%;
-    height: 50vh;
+    width: 80vw;
+    height: 80vw; // Make it square for perfect circle
   }
 `;

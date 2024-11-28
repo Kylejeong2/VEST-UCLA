@@ -19,6 +19,8 @@ import {
   paragraphPhrases,
   phrases,
 } from './constants';
+import Spline from '@splinetool/react-spline';
+
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
@@ -48,14 +50,17 @@ const HeroSection = () => {
           </div>
           
           <Divider />
-          
+
           <ImageContainer>
             {/* Add your hero image here */}
-            <Image 
+            {/* <Image 
               src="/hero.png"
               alt="Hero Image"
               fill
               style={{ objectFit: 'cover' }}
+            /> */}
+            <Spline
+              scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" 
             />
           </ImageContainer>
         </ContentContainer>

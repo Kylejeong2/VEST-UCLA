@@ -112,7 +112,7 @@ const CaseStudiesPage = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 6rem 0;
+  padding: 4rem 0;
   background: var(--Background);
 `;
 

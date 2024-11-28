@@ -8,17 +8,17 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { type, companyName, contactName, email, companyInfo, requirements } = body;
 
-    // Save to database
-    const workRequest = await prisma.workRequest.create({
-      data: {
-        type,
-        companyName,
-        contactName,
-        email,
-        companyInfo,
-        requirements,
-      },
-    });
+    // Save to database // don't need this for now
+    // const workRequest = await prisma.workRequest.create({
+    //   data: {
+    //     type,
+    //     companyName,
+    //     contactName,
+    //     email,
+    //     companyInfo,
+    //     requirements,
+    //   },
+    // });
 
     if (DISCORD_WEBHOOK_URL && !DISCORD_WEBHOOK_URL.startsWith('https://discord.com/api/webhooks/')) {
       console.error('Invalid Discord webhook URL');
@@ -74,7 +74,8 @@ export async function POST(req: Request) {
       });
     }
 
-    return NextResponse.json({ success: true, data: workRequest });
+    // return NextResponse.json({ success: true, data: workRequest });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Work request error:', error);
     return NextResponse.json(

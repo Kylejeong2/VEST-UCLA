@@ -15,6 +15,7 @@ import AnimatedLink from '@/components/Common/AnimatedLink';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { links, menu } from './constants';
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,9 @@ const Header = () => {
     <Wrapper>
       <Inner>
         <LogoContainer>
-          <Image src="/Bruin_Venture_Lab_Submark_Bold.png" width={50} height={50} alt="bvl logo" priority />
+          <Link href="/">
+            <Image src="/Bruin_Venture_Lab_Submark_Bold.png" width={50} height={50} alt="bvl logo" priority />
+          </Link>
           <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
             <motion.div
               variants={menu}
