@@ -18,10 +18,10 @@ export const stats = [
     number: '2+',
     subtitle: 'Startup Internships',
   },
-  {
-    number: '20+',
-    subtitle: 'Members',
-  },
+  // {
+  //   number: '20+',
+  //   subtitle: 'Members',
+  // },
   {
     number: '4+',
     subtitle: 'VC Partnerships',

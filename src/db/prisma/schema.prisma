@@ -37,3 +37,16 @@ model caseStudy {
   category String
   readTime String
 }
+
+model WorkRequest {
+  id          String   @id @default(uuid())
+  type        String   // "VC" or "Startup"
+  companyName String
+  contactName String
+  email       String
+  companyInfo String   @db.Text
+  requirements String  @db.Text
+  status      String   @default("pending") // pending, approved, rejected
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

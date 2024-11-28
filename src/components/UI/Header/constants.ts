@@ -38,6 +38,10 @@ export const links = [
     linkTo: 'Case Studies',
   },
   {
+    url: '/work-with-us',
+    linkTo: 'Work with Us',
+  },
+  {
     url: '/blog',
     linkTo: 'Blog',
   },
