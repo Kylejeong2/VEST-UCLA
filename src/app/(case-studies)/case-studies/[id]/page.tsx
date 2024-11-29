@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+export const runtime = 'edge';
+
 // Mock data - replace with your CMS data
 const caseStudies = {
   1: {

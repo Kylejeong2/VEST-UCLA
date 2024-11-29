@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/db';
 
+export const runtime = 'edge';
+
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 
 export async function POST(req: Request) {
@@ -9,16 +11,16 @@ export async function POST(req: Request) {
     const { type, companyName, contactName, email, companyInfo, requirements } = body;
 
     // Save to database // don't need this for now
-    // const workRequest = await prisma.workRequest.create({
-    //   data: {
-    //     type,
-    //     companyName,
-    //     contactName,
-    //     email,
-    //     companyInfo,
-    //     requirements,
-    //   },
-    // });
+    const workRequest = await prisma.workRequest.create({
+      data: {
+        type,
+        companyName,
+        contactName,
+        email,
+        companyInfo,
+        requirements,
+      },
+    });
 
     if (DISCORD_WEBHOOK_URL && !DISCORD_WEBHOOK_URL.startsWith('https://discord.com/api/webhooks/')) {
       console.error('Invalid Discord webhook URL');
