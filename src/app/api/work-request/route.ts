@@ -1,10 +1,12 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/db';
 
-const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {
+    const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+
     const body = await req.json();
     const { type, companyName, contactName, email, companyInfo, requirements } = body;
 
