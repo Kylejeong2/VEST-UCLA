@@ -79,7 +79,7 @@ const Footer = () => {
           <FooterBottom>
             <CopyRight>
               <Image src={ic_copyright} alt="copyright svg" />
-              Bruin Venture Lab.
+              VEST @ UCLA.
             </CopyRight>
           </FooterBottom>
         </FooterMainContent>
