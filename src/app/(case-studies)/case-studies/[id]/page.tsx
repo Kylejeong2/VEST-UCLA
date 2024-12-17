@@ -26,7 +26,7 @@ const caseStudies = {
       efficiency: '85% workflow efficiency improvement'
     },
     testimonial: {
-      quote: "BVL's mentorship was instrumental in helping us navigate our Series A and scale our infrastructure.",
+      quote: "VEST's mentorship was instrumental in helping us navigate our Series A and scale our infrastructure.",
       author: "Sarah Chen",
       role: "CEO, TechFlow AI"
     },

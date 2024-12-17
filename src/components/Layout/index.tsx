@@ -3,7 +3,7 @@
 import { ReactLenis } from '@studio-freight/react-lenis';
 import StyledComponentsRegistry from '../../../libs/registry';
 import { GlobalStyles } from './GlobalStyles';
-import { Footer, Header, Preloader } from '..';
+import { Footer, Header, Preloader } from '../LandingPage';
 import { useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

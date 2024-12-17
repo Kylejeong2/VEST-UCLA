@@ -5,22 +5,22 @@ export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {
-    const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+    const DISCORD_WEBHOOK_URL = process.env.CLIENT_DISCORD_WEBHOOK_URL;
 
     const body = await req.json();
     const { type, companyName, contactName, email, companyInfo, requirements } = body;
 
-    // Save to database // don't need this for now
-    const workRequest = await prisma.workRequest.create({
-      data: {
-        type,
-        companyName,
-        contactName,
-        email,
-        companyInfo,
-        requirements,
-      },
-    });
+    // TODO: not working for some reason
+    // const workRequest = await prisma.WorkRequest.create({
+    //   data: {
+    //     type,
+    //     companyName,
+    //     contactName,
+    //     email,
+    //     companyInfo,
+    //     requirements,
+    //   },
+    // });
 
     if (DISCORD_WEBHOOK_URL && !DISCORD_WEBHOOK_URL.startsWith('https://discord.com/api/webhooks/')) {
       console.error('Invalid Discord webhook URL');
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
           ],
           timestamp: new Date().toISOString(),
           footer: {
-            text: 'BVL Work Request',
+            text: 'VEST Work Request',
           },
         }],
       };
@@ -76,8 +76,8 @@ export async function POST(req: Request) {
       });
     }
 
-    return NextResponse.json({ success: true, data: workRequest });
-    // return NextResponse.json({ success: true });
+    // return NextResponse.json({ success: true, data: workRequest });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Work request error:', error);
     return NextResponse.json(
