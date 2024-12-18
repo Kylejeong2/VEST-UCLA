@@ -33,17 +33,18 @@ export async function POST() {
       responses.map(async (response) => {
         const analysis = await analyzer.analyzeApplication(response)
         
-        const firstAnalysisJson = {
+        // Convert analysis objects to JSON-safe format
+        const firstAnalysisJson = JSON.parse(JSON.stringify({
           status: analysis.firstAnalysis.status,
           confidence: analysis.firstAnalysis.confidence,
           reasoning: analysis.firstAnalysis.reasoning
-        }
+        }))
         
-        const secondAnalysisJson = {
+        const secondAnalysisJson = JSON.parse(JSON.stringify({
           status: analysis.secondAnalysis.status,
           confidence: analysis.secondAnalysis.confidence,
           reasoning: analysis.secondAnalysis.reasoning
-        }
+        }))
 
         const savedApplication = await prisma.application.create({
           data: {
@@ -51,7 +52,7 @@ export async function POST() {
             timestamp: new Date(response.timestamp),
             candidateName: response.candidateName,
             email: response.email,
-            responses: response.responses,
+            responses: JSON.parse(JSON.stringify(response.responses)),
             firstAnalysis: firstAnalysisJson,
             secondAnalysis: secondAnalysisJson,
             finalStatus: analysis.finalStatus,
