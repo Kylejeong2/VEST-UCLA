@@ -33,18 +33,18 @@ export async function POST() {
       responses.map(async (response) => {
         const analysis = await analyzer.analyzeApplication(response)
         
-        // Convert analysis objects to JSON-safe format
-        const firstAnalysisJson = JSON.parse(JSON.stringify({
-          status: analysis.firstAnalysis.status,
-          confidence: analysis.firstAnalysis.confidence,
-          reasoning: analysis.firstAnalysis.reasoning
-        }))
+        // Create plain objects for analysis
+        const firstAnalysis = {
+          status: String(analysis.firstAnalysis.status),
+          confidence: Number(analysis.firstAnalysis.confidence),
+          reasoning: String(analysis.firstAnalysis.reasoning)
+        }
         
-        const secondAnalysisJson = JSON.parse(JSON.stringify({
-          status: analysis.secondAnalysis.status,
-          confidence: analysis.secondAnalysis.confidence,
-          reasoning: analysis.secondAnalysis.reasoning
-        }))
+        const secondAnalysis = {
+          status: String(analysis.secondAnalysis.status),
+          confidence: Number(analysis.secondAnalysis.confidence),
+          reasoning: String(analysis.secondAnalysis.reasoning)
+        }
 
         const savedApplication = await prisma.application.create({
           data: {
@@ -52,15 +52,14 @@ export async function POST() {
             timestamp: new Date(response.timestamp),
             candidateName: response.candidateName,
             email: response.email,
-            responses: JSON.parse(JSON.stringify(response.responses)),
-            firstAnalysis: firstAnalysisJson,
-            secondAnalysis: secondAnalysisJson,
-            finalStatus: analysis.finalStatus,
-            needsManualReview: analysis.needsManualReview,
+            responses: response.responses,
+            firstAnalysis,
+            secondAnalysis,
+            finalStatus: String(analysis.finalStatus),
+            needsManualReview: Boolean(analysis.needsManualReview),
           },
         })
 
-        // Send to Discord
         await sendApplicationToDiscord({
           ...response,
           ...analysis,
