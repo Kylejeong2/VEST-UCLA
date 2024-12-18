@@ -33,6 +33,18 @@ export async function POST() {
       responses.map(async (response) => {
         const analysis = await analyzer.analyzeApplication(response)
         
+        const firstAnalysisJson = {
+          status: analysis.firstAnalysis.status,
+          confidence: analysis.firstAnalysis.confidence,
+          reasoning: analysis.firstAnalysis.reasoning
+        }
+        
+        const secondAnalysisJson = {
+          status: analysis.secondAnalysis.status,
+          confidence: analysis.secondAnalysis.confidence,
+          reasoning: analysis.secondAnalysis.reasoning
+        }
+
         const savedApplication = await prisma.application.create({
           data: {
             id: response.id,
@@ -40,8 +52,8 @@ export async function POST() {
             candidateName: response.candidateName,
             email: response.email,
             responses: response.responses,
-            firstAnalysis: JSON.stringify(analysis.firstAnalysis),
-            secondAnalysis: JSON.stringify(analysis.secondAnalysis),
+            firstAnalysis: firstAnalysisJson,
+            secondAnalysis: secondAnalysisJson,
             finalStatus: analysis.finalStatus,
             needsManualReview: analysis.needsManualReview,
           },
