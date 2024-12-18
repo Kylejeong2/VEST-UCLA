@@ -10,12 +10,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:generate": "npx prisma generate && npx prisma db push"
+    "prisma:generate": "npx prisma generate && npx prisma db push",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-        "npm run eslint --fix",
-        "npm run prettier"
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
