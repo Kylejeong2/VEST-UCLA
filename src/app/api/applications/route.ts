@@ -35,15 +35,15 @@ export async function POST() {
         
         // Create plain objects for analysis
         const firstAnalysis = {
-          status: String(analysis.firstAnalysis.status),
-          confidence: Number(analysis.firstAnalysis.confidence),
-          reasoning: String(analysis.firstAnalysis.reasoning)
+          status: analysis.firstAnalysis.status || 'NEEDS_REVIEW',
+          confidence: analysis.firstAnalysis.confidence || 0,
+          reasoning: analysis.firstAnalysis.reasoning || ''
         }
         
         const secondAnalysis = {
-          status: String(analysis.secondAnalysis.status),
-          confidence: Number(analysis.secondAnalysis.confidence),
-          reasoning: String(analysis.secondAnalysis.reasoning)
+          status: analysis.secondAnalysis.status || 'NEEDS_REVIEW',
+          confidence: analysis.secondAnalysis.confidence || 0,
+          reasoning: analysis.secondAnalysis.reasoning || ''
         }
 
         const savedApplication = await prisma.application.create({
@@ -52,11 +52,11 @@ export async function POST() {
             timestamp: new Date(response.timestamp),
             candidateName: response.candidateName,
             email: response.email,
-            responses: response.responses,
+            responses: response.responses || {},
             firstAnalysis,
             secondAnalysis,
-            finalStatus: String(analysis.finalStatus),
-            needsManualReview: Boolean(analysis.needsManualReview),
+            finalStatus: analysis.finalStatus || 'NEEDS_REVIEW',
+            needsManualReview: analysis.needsManualReview || true,
           },
         })
 
