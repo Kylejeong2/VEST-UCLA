@@ -4,8 +4,6 @@ import { ApplicationAnalyzer } from '@/lib/services/application-analyzer'
 import { sendApplicationToDiscord } from '@/lib/services/discord'
 import { prisma } from '@/db'
 
-export const runtime = "edge";
-
 const FORM_ID = process.env.GOOGLE_FORM_ID!
 const SYSTEM_PROMPT = process.env.APPLICATION_SYSTEM_PROMPT!
 
