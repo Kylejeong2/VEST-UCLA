@@ -22,7 +22,7 @@ export async function analyzeApplication(
       messages: [
         {
           role: "system",
-          content: `${systemPrompt}\nProvide your response as a JSON object with the following structure: { "status": "PENDING"|"APPROVED"|"REJECTED"|"NEEDS_REVIEW", "confidence": number, "reasoning": string }`
+          content: `${systemPrompt}\nYou must respond with a valid JSON object containing exactly these fields:\n{\n  "status": "PENDING" | "APPROVED" | "REJECTED" | "NEEDS_REVIEW",\n  "confidence": number between 0 and 1,\n  "reasoning": string\n}`
         },
         {
           role: "user",
@@ -34,19 +34,25 @@ export async function analyzeApplication(
     })
 
     const response = completion.choices[0]?.message?.content
-    if (!response) {
-      throw new Error('No response from OpenAI')
+    if (!response || typeof response !== 'string') {
+      throw new Error('Invalid response from OpenAI')
     }
 
-    const parsedResponse = AnalysisSchema.parse(JSON.parse(response))
-    return parsedResponse
+    try {
+      const parsedResponse = JSON.parse(response.trim())
+      const validatedResponse = AnalysisSchema.parse(parsedResponse)
+      return validatedResponse
+    } catch (parseError) {
+      console.error('Failed to parse OpenAI response:', response)
+      throw new Error('Invalid JSON response from OpenAI')
+    }
 
   } catch (error) {
     console.error('Error analyzing application:', error)
     return {
       status: 'NEEDS_REVIEW',
       confidence: 0,
-      reasoning: 'Error during analysis'
+      reasoning: 'Error during analysis: ' + (error as Error).message
     }
   }
 }

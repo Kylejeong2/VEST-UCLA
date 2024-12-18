@@ -33,7 +33,6 @@ export async function POST() {
       responses.map(async (response) => {
         const analysis = await analyzer.analyzeApplication(response)
         
-        // Create plain objects for analysis
         const firstAnalysis = {
           status: analysis.firstAnalysis.status || 'NEEDS_REVIEW',
           confidence: analysis.firstAnalysis.confidence || 0,
