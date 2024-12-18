@@ -80,6 +80,7 @@
 
 // TEMP this is just here so it can deploy, when fixing remove this
 import { NextResponse } from 'next/server'
+export const runtime = 'edge'
 
 // Temporary minimal implementation while the full functionality is commented out
 export async function GET() {

@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 
+export const runtime = 'edge';
+
 // Helper to delay between API calls
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
