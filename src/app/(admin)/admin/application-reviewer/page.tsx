@@ -12,19 +12,20 @@ export default function ApplicationReviewerPage() {
 
   const handleProcessApplications = async () => {
     setIsProcessing(true)
-    try {
-      const response = await fetch('/api/applications', {
-        method: 'POST',
-      })
-      if (!response.ok) {
-        throw new Error('Failed to process applications')
-      }
-      window.location.reload()
-    } catch (error) {
-      console.error('Error processing applications:', error)
-    } finally {
-      setIsProcessing(false)
-    }
+    // TODO: fix this stuff it won't deploy with the applications route
+    // try {
+    //   const response = await fetch('/api/applications', {
+    //     method: 'POST',
+    //   })
+    //   if (!response.ok) {
+    //     throw new Error('Failed to process applications')
+    //   }
+    //   window.location.reload()
+    // } catch (error) {
+    //   console.error('Error processing applications:', error)
+    // } finally {
+    //   setIsProcessing(false)
+    // }
   }
 
   return (
@@ -78,21 +79,21 @@ function ApplicationTable() {
   const [applications, setApplications] = useState<any[]>([])
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    const fetchApplications = async () => {
-      try {
-        const response = await fetch('/api/applications')
-        if (!response.ok) {
-          throw new Error('Failed to load applications')
-        }
-        const data = await response.json()
-        setApplications(data)
-      } catch (error) {
-        setError('Failed to load applications. Please try again later.')
-      }
-    }
-    fetchApplications()
-  }, [])
+  // useEffect(() => {
+  //   const fetchApplications = async () => {
+  //     try {
+  //       const response = await fetch('/api/applications')
+  //       if (!response.ok) {
+  //         throw new Error('Failed to load applications')
+  //       }
+  //       const data = await response.json()
+  //       setApplications(data)
+  //     } catch (error) {
+  //       setError('Failed to load applications. Please try again later.')
+  //     }
+  //   }
+  //   fetchApplications()
+  // }, [])
 
   if (error) {
     return (
