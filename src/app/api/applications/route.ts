@@ -77,3 +77,15 @@
 //     )
 //   }
 // } 
+
+// TEMP this is just here so it can deploy, when fixing remove this
+import { NextResponse } from 'next/server'
+
+// Temporary minimal implementation while the full functionality is commented out
+export async function GET() {
+  return NextResponse.json({ message: 'Applications API temporarily disabled' })
+}
+
+export async function POST() {
+  return NextResponse.json({ message: 'Applications API temporarily disabled' })
+}
