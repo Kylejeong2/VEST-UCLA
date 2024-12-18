@@ -10,18 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:generate": "npx prisma generate && npx prisma db push",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.{json,md}": [
-      "prettier --write"
-    ]
+    "prisma:generate": "npx prisma generate && npx prisma db push"
   },
   "dependencies": {
     "@motionone/utils": "^10.16.3",
