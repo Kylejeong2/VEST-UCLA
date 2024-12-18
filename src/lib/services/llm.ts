@@ -1,8 +1,15 @@
 import OpenAI from 'openai'
-import { ApplicationResponse, AnalysisResult } from '../types/application'
+import { ApplicationResponse, AnalysisResult, ApplicationStatus } from '../types/application'
+import { z } from 'zod'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
+})
+
+const AnalysisSchema = z.object({
+  status: z.enum(['PENDING', 'APPROVED', 'REJECTED', 'NEEDS_REVIEW'] as const),
+  confidence: z.number(),
+  reasoning: z.string()
 })
 
 export async function analyzeApplication(
@@ -15,7 +22,7 @@ export async function analyzeApplication(
       messages: [
         {
           role: "system",
-          content: systemPrompt
+          content: `${systemPrompt}\nProvide your response as a JSON object with the following structure: { "status": "PENDING"|"APPROVED"|"REJECTED"|"NEEDS_REVIEW", "confidence": number, "reasoning": string }`
         },
         {
           role: "user",
@@ -31,12 +38,9 @@ export async function analyzeApplication(
       throw new Error('No response from OpenAI')
     }
 
-    const analysis = JSON.parse(response) as AnalysisResult
-    return {
-      status: analysis.status,
-      confidence: analysis.confidence,
-      reasoning: analysis.reasoning
-    }
+    const parsedResponse = AnalysisSchema.parse(JSON.parse(response))
+    return parsedResponse
+
   } catch (error) {
     console.error('Error analyzing application:', error)
     return {
@@ -45,4 +49,4 @@ export async function analyzeApplication(
       reasoning: 'Error during analysis'
     }
   }
-} 
+}
