@@ -1,23 +1,28 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Search, FileText } from "lucide-react";
+import { Search } from "lucide-react";
 
 export default function ColdOutreachPage() {
   return (
     <div className="container mx-auto p-8 bg-black min-h-screen">
       <div className="flex items-center justify-between mb-8">
         <div className="space-y-1">
-          <h1 className="text-4xl font-bold tracking-tight text-white">Cold Outreach</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white">
+            Cold Outreach
+          </h1>
           <p className="text-zinc-400">
             Manage your outreach campaigns and leads
           </p>
         </div>
         <Link href="/admin">
-          <Button variant="outline" className="border-zinc-800 bg-black hover:bg-zinc-900 text-white">
+          <Button
+            variant="outline"
+            className="border-zinc-800 bg-black hover:bg-zinc-900 text-white"
+          >
             Back to Admin
           </Button>
         </Link>
@@ -31,7 +36,9 @@ export default function ColdOutreachPage() {
                 <Search className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-white">Search Companies</h2>
+                <h2 className="text-2xl font-semibold text-white">
+                  Search Companies
+                </h2>
                 <p className="text-zinc-400 text-sm">
                   Search and filter companies for outreach campaigns
                 </p>
@@ -39,7 +46,6 @@ export default function ColdOutreachPage() {
             </div>
           </Card>
         </Link>
-
       </div>
     </div>
   );

@@ -1,12 +1,14 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+"use client";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
-const isClient = typeof window === 'object';
+const isClient = typeof window === "object";
 
 export const useIsMobile = () => {
   const pathname = usePathname();
-  const [isMobile, setIsMobile] = useState(isClient && window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(
+    isClient && window.innerWidth <= 768,
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,10 +17,10 @@ export const useIsMobile = () => {
     };
 
     if (isClient) {
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
 
       return () => {
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, [pathname]);

@@ -1,26 +1,25 @@
-'use client';
-import Image from 'next/image';
-import { 
-  Wrapper, 
-  Inner, 
-  Pill, 
+"use client";
+import Image from "next/image";
+import {
+  Wrapper,
+  Inner,
+  Pill,
   HeroTextContainer,
   ContentContainer,
   Divider,
-  ImageContainer 
-} from './styles';
-import ic_chevron_right from '../../../../public/svgs/ic_chevron_right.svg';
-import { GetStartedButton } from '@/components/LandingPage';
-import MaskText from '@/components/Common/MaskText';
-import { useIsMobile } from '../../../../libs/useIsMobile';
+  ImageContainer,
+} from "./styles";
+import ic_chevron_right from "../../../../public/svgs/ic_chevron_right.svg";
+import { GetStartedButton } from "@/components/LandingPage";
+import MaskText from "@/components/Common/MaskText";
+import { useIsMobile } from "../../../../libs/useIsMobile";
 import {
   mobileParagraphPhrases,
   mobilePhrases,
   paragraphPhrases,
   phrases,
-} from './constants';
-import Spline from '@splinetool/react-spline';
-
+} from "./constants";
+import Spline from "@splinetool/react-spline";
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
@@ -48,7 +47,7 @@ const HeroSection = () => {
             </HeroTextContainer>
             <GetStartedButton padding="1rem 2rem" />
           </div>
-          
+
           <Divider />
 
           <ImageContainer>
@@ -59,9 +58,7 @@ const HeroSection = () => {
               fill
               style={{ objectFit: 'cover' }}
             /> */}
-            <Spline
-              scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" 
-            />
+            <Spline scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" />
           </ImageContainer>
         </ContentContainer>
       </Inner>

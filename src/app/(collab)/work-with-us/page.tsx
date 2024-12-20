@@ -1,30 +1,32 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 
 const WorkWithUs = () => {
-  const [activeTab, setActiveTab] = useState<'VC' | 'Startup'>('VC');
+  const [activeTab, setActiveTab] = useState<"VC" | "Startup">("VC");
   const [formData, setFormData] = useState({
-    companyName: '',
-    contactName: '',
-    email: '',
-    companyInfo: '',
-    requirements: '',
+    companyName: "",
+    contactName: "",
+    email: "",
+    companyInfo: "",
+    requirements: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      const response = await fetch('/api/work-request', {
-        method: 'POST',
+      const response = await fetch("/api/work-request", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...formData,
@@ -32,26 +34,28 @@ const WorkWithUs = () => {
         }),
       });
 
-      if (!response.ok) throw new Error('Submission failed');
-      
-      setSubmitStatus('success');
+      if (!response.ok) throw new Error("Submission failed");
+
+      setSubmitStatus("success");
       setFormData({
-        companyName: '',
-        contactName: '',
-        email: '',
-        companyInfo: '',
-        requirements: '',
+        companyName: "",
+        contactName: "",
+        email: "",
+        companyInfo: "",
+        requirements: "",
       });
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      setTimeout(() => setSubmitStatus("idle"), 3000);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
@@ -66,19 +70,18 @@ const WorkWithUs = () => {
         </Header>
 
         <Tabs>
-          <Tab
-            active={activeTab === 'VC'}
-            onClick={() => setActiveTab('VC')}
-          >
+          <Tab active={activeTab === "VC"} onClick={() => setActiveTab("VC")}>
             For VC Firms
-            {activeTab === 'VC' && <ActiveIndicator layoutId="activeTab" />}
+            {activeTab === "VC" && <ActiveIndicator layoutId="activeTab" />}
           </Tab>
           <Tab
-            active={activeTab === 'Startup'}
-            onClick={() => setActiveTab('Startup')}
+            active={activeTab === "Startup"}
+            onClick={() => setActiveTab("Startup")}
           >
             For Startups
-            {activeTab === 'Startup' && <ActiveIndicator layoutId="activeTab" />}
+            {activeTab === "Startup" && (
+              <ActiveIndicator layoutId="activeTab" />
+            )}
           </Tab>
         </Tabs>
 
@@ -89,21 +92,31 @@ const WorkWithUs = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            {activeTab === 'VC' ? (
+            {activeTab === "VC" ? (
               <InfoSection>
                 <h2>VC Partnership Benefits</h2>
                 <Benefits>
                   <Benefit>
                     <h3>Deal Flow Support</h3>
-                    <p>Our talented students help source and evaluate potential investments, providing detailed analysis and fresh perspectives.</p>
+                    <p>
+                      Our talented students help source and evaluate potential
+                      investments, providing detailed analysis and fresh
+                      perspectives.
+                    </p>
                   </Benefit>
                   <Benefit>
                     <h3>Market Research</h3>
-                    <p>Get comprehensive market research and competitive analysis to support your investment decisions.</p>
+                    <p>
+                      Get comprehensive market research and competitive analysis
+                      to support your investment decisions.
+                    </p>
                   </Benefit>
                   <Benefit>
                     <h3>Due Diligence</h3>
-                    <p>Leverage our team's expertise for thorough due diligence processes and investment memorandums.</p>
+                    <p>
+                      Leverage our team's expertise for thorough due diligence
+                      processes and investment memorandums.
+                    </p>
                   </Benefit>
                 </Benefits>
               </InfoSection>
@@ -113,11 +126,17 @@ const WorkWithUs = () => {
                 <Benefits>
                   <Benefit>
                     <h3>Technical Support</h3>
-                    <p>Access our pool of talented developers and designers for your technical needs.</p>
+                    <p>
+                      Access our pool of talented developers and designers for
+                      your technical needs.
+                    </p>
                   </Benefit>
                   <Benefit>
                     <h3>Growth Strategy</h3>
-                    <p>Get help with market analysis, user acquisition strategies, and growth planning.</p>
+                    <p>
+                      Get help with market analysis, user acquisition
+                      strategies, and growth planning.
+                    </p>
                   </Benefit>
                   <Benefit>
                     <h3>Design & UI/UX</h3>
@@ -188,15 +207,15 @@ const WorkWithUs = () => {
                 disabled={isSubmitting}
                 status={submitStatus}
               >
-                {isSubmitting ? 'Submitting...' : 'Submit Request'}
+                {isSubmitting ? "Submitting..." : "Submit Request"}
               </SubmitButton>
 
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <StatusMessage success>
                   Request submitted successfully! We'll be in touch soon.
                 </StatusMessage>
               )}
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <StatusMessage>
                   Something went wrong. Please try again.
                 </StatusMessage>
@@ -257,7 +276,7 @@ const Tab = styled.button<{ active: boolean }>`
   padding: 1rem 2rem;
   background: none;
   border: none;
-  color: ${props => props.active ? 'var(--white)' : 'var(--link-color)'};
+  color: ${(props) => (props.active ? "var(--white)" : "var(--link-color)")};
   font-size: 1.125rem;
   cursor: pointer;
   position: relative;
@@ -357,7 +376,7 @@ const TextArea = styled.textarea`
   }
 `;
 
-const SubmitButton = styled.button<{ status: 'idle' | 'success' | 'error' }>`
+const SubmitButton = styled.button<{ status: "idle" | "success" | "error" }>`
   padding: 1rem 2rem;
   border-radius: 2rem;
   border: none;
@@ -381,9 +400,10 @@ const SubmitButton = styled.button<{ status: 'idle' | 'success' | 'error' }>`
 const StatusMessage = styled.div<{ success?: boolean }>`
   padding: 1rem;
   border-radius: 0.5rem;
-  background: ${props => props.success ? 'rgba(52, 211, 153, 0.1)' : 'rgba(239, 68, 68, 0.1)'};
-  color: ${props => props.success ? '#34D399' : '#EF4444'};
+  background: ${(props) =>
+    props.success ? "rgba(52, 211, 153, 0.1)" : "rgba(239, 68, 68, 0.1)"};
+  color: ${(props) => (props.success ? "#34D399" : "#EF4444")};
   text-align: center;
 `;
 
-export default WorkWithUs; 
+export default WorkWithUs;

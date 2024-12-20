@@ -1,9 +1,15 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Users, Search, Settings, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Search,
+  Settings,
+  ChevronRight,
+} from "lucide-react";
 
 export default function AdminPage() {
   return (
@@ -33,9 +39,12 @@ export default function AdminPage() {
                   <Search className="w-6 h-6 text-white dark:text-primary/90" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold mb-1">Cold Outreach Automation</h2>
+                  <h2 className="text-2xl font-semibold mb-1">
+                    Cold Outreach Automation
+                  </h2>
                   <p className="text-muted-foreground text-sm">
-                    Search and enrich LinkedIn profiles, manage outreach campaigns
+                    Search and enrich LinkedIn profiles, manage outreach
+                    campaigns
                   </p>
                 </div>
                 <div className="flex items-center text-sm text-primary dark:text-primary/90">
@@ -56,7 +65,9 @@ export default function AdminPage() {
                   <Users className="w-6 h-6 text-white dark:text-primary/90" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold mb-1">Application Reviewer</h2>
+                  <h2 className="text-2xl font-semibold mb-1">
+                    Application Reviewer
+                  </h2>
                   <p className="text-muted-foreground text-sm">
                     Review and manage incoming applications with AI assistance
                   </p>
@@ -73,4 +84,4 @@ export default function AdminPage() {
       </div>
     </div>
   );
-} 
+}

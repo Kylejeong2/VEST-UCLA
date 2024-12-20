@@ -1,5 +1,5 @@
-'use client';
-import { styled } from 'styled-components';
+"use client";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   padding-top: 7.75rem;
@@ -42,7 +42,7 @@ export const Header = styled.header`
 
   @media (max-width: 768px) {
     margin-bottom: 3.75rem;
-    
+
     h1 {
       font-size: 2.25rem;
     }

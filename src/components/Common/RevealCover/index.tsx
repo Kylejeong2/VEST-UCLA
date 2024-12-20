@@ -1,12 +1,12 @@
-'use client';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
+"use client";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 const variant = {
   hidden: {
-    width: '100%',
+    width: "100%",
   },
   visible: {
-    width: '0%',
+    width: "0%",
     transition: {
       duration: 1.4,
       ease: [0.6, 0.05, -0.01, 0.9],
@@ -28,7 +28,7 @@ const RevealCover = () => {
 export default RevealCover;
 
 const Reveal = styled(motion.div)`
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;

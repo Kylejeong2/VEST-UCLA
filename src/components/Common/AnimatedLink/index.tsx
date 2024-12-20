@@ -1,7 +1,7 @@
-'use client';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Div, Word, Span, AbsoluteContainer } from './styles';
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Div, Word, Span, AbsoluteContainer } from "./styles";
 
 type Props = {
   title: string;
@@ -30,7 +30,7 @@ const letterAnimation = {
     transition: {
       duration: 0.3,
       ease: [0.6, 0.01, 0.05, 0.95],
-      type: 'tween',
+      type: "tween",
     },
   },
 };
@@ -44,7 +44,7 @@ const letterAnimationTwo = {
     transition: {
       duration: 0.3,
       ease: [0.6, 0.01, 0.05, 0.95],
-      type: 'tween',
+      type: "tween",
     },
   },
 };
@@ -55,12 +55,12 @@ const AnimatedLink = ({ title, url }: Props) => {
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (url.startsWith('#')) {
+    if (url.startsWith("#")) {
       const element = document.querySelector(url);
       if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
       }
     } else {
@@ -74,17 +74,11 @@ const AnimatedLink = ({ title, url }: Props) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      <Word
-        animate={isHovered ? 'hover' : 'rest'}
-        variants={titleAnimation}
-      >
+      <Word animate={isHovered ? "hover" : "rest"} variants={titleAnimation}>
         <Span>{title}</Span>
       </Word>
       <AbsoluteContainer>
-        <Word
-          animate={isHovered ? 'hover' : 'rest'}
-          variants={titleAnimation}
-        >
+        <Word animate={isHovered ? "hover" : "rest"} variants={titleAnimation}>
           <Span>{title}</Span>
         </Word>
       </AbsoluteContainer>

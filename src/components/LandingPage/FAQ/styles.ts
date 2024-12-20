@@ -1,6 +1,6 @@
-'use client';
-import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
+"use client";
+import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
 export const Wrapper = styled.div`
   padding: 8.25rem 0 10rem;

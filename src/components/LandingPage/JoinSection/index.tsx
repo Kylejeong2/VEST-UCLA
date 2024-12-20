@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Wrapper,
   Inner,
@@ -10,15 +10,15 @@ import {
   CardGrid,
   TopRow,
   BottomRow,
-} from './styles';
-import Image from 'next/image';
-import { MaskText } from '@/components/LandingPage';
-import { useIsMobile } from '../../../../libs/useIsMobile';
-import { Props, desktopHeaderPhrase, testimonials } from './constants';
+} from "./styles";
+import Image from "next/image";
+import { MaskText } from "@/components/LandingPage";
+import { useIsMobile } from "../../../../libs/useIsMobile";
+import { Props, desktopHeaderPhrase, testimonials } from "./constants";
 
 const JoinSection = () => {
   const isMobile = useIsMobile();
-  
+
   const topRow = testimonials.slice(0, 2);
   const bottomRow = testimonials.slice(2);
 
@@ -33,12 +33,12 @@ const JoinSection = () => {
             {topRow.map((t, i) => (
               <Testimonial key={i}>
                 <Avatar>
-                  <Image 
-                    src={t.avatar} 
-                    alt={t.person} 
-                    width={160} 
+                  <Image
+                    src={t.avatar}
+                    alt={t.person}
+                    width={160}
                     height={160}
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                 </Avatar>
                 <Name>
@@ -53,12 +53,12 @@ const JoinSection = () => {
             {bottomRow.map((t, i) => (
               <Testimonial key={i}>
                 <Avatar>
-                  <Image 
-                    src={t.avatar} 
-                    alt={t.person} 
-                    width={160} 
+                  <Image
+                    src={t.avatar}
+                    alt={t.person}
+                    width={160}
                     height={160}
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                 </Avatar>
                 <Name>

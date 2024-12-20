@@ -28,17 +28,17 @@
 //   try {
 //     const responses = await fetchFormResponses(FORM_ID)
 //     const analyzer = new ApplicationAnalyzer(SYSTEM_PROMPT)
-    
+
 //     const analyzedApplications = await Promise.all(
 //       responses.map(async (response) => {
 //         const analysis = await analyzer.analyzeApplication(response)
-        
+
 //         const firstAnalysis = {
 //           status: analysis.firstAnalysis.status || 'NEEDS_REVIEW',
 //           confidence: analysis.firstAnalysis.confidence || 0,
 //           reasoning: analysis.firstAnalysis.reasoning || ''
 //         }
-        
+
 //         const secondAnalysis = {
 //           status: analysis.secondAnalysis.status || 'NEEDS_REVIEW',
 //           confidence: analysis.secondAnalysis.confidence || 0,
@@ -76,17 +76,21 @@
 //       { status: 500 }
 //     )
 //   }
-// } 
+// }
 
 // TEMP this is just here so it can deploy, when fixing remove this
-import { NextResponse } from 'next/server'
-export const runtime = 'edge'
+import { NextResponse } from "next/server";
+export const runtime = "edge";
 
 // Temporary minimal implementation while the full functionality is commented out
 export async function GET() {
-  return NextResponse.json({ message: 'Applications API temporarily disabled' })
+  return NextResponse.json({
+    message: "Applications API temporarily disabled",
+  });
 }
 
 export async function POST() {
-  return NextResponse.json({ message: 'Applications API temporarily disabled' })
+  return NextResponse.json({
+    message: "Applications API temporarily disabled",
+  });
 }

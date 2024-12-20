@@ -1,39 +1,43 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import styled from 'styled-components';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import styled from "styled-components";
 
 // Mock data - replace with your CMS data
 const blogPosts = [
   {
     id: 1,
-    title: 'Understanding Venture Capital',
-    excerpt: 'A comprehensive guide to understanding how venture capital works...',
-    date: '2024-01-15',
-    image: '/blog/vc-101.jpg',
-    category: 'Education',
+    title: "Understanding Venture Capital",
+    excerpt:
+      "A comprehensive guide to understanding how venture capital works...",
+    date: "2024-01-15",
+    image: "/blog/vc-101.jpg",
+    category: "Education",
   },
   {
     id: 2,
-    title: 'Top Startup Trends in 2024',
-    excerpt: 'Exploring the most promising startup trends that are shaping the future...',
-    date: '2024-01-10',
-    image: '/blog/trends.jpg',
-    category: 'Trends',
+    title: "Top Startup Trends in 2024",
+    excerpt:
+      "Exploring the most promising startup trends that are shaping the future...",
+    date: "2024-01-10",
+    image: "/blog/trends.jpg",
+    category: "Trends",
   },
   // Add more mock posts
 ];
 
 const BlogPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+  const filteredPosts = blogPosts.filter((post) => {
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "All" || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -44,7 +48,7 @@ const BlogPage = () => {
           <h1>Bruin Venture Lab Blog</h1>
           <p>Insights from UCLA's premier VC/Startup community</p>
         </Header>
-        
+
         <SearchBar>
           <input
             type="text"
@@ -55,7 +59,7 @@ const BlogPage = () => {
         </SearchBar>
 
         <Categories>
-          {['All', 'Education', 'Trends', 'Startups', 'VC'].map(category => (
+          {["All", "Education", "Trends", "Startups", "VC"].map((category) => (
             <CategoryButton
               key={category}
               active={selectedCategory === category}
@@ -67,11 +71,16 @@ const BlogPage = () => {
         </Categories>
 
         <BlogGrid>
-          {filteredPosts.map(post => (
+          {filteredPosts.map((post) => (
             <BlogCard key={post.id}>
               <Link href={`/blog/${post.id}`}>
                 <ImageContainer>
-                  <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
                 </ImageContainer>
                 <CardContent>
                   <Category>{post.category}</Category>
@@ -157,8 +166,9 @@ const Categories = styled.div`
 const CategoryButton = styled.button<{ active: boolean }>`
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  border: 1px solid ${props => props.active ? 'var(--emerald)' : 'rgba(255, 255, 255, 0.1)'};
-  background: ${props => props.active ? 'var(--emerald)' : 'transparent'};
+  border: 1px solid
+    ${(props) => (props.active ? "var(--emerald)" : "rgba(255, 255, 255, 0.1)")};
+  background: ${(props) => (props.active ? "var(--emerald)" : "transparent")};
   color: var(--white);
   cursor: pointer;
   transition: all 0.2s ease;

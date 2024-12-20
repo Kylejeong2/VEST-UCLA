@@ -8,7 +8,7 @@ import {
   WhatYouDo,
   Timeline,
   Learn,
-} from '@/components/LandingPage';
+} from "@/components/LandingPage";
 
 export default function Home() {
   return (

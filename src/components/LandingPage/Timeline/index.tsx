@@ -1,9 +1,14 @@
-'use client';
-import Image from 'next/image';
-import { Wrapper, Inner, Header, TimelineContainer } from './styles';
-import MaskText from '@/components/Common/MaskText';
-import { useIsMobile } from '../../../../libs/useIsMobile';
-import { desktopHeaderPhrase, desktopParagraphPhrase, mobileHeaderPhrase, mobileParagraphPhrase } from './constants';
+"use client";
+import Image from "next/image";
+import { Wrapper, Inner, Header, TimelineContainer } from "./styles";
+import MaskText from "@/components/Common/MaskText";
+import { useIsMobile } from "../../../../libs/useIsMobile";
+import {
+  desktopHeaderPhrase,
+  desktopParagraphPhrase,
+  mobileHeaderPhrase,
+  mobileParagraphPhrase,
+} from "./constants";
 
 const Timeline = () => {
   const isMobile = useIsMobile();
@@ -25,11 +30,11 @@ const Timeline = () => {
           )}
         </Header>
         <TimelineContainer>
-          <Image 
+          <Image
             src="/VEST_Recruiting.png"
             alt="VEST Timeline"
             fill
-            style={{ objectFit: 'contain' }}
+            style={{ objectFit: "contain" }}
           />
         </TimelineContainer>
       </Inner>

@@ -1,6 +1,6 @@
-'use client';
-import Link from 'next/link';
-import { styled } from 'styled-components';
+"use client";
+import Link from "next/link";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   padding: 1rem 0;
@@ -40,8 +40,8 @@ export const BurgerMenu = styled.div`
     div {
       position: absolute;
       background: var(--emerald);
-      width: '250px';
-      height: '300px';
+      width: "250px";
+      height: "300px";
       border-radius: 25px;
       z-index: 1;
       top: 50px;
@@ -107,7 +107,7 @@ export const CallToActions = styled.div`
     align-items: center;
     padding: 0.5rem 0.75rem;
     border-radius: 6.25rem;
-    background: #5865F2;
+    background: #5865f2;
     color: var(--white);
     font-size: 1rem;
     font-weight: 600;
@@ -115,7 +115,7 @@ export const CallToActions = styled.div`
     transition: background 0.2s ease;
 
     &:hover {
-      background: #4752C4;
+      background: #4752c4;
     }
   }
 

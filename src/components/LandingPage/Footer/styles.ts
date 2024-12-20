@@ -1,5 +1,5 @@
-'use client';
-import { styled } from 'styled-components';
+"use client";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.footer`
   padding-bottom: 3.5rem;
@@ -128,7 +128,7 @@ export const LinksContainer = styled.ul`
 
     &::after {
       position: absolute;
-      content: '';
+      content: "";
       width: 100%;
       height: 1px;
       background-color: #efefef;
