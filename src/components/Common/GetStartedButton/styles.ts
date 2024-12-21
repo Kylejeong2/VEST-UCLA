@@ -1,6 +1,6 @@
-'use client';
-import Link from 'next/link';
-import { styled } from 'styled-components';
+"use client";
+import Link from "next/link";
+import { styled } from "styled-components";
 
 export const LinkTo = styled(Link)`
   display: flex;

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from "react"
-import { ColumnDef } from "@tanstack/react-table"
-import { Button } from "@/components/ui/button"
-import { ArrowUpDown, MoreHorizontal, Mail } from "lucide-react"
+import React from "react";
+import { ColumnDef } from "@tanstack/react-table";
+import { Button } from "@/components/ui/button";
+import { ArrowUpDown, MoreHorizontal, Mail } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,18 +11,18 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Checkbox } from "@/components/ui/checkbox"
+} from "@/components/ui/dropdown-menu";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export type Lead = {
-  id: string
-  name: string
-  email: string
-  linkedinUrl: string
-  position: string
-  company: string
-  selected?: boolean
-}
+  id: string;
+  name: string;
+  email: string;
+  linkedinUrl: string;
+  position: string;
+  company: string;
+  selected?: boolean;
+};
 
 export const columns: ColumnDef<Lead>[] = [
   {
@@ -30,7 +30,9 @@ export const columns: ColumnDef<Lead>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value: any) => table.toggleAllPageRowsSelected(!!value)}
+        onCheckedChange={(value: any) =>
+          table.toggleAllPageRowsSelected(!!value)
+        }
         aria-label="Select all"
         className="border-zinc-700"
       />
@@ -58,11 +60,9 @@ export const columns: ColumnDef<Lead>[] = [
           Name
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
-    cell: ({ row }) => (
-      <div className="text-white">{row.getValue("name")}</div>
-    ),
+    cell: ({ row }) => <div className="text-white">{row.getValue("name")}</div>,
   },
   {
     accessorKey: "position",
@@ -76,7 +76,7 @@ export const columns: ColumnDef<Lead>[] = [
           Position
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
     cell: ({ row }) => (
       <div className="text-white">{row.getValue("position")}</div>
@@ -94,7 +94,7 @@ export const columns: ColumnDef<Lead>[] = [
           Company
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
     cell: ({ row }) => (
       <div className="text-white">{row.getValue("company")}</div>
@@ -104,7 +104,7 @@ export const columns: ColumnDef<Lead>[] = [
     accessorKey: "email",
     header: "Email",
     cell: ({ row }) => {
-      const email = row.getValue("email") as string
+      const email = row.getValue("email") as string;
       return (
         <div className="flex items-center gap-2">
           <span className="text-white">{email}</span>
@@ -119,26 +119,31 @@ export const columns: ColumnDef<Lead>[] = [
             </Button>
           )}
         </div>
-      )
+      );
     },
   },
   {
     id: "actions",
     cell: ({ row }) => {
-      const lead = row.original
+      const lead = row.original;
 
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0 text-white hover:text-white">
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 text-white hover:text-white"
+            >
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-black border-zinc-800">
-            <DropdownMenuLabel className="text-white">Actions</DropdownMenuLabel>
+            <DropdownMenuLabel className="text-white">
+              Actions
+            </DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => window.open(lead.linkedinUrl, '_blank')}
+              onClick={() => window.open(lead.linkedinUrl, "_blank")}
               className="text-white hover:bg-zinc-800"
             >
               View LinkedIn Profile
@@ -152,7 +157,7 @@ export const columns: ColumnDef<Lead>[] = [
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      )
+      );
     },
   },
-]
+];

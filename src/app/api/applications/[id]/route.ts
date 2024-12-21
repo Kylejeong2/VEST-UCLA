@@ -1,17 +1,17 @@
-import { NextResponse } from 'next/server'
-import { prisma } from '@/db'
-import { sendApplicationToDiscord } from '@/lib/services/discord'
-import { ApplicationStatus } from '@/lib/types/application'
+import { NextResponse } from "next/server";
+import { prisma } from "@/db";
+import { sendApplicationToDiscord } from "@/lib/services/discord";
+import { ApplicationStatus } from "@/lib/types/application";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   try {
-    const { status } = await request.json()
-    const { id } = params
+    const { status } = await request.json();
+    const { id } = params;
 
     const updatedApplication = await prisma.application.update({
       where: { id },
@@ -20,7 +20,7 @@ export async function PATCH(
         needsManualReview: false,
         updatedAt: new Date(),
       },
-    })
+    });
 
     // Send update to Discord
     await sendApplicationToDiscord({
@@ -31,14 +31,14 @@ export async function PATCH(
       finalStatus: updatedApplication.finalStatus as ApplicationStatus,
       firstAnalysis: updatedApplication.firstAnalysis as any,
       secondAnalysis: updatedApplication.secondAnalysis as any,
-    })
+    });
 
-    return NextResponse.json(updatedApplication)
+    return NextResponse.json(updatedApplication);
   } catch (error) {
-    console.error('Failed to update application:', error)
+    console.error("Failed to update application:", error);
     return NextResponse.json(
-      { error: 'Failed to update application' },
-      { status: 500 }
-    )
+      { error: "Failed to update application" },
+      { status: 500 },
+    );
   }
-} 
+}

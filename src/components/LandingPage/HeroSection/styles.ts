@@ -1,6 +1,6 @@
-'use client';
-import { styled } from 'styled-components';
-import hero_background from '../../../../public/images/grid_background.png';
+"use client";
+import { styled } from "styled-components";
+import hero_background from "../../../../public/images/grid_background.png";
 
 export const Wrapper = styled.section`
   margin-top: 0;
@@ -19,7 +19,7 @@ export const Inner = styled.div`
   background-position: top center;
   background-size: cover;
   padding: 4rem 0;
-  
+
   @media (max-width: 768px) {
     padding: 2rem 0;
   }
@@ -83,7 +83,7 @@ export const ContentContainer = styled.div`
   align-items: center;
   width: 100%;
   min-height: calc(100vh - 14.5rem);
-  
+
   .left-content {
     width: 50vw;
     padding: 0 4rem;
@@ -96,7 +96,7 @@ export const ContentContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     min-height: auto;
-    
+
     .left-content {
       width: 100%;
       padding: 2rem;
@@ -111,7 +111,7 @@ export const Divider = styled.div`
   height: 80vh;
   background-color: rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
-  
+
   @media (max-width: 768px) {
     width: 100%;
     height: 1px;
@@ -127,14 +127,14 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   aspect-ratio: 1;
   margin: auto;
-  
+
   // Make container smaller but keep spline large
   > div {
     transform: scale(1.5);
     width: 100% !important;
     height: 100% !important;
   }
-  
+
   @media (max-width: 768px) {
     width: 80vw;
     height: 80vw; // Make it square for perfect circle

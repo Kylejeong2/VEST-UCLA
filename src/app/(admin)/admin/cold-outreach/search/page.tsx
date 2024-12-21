@@ -1,59 +1,66 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { DataTable } from "@/components/data-table"
-import { columns } from "./columns"
-import { motion, AnimatePresence } from "framer-motion"
-import { Loader2, Download } from "lucide-react"
-import { Skeleton } from "@/components/ui/skeleton"
-import Link from "next/link"
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { DataTable } from "@/components/data-table";
+import { columns } from "./columns";
+import { motion, AnimatePresence } from "framer-motion";
+import { Loader2, Download } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import Link from "next/link";
 
 export default function SearchPage() {
-  const [data, setData] = useState<any[]>([])
-  const [loading, setLoading] = useState(false)
-  const [query, setQuery] = useState('')
+  const [data, setData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useState("");
 
   const handleSearch = async () => {
-    if (!query.trim()) return
-    setLoading(true)
-    setData([])
+    if (!query.trim()) return;
+    setLoading(true);
+    setData([]);
     try {
-      const response = await fetch('/api/search', {
-        method: 'POST',
+      const response = await fetch("/api/search", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ query: query.trim() })
-      })
-      const results = await response.json()
-      setData(results)
+        body: JSON.stringify({ query: query.trim() }),
+      });
+      const results = await response.json();
+      setData(results);
     } catch (error) {
-      console.error('Error fetching data:', error)
+      console.error("Error fetching data:", error);
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   const handleExport = () => {
     const csvContent = [
-      ['Name', 'Email', 'LinkedIn Profile URL', 'Position'],
-      ...data.map(row => [row.name, row.email, row.linkedinUrl, row.position])
-    ].map(row => row.join(',')).join('\n')
+      ["Name", "Email", "LinkedIn Profile URL", "Position"],
+      ...data.map((row) => [
+        row.name,
+        row.email,
+        row.linkedinUrl,
+        row.position,
+      ]),
+    ]
+      .map((row) => row.join(","))
+      .join("\n");
 
-    const blob = new Blob([csvContent], { type: 'text/csv' })
-    const url = window.URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'leads.csv'
-    a.click()
-    window.URL.revokeObjectURL(url)
-  }
+    const blob = new Blob([csvContent], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "leads.csv";
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="container mx-auto py-10 px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col gap-8 mb-8"
@@ -61,12 +68,15 @@ export default function SearchPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link href="/admin/cold-outreach">
-                <Button variant="outline" className="border-zinc-800 bg-black hover:bg-zinc-900 text-white">
+                <Button
+                  variant="outline"
+                  className="border-zinc-800 bg-black hover:bg-zinc-900 text-white"
+                >
                   Back
                 </Button>
               </Link>
               <div className="space-y-1">
-                <motion.h1 
+                <motion.h1
                   className="text-4xl font-bold tracking-tight text-white"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -85,7 +95,7 @@ export default function SearchPage() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   className="w-96 bg-black border-zinc-800 text-white placeholder:text-zinc-500"
-                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 />
                 <AnimatePresence>
                   {loading && (
@@ -100,8 +110,8 @@ export default function SearchPage() {
                   )}
                 </AnimatePresence>
               </div>
-              <Button 
-                onClick={handleSearch} 
+              <Button
+                onClick={handleSearch}
                 disabled={loading || !query.trim()}
                 className="min-w-[100px] relative bg-black text-white hover:bg-zinc-900"
               >
@@ -111,11 +121,11 @@ export default function SearchPage() {
                     Searching...
                   </span>
                 ) : (
-                  'Search'
+                  "Search"
                 )}
               </Button>
-              <Button 
-                onClick={handleExport} 
+              <Button
+                onClick={handleExport}
                 disabled={data.length === 0}
                 variant="outline"
                 className="border-zinc-800 bg-black hover:bg-zinc-900 text-white"
@@ -157,5 +167,5 @@ export default function SearchPage() {
         </motion.div>
       </div>
     </div>
-  )
-} 
+  );
+}

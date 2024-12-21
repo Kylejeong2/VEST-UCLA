@@ -1,5 +1,5 @@
-'use client';
-import { styled } from 'styled-components';
+"use client";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   margin-top: 8.56rem;
@@ -69,7 +69,7 @@ export const Testimonial = styled.div`
   transition: transform 0.2s ease-in-out;
   height: 100%;
   min-height: 24rem;
-  
+
   &:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.2);

@@ -1,5 +1,5 @@
-'use client';
-import Image from 'next/image';
+"use client";
+import Image from "next/image";
 import {
   Wrapper,
   Inner,
@@ -11,9 +11,9 @@ import {
   Stats,
   Stat,
   Banner,
-} from './styles';
-import MaskText from '@/components/Common/MaskText';
-import { useIsMobile } from '../../../../libs/useIsMobile';
+} from "./styles";
+import MaskText from "@/components/Common/MaskText";
+import { useIsMobile } from "../../../../libs/useIsMobile";
 import {
   cardsInfo,
   desktopHeaderPhrase,
@@ -21,7 +21,7 @@ import {
   mobileHeaderPhrase,
   mobileParagraphPhrase,
   stats,
-} from './constants';
+} from "./constants";
 
 const Learn = () => {
   const isMobile = useIsMobile();

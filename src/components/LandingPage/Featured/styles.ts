@@ -1,6 +1,6 @@
-'use client';
-import { motion } from 'framer-motion';
-import { styled } from 'styled-components';
+"use client";
+import { motion } from "framer-motion";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.section``;
 
@@ -66,7 +66,7 @@ export const Div = styled(motion.div)`
 
   @media (max-width: 599px) {
     height: 17rem;
-    
+
     img {
       object-fit: cover;
     }

@@ -1,5 +1,5 @@
-'use client';
-import Image from 'next/image';
+"use client";
+import Image from "next/image";
 import {
   Wrapper,
   Inner,
@@ -9,14 +9,14 @@ import {
   Edge,
   Title,
   BriefNote,
-} from './styles';
-import MaskText from '@/components/Common/MaskText';
-import RevealCover from '@/components/Common/RevealCover';
-import { Div } from '../Featured/styles';
-import { imageVariants } from '../Featured';
-import { useIsMobile } from '../../../../libs/useIsMobile';
-import financial_freedom_banner from '../../../../public/images/financial_freedom_banner.png';
-import freedom_mobile_banner from '../../../../public/images/freedom_mobile_banner.png';
+} from "./styles";
+import MaskText from "@/components/Common/MaskText";
+import RevealCover from "@/components/Common/RevealCover";
+import { Div } from "../Featured/styles";
+import { imageVariants } from "../Featured";
+import { useIsMobile } from "../../../../libs/useIsMobile";
+import financial_freedom_banner from "../../../../public/images/financial_freedom_banner.png";
+import freedom_mobile_banner from "../../../../public/images/freedom_mobile_banner.png";
 import {
   desktopBriefNotePhrase,
   desktopHeaderPhrase,
@@ -25,7 +25,7 @@ import {
   mobileBriefNotePhrase,
   mobileHeaderPhrase,
   mobileParagraphPhrase,
-} from './constants';
+} from "./constants";
 
 const Building = () => {
   const isMobile = useIsMobile();

@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useParams } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import styled from 'styled-components';
+import { useParams } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import styled from "styled-components";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 // Mock data - replace with your CMS data
 const caseStudies = {
   1: {
-    companyName: 'TechFlow AI',
-    tagline: 'Revolutionizing workflow automation with AI',
+    companyName: "TechFlow AI",
+    tagline: "Revolutionizing workflow automation with AI",
     overview: `TechFlow AI is transforming how businesses handle their workflows through advanced AI automation. Founded in 2022, they've quickly become a leader in the AI automation space.`,
     challenge: `The main challenge was scaling their infrastructure to handle rapid user growth while maintaining AI processing speed and accuracy.`,
     solution: `Working closely with our mentors, TechFlow AI:
@@ -20,20 +20,21 @@ const caseStudies = {
     • Developed an innovative pricing model
     • Built strategic partnerships with enterprise clients`,
     results: {
-      raised: '$5M Series A',
-      growth: '300% YoY growth',
-      users: '100k+ active users',
-      efficiency: '85% workflow efficiency improvement'
+      raised: "$5M Series A",
+      growth: "300% YoY growth",
+      users: "100k+ active users",
+      efficiency: "85% workflow efficiency improvement",
     },
     testimonial: {
-      quote: "VEST's mentorship was instrumental in helping us navigate our Series A and scale our infrastructure.",
+      quote:
+        "VEST's mentorship was instrumental in helping us navigate our Series A and scale our infrastructure.",
       author: "Sarah Chen",
-      role: "CEO, TechFlow AI"
+      role: "CEO, TechFlow AI",
     },
-    logo: '/case-studies/techflow.png',
-    coverImage: '/case-studies/techflow-cover.jpg',
-    teamImage: '/case-studies/techflow-team.jpg',
-    industry: 'AI/ML',
+    logo: "/case-studies/techflow.png",
+    coverImage: "/case-studies/techflow-cover.jpg",
+    teamImage: "/case-studies/techflow-team.jpg",
+    industry: "AI/ML",
   },
   // Add more case studies
 };
@@ -57,10 +58,15 @@ const CaseStudy = () => {
     <Wrapper>
       <Inner>
         <BackLink href="/case-studies">← Back to case studies</BackLink>
-        
+
         <Header>
           <LogoContainer>
-            <Image src={study.logo} alt={study.companyName} width={80} height={80} />
+            <Image
+              src={study.logo}
+              alt={study.companyName}
+              width={80}
+              height={80}
+            />
           </LogoContainer>
           <HeaderContent>
             <Industry>{study.industry}</Industry>
@@ -70,7 +76,12 @@ const CaseStudy = () => {
         </Header>
 
         <CoverImage>
-          <Image src={study.coverImage} alt={study.companyName} fill style={{ objectFit: 'cover' }} />
+          <Image
+            src={study.coverImage}
+            alt={study.companyName}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </CoverImage>
 
         <Content>
@@ -86,7 +97,7 @@ const CaseStudy = () => {
 
           <Section>
             <h2>Solution</h2>
-            <p style={{ whiteSpace: 'pre-line' }}>{study.solution}</p>
+            <p style={{ whiteSpace: "pre-line" }}>{study.solution}</p>
           </Section>
 
           <ResultsSection>
@@ -95,14 +106,21 @@ const CaseStudy = () => {
               {Object.entries(study.results).map(([key, value]) => (
                 <ResultCard key={key}>
                   <ResultValue>{value}</ResultValue>
-                  <ResultLabel>{key.replace(/([A-Z])/g, ' $1').trim()}</ResultLabel>
+                  <ResultLabel>
+                    {key.replace(/([A-Z])/g, " $1").trim()}
+                  </ResultLabel>
                 </ResultCard>
               ))}
             </ResultsGrid>
           </ResultsSection>
 
           <TeamImage>
-            <Image src={study.teamImage} alt="Team" fill style={{ objectFit: 'cover' }} />
+            <Image
+              src={study.teamImage}
+              alt="Team"
+              fill
+              style={{ objectFit: "cover" }}
+            />
           </TeamImage>
 
           <TestimonialSection>
@@ -134,7 +152,7 @@ const BackLink = styled(Link)`
   color: var(--emerald);
   margin-bottom: 2rem;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -307,4 +325,4 @@ const Author = styled.div`
   }
 `;
 
-export default CaseStudy; 
+export default CaseStudy;

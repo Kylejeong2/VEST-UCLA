@@ -1,8 +1,8 @@
-'use client';
-import Image from 'next/image';
-import ParallaxText from '@/components/Common/ParallaxImages';
-import companies_image from '../../../../public/images/companies.png';
-import { Wrapper, Inner, ParallaxImages } from './styles';
+"use client";
+import Image from "next/image";
+import ParallaxText from "@/components/Common/ParallaxImages";
+import companies_image from "../../../../public/images/companies.png";
+import { Wrapper, Inner, ParallaxImages } from "./styles";
 export const imageVariants = {
   hidden: {
     scale: 1.6,

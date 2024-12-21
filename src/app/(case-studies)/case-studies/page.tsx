@@ -1,51 +1,55 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import styled from 'styled-components';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import styled from "styled-components";
 
 // Mock data - replace with your CMS data
 const caseStudies = [
   {
     id: 1,
-    companyName: 'TechFlow AI',
-    tagline: 'Revolutionizing workflow automation with AI',
-    description: 'How TechFlow AI raised their Series A and scaled to 100k users...',
+    companyName: "TechFlow AI",
+    tagline: "Revolutionizing workflow automation with AI",
+    description:
+      "How TechFlow AI raised their Series A and scaled to 100k users...",
     metrics: {
-      raised: '$5M',
-      growth: '300%',
-      users: '100k+'
+      raised: "$5M",
+      growth: "300%",
+      users: "100k+",
     },
-    logo: '/case-studies/techflow.png',
-    coverImage: '/case-studies/techflow-cover.jpg',
-    industry: 'AI/ML',
+    logo: "/case-studies/techflow.png",
+    coverImage: "/case-studies/techflow-cover.jpg",
+    industry: "AI/ML",
   },
   {
     id: 2,
-    companyName: 'GreenCommerce',
-    tagline: 'Sustainable e-commerce platform',
-    description: 'Building a carbon-neutral marketplace for eco-friendly products...',
+    companyName: "GreenCommerce",
+    tagline: "Sustainable e-commerce platform",
+    description:
+      "Building a carbon-neutral marketplace for eco-friendly products...",
     metrics: {
-      raised: '$3M',
-      growth: '200%',
-      impact: '50k tons CO₂'
+      raised: "$3M",
+      growth: "200%",
+      impact: "50k tons CO₂",
     },
-    logo: '/case-studies/greencommerce.png',
-    coverImage: '/case-studies/greencommerce-cover.jpg',
-    industry: 'E-commerce',
+    logo: "/case-studies/greencommerce.png",
+    coverImage: "/case-studies/greencommerce-cover.jpg",
+    industry: "E-commerce",
   },
   // Add more case studies
 ];
 
 const CaseStudiesPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedIndustry, setSelectedIndustry] = useState('All');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedIndustry, setSelectedIndustry] = useState("All");
 
-  const filteredStudies = caseStudies.filter(study => {
-    const matchesSearch = study.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         study.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesIndustry = selectedIndustry === 'All' || study.industry === selectedIndustry;
+  const filteredStudies = caseStudies.filter((study) => {
+    const matchesSearch =
+      study.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      study.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesIndustry =
+      selectedIndustry === "All" || study.industry === selectedIndustry;
     return matchesSearch && matchesIndustry;
   });
 
@@ -56,7 +60,7 @@ const CaseStudiesPage = () => {
           <h1>Case Studies</h1>
           <p>Success stories from our portfolio companies</p>
         </Header>
-        
+
         <SearchBar>
           <input
             type="text"
@@ -67,25 +71,37 @@ const CaseStudiesPage = () => {
         </SearchBar>
 
         <Industries>
-          {['All', 'AI/ML', 'E-commerce', 'FinTech', 'HealthTech'].map(industry => (
-            <IndustryButton
-              key={industry}
-              active={selectedIndustry === industry}
-              onClick={() => setSelectedIndustry(industry)}
-            >
-              {industry}
-            </IndustryButton>
-          ))}
+          {["All", "AI/ML", "E-commerce", "FinTech", "HealthTech"].map(
+            (industry) => (
+              <IndustryButton
+                key={industry}
+                active={selectedIndustry === industry}
+                onClick={() => setSelectedIndustry(industry)}
+              >
+                {industry}
+              </IndustryButton>
+            ),
+          )}
         </Industries>
 
         <CaseStudyGrid>
-          {filteredStudies.map(study => (
+          {filteredStudies.map((study) => (
             <CaseStudyCard key={study.id}>
               <Link href={`/case-studies/${study.id}`}>
                 <ImageContainer>
-                  <Image src={study.coverImage} alt={study.companyName} fill style={{ objectFit: 'cover' }} />
+                  <Image
+                    src={study.coverImage}
+                    alt={study.companyName}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
                   <LogoOverlay>
-                    <Image src={study.logo} alt={`${study.companyName} logo`} width={60} height={60} />
+                    <Image
+                      src={study.logo}
+                      alt={`${study.companyName} logo`}
+                      width={60}
+                      height={60}
+                    />
                   </LogoOverlay>
                 </ImageContainer>
                 <CardContent>
@@ -180,8 +196,9 @@ const Industries = styled.div`
 const IndustryButton = styled.button<{ active: boolean }>`
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  border: 1px solid ${props => props.active ? 'var(--emerald)' : 'rgba(255, 255, 255, 0.1)'};
-  background: ${props => props.active ? 'var(--emerald)' : 'transparent'};
+  border: 1px solid
+    ${(props) => (props.active ? "var(--emerald)" : "rgba(255, 255, 255, 0.1)")};
+  background: ${(props) => (props.active ? "var(--emerald)" : "transparent")};
   color: var(--white);
   cursor: pointer;
   transition: all 0.2s ease;

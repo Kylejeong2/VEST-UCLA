@@ -1,6 +1,6 @@
-'use client';
-import { styled } from 'styled-components';
-import card_grid from '../../../../public/images/card_grid.png';
+"use client";
+import { styled } from "styled-components";
+import card_grid from "../../../../public/images/card_grid.png";
 
 export const Wrapper = styled.section`
   padding-top: 7.75rem;

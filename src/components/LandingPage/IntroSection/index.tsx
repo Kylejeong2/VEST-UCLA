@@ -1,9 +1,9 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
-import lola_card from '../../../../public/images/lola_card.png';
-import orange_card from '../../../../public/images/orange_card.png';
-import terry_card from '../../../../public/images/terry_card.png';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import lola_card from "../../../../public/images/lola_card.png";
+import orange_card from "../../../../public/images/orange_card.png";
+import terry_card from "../../../../public/images/terry_card.png";
 import {
   Wrapper,
   Inner,
@@ -15,17 +15,17 @@ import {
   RightImage,
   Edge,
   Edges,
-  Title
-} from './styles';
-import { MaskText } from '@/components/LandingPage';
-import { useIsMobile } from '../../../../libs/useIsMobile';
+  Title,
+} from "./styles";
+import { MaskText } from "@/components/LandingPage";
+import { useIsMobile } from "../../../../libs/useIsMobile";
 import {
   desktopHeaderPhrase,
   desktopParagraphPhrase,
   edges,
   mobileHeaderPhrase,
   mobileParagraphPhrase,
-} from './constants';
+} from "./constants";
 
 const IntroSection = () => {
   const isMobile = useIsMobile();

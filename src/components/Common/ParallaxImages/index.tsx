@@ -1,5 +1,5 @@
-'use client';
-import { useRef } from 'react';
+"use client";
+import { useRef } from "react";
 import {
   motion,
   useScroll,
@@ -8,8 +8,8 @@ import {
   useMotionValue,
   useVelocity,
   useAnimationFrame,
-} from 'framer-motion';
-import { wrap } from '@motionone/utils';
+} from "framer-motion";
+import { wrap } from "@motionone/utils";
 
 interface ParallaxProps {
   children: React.ReactNode;

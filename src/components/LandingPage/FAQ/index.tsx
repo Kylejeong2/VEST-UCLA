@@ -1,6 +1,6 @@
-'use client';
-import React, { useRef, useState } from 'react';
-import { AnimatePresence, useInView } from 'framer-motion';
+"use client";
+import React, { useRef, useState } from "react";
+import { AnimatePresence, useInView } from "framer-motion";
 import {
   Accordion,
   AccordionItem,
@@ -8,17 +8,17 @@ import {
   Inner,
   Question,
   Wrapper,
-} from './styles';
-import Image from 'next/image';
-import ic_chevron_down from '../../../../public/svgs/ic_chevron_down.svg';
-import { MaskText } from '@/components/LandingPage';
-import { useIsMobile } from '../../../../libs/useIsMobile';
+} from "./styles";
+import Image from "next/image";
+import ic_chevron_down from "../../../../public/svgs/ic_chevron_down.svg";
+import { MaskText } from "@/components/LandingPage";
+import { useIsMobile } from "../../../../libs/useIsMobile";
 import {
   animate,
   desktopHeaderPhrase,
   faqData,
   mobileHeaderPhrase,
-} from './constants';
+} from "./constants";
 
 const FAQ = () => {
   const [openItem, setOpenItem] = useState<number | null>(null);
@@ -30,7 +30,7 @@ const FAQ = () => {
   const accordionRef = useRef(null);
   const isInView = useInView(accordionRef, {
     once: true,
-    margin: '-10%',
+    margin: "-10%",
     amount: 0.4,
   });
 
@@ -49,7 +49,7 @@ const FAQ = () => {
             <AccordionItem
               variants={animate}
               initial="initial"
-              animate={isInView ? 'open' : ''}
+              animate={isInView ? "open" : ""}
               custom={index}
               key={index}
             >
@@ -61,7 +61,7 @@ const FAQ = () => {
                 {openItem === index && (
                   <Answer
                     initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
+                    animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                   >
                     {item.answer}

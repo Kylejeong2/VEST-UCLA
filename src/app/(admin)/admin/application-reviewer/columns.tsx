@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from "react"
-import { ColumnDef } from "@tanstack/react-table"
-import { Button } from "@/components/ui/button"
-import { ArrowUpDown, MoreHorizontal, Mail } from "lucide-react"
+import React from "react";
+import { ColumnDef } from "@tanstack/react-table";
+import { Button } from "@/components/ui/button";
+import { ArrowUpDown, MoreHorizontal, Mail } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -12,19 +12,19 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Badge } from "@/components/ui/badge"
+} from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/badge";
 
 export type Application = {
-  id: string
-  name: string
-  email: string
-  status: "pending" | "approved" | "rejected"
-  submittedAt: string
-  company: string
-  position: string
-  linkedinUrl: string
-}
+  id: string;
+  name: string;
+  email: string;
+  status: "pending" | "approved" | "rejected";
+  submittedAt: string;
+  company: string;
+  position: string;
+  linkedinUrl: string;
+};
 
 export const columns: ColumnDef<Application>[] = [
   {
@@ -39,7 +39,7 @@ export const columns: ColumnDef<Application>[] = [
           Name
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
   },
   {
@@ -54,7 +54,7 @@ export const columns: ColumnDef<Application>[] = [
           Company
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
   },
   {
@@ -65,7 +65,7 @@ export const columns: ColumnDef<Application>[] = [
     accessorKey: "email",
     header: "Email",
     cell: ({ row }) => {
-      const email = row.getValue("email") as string
+      const email = row.getValue("email") as string;
       return (
         <div className="flex items-center gap-2">
           <span className="text-white">{email}</span>
@@ -80,28 +80,28 @@ export const columns: ColumnDef<Application>[] = [
             </Button>
           )}
         </div>
-      )
+      );
     },
   },
   {
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => {
-      const status = row.getValue("status") as string
+      const status = row.getValue("status") as string;
       return (
         <Badge
           variant={
             status === "approved"
               ? "success"
               : status === "rejected"
-              ? "destructive"
-              : "default"
+                ? "destructive"
+                : "default"
           }
           className="bg-opacity-20"
         >
           {status.charAt(0).toUpperCase() + status.slice(1)}
         </Badge>
-      )
+      );
     },
   },
   {
@@ -116,51 +116,56 @@ export const columns: ColumnDef<Application>[] = [
           Submitted At
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
     cell: ({ row }) => {
       return (
         <span className="text-white">
           {new Date(row.getValue("submittedAt")).toLocaleDateString()}
         </span>
-      )
+      );
     },
   },
   {
     id: "actions",
     cell: ({ row }) => {
-      const application = row.original
+      const application = row.original;
 
       const handleStatusChange = async (newStatus: string) => {
         try {
           const response = await fetch(`/api/applications/${application.id}`, {
-            method: 'PATCH',
+            method: "PATCH",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({ status: newStatus }),
-          })
+          });
           if (!response.ok) {
-            throw new Error('Failed to update status')
+            throw new Error("Failed to update status");
           }
-          window.location.reload()
+          window.location.reload();
         } catch (error) {
-          console.error('Error updating status:', error)
+          console.error("Error updating status:", error);
         }
-      }
+      };
 
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0 text-white hover:text-white">
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 text-white hover:text-white"
+            >
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-black border-zinc-800">
-            <DropdownMenuLabel className="text-white">Actions</DropdownMenuLabel>
+            <DropdownMenuLabel className="text-white">
+              Actions
+            </DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => window.open(application.linkedinUrl, '_blank')}
+              onClick={() => window.open(application.linkedinUrl, "_blank")}
               className="text-white hover:bg-zinc-800"
             >
               View LinkedIn Profile
@@ -173,22 +178,22 @@ export const columns: ColumnDef<Application>[] = [
             </DropdownMenuItem>
             <DropdownMenuSeparator className="border-zinc-800" />
             <DropdownMenuItem
-              onClick={() => handleStatusChange('approved')}
-              disabled={application.status === 'approved'}
+              onClick={() => handleStatusChange("approved")}
+              disabled={application.status === "approved"}
               className="text-white hover:bg-zinc-800"
             >
               Approve
             </DropdownMenuItem>
             <DropdownMenuItem
-              onClick={() => handleStatusChange('rejected')}
-              disabled={application.status === 'rejected'}
+              onClick={() => handleStatusChange("rejected")}
+              disabled={application.status === "rejected"}
               className="text-red-400 hover:bg-zinc-800"
             >
               Reject
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      )
+      );
     },
   },
-]
+];

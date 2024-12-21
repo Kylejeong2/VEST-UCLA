@@ -1,10 +1,10 @@
-import Layout from '@/components/Layout';
-import './globals.css';
-import type { Metadata } from 'next';
+import Layout from "@/components/Layout";
+import "./globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'VEST @ UCLA',
-  description: 'Building the future of entrepreneurship',
+  title: "VEST @ UCLA",
+  description: "Building the future of entrepreneurship",
 };
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
-'use client';
-import Image from 'next/image';
-import { styled } from 'styled-components';
+"use client";
+import Image from "next/image";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   padding-top: 7.5rem;

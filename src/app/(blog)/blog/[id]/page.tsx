@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useParams } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import styled from 'styled-components';
+import { useParams } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import styled from "styled-components";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const blogPosts = {
   1: {
-    title: 'Understanding Venture Capital',
+    title: "Understanding Venture Capital",
     content: `
       <h2>Introduction to Venture Capital</h2>
       <p>Venture capital (VC) is a form of private equity financing that is provided by venture capital firms or funds to startups, early-stage, and emerging companies that have been deemed to have high growth potential or which have demonstrated high growth.</p>
@@ -27,13 +27,13 @@ const blogPosts = {
         <li>Exit Strategy</li>
       </ul>
     `,
-    date: '2024-01-15',
-    author: 'John Doe',
-    authorRole: 'VC Associate',
-    authorImage: '/team/john.jpg',
-    coverImage: '/blog/vc-101.jpg',
-    category: 'Education',
-    readTime: '5 min read',
+    date: "2024-01-15",
+    author: "John Doe",
+    authorRole: "VC Associate",
+    authorImage: "/team/john.jpg",
+    coverImage: "/blog/vc-101.jpg",
+    category: "Education",
+    readTime: "5 min read",
   },
   // Add more blog posts
 };
@@ -57,14 +57,19 @@ const BlogPost = () => {
     <Wrapper>
       <Inner>
         <BackLink href="/blog">← Back to blog</BackLink>
-        
+
         <Header>
           <Category>{post.category}</Category>
           <h1>{post.title}</h1>
           <MetaInfo>
             <AuthorInfo>
               <AuthorImage>
-                <Image src={post.authorImage} alt={post.author} width={40} height={40} />
+                <Image
+                  src={post.authorImage}
+                  alt={post.author}
+                  width={40}
+                  height={40}
+                />
               </AuthorImage>
               <div>
                 <AuthorName>{post.author}</AuthorName>
@@ -80,7 +85,12 @@ const BlogPost = () => {
         </Header>
 
         <CoverImage>
-          <Image src={post.coverImage} alt={post.title} fill style={{ objectFit: 'cover' }} />
+          <Image
+            src={post.coverImage}
+            alt={post.title}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </CoverImage>
 
         <Content dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -90,7 +100,7 @@ const BlogPost = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 2rem 0; 
+  padding: 2rem 0;
   background: var(--Background);
 `;
 
@@ -105,7 +115,7 @@ const BackLink = styled(Link)`
   color: var(--emerald);
   margin-bottom: 2rem;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -222,4 +232,4 @@ const Content = styled.div`
   }
 `;
 
-export default BlogPost; 
+export default BlogPost;
