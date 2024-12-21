@@ -47,17 +47,8 @@ const HeroSection = () => {
             </HeroTextContainer>
             <GetStartedButton padding="1rem 2rem" />
           </div>
-
           <Divider />
-
           <ImageContainer>
-            {/* Add your hero image here */}
-            {/* <Image 
-              src="/hero.png"
-              alt="Hero Image"
-              fill
-              style={{ objectFit: 'cover' }}
-            /> */}
             <Spline scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" />
           </ImageContainer>
         </ContentContainer>

@@ -16,7 +16,7 @@ import { MaskText } from "@/components/LandingPage";
 import { useIsMobile } from "../../../../libs/useIsMobile";
 import { Props, desktopHeaderPhrase, testimonials } from "./constants";
 
-const JoinSection = () => {
+const Directors = () => {
   const isMobile = useIsMobile();
 
   const topRow = testimonials.slice(0, 2);
@@ -75,4 +75,4 @@ const JoinSection = () => {
   );
 };
 
-export default JoinSection;
+export default Directors;

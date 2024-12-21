@@ -17,15 +17,15 @@ export const cardsInfo = [
 
 export const stats = [
   {
-    number: "2+",
-    subtitle: "Startup Internships",
-  },
-  // {
-  //   number: '20+',
-  //   subtitle: 'Members',
-  // },
-  {
     number: "4+",
+    subtitle: "Startup Clients",
+  },
+  {
+    number: "3",
+    subtitle: "Companies Hiring From Us",
+  },
+  {
+    number: "2+",
     subtitle: "VC Partnerships",
   },
 ];

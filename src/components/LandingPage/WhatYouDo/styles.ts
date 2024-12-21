@@ -21,92 +21,81 @@ export const Header = styled.header`
   gap: 1.5rem;
   text-align: center;
   max-width: 56rem;
-  margin: 0 auto 6.75rem;
+  margin: 0 auto 10rem;
 
   h1 {
-    font-size: 4.75rem;
+    font-size: 3.5rem;
     font-weight: 400;
   }
 
   p {
     max-width: 41.75rem;
     color: #989898;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 400;
-    line-height: 1.75rem;
+    line-height: 1.6rem;
   }
 
   @media (max-width: 768px) {
+    margin: 0 auto 6rem;
+    
     h1 {
-      font-size: 2.25rem;
+      font-size: 2rem;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.4rem;
     }
   }
 `;
 
 export const ImageCtn = styled.div`
-  margin: 3rem auto 0;
   position: relative;
-  display: flex;
-
-  &::after {
-    position: absolute;
-    content: "";
-    height: 13.4375rem;
-    width: 100%;
-    background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, #131313 100%);
-    left: 0;
-    top: 50px;
-  }
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
 
   img {
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
   }
 
-  @media (max-width: 768px) {
-    margin: 0.32rem auto 0;
-
-    &::after {
-      top: 30px;
-    }
-
-    img {
-      width: 90%;
-      margin: 0 auto;
-      object-fit: contain;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, #131313 0%, transparent 100%);
   }
 `;
 
 export const TextCtn = styled.div`
-  padding: 2.5rem;
-  padding-top: 3.25rem;
-  max-width: 32.25rem;
+  padding: 2rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: auto;
 
   h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 1.75rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
   }
 
   p {
-    color: var(--link-color);
+    color: #989898;
     font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   @media (max-width: 768px) {
     padding: 1.5rem;
+    
     h2 {
       font-size: 1.5rem;
     }
@@ -114,96 +103,29 @@ export const TextCtn = styled.div`
 `;
 
 export const Offers = styled.div`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-
-  &:last-child {
-    margin-top: 2rem;
-
-    div:first-child {
-      flex: 1;
-
-      ${ImageCtn} {
-        margin-top: 5.7rem;
-        flex: 2;
-      }
-
-      ${TextCtn} {
-        height: 1em;
-        flex: 1;
-      }
-    }
-
-    div:last-child {
-      flex: 2;
-
-      ${ImageCtn} {
-        margin-top: 5.7rem;
-        flex: 2;
-        margin-left: auto;
-      }
-
-      ${TextCtn} {
-        height: 1em;
-        flex: 1;
-      }
-    }
-  }
+  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-
-    &:last-child {
-      div:first-child {
-        flex: 1;
-
-        ${ImageCtn} {
-          margin-top: 4.78rem;
-          flex: 1;
-        }
-
-        ${TextCtn} {
-          margin-top: 4rem;
-        }
-      }
-
-      div:last-child {
-        flex: 1;
-
-        ${ImageCtn} {
-          margin-top: 5.7rem;
-          flex: 1;
-          margin-left: auto;
-        }
-
-        ${TextCtn} {
-          margin-top: 2rem;
-        }
-      }
-    }
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
 export const OfferCard = styled.div`
   overflow: hidden;
-  height: 31.25rem;
+  min-height: 24rem;
   border-radius: 0.75rem;
   border: 1px solid var(--stroke, rgba(255, 255, 255, 0.04));
   display: flex;
   flex-direction: column;
   background: url(${grid_background.src}) #131313 no-repeat;
+  transition: all 0.3s ease;
 
-  &:first-child {
-    flex: 2;
-  }
-
-  &:nth-child(2) {
-    flex: 1;
-
-    ${ImageCtn} {
-      margin-left: 2.5rem;
-      width: 100%;
-    }
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
   }
 `;

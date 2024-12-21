@@ -4,10 +4,11 @@ import {
   Building,
   HeroSection,
   IntroSection,
-  JoinSection,
+  Directors,
   WhatYouDo,
   Timeline,
   Learn,
+  TrustedBy,
 } from "@/components/LandingPage";
 
 export default function Home() {
@@ -19,12 +20,13 @@ export default function Home() {
       <Featured />
       <WhatYouDo />
       <Building />
+      <TrustedBy />
       <Learn />
       <div id="intro">
         <IntroSection />
       </div>
       <div id="join">
-        <JoinSection />
+        <Directors />
       </div>
       <div id="timeline">
         <Timeline />

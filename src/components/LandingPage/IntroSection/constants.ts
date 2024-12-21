@@ -2,42 +2,42 @@ import ic_document_duplicate from "../../../../public/svgs/ic_document_duplicate
 import ic_identification from "../../../../public/svgs/ic_identification.svg";
 import ic_lock_closed from "../../../../public/svgs/ic_lock_closed.svg";
 
-export const desktopHeaderPhrase = ["Our 4-Week Program Structure"];
+export const desktopHeaderPhrase = ["How We Work"];
 export const desktopParagraphPhrase = [
-  "Learn venture capital fundamentals and gain hands-on experience",
-  "working with startups and VCs through our structured program.",
+  "Skip the powerpoints. Do real work that ships to production.",
+  "Build alongside founders and VCs in rapid development cycles.",
 ];
 
-export const mobileHeaderPhrase = ["Our 4-Week Program"];
+export const mobileHeaderPhrase = ["How We Work"];
 export const mobileParagraphPhrase = [
-  "Learn venture capital fundamentals and",
-  "gain hands-on experience working with",
-  "startups and VCs.",
+  "Skip the powerpoints.",
+  "Do real work that ships to production.",
+  "Build alongside founders and VCs.",
 ];
 
 export const edges = [
   {
-    point: "Week 1: VC Fundamentals",
+    point: "Engineering & Design",
     details:
-      "Learn venture capital basics, funding stages, and startup ecosystems. Study VC firm structures, analyze case studies, and explore current market trends.",
+      "Write production code, design user interfaces, and ship features directly to users. Experience startup-speed development cycles.",
     icon: ic_document_duplicate,
   },
   {
-    point: "Week 2: Startup Scouting",
+    point: "Startup Operations",
     details:
-      "Develop skills for finding and evaluating promising startups through databases, accelerators, and networks. Practice scouting with real examples.",
+      "Work directly with founders on growth, marketing, and product strategy. Help shape the direction of early-stage companies.",
     icon: ic_identification,
   },
   {
-    point: "Week 3: Research & Analysis",
+    point: "VC Research",
     details:
-      "Master startup analysis including financials, market sizing, and competitive research. Calculate key metrics like CAC, LTV and burn rate.",
+      "Partner with VCs on sourcing and due diligence. Research markets, analyze competitors, and help identify the next unicorns.",
     icon: ic_lock_closed,
   },
   {
-    point: "Week 4: Investment Recommendations",
+    point: "Community & Network",
     details:
-      "Create and present investment memos and recommendations. Practice pitching and defending investment theses with data-driven insights.",
+      "Join a community of ambitious builders. Work hard, play harder with social events, hackathons, and exclusive career opportunities.",
     icon: ic_lock_closed,
   },
 ];

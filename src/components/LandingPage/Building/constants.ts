@@ -11,8 +11,7 @@ export const desktopParagraphPhrase = [
 export const desktopBriefNotePhrase = [
   "Join us to kickstart",
   "your journey in",
-  "venture capital and",
-  "startups.",
+  "venture capital and startups.",
 ];
 
 export const mobileHeaderPhrase = ["Building Future VCs and Founders"];

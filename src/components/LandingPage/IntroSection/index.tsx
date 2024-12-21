@@ -35,7 +35,6 @@ const IntroSection = () => {
     <Wrapper>
       <Inner>
         <Header>
-          <h3>Introducing</h3>
           <HeaderMainText>
             {isMobile ? (
               <>

@@ -24,7 +24,7 @@ const Featured = () => {
       {/* https://pixlr.com/editor/ */}
       <Inner>
         {/* TODO: for some reason the images are super small */}
-        <h2>Companies We've Worked With</h2>
+        <h2>Companies</h2>
         <ParallaxImages>
           <ParallaxText baseVelocity={-4}>
             <Image src={companies_image} alt="companies" />

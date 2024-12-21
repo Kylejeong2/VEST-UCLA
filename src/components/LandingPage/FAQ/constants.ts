@@ -21,21 +21,21 @@ export const faqData: FAQItem[] = [
   {
     question: "What is VEST?",
     answer:
-      "We are a community of entrepreneurial students that work tightly together with VC firms & startups.",
+      "We're a different kind of organization at UCLA focused on engineering, design, and marketing work for startups, plus sourcing and due diligence for VC firms.",
   },
   {
-    question: "What do you do?",
+    question: "What makes VEST unique?",
     answer:
-      "We work with VC firms to help with scouting, research, and analysis on companies. We also work with early stage startups in (but not limited to) engineering, design, and marketing roles.",
+      "Unlike traditional consulting clubs, we do hands-on technical work with rapid development cycles. Our members write code, design products, and work directly with founders and VCs.",
   },
   {
-    question: "How can I join & what are the benefits?",
+    question: "What opportunities are available?",
     answer:
-      "You get to learn about tech startups and the world of vc through hands-on career experience through a community that is composed of entrepreneur devoted & creative students.",
+      "We offer direct access to internship and full-time opportunities at our partner startups and VCs. Members work on real projects that can be used in their resumes, gaining valuable technical and business experience.",
   },
   {
-    question: "What is the application process?",
+    question: "What are you looking for?",
     answer:
-      "The process includes submitting an application form with your resume and answering a few questions, followed by a casual interview with two executives. Selected candidates will receive an email invitation to join.",
+      "We value ambition, high agency, and passion over perfect technical skills. We're building a community of driven individuals who want to make a lasting impact in the startup ecosystem.",
   },
 ];

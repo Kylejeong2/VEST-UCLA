@@ -3,43 +3,43 @@ import smart_investing from "../../../../public/images/smart_investing.png";
 import wealth_management from "../../../../public/images/wealth_management.png";
 import financial_planning from "../../../../public/images/financial_planning.png";
 // For desktop
-export const desktopHeaderPhrases = ["What You Will Learn & Do"];
+export const desktopHeaderPhrases = ["What Sets Us Apart"];
 export const desktopParagraphPhrase = [
-  "Our 4-week program combines hands-on experience with structured learning.",
-  "Work on real projects while building your knowledge and network.",
+  "No consulting. No BS. Just the hard work that matters.",
+  "Direct access to startup opportunities and the Silicon Valley network.",
 ];
 
 // For mobile
 export const mobileParagraphPhrase = [
-  "Our 4-week program combines hands-on",
-  "experience with structured learning.",
-  "Work on real projects while building",
-  "your knowledge and network.",
+  "No consulting.",
+  "Just the hard work that matters.",
+  "Direct access to startup opportunities",
+  "and the Silicon Valley network.",
 ];
 
 export const offers = [
   {
     illustration: seamless_payments,
-    title: "VC Fundamentals",
+    title: "Software Engineering",
     details:
-      "Learn about venture capital, funding stages, startup evaluation, and market analysis through structured workshops and real cases.",
+      "Write code that ships to production. Experience 5-minute PR merge times and rapid development cycles that actually impact users.",
   },
   {
     illustration: smart_investing,
-    title: "Startup Projects",
+    title: "Direct Impact",
     details:
-      "Work directly with early-stage startups on engineering, design, or marketing projects. Get hands-on experience in your area of interest.",
+      "Work directly with founders to build and shape products. Your contributions will be used by real customers, not just stored in a slide deck.",
   },
   {
     illustration: wealth_management,
-    title: "Deal Flow & Analysis",
+    title: "Startup Culture",
     details:
-      "Help VC firms with deal sourcing, startup research, and investment analysis. Learn how VCs evaluate opportunities.",
+      "Experience the fast-paced startup environment. Learn to move quickly, adapt to changes, and take ownership of meaningful projects.",
   },
   {
     illustration: financial_planning,
-    title: "Network Building",
+    title: "Career Growth",
     details:
-      "Connect with VCs, founders, and fellow members through events, projects, and our alumni network. Build lasting relationships.",
+      "Access internship and full-time opportunities at innovative startups. Build a network that will support your journey.",
   },
 ];

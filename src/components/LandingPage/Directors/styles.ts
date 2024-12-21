@@ -24,7 +24,7 @@ export const Header = styled.header`
   h1 {
     color: var(--Background, #070606);
     font-size: 4.75rem;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   @media (max-width: 768px) {

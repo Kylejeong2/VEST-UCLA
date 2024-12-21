@@ -15,8 +15,7 @@ import RevealCover from "@/components/Common/RevealCover";
 import { Div } from "../Featured/styles";
 import { imageVariants } from "../Featured";
 import { useIsMobile } from "../../../../libs/useIsMobile";
-import financial_freedom_banner from "../../../../public/images/financial_freedom_banner.png";
-import freedom_mobile_banner from "../../../../public/images/freedom_mobile_banner.png";
+import first_meeting from "../../../../public/first_meeting.jpeg";
 import {
   desktopBriefNotePhrase,
   desktopHeaderPhrase,
@@ -46,7 +45,7 @@ const Building = () => {
             </>
           )}
         </Header>
-        <BannerCtn>
+        {/* <BannerCtn> // change this later
           <RevealCover />
           <Div
             variants={imageVariants}
@@ -55,12 +54,12 @@ const Building = () => {
             viewport={{ amount: 0.25, once: true }}
           >
             {isMobile ? (
-              <Image src={freedom_mobile_banner} alt="banner_img" fill />
+              <Image src={first_meeting} alt="image" fill />
             ) : (
-              <Image src={financial_freedom_banner} alt="banner_img" fill />
+              <Image src={first_meeting} alt="image" fill />
             )}
           </Div>
-        </BannerCtn>
+        </BannerCtn> */}
         <Edges>
           {edges.map((edge, i) => (
             <Edge key={i}>
@@ -73,13 +72,13 @@ const Building = () => {
           ))}
         </Edges>
       </Inner>
-      <BriefNote>
+      {/* <BriefNote>
         {isMobile ? (
           <MaskText phrases={mobileBriefNotePhrase} tag="p" />
         ) : (
           <MaskText phrases={desktopBriefNotePhrase} tag="p" />
         )}
-      </BriefNote>
+      </BriefNote> */}
     </Wrapper>
   );
 };
