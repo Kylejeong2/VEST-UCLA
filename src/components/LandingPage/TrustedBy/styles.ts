@@ -2,7 +2,7 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-  background: #0A0A0A;
+  background: #0a0a0a;
   padding: 4rem 0;
   margin: 4rem 0;
 `;
@@ -44,7 +44,7 @@ export const LogoContainer = styled.div`
   width: 100%;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #0F0F0F;
+  background: #0f0f0f;
   padding: 2rem;
 
   img {
@@ -52,4 +52,4 @@ export const LogoContainer = styled.div`
     height: 100%;
     object-fit: contain;
   }
-`; 
+`;

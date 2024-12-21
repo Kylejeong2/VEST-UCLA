@@ -41,4 +41,4 @@ export const trustedByLogos = [
   },
 ];
 
-export const headerText = "Members Trusted By Leading VCs"; 
+export const headerText = "Members Trusted By Leading VCs";

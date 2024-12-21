@@ -38,7 +38,7 @@ export const Header = styled.header`
 
   @media (max-width: 768px) {
     margin: 0 auto 6rem;
-    
+
     h1 {
       font-size: 2rem;
     }
@@ -95,7 +95,7 @@ export const TextCtn = styled.div`
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-    
+
     h2 {
       font-size: 1.5rem;
     }
