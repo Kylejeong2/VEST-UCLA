@@ -13,12 +13,9 @@ import {
 } from "./styles";
 import Image from "next/image";
 import { MaskText } from "@/components/LandingPage";
-import { useIsMobile } from "../../../../libs/useIsMobile";
-import { Props, desktopHeaderPhrase, testimonials } from "./constants";
+import { desktopHeaderPhrase, testimonials } from "./constants";
 
 const Directors = () => {
-  const isMobile = useIsMobile();
-
   const topRow = testimonials.slice(0, 2);
   const bottomRow = testimonials.slice(2);
 

@@ -1,3 +1,10 @@
+export type Props = {
+  testimony: string;
+  person: string;
+  role: string;
+  avatar: string;
+};
+
 export const testimonials = [
   {
     testimony:
@@ -7,8 +14,7 @@ export const testimonials = [
     avatar: "/Headshots/kyle-jeong-headshot.png",
   },
   {
-    testimony:
-      "Managing marketing and online presence, creating merchandise, and head of branding.",
+    testimony: "Managing marketing and online presence, creating merchandise, and head of branding.",
     person: "Tony Asnaran",
     role: "President",
     avatar: "/images/avatars/tony.jpg",
@@ -36,23 +42,25 @@ export const testimonials = [
   },
   // {
   //   testimony:
-  //     "Leading technical project management and ensuring quality delivery to startups.",
-  //   person: "Ethan Tam",
-  //   role: "Director of Engineering",
-  //   avatar: "/Headshots/ethan-headshot.png",
+  //     "Leading marketing initiatives and managing our social media presence.",
+  //   person: "Mergen Enkhbat",
+  //   role: "Director of Operations",
+  //   avatar: "/images/avatars/mergen.jpg",
   // },
   // {
   //   testimony:
-  //     "Managing design operations and ensuring consistent brand identity across projects.",
-  //   person: "Aarav Batra",
-  //   role: "Director of Design",
-  //   avatar: "/Headshots/aarav-headshot.png",
+  //     "Leading marketing initiatives and managing our social media presence.",
+  //   person: "Mergen Enkhbat",
+  //   role: "Director of Operations",
+  //   avatar: "/images/avatars/mergen.jpg",
   // },
   // {
   //   testimony:
-  //     "Overseeing startup partnerships and project scoping for maximum impact.",
-  //   person: "Arjun Vadde",
-  //   role: "Director of Startup Relations",
-  //   avatar: "/Headshots/arjun-headshot.png",
+  //     "Leading marketing initiatives and managing our social media presence.",
+  //   person: "Mergen Enkhbat",
+  //   role: "Director of Operations",
+  //   avatar: "/images/avatars/mergen.jpg",
   // },
 ];
+
+export const desktopHeaderPhrase = ["Meet Our Leadership Team"];
