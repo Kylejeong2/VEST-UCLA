@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import ic_import from "../../../../public/svgs/ic_import.svg";
+import vest_logo from "../../../../public/logo/VEST_LOGO_TRANSPARENT.png";
 
 import { Wrapper, Inner, SecondOverlay } from "./styles";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
@@ -60,7 +60,7 @@ const Preloader = ({
     <>
       <Wrapper ref={wrapperRef}>
         <Inner>
-          <Image ref={imageRef} src={ic_import} alt="import icon" />
+          <Image ref={imageRef} src={vest_logo} alt="vest logo" />
           <div>
             {word.map((t, i) => (
               <div

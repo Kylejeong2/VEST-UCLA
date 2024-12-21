@@ -45,7 +45,7 @@ const BlogPage = () => {
     <Wrapper>
       <Inner>
         <Header>
-          <h1>Bruin Venture Lab Blog</h1>
+          <h1>VEST Blog</h1>
           <p>Insights from UCLA's premier VC/Startup community</p>
         </Header>
 

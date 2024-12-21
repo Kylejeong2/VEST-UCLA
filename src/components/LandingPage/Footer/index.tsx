@@ -54,7 +54,7 @@ const Footer = () => {
       <Inner>
         <FooterLogo>
           <Image
-            src="/Bruin_Venture_Lab_Submark_Bold.png"
+            src="/logo/VEST_LOGO_TRANSPARENT.png"
             width={150}
             height={150}
             alt="VEST_footer_logo"
