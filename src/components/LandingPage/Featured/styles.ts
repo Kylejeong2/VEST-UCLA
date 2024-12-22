@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "framer-motion";
-import { styled } from "styled-components";
+'use client';
+import { motion } from 'framer-motion';
+import { styled } from 'styled-components';
 
 export const Wrapper = styled.section``;
 
@@ -56,19 +56,19 @@ export const ImageContainer = styled.div`
 export const ParallaxImages = styled.div`
   position: relative;
   max-width: 53.7rem;
-  margin: 2rem auto 0;
+  margin: 3rem auto 0;
 `;
 
 export const Div = styled(motion.div)`
   position: relative;
-  height: 25rem;
+  height: 35rem;
   overflow: hidden;
 
   @media (max-width: 599px) {
-    height: 17rem;
-
-    img {
+    height: 23.75rem;
+    
+     img {
       object-fit: cover;
-    }
+     }
   }
 `;

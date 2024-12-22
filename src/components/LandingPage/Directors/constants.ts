@@ -18,7 +18,7 @@ export const testimonials = [
       "Managing marketing and online presence, creating merchandise, and head of branding.",
     person: "Tony Asnaran",
     role: "President",
-    avatar: "/images/avatars/tony.jpg",
+    avatar: "/Headshots/tony-headshot.png",
   },
   {
     testimony:

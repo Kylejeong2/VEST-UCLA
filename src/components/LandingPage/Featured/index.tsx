@@ -1,8 +1,10 @@
-"use client";
-import Image from "next/image";
-import ParallaxText from "@/components/Common/ParallaxImages";
-import companies_image from "../../../../public/images/companies.png";
-import { Wrapper, Inner, ParallaxImages } from "./styles";
+'use client';
+import Image from 'next/image';
+import ParallaxText from '@/components/Common/ParallaxImages';
+import companies_image from '../../../../public/images/companies.png';
+import { Wrapper, Inner, ImageContainer, ParallaxImages } from './styles';
+import RevealCover from '@/components/Common/RevealCover';
+
 export const imageVariants = {
   hidden: {
     scale: 1.6,
@@ -20,14 +22,14 @@ export const imageVariants = {
 const Featured = () => {
   return (
     <Wrapper>
-      {/* add when we get vc connections */}
-      {/* https://pixlr.com/editor/ */}
       <Inner>
-        {/* TODO: for some reason the images are super small */}
+        <ImageContainer>
+          <RevealCover />
+        </ImageContainer>
         <h2>Companies</h2>
         <ParallaxImages>
           <ParallaxText baseVelocity={-4}>
-            <Image src={companies_image} alt="companies" />
+            <Image src={companies_image} alt="comapanies" />
           </ParallaxText>
         </ParallaxImages>
       </Inner>

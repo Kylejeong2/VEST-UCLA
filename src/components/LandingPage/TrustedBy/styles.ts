@@ -8,15 +8,15 @@ export const Wrapper = styled.section`
 `;
 
 export const Inner = styled.div`
-  max-width: 1440px;
+  max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
 `;
 
 export const Header = styled.header`
   text-align: center;
   margin-bottom: 3rem;
+  padding: 0 2rem;
 
   h2 {
     font-size: 1.5rem;
@@ -33,23 +33,26 @@ export const LogoGrid = styled.div`
   align-items: stretch;
   justify-items: stretch;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100px;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    height: 200px;
   }
 `;
 
 export const LogoContainer = styled.div`
-  height: 180px;
   width: 100%;
+  height: 100%;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: #0f0f0f;
-  padding: 2rem;
+  padding: 0.5rem;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: contain;
+    padding: 1rem;
   }
 `;

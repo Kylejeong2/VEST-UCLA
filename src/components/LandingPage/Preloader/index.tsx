@@ -5,6 +5,7 @@ import vest_logo from "../../../../public/logo/VEST_LOGO_TRANSPARENT.png";
 import { Wrapper, Inner, SecondOverlay } from "./styles";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useIsMobile } from "../../../../libs/useIsMobile";
 
 const Preloader = ({
   setComplete,
@@ -12,6 +13,7 @@ const Preloader = ({
   setComplete: Dispatch<SetStateAction<boolean>>;
 }) => {
   const word = ["V", "E", "S", "T"];
+  const isMobile = useIsMobile();
 
   const spans = useRef<any>([]); // Create a ref to store the span elements
   const imageRef = useRef(null);
@@ -19,6 +21,12 @@ const Preloader = ({
   const wrapperRef = useRef(null);
 
   useEffect(() => {
+    // Skip animation on mobile
+    if (isMobile) {
+      setComplete(true);
+      return;
+    }
+
     const tl = gsap.timeline();
     tl.to(imageRef.current, {
       rotate: "360deg",
@@ -54,7 +62,10 @@ const Preloader = ({
       duration: 0.5,
       delay: -0.4,
     });
-  }, [setComplete]);
+  }, [setComplete, isMobile]);
+
+  // Don't render anything on mobile
+  if (isMobile) return null;
 
   return (
     <>
