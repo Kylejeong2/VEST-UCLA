@@ -28,6 +28,8 @@ import {
   FooterBottom,
   Translator,
   CopyRight,
+  ManifestoLinkContainer,
+  ManifestoLink,
 } from "./styles";
 
 const Footer = () => {
@@ -82,6 +84,14 @@ const Footer = () => {
                 </GridColumn>
               ))}
             </FooterNavigation>
+
+            <ManifestoLinkContainer>
+              <ManifestoLink href="https://elderly-harpymimus-3b1.notion.site/VEST-Manifesto-15e069ddeded80378d36c63dc706a1b9" target="_blank">
+                VEST Manifesto
+            </ManifestoLink>
+          </ManifestoLinkContainer>
+
+
           </FooterMiddle>
           <FooterBottom>
             <CopyRight>

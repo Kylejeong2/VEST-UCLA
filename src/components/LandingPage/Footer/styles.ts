@@ -43,6 +43,7 @@ export const FooterMiddle = styled.div`
   justify-content: space-between;
   width: 100%;
   gap: 2rem;
+  align-items: flex-start;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -180,5 +181,41 @@ export const CopyRight = styled.div`
   @media (max-width: 768px) {
     font-size: 0.875rem;
     gap: 0.25rem;
+  }
+`;
+
+
+export const ManifestoLink = styled.a`
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+`;
+
+export const ManifestoLinkContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 0; /* Reset any top margin */
+  a {
+    color: #efefef;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
   }
 `;
