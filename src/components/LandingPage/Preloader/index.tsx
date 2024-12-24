@@ -15,7 +15,7 @@ const Preloader = ({
   const word = ["V", "E", "S", "T"];
   const isMobile = useIsMobile();
 
-  const spans = useRef<any>([]); // Create a ref to store the span elements
+  const spans = useRef<any>([]); 
   const imageRef = useRef(null);
   const secondOverlayRef = useRef(null);
   const wrapperRef = useRef(null);

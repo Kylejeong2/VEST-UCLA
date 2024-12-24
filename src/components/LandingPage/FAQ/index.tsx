@@ -60,9 +60,10 @@ const FAQ = () => {
               <AnimatePresence>
                 {openItem === index && (
                   <Answer
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
+                    initial={{ opacity: 0, height: 0, transform: 'translateY(-10px)' }}
+                    animate={{ opacity: 1, height: "auto", transform: 'translateY(0)' }}
+                    exit={{ opacity: 0, height: 0, transform: 'translateY(-10px)' }}
+                    transition={{ duration: 0.2 }}
                   >
                     {item.answer}
                   </Answer>
