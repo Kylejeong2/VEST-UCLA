@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } },
+  { params }: { params: { id: string } }
 ) {
   try {
     const { status } = await request.json();
@@ -20,6 +20,24 @@ export async function PATCH(
         needsManualReview: false,
         updatedAt: new Date(),
       },
+      select: {
+        id: true,
+        timestamp: true,
+        candidateName: true,
+        email: true,
+        responses: true,
+        linkedinUrl: true,
+        resumeUrl: true,
+        firstAnalysis: true,
+        secondAnalysis: true,
+        finalStatus: true,
+        firstReasoning: true,
+        secondStatus: true,
+        secondReasoning: true,
+        needsManualReview: true,
+        createdAt: true,
+        updatedAt: true
+      }
     });
 
     // Send update to Discord
