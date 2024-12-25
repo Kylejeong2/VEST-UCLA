@@ -20,22 +20,6 @@ export async function PATCH(
         needsManualReview: false,
         updatedAt: new Date(),
       },
-      select: {
-        id: true,
-        timestamp: true,
-        candidateName: true,
-        email: true,
-        responses: true,
-        firstAnalysis: true,
-        secondAnalysis: true,
-        finalStatus: true,
-        firstReasoning: true,
-        secondStatus: true,
-        secondReasoning: true,
-        needsManualReview: true,
-        createdAt: true,
-        updatedAt: true
-      }
     });
 
     // Send update to Discord
