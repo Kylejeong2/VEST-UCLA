@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { ApplicationAnalyzer } from '@/lib/services/application-analyzer'
 import { sendApplicationToDiscord } from '@/lib/services/discord'
-import { prisma, type ApplicationStatus } from '@/db/index'
+import { prisma } from '@/db/index'
+import { ApplicationStatus } from '@/lib/types/application'
 import { prompt } from '@/lib/utils/prompt'
 
 const SYSTEM_PROMPT = prompt;
