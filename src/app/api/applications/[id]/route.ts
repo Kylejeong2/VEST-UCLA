@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { prisma, type ApplicationStatus } from "@/db/index";
+import { prisma } from "@/db/index";
 import { sendApplicationToDiscord } from "@/lib/services/discord";
+import { ApplicationStatus } from "@/lib/types/application";
 
 export const runtime = "edge";
 
