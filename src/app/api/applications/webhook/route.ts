@@ -34,6 +34,8 @@ export async function POST(req: Request) {
         candidateName: formResponse.candidateName,
         email: formResponse.email,
         responses: formResponse.responses || {},
+        linkedinUrl: formResponse.responses["linkedin url"] || '',
+        resumeUrl: formResponse.responses["upload resume"] || '',
         firstAnalysis,
         secondAnalysis,
         finalStatus: analysis.firstAnalysis.status as ApplicationStatus,
@@ -41,8 +43,6 @@ export async function POST(req: Request) {
         secondStatus: analysis.secondAnalysis.status as ApplicationStatus,
         secondReasoning: analysis.secondAnalysis.reasoning || '',
         needsManualReview: analysis.needsManualReview || true,
-        linkedinUrl: formResponse.responses["linkedin url"],
-        resumeUrl: formResponse.responses["upload resume"],
       },
     })
 
