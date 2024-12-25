@@ -32,6 +32,7 @@ export async function PATCH(
       secondAnalysis: updatedApplication.secondAnalysis as any,
       linkedinUrl: (updatedApplication.responses as any)?.["linkedin url"] || undefined,
       resumeUrl: (updatedApplication.responses as any)?.["resume url"] || undefined,
+      finalStatus: updatedApplication.finalStatus as ApplicationStatus,
     });
 
     return NextResponse.json(updatedApplication);
@@ -39,7 +40,7 @@ export async function PATCH(
     console.error("Failed to update application:", error);
     return NextResponse.json(
       { error: "Failed to update application" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
