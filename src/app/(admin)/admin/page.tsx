@@ -18,7 +18,7 @@ export default function AdminPage() {
         <div className="space-y-1">
           <h1 className="text-4xl font-bold tracking-tight">Admin Dashboard</h1>
           <p className="text-muted-foreground">
-            Manage applications and outreach campaigns
+            All of VEST's internal tools
           </p>
         </div>
         <div className="flex items-center space-x-2">
@@ -32,7 +32,7 @@ export default function AdminPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Link href="/admin/cold-outreach" className="block group">
-          <Card className="p-6 hover:shadow-xl transition-all border bg-black text-white dark:border-zinc-800 group-hover:border-primary">
+          <Card className="p-6 transition-all border bg-zinc-900 hover:bg-zinc-950 text-white border-zinc-800">
             <div className="flex items-start justify-between">
               <div className="space-y-3">
                 <div className="bg-primary/10 dark:bg-primary/20 w-fit p-3 rounded-lg">
@@ -47,7 +47,7 @@ export default function AdminPage() {
                     campaigns
                   </p>
                 </div>
-                <div className="flex items-center text-sm text-primary dark:text-primary/90">
+                <div className="flex items-center text-sm text-white">
                   <span>View campaigns</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -58,7 +58,7 @@ export default function AdminPage() {
         </Link>
 
         <Link href="/admin/application-reviewer" className="block group">
-          <Card className="p-6 hover:shadow-xl transition-all border bg-black text-white dark:border-zinc-800 group-hover:border-primary">
+          <Card className="p-6 transition-all border bg-zinc-900 hover:bg-zinc-950 text-white border-zinc-800">
             <div className="flex items-start justify-between">
               <div className="space-y-3">
                 <div className="bg-primary/10 dark:bg-primary/20 w-fit p-3 rounded-lg">
@@ -72,7 +72,7 @@ export default function AdminPage() {
                     Review and manage incoming applications with AI assistance
                   </p>
                 </div>
-                <div className="flex items-center text-sm text-primary dark:text-primary/90">
+                <div className="flex items-center text-sm text-white">
                   <span>Review applications</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
