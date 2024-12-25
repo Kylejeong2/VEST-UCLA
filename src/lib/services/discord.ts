@@ -34,7 +34,7 @@ export async function sendApplicationToDiscord(
         },
         {
           name: "LinkedIn",
-          value: application.linkedinUrl || "Not provided",
+          value: application.linkedinUrl,
           inline: false,
         },
         {

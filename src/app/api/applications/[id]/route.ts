@@ -3,7 +3,7 @@ import { prisma } from "@/db";
 import { sendApplicationToDiscord } from "@/lib/services/discord";
 import { ApplicationStatus } from "@/lib/types/application";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function PATCH(
   request: Request,
@@ -25,6 +25,8 @@ export async function PATCH(
     // Send update to Discord
     await sendApplicationToDiscord({
       ...updatedApplication,
+      linkedinUrl: updatedApplication.linkedinUrl || undefined,
+      resumeUrl: updatedApplication.resumeUrl || undefined,
       timestamp: updatedApplication.timestamp.toISOString(),
       createdAt: updatedApplication.createdAt.toISOString(),
       updatedAt: updatedApplication.updatedAt.toISOString(),

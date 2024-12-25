@@ -11,6 +11,7 @@ export interface ApplicationResponse {
   email: string;
   responses: Record<string, string> | any;
   linkedinUrl?: string;
+  resumeUrl?: string;
   createdAt?: string;
   updatedAt?: string;
 }

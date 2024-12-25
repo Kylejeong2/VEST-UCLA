@@ -52,6 +52,7 @@ model WorkRequest {
 }
 
 enum ApplicationStatus {
+  PENDING
   ACCEPTED
   REJECTED
   NEEDS_REVIEW
@@ -64,6 +65,7 @@ model Application {
   candidateName   String
   email          String
   responses      Json
+  linkedinUrl    String?
   
   // AI Analysis
   firstAnalysis  Json?

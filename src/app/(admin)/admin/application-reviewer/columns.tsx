@@ -1,8 +1,10 @@
 "use client";
 
+import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal, Mail } from "lucide-react";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,37 +14,27 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
-import { ApplicationStatus } from "@prisma/client";
 
 export type Application = {
   id: string;
-  timestamp: Date;
   candidateName: string;
   email: string;
-  responses: any;
+  finalStatus: "ACCEPTED" | "REJECTED" | "NEEDS_REVIEW";
+  timestamp: string;
+  responses: Record<string, any>;
+  linkedinUrl?: string;
+  resumeUrl?: string;
   firstAnalysis: {
-    status: ApplicationStatus;
+    status: string;
     confidence: number;
     reasoning: string;
   };
   secondAnalysis: {
-    status: ApplicationStatus;
+    status: string;
     confidence: number;
     reasoning: string;
   };
-  finalStatus: ApplicationStatus;
-  firstReasoning: string;
-  secondStatus: ApplicationStatus;
-  secondReasoning: string;
   needsManualReview: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-};
-
-const statusColors = {
-  ACCEPTED: "bg-emerald-500 text-emerald-50",
-  REJECTED: "bg-red-500 text-red-50",
-  NEEDS_REVIEW: "bg-yellow-500 text-yellow-50",
 };
 
 export const columns: ColumnDef<Application>[] = [
@@ -60,13 +52,28 @@ export const columns: ColumnDef<Application>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      const email = row.original.email;
+      return (
+        <div className="space-y-2">
+          <div className="font-medium text-white">{row.getValue("candidateName")}</div>
+          <div className="flex items-center gap-2 text-sm text-zinc-400">
+            <span>{email}</span>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-4 w-4 text-zinc-400 hover:text-white"
+              onClick={() => window.open(`mailto:${email}`)}
+            >
+              <Mail className="h-3 w-3" />
+            </Button>
+          </div>
+        </div>
+      );
+    }
   },
   {
-    accessorKey: "email",
-    header: "Email",
-  },
-  {
-    accessorKey: "timestamp",
+    accessorKey: "responses",
     header: ({ column }) => {
       return (
         <Button
@@ -74,50 +81,88 @@ export const columns: ColumnDef<Application>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           className="text-white hover:text-white"
         >
-          Submitted
+          Background
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
     cell: ({ row }) => {
-      return new Date(row.getValue("timestamp")).toLocaleString();
-    },
-  },
-  {
-    accessorKey: "firstAnalysis",
-    header: "First Analysis",
-    cell: ({ row }) => {
-      const analysis = row.getValue("firstAnalysis") as Application["firstAnalysis"];
+      const responses = row.getValue("responses") as Record<string, any>;
+      const linkedinUrl = row.original.linkedinUrl;
+      const resumeUrl = row.original.resumeUrl;
+      
       return (
-        <div className="space-y-1">
-          <Badge className={statusColors[analysis.status]}>
-            {analysis.status.replace("_", " ")}
-          </Badge>
-          <div className="text-xs text-zinc-400">
-            Confidence: {(analysis.confidence * 100).toFixed(1)}%
+        <div className="space-y-2">
+          <div className="space-y-1">
+            <div className="font-medium text-white">{responses?.["major/pre-major"] || "N/A"}</div>
+            <div className="text-sm text-zinc-400">{responses?.["year"] || "N/A"}</div>
           </div>
-          <div className="text-xs text-zinc-400 max-w-[200px] truncate" title={analysis.reasoning}>
-            {analysis.reasoning}
+          <div className="flex gap-2 text-xs">
+            {linkedinUrl && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-7 border-zinc-800 bg-zinc-900 text-xs hover:bg-zinc-800"
+                onClick={() => window.open(linkedinUrl, "_blank")}
+              >
+                LinkedIn
+              </Button>
+            )}
+            {resumeUrl && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-7 border-zinc-800 bg-zinc-900 text-xs hover:bg-zinc-800"
+                onClick={() => window.open(`https://drive.google.com/file/d/${resumeUrl}/view`, "_blank")}
+              >
+                Resume
+              </Button>
+            )}
           </div>
         </div>
       );
     },
+    filterFn: (row, value) => {
+      const responses = row.getValue("responses") as Record<string, string>;
+      const major = responses?.["major/pre-major"]?.toLowerCase() || "";
+      return major.includes((value as string).toLowerCase());
+    },
   },
   {
-    accessorKey: "secondAnalysis",
-    header: "Second Analysis",
+    id: "analysis",
+    header: "AI Analysis",
     cell: ({ row }) => {
-      const analysis = row.getValue("secondAnalysis") as Application["secondAnalysis"];
+      const first = row.original.firstAnalysis;
+      const second = row.original.secondAnalysis;
+
+      const getVariant = (status: string) => 
+        status === "ACCEPTED" ? "success" :
+        status === "REJECTED" ? "destructive" :
+        "default";
+
       return (
-        <div className="space-y-1">
-          <Badge className={statusColors[analysis.status]}>
-            {analysis.status.replace("_", " ")}
-          </Badge>
-          <div className="text-xs text-zinc-400">
-            Confidence: {(analysis.confidence * 100).toFixed(1)}%
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Badge variant={getVariant(first.status)} className="bg-opacity-20">
+                {first.status}
+              </Badge>
+              <span className="text-xs text-zinc-400">
+                {(first.confidence * 100).toFixed(0)}% confident
+              </span>
+            </div>
+            <div className="text-sm text-zinc-400 line-clamp-2">{first.reasoning}</div>
           </div>
-          <div className="text-xs text-zinc-400 max-w-[200px] truncate" title={analysis.reasoning}>
-            {analysis.reasoning}
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Badge variant={getVariant(second.status)} className="bg-opacity-20">
+                {second.status}
+              </Badge>
+              <span className="text-xs text-zinc-400">
+                {(second.confidence * 100).toFixed(0)}% confident
+              </span>
+            </div>
+            <div className="text-sm text-zinc-400 line-clamp-2">{second.reasoning}</div>
           </div>
         </div>
       );
@@ -125,25 +170,37 @@ export const columns: ColumnDef<Application>[] = [
   },
   {
     accessorKey: "finalStatus",
-    header: "Final Status",
+    header: "Status",
     cell: ({ row }) => {
-      const status = row.getValue("finalStatus") as ApplicationStatus;
+      const status = row.getValue("finalStatus") as string;
+      const needsManualReview = row.original.needsManualReview;
+      const timestamp = new Date(row.original.timestamp);
+      
+      if (!status) return null;
+
+      const variant = 
+        status === "ACCEPTED" ? "success" :
+        status === "REJECTED" ? "destructive" :
+        "default";
+
       return (
-        <Badge className={statusColors[status]}>
-          {status.replace("_", " ")}
-        </Badge>
+        <div className="space-y-2">
+          <Badge variant={variant} className="bg-opacity-20">
+            {status.charAt(0).toUpperCase() + status.slice(1).toLowerCase()}
+          </Badge>
+          {needsManualReview && (
+            <div className="text-xs text-yellow-500 font-medium">Needs Review</div>
+          )}
+          <div className="text-xs text-zinc-400">
+            <div>{timestamp.toLocaleDateString()}</div>
+            <div>{timestamp.toLocaleTimeString()}</div>
+          </div>
+        </div>
       );
     },
-  },
-  {
-    accessorKey: "needsManualReview",
-    header: "Needs Review",
-    cell: ({ row }) => {
-      return row.getValue("needsManualReview") ? (
-        <Badge variant="destructive">Yes</Badge>
-      ) : (
-        <Badge variant="secondary">No</Badge>
-      );
+    filterFn: (row, id, value) => {
+      const status = (row.getValue("finalStatus") as string)?.toLowerCase() || "";
+      return status.includes((value as string).toLowerCase());
     },
   },
   {
@@ -151,7 +208,7 @@ export const columns: ColumnDef<Application>[] = [
     cell: ({ row }) => {
       const application = row.original;
 
-      const handleStatusChange = async (newStatus: ApplicationStatus) => {
+      const handleStatusChange = async (newStatus: string) => {
         try {
           const response = await fetch(`/api/applications/${application.id}`, {
             method: "PATCH",
@@ -181,46 +238,22 @@ export const columns: ColumnDef<Application>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-black border-zinc-800">
-            <DropdownMenuLabel className="text-white">Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => {
-                const responses = application.responses;
-                const formattedResponses = Object.entries(responses)
-                  .map(([q, a]) => `${q}: ${a}`)
-                  .join("\n");
-                alert(formattedResponses);
-              }}
-              className="text-white hover:bg-zinc-800"
-            >
-              View Responses
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => window.open(`mailto:${application.email}`)}
-              className="text-white hover:bg-zinc-800"
-            >
-              Send Email
-            </DropdownMenuItem>
-            <DropdownMenuSeparator className="border-zinc-800" />
+            <DropdownMenuLabel className="text-white">
+              Actions
+            </DropdownMenuLabel>
             <DropdownMenuItem
               onClick={() => handleStatusChange("ACCEPTED")}
               disabled={application.finalStatus === "ACCEPTED"}
-              className="text-emerald-400 hover:bg-zinc-800"
+              className="text-emerald-400 hover:bg-zinc-800 hover:text-emerald-300"
             >
-              Accept
+              Accept Application
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => handleStatusChange("REJECTED")}
               disabled={application.finalStatus === "REJECTED"}
-              className="text-red-400 hover:bg-zinc-800"
+              className="text-red-400 hover:bg-zinc-800 hover:text-red-300"
             >
-              Reject
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={() => handleStatusChange("NEEDS_REVIEW")}
-              disabled={application.finalStatus === "NEEDS_REVIEW"}
-              className="text-yellow-400 hover:bg-zinc-800"
-            >
-              Mark for Review
+              Reject Application
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
