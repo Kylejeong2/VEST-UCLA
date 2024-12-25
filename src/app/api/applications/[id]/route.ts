@@ -16,7 +16,7 @@ export async function PATCH(
     const updatedApplication = await prisma.application.update({
       where: { id },
       data: {
-        finalStatus: status,
+        finalStatus: status as ApplicationStatus,
         needsManualReview: false,
         updatedAt: new Date(),
       },
@@ -25,8 +25,8 @@ export async function PATCH(
     // Send update to Discord
     await sendApplicationToDiscord({
       ...updatedApplication,
-      linkedinUrl: updatedApplication.linkedinUrl || undefined,
-      resumeUrl: updatedApplication.resumeUrl || undefined,
+      linkedinUrl: updatedApplication.linkedinUrl as string,
+      resumeUrl: updatedApplication.resumeUrl as string, // this is the id so to view you have to parse
       timestamp: updatedApplication.timestamp.toISOString(),
       createdAt: updatedApplication.createdAt.toISOString(),
       updatedAt: updatedApplication.updatedAt.toISOString(),
