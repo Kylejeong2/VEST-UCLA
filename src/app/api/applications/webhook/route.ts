@@ -6,6 +6,7 @@ import { ApplicationStatus } from '@prisma/client'
 import { prompt } from '@/lib/utils/prompt'
 
 const SYSTEM_PROMPT = prompt;
+export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {

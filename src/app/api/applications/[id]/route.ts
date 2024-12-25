@@ -3,7 +3,7 @@ import { prisma } from "@/db";
 import { sendApplicationToDiscord } from "@/lib/services/discord";
 import { ApplicationStatus } from "@/lib/types/application";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export async function PATCH(
   request: Request,
