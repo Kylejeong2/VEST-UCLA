@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/db/index";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
@@ -11,17 +11,16 @@ export async function POST(req: Request) {
     const { type, companyName, contactName, email, companyInfo, requirements } =
       body;
 
-    // TODO: not working for some reason
-    // const workRequest = await prisma.WorkRequest.create({
-    //   data: {
-    //     type,
-    //     companyName,
-    //     contactName,
-    //     email,
-    //     companyInfo,
-    //     requirements,
-    //   },
-    // });
+    const workRequest = await prisma.workRequest.create({
+      data: {
+        type,
+        companyName,
+        contactName,
+        email,
+        companyInfo,
+        requirements,
+      },
+    });
 
     if (
       DISCORD_WEBHOOK_URL &&
@@ -82,8 +81,8 @@ export async function POST(req: Request) {
       });
     }
 
-    // return NextResponse.json({ success: true, data: workRequest });
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, data: workRequest });
+    // return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Work request error:", error);
     return NextResponse.json(

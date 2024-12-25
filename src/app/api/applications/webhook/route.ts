@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
 import { ApplicationAnalyzer } from '@/lib/services/application-analyzer'
 import { sendApplicationToDiscord } from '@/lib/services/discord'
-import { prisma } from '@/db'
 import { ApplicationStatus } from '@prisma/client'
 import { prompt } from '@/lib/utils/prompt'
+import { createApplication } from '@/lib/services/applications'
 
 const SYSTEM_PROMPT = prompt;
 export const runtime = 'edge';
@@ -27,23 +27,21 @@ export async function POST(req: Request) {
       reasoning: analysis.secondAnalysis.reasoning || ''
     }
 
-    const savedApplication = await prisma.application.create({
-      data: {
-        id: formResponse.id,
-        timestamp: new Date(formResponse.timestamp),
-        candidateName: formResponse.candidateName,
-        email: formResponse.email,
-        responses: formResponse.responses || {},
-        firstAnalysis,
-        secondAnalysis,
-        finalStatus: analysis.firstAnalysis.status as ApplicationStatus,
-        firstReasoning: analysis.firstAnalysis.reasoning || '',
-        secondStatus: analysis.secondAnalysis.status as ApplicationStatus,
-        secondReasoning: analysis.secondAnalysis.reasoning || '',
-        needsManualReview: analysis.needsManualReview || true,
-        linkedinUrl: formResponse.responses["linkedin url"],
-        resumeUrl: formResponse.responses["upload resume"],
-      },
+    const savedApplication = await createApplication({
+      id: formResponse.id,
+      timestamp: new Date(formResponse.timestamp),
+      candidateName: formResponse.candidateName,
+      email: formResponse.email,
+      responses: formResponse.responses || {},
+      firstAnalysis,
+      secondAnalysis,
+      finalStatus: analysis.firstAnalysis.status as ApplicationStatus,
+      firstReasoning: analysis.firstAnalysis.reasoning || '',
+      secondStatus: analysis.secondAnalysis.status as ApplicationStatus,
+      secondReasoning: analysis.secondAnalysis.reasoning || '',
+      needsManualReview: analysis.needsManualReview || true,
+      linkedinUrl: formResponse.responses["linkedin url"],
+      resumeUrl: formResponse.responses["upload resume"],
     })
 
     await sendApplicationToDiscord({
