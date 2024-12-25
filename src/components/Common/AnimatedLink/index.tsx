@@ -53,15 +53,28 @@ const AnimatedLink = ({ title, url }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault();
+    
     if (url.startsWith("#")) {
-      const element = document.querySelector(url);
-      if (element) {
-        element.scrollIntoView({
+      // If we're already on the home page
+      if (router.pathname === "/") {
+        const element = document.querySelector(url);
+        element?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
+      } else {
+        // If we're on another page, navigate home first then scroll
+        await router.push("/");
+        // Wait for DOM to update
+        setTimeout(() => {
+          const element = document.querySelector(url);
+          element?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
       }
     } else {
       router.push(url);

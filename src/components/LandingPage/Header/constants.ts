@@ -22,16 +22,19 @@ export const menu = {
 };
 export const links = [
   {
-    url: "/",
+    url: "#intro",
     linkTo: "Program",
+    scroll: { behavior: "smooth" }
   },
   {
-    url: "/#timeline",
+    url: "#timeline",
     linkTo: "Timeline",
+    scroll: { behavior: "smooth" }
   },
   {
-    url: "/#faq",
+    url: "#faq",
     linkTo: "FAQ",
+    scroll: { behavior: "smooth" }
   },
   {
     url: "/case-studies",
