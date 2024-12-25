@@ -24,17 +24,14 @@ export const links = [
   {
     url: "#intro",
     linkTo: "Program",
-    scroll: { behavior: "smooth" }
   },
   {
     url: "#timeline",
     linkTo: "Timeline",
-    scroll: { behavior: "smooth" }
   },
   {
     url: "#faq",
     linkTo: "FAQ",
-    scroll: { behavior: "smooth" }
   },
   {
     url: "/case-studies",
