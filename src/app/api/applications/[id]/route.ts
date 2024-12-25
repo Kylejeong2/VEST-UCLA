@@ -26,8 +26,6 @@ export async function PATCH(
         candidateName: true,
         email: true,
         responses: true,
-        linkedinUrl: true,
-        resumeUrl: true,
         firstAnalysis: true,
         secondAnalysis: true,
         finalStatus: true,
@@ -43,14 +41,13 @@ export async function PATCH(
     // Send update to Discord
     await sendApplicationToDiscord({
       ...updatedApplication,
-      linkedinUrl: updatedApplication.linkedinUrl as string,
-      resumeUrl: updatedApplication.resumeUrl as string, // this is the id so to view you have to parse
       timestamp: updatedApplication.timestamp.toISOString(),
       createdAt: updatedApplication.createdAt.toISOString(),
       updatedAt: updatedApplication.updatedAt.toISOString(),
-      finalStatus: updatedApplication.finalStatus as ApplicationStatus,
       firstAnalysis: updatedApplication.firstAnalysis as any,
       secondAnalysis: updatedApplication.secondAnalysis as any,
+      linkedinUrl: (updatedApplication.responses as any)?.["linkedin url"] || undefined,
+      resumeUrl: (updatedApplication.responses as any)?.["resume url"] || undefined,
     });
 
     return NextResponse.json(updatedApplication);
