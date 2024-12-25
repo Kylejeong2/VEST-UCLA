@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-export const runtime = "edge";
-
 const blogPosts = {
   1: {
     title: "Understanding Venture Capital",
