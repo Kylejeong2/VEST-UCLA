@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Div, Word, Span, AbsoluteContainer } from "./styles";
 
 type Props = {
@@ -52,13 +52,14 @@ const letterAnimationTwo = {
 const AnimatedLink = ({ title, url }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     
     if (url.startsWith("#")) {
       // If we're already on the home page
-      if (router.pathname === "/") {
+      if (pathname === "/") {
         const element = document.querySelector(url);
         element?.scrollIntoView({
           behavior: "smooth",
