@@ -1,6 +1,6 @@
 export type ApplicationStatus =
   | "PENDING"
-  | "APPROVED"
+  | "ACCEPTED"
   | "REJECTED"
   | "NEEDS_REVIEW";
 
