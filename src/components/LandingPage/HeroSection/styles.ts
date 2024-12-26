@@ -67,13 +67,13 @@ export const HeroTextContainer = styled.div`
     gap: 1rem;
     padding-bottom: 1.5rem;
     h1 {
-      font-size: 2rem;
+      font-size: 2.75rem;
       font-weight: 400;
     }
 
     p {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
     }
   }
 `;
@@ -99,7 +99,7 @@ export const ContentContainer = styled.div`
 
     .left-content {
       width: 100%;
-      padding: 2rem;
+      padding: 3rem 2rem;
       align-items: center;
       text-align: center;
     }
@@ -136,7 +136,11 @@ export const ImageContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 80vw;
-    height: 80vw; // Make it square for perfect circle
+    width: 100vw;
+    height: 100vw;
+    
+    > div {
+      transform: scale(1.2);
+    }
   }
 `;

@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 
 export const Wrapper = styled.div`
   padding: 8.25rem 0 10rem;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0 6rem;
+  }
 `;
 
 export const Inner = styled.div`
@@ -21,6 +25,7 @@ export const Inner = styled.div`
   }
 
   @media (max-width: 768px) {
+    gap: 3rem;
     h1 {
       font-size: 3.75rem;
     }
