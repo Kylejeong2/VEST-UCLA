@@ -70,9 +70,6 @@ model Application {
   firstAnalysis  Json?
   secondAnalysis Json?
   finalStatus    ApplicationStatus @default(NEEDS_REVIEW)
-  firstReasoning      String?
-  secondStatus      ApplicationStatus?
-  secondReasoning     String?
   needsManualReview Boolean @default(true)
   
   createdAt      DateTime @default(now())

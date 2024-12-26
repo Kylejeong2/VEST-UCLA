@@ -37,9 +37,6 @@ export async function POST(req: Request) {
         firstAnalysis,
         secondAnalysis,
         finalStatus: analysis.firstAnalysis.status as ApplicationStatus,
-        firstReasoning: analysis.firstAnalysis.reasoning || '',
-        secondStatus: analysis.secondAnalysis.status as ApplicationStatus,
-        secondReasoning: analysis.secondAnalysis.reasoning || '',
         needsManualReview: analysis.needsManualReview || true,
       },
     })
