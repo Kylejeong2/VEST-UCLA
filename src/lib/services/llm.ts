@@ -25,7 +25,7 @@ export async function analyzeApplication(
       messages: [
         {
           role: "system",
-          content: `${systemPrompt}\nYou must respond with a valid JSON object containing exactly these fields:\n{\n  "status": "PENDING" | "APPROVED" | "REJECTED" | "NEEDS_REVIEW",\n  "confidence": number between 0 and 1,\n  "reasoning": string\n}`,
+          content: systemPrompt,
         },
         {
           role: "user",
