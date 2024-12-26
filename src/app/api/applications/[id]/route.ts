@@ -13,6 +13,17 @@ export async function PATCH(
     const { status } = await request.json();
     const { id } = params;
 
+    const existingApplication = await prisma.application.findUnique({
+      where: { id },
+    });
+
+    if (!existingApplication) {
+      return NextResponse.json(
+        { error: "Application not found" },
+        { status: 404 }
+      );
+    }
+
     const updatedApplication = await prisma.application.update({
       where: { id },
       data: {
@@ -30,8 +41,6 @@ export async function PATCH(
       updatedAt: updatedApplication.updatedAt.toISOString(),
       firstAnalysis: updatedApplication.firstAnalysis as any,
       secondAnalysis: updatedApplication.secondAnalysis as any,
-      linkedinUrl: (updatedApplication.responses as any)?.["linkedin url"] || undefined,
-      resumeUrl: (updatedApplication.responses as any)?.["resume url"] || undefined,
       finalStatus: updatedApplication.finalStatus as ApplicationStatus,
     });
 
