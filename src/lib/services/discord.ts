@@ -1,5 +1,4 @@
 import { ApplicationWithAnalysis } from "../types/application";
-import { ApplicationStatus } from '@prisma/client';
 
 const DISCORD_WEBHOOK_URL = process.env.APPLICATION_DISCORD_WEBHOOK_URL!;
 
