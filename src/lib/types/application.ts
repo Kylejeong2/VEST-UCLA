@@ -1,6 +1,6 @@
 export type ApplicationStatus =
   | "PENDING"
-  | "APPROVED"
+  | "ACCEPTED"
   | "REJECTED"
   | "NEEDS_REVIEW";
 
@@ -10,7 +10,6 @@ export interface ApplicationResponse {
   candidateName: string;
   email: string;
   responses: Record<string, string> | any;
-  linkedinUrl?: string;
   createdAt?: string;
   updatedAt?: string;
 }

@@ -33,6 +33,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -72,20 +79,37 @@ export function DataTable<TData, TValue>({
       <div className="flex items-center gap-2">
         <Input
           placeholder="Filter by name..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+          value={(table.getColumn("candidateName")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
+            table.getColumn("candidateName")?.setFilterValue(event.target.value)
           }
           className="max-w-sm bg-black text-white border-zinc-800 placeholder:text-zinc-500"
         />
         <Input
-          placeholder="Filter by company..."
-          value={(table.getColumn("company")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter by major..."
+          value={(table.getColumn("responses")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("company")?.setFilterValue(event.target.value)
+            table.getColumn("responses")?.setFilterValue(event.target.value)
           }
           className="max-w-sm bg-black text-white border-zinc-800 placeholder:text-zinc-500"
         />
+        <Select
+          value={(table.getColumn("finalStatus")?.getFilterValue() as string) ?? "all"}
+          onValueChange={(value) =>
+            table.getColumn("finalStatus")?.setFilterValue(value === "all" ? "" : value)
+          }
+        >
+          <SelectTrigger className="w-[180px] bg-black text-white border-zinc-800">
+            <SelectValue placeholder="Filter by status" />
+          </SelectTrigger>
+          <SelectContent className="bg-black border-zinc-800">
+            <SelectItem value="all" className="text-white">All</SelectItem>
+            <SelectItem value="PENDING" className="text-white">Pending</SelectItem>
+            <SelectItem value="ACCEPTED" className="text-emerald-400">Accepted</SelectItem>
+            <SelectItem value="REJECTED" className="text-red-400">Rejected</SelectItem>
+            <SelectItem value="NEEDS_REVIEW" className="text-yellow-400">Needs Review</SelectItem>
+          </SelectContent>
+        </Select>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -122,11 +146,11 @@ export function DataTable<TData, TValue>({
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className="border-zinc-800 hover:bg-zinc-800/50"
+                className="border-zinc-800 hover:bg-zinc-800/50 bg-black"
               >
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="text-zinc-400">
+                    <TableHead key={header.id} className="text-zinc-400 bg-black">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -145,10 +169,10 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="border-zinc-800 hover:bg-zinc-800/50"
+                  className="border-zinc-800 bg-black hover:bg-zinc-800/50"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="text-white">
+                    <TableCell key={cell.id} className="text-white bg-black">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
@@ -161,7 +185,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center text-zinc-400"
+                  className="h-24 text-center text-zinc-400 bg-black"
                 >
                   No results.
                 </TableCell>

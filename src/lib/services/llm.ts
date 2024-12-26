@@ -2,7 +2,6 @@ import OpenAI from "openai";
 import {
   ApplicationResponse,
   AnalysisResult,
-  ApplicationStatus,
 } from "../types/application";
 import { z } from "zod";
 
@@ -11,7 +10,7 @@ const openai = new OpenAI({
 });
 
 const AnalysisSchema = z.object({
-  status: z.enum(["PENDING", "APPROVED", "REJECTED", "NEEDS_REVIEW"] as const),
+  status: z.enum(["PENDING", "ACCEPTED", "REJECTED", "NEEDS_REVIEW"] as const),
   confidence: z.number(),
   reasoning: z.string(),
 });
@@ -22,7 +21,7 @@ export async function analyzeApplication(
 ): Promise<AnalysisResult> {
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o-mini",
       messages: [
         {
           role: "system",

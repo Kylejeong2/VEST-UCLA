@@ -76,20 +76,20 @@ export function DataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500"
+          className="max-w-sm bg-black border-zinc-800 text-zinc-100 placeholder:text-zinc-500"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="ml-auto dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-900 dark:text-zinc-100"
+              className="ml-auto border-zinc-800 bg-black hover:bg-zinc-900 text-zinc-100"
             >
               Columns
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="end"
-            className="dark:bg-zinc-900 dark:border-zinc-800"
+            className="bg-black border-zinc-800"
           >
             {table
               .getAllColumns()
@@ -98,7 +98,7 @@ export function DataTable<TData, TValue>({
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="capitalize dark:text-zinc-100 dark:hover:bg-zinc-800"
+                    className="capitalize text-zinc-100 hover:bg-zinc-800"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -111,17 +111,17 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border dark:border-zinc-800 bg-background dark:bg-zinc-900/50">
+      <div className="rounded-md border border-zinc-800 bg-black">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className="dark:border-zinc-800 dark:hover:bg-zinc-800/50"
+                className="border-zinc-800 hover:bg-zinc-800/50"
               >
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="dark:text-zinc-400">
+                    <TableHead key={header.id} className="text-zinc-400">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -140,10 +140,10 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="dark:border-zinc-800 dark:hover:bg-zinc-800/50"
+                  className="border-zinc-800 hover:bg-zinc-800/50"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="dark:text-zinc-300">
+                    <TableCell key={cell.id} className="text-zinc-300">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
@@ -156,7 +156,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center dark:text-zinc-400"
+                  className="h-24 text-center text-zinc-400"
                 >
                   No results.
                 </TableCell>
@@ -171,7 +171,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-900 dark:text-zinc-100"
+          className="border-zinc-800 bg-black hover:bg-zinc-900 text-zinc-100"
         >
           Previous
         </Button>
@@ -180,7 +180,7 @@ export function DataTable<TData, TValue>({
           size="sm"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-900 dark:text-zinc-100"
+          className="border-zinc-800 bg-black hover:bg-zinc-900 text-zinc-100"
         >
           Next
         </Button>

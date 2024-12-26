@@ -113,7 +113,7 @@ export default function SearchPage() {
               <Button
                 onClick={handleSearch}
                 disabled={loading || !query.trim()}
-                className="min-w-[100px] relative bg-black text-white hover:bg-zinc-900"
+                className="min-w-[100px] relative outline bg-black text-white hover:bg-zinc-900"
               >
                 {loading ? (
                   <span className="flex items-center gap-2">

@@ -51,6 +51,13 @@ model WorkRequest {
   updatedAt   DateTime @updatedAt
 }
 
+enum ApplicationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  NEEDS_REVIEW
+}
+
 
 model Application {
   id              String   @id @default(uuid())
@@ -62,7 +69,7 @@ model Application {
   // AI Analysis
   firstAnalysis  Json?
   secondAnalysis Json?
-  finalStatus    String
+  finalStatus    ApplicationStatus @default(NEEDS_REVIEW)
   needsManualReview Boolean @default(true)
   
   createdAt      DateTime @default(now())
