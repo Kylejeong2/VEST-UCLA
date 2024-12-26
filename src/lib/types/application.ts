@@ -10,8 +10,6 @@ export interface ApplicationResponse {
   candidateName: string;
   email: string;
   responses: Record<string, string> | any;
-  linkedinUrl?: string;
-  resumeUrl?: string;
   createdAt?: string;
   updatedAt?: string;
 }

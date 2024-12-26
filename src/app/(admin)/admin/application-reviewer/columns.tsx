@@ -22,8 +22,6 @@ export type Application = {
   finalStatus: "ACCEPTED" | "REJECTED" | "NEEDS_REVIEW";
   timestamp: string;
   responses: Record<string, any>;
-  linkedinUrl?: string;
-  resumeUrl?: string;
   firstAnalysis: {
     status: string;
     confidence: number;
@@ -88,8 +86,8 @@ export const columns: ColumnDef<Application>[] = [
     },
     cell: ({ row }) => {
       const responses = row.getValue("responses") as Record<string, any>;
-      const linkedinUrl = row.original.linkedinUrl;
-      const resumeUrl = row.original.resumeUrl;
+      const linkedinUrl = (row.original.responses as any)?.["linkedin url"];
+      const resumeUrl = (row.original.responses as any)?.["upload resume"];
       
       return (
         <div className="space-y-2">

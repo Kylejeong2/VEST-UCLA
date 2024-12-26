@@ -65,8 +65,6 @@ model Application {
   candidateName   String
   email          String
   responses      Json
-  linkedinUrl    String
-  resumeUrl      String
   
   // AI Analysis
   firstAnalysis  Json?
