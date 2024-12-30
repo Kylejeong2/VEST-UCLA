@@ -10,7 +10,7 @@ const Featured = () => {
         <h2>Winter 2025 Companies</h2>
         <ImageContainer>
           <Image 
-            src={companies_image} 
+            src="https://utfs.io/f/S5FODHw5IM4mwsX5LIevUF9XL70Anhsk5zdKxtYboJwp6rDP"
             alt="Companies we're working with"
             width={1200}
             height={200}

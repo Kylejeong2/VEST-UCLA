@@ -1,5 +1,3 @@
-import placeholderImage from "../../../../public/logo/VEST_LOGO_TRANSPARENT.png";
-
 // For desktop
 export const desktopHeaderPhrases = ["What Sets Us Apart"];
 export const desktopParagraphPhrase = [
@@ -17,27 +15,35 @@ export const mobileParagraphPhrase = [
 
 export const offers = [
   {
-    illustration: placeholderImage,
+    illustration: "https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM",
     title: "Software Engineering",
     details:
       "Write code that ships to production. Experience 5-minute PR merge times and rapid development cycles that actually impact users.",
+    width: 100,
+    height: 100,
   },
   {
-    illustration: placeholderImage,
+    illustration: "https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM",
     title: "Direct Impact",
     details:
       "Work directly with founders to build and shape products. Your contributions will be used by real customers, not just stored in a slide deck.",
+    width: 100,
+    height: 100,
   },
   {
-    illustration: placeholderImage,
+    illustration: "https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM",
     title: "Startup Culture",
     details:
       "Experience the fast-paced startup environment. Learn to move quickly, adapt to changes, and take ownership of meaningful projects.",
+    width: 100,
+    height: 100,
   },
   {
-    illustration: placeholderImage,
+    illustration: "https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM",
     title: "Career Growth",
     details:
       "Access internship and full-time opportunities at innovative startups. Build a network that will support your journey.",
+    width: 100,
+    height: 100,
   },
 ];

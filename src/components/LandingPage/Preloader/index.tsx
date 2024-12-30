@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import vest_logo from "../../../../public/logo/VEST_LOGO_TRANSPARENT.png";
 
 import { Wrapper, Inner, SecondOverlay } from "./styles";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
@@ -71,7 +70,7 @@ const Preloader = ({
     <>
       <Wrapper ref={wrapperRef}>
         <Inner>
-          <Image ref={imageRef} src={vest_logo} alt="vest logo" />
+          <Image ref={imageRef} src="https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM" width={150} height={150} alt="vest logo" />
           <div>
             {word.map((t, i) => (
               <div

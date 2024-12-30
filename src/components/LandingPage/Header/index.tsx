@@ -25,7 +25,7 @@ const Header = () => {
         <LogoContainer>
           <Link href="/">
             <Image
-              src="/logo/VEST_LOGO_TRANSPARENT.png"
+              src="https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM"
               width={70}
               height={70}
               alt="VEST logo"

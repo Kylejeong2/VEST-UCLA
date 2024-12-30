@@ -33,16 +33,16 @@ export const links = [
     url: "#faq",
     linkTo: "FAQ",
   },
-  {
-    url: "/case-studies",
-    linkTo: "Case Studies",
-  },
+  // {
+  //   url: "/case-studies",
+  //   linkTo: "Case Studies",
+  // },
   {
     url: "/work-with-us",
     linkTo: "Work with Us",
   },
-  {
-    url: "/blog",
-    linkTo: "Blog",
-  },
+  // {
+  //   url: "/blog",
+  //   linkTo: "Blog",
+  // },
 ];

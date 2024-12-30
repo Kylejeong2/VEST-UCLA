@@ -31,7 +31,7 @@ const Timeline = () => {
         </Header>
         <TimelineContainer>
           <Image
-            src="/VEST_Recruiting.png"
+            src="https://utfs.io/f/S5FODHw5IM4mmtxsJ6lT0YPmw3uVaUCZQIey8GASE42rH76B"
             alt="VEST Timeline"
             width={1200}
             height={600}

@@ -26,7 +26,6 @@ import {
   GridColumn,
   LinksContainer,
   FooterBottom,
-  Translator,
   CopyRight,
   ManifestoLinkContainer,
   ManifestoLink,
@@ -56,7 +55,7 @@ const Footer = () => {
       <Inner>
         <FooterLogo>
           <Image
-            src="/logo/VEST_LOGO_TRANSPARENT.png"
+            src="https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM"
             width={150}
             height={150}
             alt="VEST_footer_logo"
