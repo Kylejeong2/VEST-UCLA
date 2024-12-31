@@ -39,7 +39,7 @@ export const testimonials = [
       "Leading marketing initiatives and managing our social media presence.",
     person: "Mergen Enkhbat",
     role: "Director of Operations",
-    avatar: "/images/avatars/mergen.jpg",
+    avatar: "/Headshots/mergen.png",
   },
   // {
   //   testimony:
