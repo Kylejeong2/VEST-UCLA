@@ -26,7 +26,7 @@ export const trustedByLogos = [
   },
   {
     name: "Horizon VC",
-    logo: "https://utfs.io/f/S5FODHw5IM4mLJlN8CnNpJeLTgt83BAmCMlS0nZd7Rou6f1c",
+    logo: "https://utfs.io/f/S5FODHw5IM4m8wq2bi5UaeETrHNAoZfOI92RzpygsQ35huvJ",
     url: "https://www.horizon.vc/",
   },
   {
@@ -36,8 +36,8 @@ export const trustedByLogos = [
   },
   {
     name: "Sunset Ventures",
-    logo: "/VC/sunset-logo.jpg",
-    url: "https://utfs.io/f/S5FODHw5IM4mkp5Z2StCgnpFiRmIVoeSwA4Mqt9ZKOaUbLGd",
+    logo: "https://utfs.io/f/S5FODHw5IM4mkp5Z2StCgnpFiRmIVoeSwA4Mqt9ZKOaUbLGd",
+    url: "https://sunsetventures.xyz/",
   },
 ];
 
