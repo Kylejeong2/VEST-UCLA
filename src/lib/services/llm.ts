@@ -16,7 +16,16 @@ const AnalysisSchema = z.object({
 });
 
 export async function analyzeApplication(
-  application: ApplicationResponse,
+  application: ApplicationResponse & { 
+    resumeText?: string | null;
+    resumeData?: {
+      education?: string;
+      work_experience?: string;
+      skills?: string;
+      projects?: string;
+      achievements?: string;
+    } | null;
+  },
   systemPrompt: string,
 ): Promise<AnalysisResult> {
   try {
@@ -29,7 +38,9 @@ export async function analyzeApplication(
         },
         {
           role: "user",
-          content: JSON.stringify(application),
+          content: `Application: ${JSON.stringify(application)}
+${application.resumeData ? `\nStructured Resume Data:\n${JSON.stringify(application.resumeData, null, 2)}` : ''}
+${application.resumeText ? `\nFull Resume Text:\n${application.resumeText}` : ''}`,
         },
       ],
       temperature: 0.3,

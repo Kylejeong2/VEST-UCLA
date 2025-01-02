@@ -24,6 +24,7 @@
     "@splinetool/react-spline": "^2.2.6",
     "@studio-freight/react-lenis": "^0.0.38",
     "@tanstack/react-table": "^8.11.2",
+    "axios": "^1.7.9",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",

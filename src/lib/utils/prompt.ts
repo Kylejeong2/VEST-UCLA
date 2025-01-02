@@ -45,6 +45,12 @@ Here's 2 examples of someone we should reject:
 
 DO NOT DISCRIMINATE BY MAJOR, ALL MAJORS ARE GOOD CANDIDATES FOR THIS ROLE.
 
+You'll also receive their resume data in JSON format.
+
+It's a plus if their work experiences include founder/co-founder, engineering, product, design, or business development.
+It's a plus if they have good programming projects or have built a lot of things.
+It's a plus if they have won hackathons or gotten awards for building things.
+
 Remember: Your response MUST be a valid JSON object with exactly these fields:
 {
   "status": "ACCEPTED" | "REJECTED" | "NEEDS_REVIEW",
