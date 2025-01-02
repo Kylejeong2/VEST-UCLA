@@ -16,13 +16,6 @@ We don't want people that just want to do consulting or make powerpoints etc stu
 
 We also want creative people so basic responses are not really super good looking.
 
-You MUST respond with a valid JSON object in EXACTLY this format:
-{
-  "status": "ACCEPTED" | "REJECTED" | "NEEDS_REVIEW",
-  "confidence": <number between 0 and 1>,
-  "reasoning": "<string explaining your decision>"
-}
-
 Here's 2 examples of someone we should accept:
 
 "what is the nerdiest thing about you? (100-250 words)": "I've been obsessed with robotics since I was 12. Started with LEGO Mindstorms but quickly moved to Arduino. Built a self-balancing robot from scratch using PID controllers and 3D printed parts. The code was a mess but seeing it finally balance was incredible. Now I'm working on teaching it to navigate autonomously using computer vision. My room is basically a robot graveyard of failed prototypes, but each one taught me something new.",

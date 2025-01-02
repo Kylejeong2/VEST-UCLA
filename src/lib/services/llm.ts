@@ -40,7 +40,7 @@ export async function analyzeApplication(
           role: "user",
           content: `Application: ${JSON.stringify(application)}
 ${application.resumeData ? `\nStructured Resume Data:\n${JSON.stringify(application.resumeData, null, 2)}` : ''}
-${application.resumeText ? `\nFull Resume Text:\n${application.resumeText}` : ''}`,
+`
         },
       ],
       temperature: 0.3,
