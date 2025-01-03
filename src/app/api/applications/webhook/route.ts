@@ -7,7 +7,7 @@ import { prompt } from '@/lib/utils/prompt'
 
 const SYSTEM_PROMPT = prompt;
 export const runtime = 'nodejs';
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 export async function POST(req: Request) {
   try {
