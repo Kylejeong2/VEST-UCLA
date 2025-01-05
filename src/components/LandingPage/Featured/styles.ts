@@ -31,22 +31,8 @@ export const Inner = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  overflow: hidden;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-
-  > span {
-    // This targets the Next.js Image wrapper
-    display: block !important;
-    max-width: 1200px !important;
-    width: 100% !important;
-  }
-
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-  }
 `;
 
 export const ScrollingWrapper = styled.div`
