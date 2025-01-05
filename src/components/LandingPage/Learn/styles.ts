@@ -18,6 +18,10 @@ export const Header = styled.header`
   gap: 1.5rem;
   max-width: 56rem;
   margin-bottom: 6.25rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
 
   h1 {
     font-size: 4.75rem;
