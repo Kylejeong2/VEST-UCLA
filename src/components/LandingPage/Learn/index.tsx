@@ -66,9 +66,9 @@ const Learn = () => {
       </Inner>
       <Banner>
         {isMobile ? (
-          <Image src="https://utfs.io/f/S5FODHw5IM4mFB6SKkGuNBQp2ktKL8xs7vPWalU39XERI1gr" alt="future_banner" fill />
+          <Image src="https://utfs.io/f/rc1bTfWqlGiYCcy4vvDbJgEGMxeshBfODTPi3S6HocaFY2Iz" alt="future_banner" fill />
         ) : (
-          <Image src="https://utfs.io/f/S5FODHw5IM4mFB6SKkGuNBQp2ktKL8xs7vPWalU39XERI1gr" alt="future_banner" fill />
+          <Image src="https://utfs.io/f/rc1bTfWqlGiYCcy4vvDbJgEGMxeshBfODTPi3S6HocaFY2Iz" alt="future_banner" fill />
         )}
       </Banner>
     </Wrapper>

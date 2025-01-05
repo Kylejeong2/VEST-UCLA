@@ -31,14 +31,14 @@ const Timeline = () => {
         </Header>
         <TimelineContainer>
           <Image
-            src="https://utfs.io/f/S5FODHw5IM4mmtxsJ6lT0YPmw3uVaUCZQIey8GASE42rH76B"
+            src="https://utfs.io/f/rc1bTfWqlGiYXGTYmWsUCe89MQBvKqOZjtW13m04cyrdlhNY"
             alt="VEST Timeline"
             width={1200}
             height={600}
             style={{ 
               width: '100%',
               height: 'auto',
-              maxHeight: '600px',
+              maxHeight: '1600px',
               objectFit: 'contain'
             }}
             priority

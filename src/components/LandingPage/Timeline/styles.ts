@@ -22,10 +22,10 @@ export const Header = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   text-align: center;
   max-width: 56rem;
-  margin-bottom: 6.25rem;
+  margin-bottom: 0.5rem;
 
   h1 {
     font-size: 4.75rem;
@@ -41,7 +41,7 @@ export const Header = styled.header`
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 3.75rem;
+    margin-bottom: 0.5rem;
 
     h1 {
       font-size: 2.25rem;
