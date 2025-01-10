@@ -3,9 +3,11 @@ import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   margin-top: 11.25rem;
+  background: #1a1a1a;
+  padding: 4rem 0;
 
   @media (max-width: 768px) {
-    margint-top: 6.25rem;
+    margin-top: 6.25rem;
   }
 `;
 

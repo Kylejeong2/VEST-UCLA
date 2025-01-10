@@ -26,23 +26,19 @@ export const links = [
     linkTo: "Program",
   },
   {
-    url: "#timeline",
+    url: "/timeline",
     linkTo: "Timeline",
   },
   {
-    url: "#faq",
+    url: "/team",
+    linkTo: "Team",
+  },
+  {
+    url: "/faq",
     linkTo: "FAQ",
   },
-  // {
-  //   url: "/case-studies",
-  //   linkTo: "Case Studies",
-  // },
   {
     url: "/work-with-us",
     linkTo: "Work with Us",
   },
-  // {
-  //   url: "/blog",
-  //   linkTo: "Blog",
-  // },
 ];

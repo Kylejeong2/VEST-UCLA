@@ -1,18 +1,12 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import lola_card from "../../../../public/images/lola_card.png";
-import orange_card from "../../../../public/images/orange_card.png";
-import terry_card from "../../../../public/images/terry_card.png";
+
 import {
   Wrapper,
   Inner,
   Header,
   HeaderMainText,
-  CardsContainer,
-  LeftImage,
-  MiddleImage,
-  RightImage,
   Edge,
   Edges,
   Title,
@@ -29,13 +23,41 @@ import {
 
 const IntroSection = () => {
   const isMobile = useIsMobile();
-  // const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const edgeVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.2 + i * 0.1,
+        ease: "easeOut"
+      }
+    })
+  };
 
   return (
     <Wrapper>
       <Inner>
-        <Header>
-          <HeaderMainText>
+        <HeaderMainText
+          initial="hidden"
+          animate="visible"
+          variants={headerVariants}
+        >
+          <Header>
             {isMobile ? (
               <>
                 <MaskText phrases={mobileHeaderPhrase} tag="h1" />
@@ -47,31 +69,21 @@ const IntroSection = () => {
                 <MaskText phrases={desktopParagraphPhrase} tag="p" />
               </>
             )}
-          </HeaderMainText>
-        </Header>
-        <CardsContainer>
-          {/* <LeftImage
-            className={isHovered ? 'active' : ''}
-            src={orange_card}
-            alt="orange_atm_card"
-          />
-          <MiddleImage
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            src={lola_card}
-            alt="blue card"
-          />
-          <RightImage
-            className={isHovered ? 'active' : ''}
-            src={terry_card}
-            alt="terry card"
-          /> */}
-        </CardsContainer>
+          </Header>
+        </HeaderMainText>
+
         <Edges>
           {edges.map((edge, i) => (
-            <Edge key={i}>
+            <Edge
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={edgeVariants}
+            >
               <Title>
-                <Image src={edge.icon} alt="icon" />
+                <Image src={edge.icon} alt="icon" width={24} height={24} />
                 <MaskText phrases={new Array(edge.point)} tag="h3" />
               </Title>
               <MaskText phrases={new Array(edge.details)} tag="p" />

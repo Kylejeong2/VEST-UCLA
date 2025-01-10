@@ -20,12 +20,25 @@ import {
 
 const WhatYouDo = () => {
   const isMobile = useIsMobile();
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.1,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <Wrapper>
       <Inner>
         <Header>
           <MaskText phrases={desktopHeaderPhrases} tag="h1" />
-
           {isMobile ? (
             <MaskText phrases={mobileParagraphPhrase} tag="p" />
           ) : (
@@ -33,32 +46,21 @@ const WhatYouDo = () => {
           )}
         </Header>
         <Offers>
-          {offers.slice(0, 2).map((offer, i) => (
-            <OfferCard key={i}>
+          {offers.map((offer, i) => (
+            <OfferCard
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={cardVariants}
+            >
               <ImageCtn>
                 <Image 
                   src={offer.illustration} 
-                  width={offer.width} 
-                  height={offer.height} 
-                  alt="illustration" 
-                />
-              </ImageCtn>
-              <TextCtn>
-                <MaskText phrases={new Array(offer.title)} tag="h2" />
-                <p>{offer.details}</p>
-              </TextCtn>
-            </OfferCard>
-          ))}
-        </Offers>
-        <Offers>
-          {offers.slice(2, 4).map((offer, i) => (
-            <OfferCard key={i}>
-              <ImageCtn>
-                <Image 
-                  src={offer.illustration} 
-                  width={offer.width} 
-                  height={offer.height} 
-                  alt="illustration" 
+                  width={480}
+                  height={480}
+                  alt={offer.title} 
                 />
               </ImageCtn>
               <TextCtn>
