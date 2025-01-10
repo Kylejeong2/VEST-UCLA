@@ -4,7 +4,6 @@ import {
   Building,
   HeroSection,
   IntroSection,
-  Directors,
   WhatYouDo,
   Timeline,
   Learn,
@@ -24,9 +23,6 @@ export default function Home() {
       <Learn />
       <div id="intro">
         <IntroSection />
-      </div>
-      <div id="join">
-        <Directors />
       </div>
       <div id="timeline">
         <Timeline />

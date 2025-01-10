@@ -30,6 +30,10 @@ export const links = [
     linkTo: "Timeline",
   },
   {
+    url: "/leadership",
+    linkTo: "Our Directors",
+  },
+  {
     url: "#faq",
     linkTo: "FAQ",
   },

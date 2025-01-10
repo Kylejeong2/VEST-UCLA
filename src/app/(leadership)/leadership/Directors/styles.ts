@@ -2,8 +2,9 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-  margin-top: 4rem;
   background: var(--emerald);
+  width: 100vw;
+  margin-bottom: 4rem;
 `;
 
 export const Inner = styled.div`
