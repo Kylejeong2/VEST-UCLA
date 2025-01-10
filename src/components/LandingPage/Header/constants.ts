@@ -22,10 +22,6 @@ export const menu = {
 };
 export const links = [
   {
-    url: "#intro",
-    linkTo: "Program",
-  },
-  {
     url: "/timeline",
     linkTo: "Timeline",
   },
