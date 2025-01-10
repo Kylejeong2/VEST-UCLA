@@ -6,7 +6,7 @@ const linksArr = [
     title: "About",
     links: [
       { text: "Program", type: "internal" },
-      { text: "Team", type: "external", url: "https://www.vestucla.com/leadership" }, //tentative based on merge
+      { text: "Team", type: "external", url: "https://www.vestucla.com/team" }, //tentative based on merge
       { text: "Mission", type: "external", url: "https://elderly-harpymimus-3b1.notion.site/VEST-Manifesto-15e069ddeded80378d36c63dc706a1b9" },
     ],
   },
