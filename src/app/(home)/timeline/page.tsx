@@ -1,15 +1,11 @@
+"use client";
 import { Timeline } from "@/components/LandingPage";
-import { styled } from "styled-components";
+import { Wrapper } from "./styles";
 
 export default function TimelinePage() {
   return (
     <Wrapper>
-        <Timeline />
+      <Timeline />
     </Wrapper>
   );
 }
-
-const Wrapper = styled.section`
-  padding: 4rem 0;
-  background: var(--Background);
-`;
