@@ -31,26 +31,106 @@ export const LogoContainer = styled.div`
 
 export const BurgerMenu = styled.div`
   display: none;
-  position: relative;
+  cursor: pointer;
+  z-index: 102;
 
   @media (max-width: 768px) {
     display: block;
-    padding: 0.5rem;
-
-    div {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    
+    span {
+      display: block;
       position: absolute;
+      height: 2px;
+      width: 100%;
       background: var(--emerald);
-      width: "250px";
-      height: "300px";
-      border-radius: 25px;
-      z-index: 1;
-      top: 50px;
+      border-radius: 2px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 4px;
+      }
+
+      &:nth-child(2) {
+        top: 11px;
+      }
+
+      &:nth-child(3) {
+        top: 18px;
+      }
     }
 
-    img {
-      position: relative;
-      z-index: 2;
-      object-fit: cover;
+    &.open {
+      span:nth-child(1) {
+        top: 11px;
+        transform: rotate(135deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+
+      span:nth-child(3) {
+        top: 11px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+`;
+
+export const MobileOverlay = styled.div`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+`;
+
+export const MobileMenu = styled.div`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
+    padding: 7rem 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 101;
+    overflow-y: auto;
+
+    &.active {
+      right: 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
     }
   }
 `;
@@ -69,21 +149,47 @@ export const Nav = styled.div`
   }
 
   @media (max-width: 768px) {
-    position: absolute;
-    top: 60px;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-    right: 120px;
-    z-index: 3;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-delay: 0.5s;
+    &.desktop {
+      display: none;
+    }
 
-    &.active {
-      opacity: 1;
-      visibility: visible;
+    position: static;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    margin: 0;
+    color: white;
+
+    a {
+      color: white;
+      font-weight: 500;
+      font-size: 1.125rem;
+      position: relative;
+      padding: 0.5rem 0;
+      width: 100%;
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--emerald);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: var(--emerald);
+        &:after {
+          width: 2rem;
+        }
+      }
+    }
+    span, p, div {
+      color: white;
     }
   }
 `;
@@ -112,7 +218,7 @@ export const CallToActions = styled.div`
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
 
     &:hover {
       background: #4752c4;
@@ -120,18 +226,41 @@ export const CallToActions = styled.div`
   }
 
   @media (max-width: 768px) {
-    position: absolute;
-    top: 220px;
-    z-index: 3;
-    right: 50px;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-delay: 0.5s;
+    &.desktop {
+      display: none;
+    }
 
-    &.active {
-      opacity: 1;
-      visibility: visible;
+    position: static;
+    margin-top: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+
+    .discord-btn, button {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      color: white;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 6.25rem;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        transform: translateY(-1px);
+      }
+    }
+
+    .discord-btn {
+      background: rgba(88, 101, 242, 0.9);
+      
+      &:hover {
+        background: #5865f2;
+      }
     }
   }
 `;

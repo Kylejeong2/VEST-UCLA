@@ -8,17 +8,28 @@ import {
   Nav,
   CallToActions,
   BurgerMenu,
+  MobileOverlay,
+  MobileMenu,
 } from "./styles";
-import ic_bars from "../../../../public/svgs/ic_bars.svg";
 import { GetStartedButton } from "@/components/LandingPage";
 import AnimatedLink from "@/components/Common/AnimatedLink";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { links, menu } from "./constants";
+import { useState, useEffect } from "react";
+import { links } from "./constants";
 import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <Wrapper>
       <Inner>
@@ -32,21 +43,40 @@ const Header = () => {
               priority
             />
           </Link>
-          <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
-            <motion.div
-              variants={menu}
-              animate={isOpen ? "open" : "closed"}
-              initial="closed"
-            ></motion.div>
-            <Image src={ic_bars} alt="bars" />
+          <BurgerMenu onClick={() => setIsOpen(!isOpen)} className={isOpen ? 'open' : ''}>
+            <span />
+            <span />
+            <span />
           </BurgerMenu>
         </LogoContainer>
-        <Nav className={isOpen ? "active" : ""}>
+
+        <MobileOverlay className={isOpen ? 'active' : ''} onClick={closeMenu} />
+        <MobileMenu className={isOpen ? 'active' : ''}>
+          <Nav>
+            {links.map((link, i) => (
+              <AnimatedLink key={i} title={link.linkTo} url={link.url} />
+            ))}
+          </Nav>
+          <CallToActions>
+            <a
+              href="https://discord.gg/PTGgbFvm9t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="discord-btn"
+              onClick={closeMenu}
+            >
+              Join Discord
+            </a>
+            <GetStartedButton padding="0.75rem" />
+          </CallToActions>
+        </MobileMenu>
+
+        <Nav className="desktop">
           {links.map((link, i) => (
             <AnimatedLink key={i} title={link.linkTo} url={link.url} />
           ))}
         </Nav>
-        <CallToActions className={isOpen ? "active" : ""}>
+        <CallToActions className="desktop">
           <a
             href="https://discord.gg/PTGgbFvm9t"
             target="_blank"
