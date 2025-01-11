@@ -2,23 +2,22 @@ export const menu = {
   open: {
     width: "250px",
     height: "300px",
-    top: "-25px",
-    right: "-25px",
-    transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
+    top: "-15px",
+    right: "-15px",
+    transition: { duration: 0.3, type: "spring", stiffness: 200, damping: 30 }
   },
-
   closed: {
-    width: "55px",
-    height: "40px",
+    width: "45px",
+    height: "45px",
     top: "0px",
-    right: "-4px",
-    transition: {
-      duration: 0.75,
-      delay: 0.35,
-      type: "tween",
-      ease: [0.76, 0, 0.24, 1],
-    },
-  },
+    right: "0px",
+    transition: { 
+      duration: 0.3,
+      type: "spring",
+      stiffness: 200,
+      damping: 30
+    }
+  }
 };
 export const links = [
   {
