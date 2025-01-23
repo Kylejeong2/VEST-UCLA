@@ -25,6 +25,7 @@
     "@splinetool/react-spline": "^2.2.6",
     "@studio-freight/react-lenis": "^0.0.38",
     "@tanstack/react-table": "^8.11.2",
+    "@uploadthing/react": "^7.1.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",
@@ -38,9 +39,12 @@
     "react-dom": "^18.2.0",
     "react-use-measure": "^2.1.1",
     "sharp": "^0.33.5",
+    "sonner": "^1.7.2",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
+    "uploadthing": "^7.4.4",
+    "use-debounce": "^10.0.4",
     "zod": "^3.24.1"
   },
   "devDependencies": {

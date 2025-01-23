@@ -56,6 +56,9 @@ const Header = () => {
             {links.map((link, i) => (
               <AnimatedLink key={i} title={link.linkTo} url={link.url} />
             ))}
+            <Link href="/hire" className="text-white hover:text-gray-300 transition-colors">
+              Hire Us
+            </Link>
           </Nav>
           <CallToActions>
             <a
@@ -75,6 +78,9 @@ const Header = () => {
           {links.map((link, i) => (
             <AnimatedLink key={i} title={link.linkTo} url={link.url} />
           ))}
+          <Link href="/hire" className="text-white hover:text-gray-300 transition-colors">
+            Hire Us
+          </Link>
         </Nav>
         <CallToActions className="desktop">
           <a

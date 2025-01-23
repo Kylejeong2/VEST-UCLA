@@ -74,4 +74,36 @@ model Application {
   
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+}
+
+model Member {
+  id              String   @id @default(uuid())
+  clerkId         String   @unique  // Clerk user ID
+  firstName       String
+  lastName        String?
+  slug            String   @unique // for the URL (first-last)
+  email           String?   @unique
+  headshot        String?   // URL to image
+  description     String?   @db.Text
+  resumeUrl       String?
+  linkedinUrl     String?
+  projects        Json[]   // Array of project objects
+  applicationResponses Json? // Their application responses
+  skills          String[] // Array of skills
+  isAvailable     Boolean  @default(true)
+  lookingFor      String? // full time, summer internship fall internship etc
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  videos          Video[]
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  url         String
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  member      Member   @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  memberId    String
 } 
