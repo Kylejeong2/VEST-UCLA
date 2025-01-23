@@ -1,10 +1,17 @@
 import Layout from "@/components/Layout";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "VEST @ UCLA",
-  description: "Building the future of entrepreneurship",
+  description: "Scaling builders at UCLA",
 };
 
 export default function RootLayout({
@@ -13,10 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <Layout>{children}</Layout>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          {/* <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn> */}
+          <Layout>{children}</Layout>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

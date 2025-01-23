@@ -1,5 +1,8 @@
 import Image from "next/image";
 import ic_copyright from "../../../../public/svgs/ic_copyright.svg";
+import { SignInButton } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
+import Link from "next/link";
 
 const linksArr = [
   {
@@ -29,9 +32,12 @@ import {
   CopyRight,
   ManifestoLinkContainer,
   ManifestoLink,
+  SignInButton as StyledSignInButton,
 } from "./styles";
 
 const Footer = () => {
+  const { isSignedIn } = useAuth();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -87,9 +93,17 @@ const Footer = () => {
             <ManifestoLinkContainer>
               <ManifestoLink href="https://elderly-harpymimus-3b1.notion.site/VEST-Manifesto-15e069ddeded80378d36c63dc706a1b9" target="_blank">
                 VEST Manifesto
-            </ManifestoLink>
-          </ManifestoLinkContainer>
-
+              </ManifestoLink>
+              {isSignedIn ? (
+                <Link href="/admin" passHref>
+                  <StyledSignInButton as="a">Admin Panel</StyledSignInButton>
+                </Link>
+              ) : (
+                <SignInButton mode="modal">
+                  <StyledSignInButton>Member Sign In</StyledSignInButton>
+                </SignInButton>
+              )}
+            </ManifestoLinkContainer>
 
           </FooterMiddle>
           <FooterBottom>
