@@ -7,15 +7,26 @@ import Link from "next/link";
 const linksArr = [
   {
     title: "About",
-    links: ["Program", "Team", "Mission"],
+    links: [
+      { text: "Program", type: "internal" },
+      { text: "Team", type: "external", url: "https://www.vestucla.com/team" }, //tentative based on merge
+      { text: "Mission", type: "external", url: "https://elderly-harpymimus-3b1.notion.site/VEST-Manifesto-15e069ddeded80378d36c63dc706a1b9" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Timeline", "FAQ", "Apply Now"],
+    links: [
+      { text: "Timeline", type: "internal" },
+      { text: "FAQ", type: "internal" },
+      { text: "Apply Now", type: "internal" },
+    ],
   },
   {
     title: "Contact",
-    links: ["Join Us", "Email", "LinkedIn"],
+    links: [
+      { text: "Email", type: "external", url: "mailto:bruinventurelab@gmail.com" },
+      { text: "LinkedIn", type: "external", url: "https://linkedin.com/company/vestucla" },
+    ],
   },
 ];
 
@@ -52,7 +63,6 @@ const Footer = () => {
     Program: "intro",
     Timeline: "timeline",
     FAQ: "faq",
-    "Join Us": "join",
     "Apply Now": "hero",
   };
 
@@ -77,12 +87,16 @@ const Footer = () => {
                     {l.links.map((link, i) => (
                       <li
                         key={i}
-                        onClick={() =>
-                          linkMap[link] && scrollToSection(linkMap[link])
-                        }
-                        className={linkMap[link] ? "clickable" : ""}
+                        onClick={() => {
+                          if (link.type === 'internal') {
+                            linkMap[link.text] && scrollToSection(linkMap[link.text]);
+                          } else {
+                            window.open(link.url, '_blank');
+                          }
+                        }}
+                        className={link.type === 'internal' ? (linkMap[link.text] ? "clickable" : "") : "clickable"}
                       >
-                        {link}
+                        {link.text}
                       </li>
                     ))}
                   </LinksContainer>
