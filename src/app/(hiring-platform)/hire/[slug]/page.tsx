@@ -6,48 +6,45 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Linkedin, Mail, FileText, ArrowLeft } from "lucide-react";
-
-interface Project {
-  title: string;
-  description: string;
-  demoUrl?: string;
-  imageUrl?: string;
-}
-
-interface Member {
-  id: string;
-  firstName: string;
-  lastName: string;
-  slug: string;
-  headshot: string;
-  description: string;
-  skills: string[];
-  isAvailable: boolean;
-  resumeUrl?: string;
-  linkedinUrl?: string;
-  email: string;
-  projects: Project[];
-  applicationResponses: Record<string, string>;
-}
+import { Linkedin, Mail, FileText, ArrowLeft, Loader2 } from "lucide-react";
+import { Member } from "@/lib/types/hiring";
 
 export default function MemberPage({ params }: { params: { slug: string } }) {
   const [member, setMember] = useState<Member | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch(`/api/members/${params.slug}`)
       .then((res) => res.json())
-      .then((data) => setMember(data));
+      .then((data) => {
+        setMember(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching member:", error);
+        setIsLoading(false);
+      });
   }, [params.slug]);
 
-  if (!member) return <div>Loading...</div>;
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto text-primary" />
+          <p className="text-white text-sm">Loading member profile...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!member) return null;
 
   return (
     <div className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
         <Link 
           href="/hire" 
-          className="inline-flex items-center text-gray-400 hover:text-white mb-8"
+          className="inline-flex items-center text-white hover:text-white mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to all members
@@ -66,7 +63,7 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
                 />
               </div>
 
-              <h1 className="text-2xl font-bold mb-2">
+              <h1 className="text-2xl font-bold mb-2 text-white">
                 {member.firstName} {member.lastName}
               </h1>
 
@@ -74,7 +71,11 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
                 <Badge className="mb-4 bg-green-500">Available</Badge>
               )}
 
-              <p className="text-gray-400 mb-6">{member.description}</p>
+              {member.lookingFor && (
+                <Badge className="mb-4 bg-blue-500">{member.lookingFor}</Badge>
+              )}
+
+              <p className="text-white mb-6">{member.description}</p>
 
               <div className="space-y-3">
                 {member.linkedinUrl && (
@@ -115,7 +116,7 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
           <div className="md:col-span-2 space-y-8">
             {/* Skills Section */}
             <Card className="bg-zinc-900 border-zinc-800 p-6">
-              <h2 className="text-xl font-semibold mb-4">Skills</h2>
+              <h2 className="text-xl font-semibold mb-4 text-white">Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {member.skills.map((skill) => (
                   <Badge key={skill} variant="secondary">
@@ -132,7 +133,7 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
                 {member.projects.map((project, index) => (
                   <Card key={index} className="bg-zinc-900 border-zinc-800 p-6">
                     <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <p className="text-white mb-4">{project.description}</p>
                     {project.imageUrl && (
                       <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                         <Image
@@ -156,14 +157,38 @@ export default function MemberPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
 
+            {/* Videos Section */}
+            {member.videos && member.videos.length > 0 && (
+              <div>
+                <h2 className="text-xl font-semibold mb-4">Demo Videos</h2>
+                <div className="space-y-6">
+                  {member.videos.map((video, index) => (
+                    <Card key={index} className="bg-zinc-900 border-zinc-800 p-6">
+                      <h3 className="text-lg font-semibold mb-2">{video.title}</h3>
+                      <div className="relative w-full aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          src={video.url.replace('watch?v=', 'embed/')}
+                          title={video.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="absolute top-0 left-0 w-full h-full"
+                        />
+                      </div>
+                      <p className="text-white">{video.description}</p>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Application Responses */}
             <Card className="bg-zinc-900 border-zinc-800 p-6">
-              <h2 className="text-xl font-semibold mb-4">Application Responses</h2>
+              <h2 className="text-xl font-semibold mb-4 text-white">Application Responses</h2>
               <div className="space-y-4">
-                {Object.entries(member.applicationResponses).map(([question, answer]) => (
+                {member.applicationResponses && Object.entries(member.applicationResponses).map(([question, answer]) => (
                   <div key={question}>
-                    <h3 className="font-medium text-gray-300 mb-2">{question}</h3>
-                    <p className="text-gray-400">{answer}</p>
+                    <h3 className="font-medium text-white mb-2">{question}</h3>
+                    <p className="text-white">{answer}</p>
                   </div>
                 ))}
               </div>

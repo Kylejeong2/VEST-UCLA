@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/db";
 
+/*
+    This route fetches the members from the DB so that they can be displayed on the hire page
+*/
+
 export async function GET() {
   try {
     const members = await prisma.member.findMany({
@@ -11,8 +15,6 @@ export async function GET() {
         slug: true,
         headshot: true,
         description: true,
-        skills: true,
-        isAvailable: true,
       },
     });
 

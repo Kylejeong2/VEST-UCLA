@@ -13,25 +13,15 @@ import { useRouter } from "next/navigation";
 import { UploadButton } from "@/components/ui/upload-button";
 import { toast } from "sonner";
 import Image from "next/image";
-
-interface Member {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  headshot: string;
-  description: string;
-  resumeUrl?: string;
-  linkedinUrl?: string;
-  projects: Array<{
-    title: string;
-    description: string;
-    demoUrl?: string;
-    imageUrl?: string;
-  }>;
-  skills: string[];
-  isAvailable: boolean;
-}
+import { Member } from "@/lib/types/hiring";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Video } from "@/lib/types/hiring";
 
 export default function ProfilePage() {
   const { user, isLoaded } = useUser();
@@ -125,12 +115,34 @@ export default function ProfilePage() {
     setMember({ ...member, projects: newProjects });
   };
 
+  const handleVideoChange = (index: number, field: string, value: any) => {
+    if (!member) return;
+    const currentVideos = member.videos || [];
+    const newVideos = [...currentVideos];
+    newVideos[index] = { ...newVideos[index], [field]: value };
+    setMember({ ...member, videos: newVideos });
+  };
+
   if (!isLoaded || !user) {
-    return <div className="text-white">Loading...</div>;
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto text-primary" />
+          <p className="text-white text-sm">Loading your profile...</p>
+        </div>
+      </div>
+    );
   }
 
   if (!member) {
-    return <div className="text-white">Setting up your profile...</div>;
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto text-primary" />
+          <p className="text-white text-sm">Setting up your profile...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -231,6 +243,28 @@ export default function ProfilePage() {
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                 </div>
               </div>
+              <div>
+                <label className="text-sm font-medium mb-2 block text-white">Looking For</label>
+                <Select
+                  value={member.lookingFor || ''}
+                  onValueChange={(value) => handleChange('lookingFor', value)}
+                >
+                  <SelectTrigger className="w-full bg-zinc-800 border-zinc-700 text-white">
+                    <SelectValue placeholder="Select..." />
+                  </SelectTrigger>
+                  <SelectContent className="bg-zinc-800 border-zinc-700">
+                    <SelectItem className="text-white" value=" ">Select...</SelectItem>
+                    <SelectItem className="text-white" value="Full-time">Full-time</SelectItem>
+                    <SelectItem className="text-white" value="Summer Internship">Summer Internship</SelectItem>
+                    <SelectItem className="text-white" value="Fall Internship">Fall Internship</SelectItem>
+                    <SelectItem className="text-white" value="Winter Internship">Winter Internship</SelectItem>
+                    <SelectItem className="text-white" value="Spring Internship">Spring Internship</SelectItem>
+                    <SelectItem className="text-white" value="Co-founder Role">Co-founder Role</SelectItem>
+                    <SelectItem className="text-white" value="Part-time">Part-time</SelectItem>
+                    <SelectItem className="text-white" value="Contract">Contract</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           </div>
         </Card>
@@ -305,7 +339,7 @@ export default function ProfilePage() {
 
           <Card className="p-6 bg-zinc-900 border-zinc-800">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-white">Skills</h2>
+              <h2 className="text-xl font-semibold text-white">Technical Skills</h2>
               <div className="text-sm text-white">Press Enter to add</div>
             </div>
             <div className="space-y-4">
@@ -325,7 +359,7 @@ export default function ProfilePage() {
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="cursor-pointer hover:bg-red-500/20 px-3 py-1 text-white"
+                    className="cursor-pointer hover:bg-red-500/20 px-3 py-1 text-black"
                     onClick={() => handleSkillRemove(skill)}
                   >
                     {skill}
@@ -402,6 +436,62 @@ export default function ProfilePage() {
                         const newProjects = [...member.projects];
                         newProjects.splice(index, 1);
                         handleChange('projects', newProjects);
+                      }}
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-zinc-900 border-zinc-800">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold text-white">Demo Videos</h2>
+              <Button
+                onClick={() => handleChange('videos', [
+                  ...(member.videos || []),
+                  { title: '', url: '', description: '' }
+                ])}
+                variant="outline"
+                className="border-zinc-700 hover:bg-zinc-800"
+              >
+                Add Video
+              </Button>
+            </div>
+            <div className="space-y-6">
+              {(member.videos || []).map((video, index) => (
+                <div key={index} className="p-4 bg-zinc-800/50 rounded-lg space-y-4">
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1 space-y-4">
+                      <Input
+                        value={video.title}
+                        onChange={(e) => handleVideoChange(index, 'title', e.target.value)}
+                        placeholder="Video Title"
+                        className="bg-zinc-800 border-zinc-700 text-white"
+                      />
+                      <Input
+                        value={video.url}
+                        onChange={(e) => handleVideoChange(index, 'url', e.target.value)}
+                        placeholder="YouTube URL"
+                        className="bg-zinc-800 border-zinc-700 text-white"
+                      />
+                      <Textarea
+                        value={video.description}
+                        onChange={(e) => handleVideoChange(index, 'description', e.target.value)}
+                        placeholder="Short description of what you're demonstrating"
+                        className="bg-zinc-800 border-zinc-700 text-white"
+                      />
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="hover:bg-red-500/20 -mt-1 text-white"
+                      onClick={() => {
+                        const newVideos = [...(member.videos || [])];
+                        newVideos.splice(index, 1);
+                        handleChange('videos', newVideos);
                       }}
                     >
                       <Trash2 className="w-4 h-4" />
