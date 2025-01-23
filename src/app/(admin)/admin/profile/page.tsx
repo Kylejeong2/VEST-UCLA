@@ -66,10 +66,25 @@ export default function ProfilePage() {
   }, [user?.id, user?.firstName, user?.lastName, user?.emailAddresses, user?.imageUrl]);
 
   useEffect(() => {
-    if (debouncedMember && !isSaving) {
-      handleSave();
-    }
-  }, [debouncedMember]);
+    const saveData = async () => {
+      if (debouncedMember && !isSaving) {
+        setIsSaving(true);
+        try {
+          await fetch('/api/members/me', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(debouncedMember),
+          });
+        } catch (error) {
+          console.error('Error saving profile:', error);
+        } finally {
+          setIsSaving(false);
+        }
+      }
+    };
+
+    saveData();
+  }, [debouncedMember, isSaving]);
 
   const handleSave = async () => {
     if (!member) return;
