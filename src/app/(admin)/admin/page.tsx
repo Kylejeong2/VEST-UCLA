@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import {
@@ -10,8 +10,23 @@ import {
   Settings,
   ChevronRight,
 } from "lucide-react";
+import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
+  const { isSignedIn } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isSignedIn) {
+      router.push('/sign-in?redirect_url=/admin');
+    }
+  }, [isSignedIn, router]);
+
+  if (!isSignedIn) {
+    return null; // Return nothing while redirecting
+  }
+
   return (
     <div className="flex-1 space-y-8 p-8 pt-6 bg-black text-white">
       <div className="flex items-center justify-between">
