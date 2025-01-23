@@ -8,6 +8,7 @@ import {
 } from '@clerk/nextjs'
 import "./globals.css";
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "VEST @ UCLA",
@@ -30,6 +31,7 @@ export default function RootLayout({
             <UserButton />
           </SignedIn> */}
           <Layout>{children}</Layout>
+          <Toaster position="top-right" theme="dark" />
         </body>
       </html>
     </ClerkProvider>

@@ -9,21 +9,22 @@ import {
   Search,
   Settings,
   ChevronRight,
+  UserCircle,
 } from "lucide-react";
-import { useAuth } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
-  const { isSignedIn } = useAuth();
+  const { isLoaded, user } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isSignedIn) {
+    if (isLoaded && !user) {
       router.push('/sign-in?redirect_url=/admin');
     }
-  }, [isSignedIn, router]);
+  }, [isLoaded, user, router]);
 
-  if (!isSignedIn) {
+  if (!isLoaded || !user) {
     return null; // Return nothing while redirecting
   }
 
@@ -89,6 +90,31 @@ export default function AdminPage() {
                 </div>
                 <div className="flex items-center text-sm text-white">
                   <span>Review applications</span>
+                  <ChevronRight className="w-4 h-4 ml-1" />
+                </div>
+              </div>
+              <ArrowRight className="w-5 h-5 text-primary dark:text-primary/90 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
+            </div>
+          </Card>
+        </Link>
+
+        <Link href="/admin/profile" className="block group">
+          <Card className="p-6 transition-all border bg-zinc-900 hover:bg-zinc-950 text-white border-zinc-800">
+            <div className="flex items-start justify-between">
+              <div className="space-y-3">
+                <div className="bg-primary/10 dark:bg-primary/20 w-fit p-3 rounded-lg">
+                  <UserCircle className="w-6 h-6 text-white dark:text-primary/90" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-semibold mb-1">
+                    Profile Management
+                  </h2>
+                  <p className="text-muted-foreground text-sm">
+                    Update your member profile, skills, and portfolio
+                  </p>
+                </div>
+                <div className="flex items-center text-sm text-white">
+                  <span>Manage profile</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
               </div>

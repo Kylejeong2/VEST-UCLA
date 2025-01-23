@@ -74,4 +74,23 @@ model Application {
   
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+}
+
+model Member {
+  id              String   @id @default(uuid())
+  clerkId         String   @unique  // Clerk user ID
+  firstName       String
+  lastName        String
+  slug            String   @unique // for the URL (first-last)
+  email           String   @unique
+  headshot        String   // URL to image
+  description     String   @db.Text
+  resumeUrl       String?
+  linkedinUrl     String?
+  projects        Json[]   // Array of project objects
+  applicationResponses Json // Their application responses
+  skills          String[] // Array of skills
+  isAvailable     Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 } 
