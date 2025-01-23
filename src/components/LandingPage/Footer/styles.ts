@@ -185,6 +185,14 @@ export const CopyRight = styled.div`
   }
 `;
 
+export const ManifestoLinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 0;
+`;
 
 export const ManifestoLink = styled.a`
   color: #ffffff;
@@ -202,21 +210,19 @@ export const ManifestoLink = styled.a`
   }
 `;
 
-export const ManifestoLinkContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  margin-top: 0; /* Reset any top margin */
-  a {
-    color: #efefef;
-    font-size: 1rem;
-    font-weight: 400;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-    }
+export const SignInButton = styled.button`
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
   }
 `;
