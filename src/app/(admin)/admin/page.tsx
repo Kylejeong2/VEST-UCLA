@@ -10,42 +10,21 @@ import {
   Settings,
   ChevronRight,
 } from "lucide-react";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
   const { isSignedIn } = useAuth();
-  const { user } = useUser();
   const router = useRouter();
 
   useEffect(() => {
     if (!isSignedIn) {
       router.push('/sign-in?redirect_url=/admin');
-      return;
     }
+  }, [isSignedIn, router]);
 
-    // Check if user is approved (stored in public metadata)
-    const isApproved = user?.publicMetadata?.isApproved;
-    if (!isApproved) {
-      router.push('/');
-    }
-  }, [isSignedIn, router, user]);
-
-  if (!isSignedIn || !user?.publicMetadata?.isApproved) {
-    return (
-      <div className="flex-1 space-y-8 p-8 pt-6 bg-black text-white">
-        <div className="flex items-center justify-center h-[80vh]">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold mb-2">Access Restricted</h1>
-            <p className="text-gray-400">
-              {!isSignedIn 
-                ? "Please sign in to access the admin panel"
-                : "Your account is pending approval. Please contact an administrator."}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
+  if (!isSignedIn) {
+    return null; // Return nothing while redirecting
   }
 
   return (
