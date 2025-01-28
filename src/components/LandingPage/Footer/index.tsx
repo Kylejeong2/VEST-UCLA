@@ -113,9 +113,9 @@ const Footer = () => {
                   <StyledSignInButton as="a">Admin Panel</StyledSignInButton>
                 </Link>
               ) : (
-                <SignInButton mode="modal">
-                  <StyledSignInButton>Member Sign In</StyledSignInButton>
-                </SignInButton>
+                <Link href="/sign-in" className="text-white hover:text-gray-300 transition-colors">
+                  <StyledSignInButton as="a">Member Sign In</StyledSignInButton>
+                </Link>
               )}
             </ManifestoLinkContainer>
 
