@@ -36,7 +36,7 @@ const Header = () => {
         <LogoContainer>
           <Link href="/">
             <Image
-              src="https://utfs.io/f/S5FODHw5IM4mVeHOqfYhcQ2vJK1dAe5mOnIjiySl03wFfWDM"
+              src="https://fg5si9hh45.ufs.sh/f/S5FODHw5IM4mHzO2YaA3KchNgqDrHkFn5i2GJTb6Aove8Rp1"
               width={70}
               height={70}
               alt="VEST logo"

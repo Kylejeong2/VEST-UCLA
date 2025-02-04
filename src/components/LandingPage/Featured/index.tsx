@@ -65,7 +65,7 @@ const Featured = () => {
               {[1, 2].map((_, idx) => (
                 <Image 
                   key={idx}
-                  src="https://utfs.io/f/S5FODHw5IM4mwsX5LIevUF9XL70Anhsk5zdKxtYboJwp6rDP"
+                  src="https://fg5si9hh45.ufs.sh/f/S5FODHw5IM4mqjIDedN97vgMEzdjwDTFkGQpSeZK4nOCHcmy"
                   alt="Companies we're working with"
                   width={3600}
                   height={600}
