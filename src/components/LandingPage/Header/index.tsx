@@ -11,14 +11,15 @@ import {
   MobileOverlay,
   MobileMenu,
 } from "./styles";
-import { GetStartedButton } from "@/components/LandingPage";
 import AnimatedLink from "@/components/Common/AnimatedLink";
 import { useState, useEffect } from "react";
 import { links } from "./constants";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isOpen) {
@@ -36,7 +37,7 @@ const Header = () => {
         <LogoContainer>
           <Link href="/">
             <Image
-              src="https://fg5si9hh45.ufs.sh/f/S5FODHw5IM4mHzO2YaA3KchNgqDrHkFn5i2GJTb6Aove8Rp1"
+              src="/images/VEST-Logo-transbg.png"
               width={70}
               height={70}
               alt="VEST logo"
@@ -54,45 +55,33 @@ const Header = () => {
         <MobileMenu className={isOpen ? 'active' : ''}>
           <Nav>
             {links.map((link, i) => (
-              <AnimatedLink key={i} title={link.linkTo} url={link.url} />
+              <Link 
+                key={i} 
+                href={link.url}
+                className={`text-white hover:text-emerald-500 transition-colors ${
+                  pathname === link.url ? 'text-emerald-500 font-medium' : ''
+                }`}
+                onClick={closeMenu}
+              >
+                {link.linkTo}
+              </Link>
             ))}
-            <Link href="/hire" className="text-white hover:text-gray-300 transition-colors">
-              Hire Us
-            </Link>
           </Nav>
-          <CallToActions>
-            <a
-              href="https://discord.gg/PTGgbFvm9t"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="discord-btn"
-              onClick={closeMenu}
-            >
-              Join Discord
-            </a>
-            <GetStartedButton padding="0.75rem" />
-          </CallToActions>
         </MobileMenu>
 
         <Nav className="desktop">
           {links.map((link, i) => (
-            <AnimatedLink key={i} title={link.linkTo} url={link.url} />
+            <Link 
+              key={i} 
+              href={link.url}
+              className={`text-white hover:text-emerald-500 transition-colors ${
+                pathname === link.url ? 'text-emerald-500 font-medium' : ''
+              }`}
+            >
+              {link.linkTo}
+            </Link>
           ))}
-          <Link href="/hire" className="text-white hover:text-gray-300 transition-colors">
-            Hire Us
-          </Link>
         </Nav>
-        <CallToActions className="desktop">
-          <a
-            href="https://discord.gg/PTGgbFvm9t"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="discord-btn"
-          >
-            Join Discord
-          </a>
-          <GetStartedButton padding="0.5rem 0.75rem" />
-        </CallToActions>
       </Inner>
     </Wrapper>
   );

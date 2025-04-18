@@ -25,25 +25,16 @@ export default function AdminPage() {
   }, [isLoaded, user, router]);
 
   if (!isLoaded || !user) {
-    return null; // Return nothing while redirecting
+    return null;
   }
 
   return (
-    <div className="flex-1 space-y-8 p-8 pt-6 bg-black text-white">
-      <div className="flex items-center justify-between">
-        <div className="space-y-1">
-          <h1 className="text-4xl font-bold tracking-tight">Admin Dashboard</h1>
-          <p className="text-muted-foreground">
-            All of VEST's internal tools
-          </p>
-        </div>
-        <div className="flex items-center space-x-2">
-          <Link href="/admin/settings">
-            <div className="p-2 rounded-full hover:bg-accent transition-colors">
-              <Settings className="w-5 h-5 text-muted-foreground" />
-            </div>
-          </Link>
-        </div>
+    <div className="p-8">
+      <div className="space-y-1 mb-8">
+        <h1 className="text-4xl font-bold tracking-tight">Admin Dashboard</h1>
+        <p className="text-muted-foreground">
+          All of VEST's internal tools
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
