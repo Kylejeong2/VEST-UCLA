@@ -46,7 +46,7 @@ const Featured = () => {
   return (
     <Wrapper>
       <Inner>
-        <h2>Winter 2025 Companies</h2>
+        <h2>Trusted by Leading VCs, Startups, and Companies</h2>
         <ImageContainer>
           <div className="relative overflow-hidden">
             <motion.div
@@ -65,7 +65,7 @@ const Featured = () => {
               {[1, 2].map((_, idx) => (
                 <Image 
                   key={idx}
-                  src="https://fg5si9hh45.ufs.sh/f/S5FODHw5IM4mqjIDedN97vgMEzdjwDTFkGQpSeZK4nOCHcmy"
+                  src="/images/Logo-Banner-white.png"
                   alt="Companies we're working with"
                   width={3600}
                   height={600}
