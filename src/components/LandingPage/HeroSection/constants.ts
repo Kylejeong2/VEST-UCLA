@@ -1,11 +1,11 @@
 // For desktop
-export const phrases = ["VEST @ UCLA"];
+export const phrases = ["Welcome to VEST at UCLA."];
 export const paragraphPhrases = [
   "Scaling UCLA's startup/builder ecosystem. A community of builders.",
 ];
 
 // For mobile
-export const mobilePhrases = ["VEST @ UCLA"];
+export const mobilePhrases = ["Welcome to VEST at UCLA."];
 export const mobileParagraphPhrases = [
   "Scaling UCLA's startup/builder ecosystem. A community of builders.",
 ];

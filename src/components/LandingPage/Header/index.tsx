@@ -37,7 +37,7 @@ const Header = () => {
         <LogoContainer>
           <Link href="/">
             <Image
-              src="/images/VEST-Logo-transbg.png"
+              src="/images/VEST-logo-white.svg"
               width={70}
               height={70}
               alt="VEST logo"

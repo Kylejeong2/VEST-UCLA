@@ -49,16 +49,23 @@ export const HeroTextContainer = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   h1 {
-    font-size: 4rem;
-    font-weight: 400;
+    font-size: 6rem;
+    font-weight: 600;
+    padding: 0 16rem;
+    line-height: 1;
+    color: #4299e1;
   }
 
   p {
     max-width: 41.75rem;
-    color: #bdbdbd;
-    font-size: 1.25rem;
+    color: #efefef;
+    font-size: 2rem;
     font-weight: 400;
     margin: 0 auto;
   }
@@ -67,41 +74,90 @@ export const HeroTextContainer = styled.div`
     gap: 1rem;
     padding-bottom: 1.5rem;
     h1 {
-      font-size: 2.75rem;
-      font-weight: 400;
+      font-size: 6rem;
+      font-weight: 600;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 2rem;
+      line-height: 1.75rem;
     }
   }
 `;
 
 export const ContentContainer = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 4rem;
   width: 100%;
   min-height: calc(100vh - 14.5rem);
 
-  .left-content {
-    width: 50vw;
+  .top-content {
+    width: 100%;
     padding: 0 4rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .bottom-content {
+    width: 80%;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .left-content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    text-align: left;
+  }
+
+  .right-content {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
     min-height: auto;
 
-    .left-content {
+    .top-content {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .bottom-content {
       width: 100%;
       padding: 3rem 2rem;
       align-items: center;
       text-align: center;
+    }
+
+    .left-content {
+      width: 60%;
+      text-align: left;
+      justify-content: left;
+      margin-top: 2rem;
+    }
+
+    .right-content {
+      justify-content: center;
+      width: 40%;
+      margin-top: 2rem;
     }
   }
 `;
@@ -120,7 +176,7 @@ export const Divider = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 50vw;
+  width: 100%;
   position: relative;
   height: calc(100vh - 14.5rem);
   border-radius: 50%;
