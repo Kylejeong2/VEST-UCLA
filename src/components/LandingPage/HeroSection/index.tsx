@@ -3,21 +3,20 @@ import Image from "next/image";
 import {
   Wrapper,
   Inner,
-  Pill,
   HeroTextContainer,
   ContentContainer,
-  Divider,
-  ImageContainer,
+  BlurCircle,
 } from "./styles";
-import ic_chevron_right from "../../../../public/svgs/ic_chevron_right.svg";
 import { GetStartedButton } from "@/components/LandingPage";
 import MaskText from "@/components/Common/MaskText";
 import { useIsMobile } from "../../../../libs/useIsMobile";
 import {
   mobileParagraphPhrases,
   mobilePhrases,
+  mobileSubPhrases,
   paragraphPhrases,
   phrases,
+  subPhrases,
 } from "./constants";
 import Spline from "@splinetool/react-spline";
 
@@ -43,10 +42,12 @@ const HeroSection = () => {
             <div className="left-content">
               {isMobile ? (
                 <>
+                  <MaskText phrases={mobileSubPhrases} tag="h2" />
                   <MaskText phrases={mobileParagraphPhrases} tag="p" />
                 </>
               ) : (
                 <>
+                  <MaskText phrases={subPhrases} tag="h2" />
                   <MaskText phrases={paragraphPhrases} tag="p" />
                 </>
               )}
@@ -62,6 +63,7 @@ const HeroSection = () => {
             <Spline scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" />
           </ImageContainer> */}
       </Inner>
+      <BlurCircle />
     </Wrapper>
   );
 };

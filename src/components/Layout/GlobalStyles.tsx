@@ -6,8 +6,8 @@ export const GlobalStyles = styled.createGlobalStyle`
   :root {
     --Background: #070606;
     --white: #fff;
-    --light-gray: #dcdcdc;
-    --link-color: #bdbdbd;
+    --light-gray: #efefef;
+    --link-color: #efefef;
     --green: #4299e1;
     --emerald: #4299e1;
   }
@@ -23,7 +23,7 @@ export const GlobalStyles = styled.createGlobalStyle`
   body {
     max-width: 100vw;
     overflow-x: hidden;
-    font-family: "SF Pro Display", sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--Background);
     color: var(--white);
     scroll-snap-type: y mandatory;

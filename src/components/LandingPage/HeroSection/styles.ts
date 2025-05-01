@@ -44,6 +44,18 @@ export const Pill = styled.div`
   }
 `;
 
+export const BlurCircle = styled.div`
+  position: absolute;
+  top: -800px;
+  left: -400px;
+  width: 1270px;
+  height: 1270px;
+  background-color: #1e3a8a;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: 0;
+`;
+
 export const HeroTextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,19 +65,33 @@ export const HeroTextContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 100;
+  font-family: "Inter", sans-serif;
+  line-height: 1.25;
+  white-space: pre-line;
 
   h1 {
-    font-size: 6rem;
+    font-size: 7rem;
     font-weight: 600;
-    padding: 0 16rem;
+    padding: 0 8rem;
     line-height: 1;
     color: #4299e1;
+    margin-top: 8rem;
+  }
+
+  h2 {
+    max-width: 41.75rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #4299e1;
+    margin: 0 auto;
+    margin-bottom: 1rem;
   }
 
   p {
     max-width: 41.75rem;
     color: #efefef;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 400;
     margin: 0 auto;
   }
@@ -74,13 +100,20 @@ export const HeroTextContainer = styled.div`
     gap: 1rem;
     padding-bottom: 1.5rem;
     h1 {
-      font-size: 6rem;
+      font-size: 7rem;
       font-weight: 600;
+      padding: 0 4rem;
+      line-height: 1;
+      white-space: pre-line;
+    } 
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 2rem;
-      line-height: 1.75rem;
+      font-size: 1.75rem;
     }
   }
 `;

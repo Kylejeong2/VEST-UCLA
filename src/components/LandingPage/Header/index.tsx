@@ -58,8 +58,8 @@ const Header = () => {
               <Link 
                 key={i} 
                 href={link.url}
-                className={`text-white hover:text-emerald-500 transition-colors ${
-                  pathname === link.url ? 'text-emerald-500 font-medium' : ''
+                className={`text-white hover:text-blue-500 transition-colors ${
+                  pathname === link.url ? 'text-blue-500 font-medium' : ''
                 }`}
                 onClick={closeMenu}
               >
@@ -74,8 +74,8 @@ const Header = () => {
             <Link 
               key={i} 
               href={link.url}
-              className={`text-white hover:text-emerald-500 transition-colors ${
-                pathname === link.url ? 'text-emerald-500 font-medium' : ''
+              className={`text-white hover:text-blue-500 transition-colors ${
+                pathname === link.url ? 'text-blue-500 font-medium' : ''
               }`}
             >
               {link.linkTo}

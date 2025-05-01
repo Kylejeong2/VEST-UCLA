@@ -4,7 +4,13 @@ import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   padding: 1rem 0;
-  border-bottom: 0.5px solid #3d3d3d;
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
 
   @media (max-width: 768px) {
     padding: 0.75rem 0;
@@ -45,7 +51,7 @@ export const BurgerMenu = styled.div`
       position: absolute;
       height: 2px;
       width: 100%;
-      background: var(--emerald);
+      background: var(--blue);
       border-radius: 2px;
       opacity: 1;
       left: 0;
@@ -155,7 +161,7 @@ export const Nav = styled.div`
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--emerald);
+      background: var(--blue);
       transition: width 0.3s ease;
     }
     
@@ -193,12 +199,12 @@ export const Nav = styled.div`
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--emerald);
+        background: var(--blue);
         transition: width 0.3s ease;
       }
 
       &:hover {
-        color: var(--emerald);
+        color: var(--blue);
         &:after {
           width: 2rem;
         }
@@ -219,7 +225,7 @@ export const AbsoluteLinks = styled(Link)`
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--emerald);
+    color: var(--blue);
   }
 `;
 
