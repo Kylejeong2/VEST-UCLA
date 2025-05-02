@@ -15,9 +15,9 @@ export default function Home() {
         <HeroSection />
       </div>
       <Featured />
-      <WhatYouDo />
+      {/* <WhatYouDo /> */}
       <Building />
-      <TrustedBy />
+      {/* <TrustedBy /> */}
       <Learn />
       <div id="intro">
         <IntroSection />

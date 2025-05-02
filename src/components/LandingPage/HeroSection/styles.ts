@@ -11,6 +11,8 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 `;
 
 export const Inner = styled.div`
@@ -45,7 +47,7 @@ export const Pill = styled.div`
 `;
 
 export const BlurCircle = styled.div`
-  position: absolute;
+  position: fixed;
   top: -800px;
   left: -400px;
   width: 1270px;
@@ -53,7 +55,8 @@ export const BlurCircle = styled.div`
   background-color: #1e3a8a;
   border-radius: 50%;
   filter: blur(250px);
-  z-index: 0;
+  z-index: -1;
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
 `;
 
 export const HeroTextContainer = styled.div`

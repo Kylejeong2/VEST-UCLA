@@ -4,6 +4,8 @@ import { styled } from "styled-components";
 export const Wrapper = styled.footer`
   padding-bottom: 3.5rem;
   padding-top: 3.5rem;
+  position: relative;
+  z-index: 2;
 `;
 
 export const Inner = styled.main`

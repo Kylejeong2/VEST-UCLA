@@ -2,19 +2,21 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-  margin-top: 11.25rem;
-  background: #1a1a1a;
+  margin-top: 5rem;
+  background: rgba(0, 0, 0, 0);
   padding: 4rem 0;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 768px) {
-    margin-top: 6.25rem;
+    margin-top: 4rem;
   }
 `;
 
 export const Inner = styled.div`
   width: 90%;
   max-width: 1440px;
-  margin: 0 auto 8.25rem;
+  margin: 0 auto 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,30 +26,82 @@ export const Inner = styled.div`
   }
 `;
 
+export const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  min-height: calc(100vh - 14.5rem);
+  padding: 0 4rem;
+
+  .left-content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .right-content {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    min-height: auto;
+
+    .left-content {
+      width: 100%;
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    .right-content {
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+`;
+
 export const Header = styled.header`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
-  max-width: 56rem;
-  margin: 0 auto 7.75rem;
-  text-align: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  font-family: "Inter", sans-serif;
 
   h1 {
-    font-size: 4.75rem;
-    font-weight: 400;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--green);
+  }
+
+  /* This is important for MaskText to render horizontally */
+  div[class*="Body"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   p {
     max-width: 41.75rem;
-    color: var(--link-color);
+    color: var(--light-gray);
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.75rem;
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 5rem;
+    flex-direction: column;
 
     h1 {
       font-size: 2.25rem;
@@ -61,7 +115,6 @@ export const Header = styled.header`
 `;
 
 export const BannerCtn = styled.div`
-  margin-bottom: 5rem;
   width: 100%;
   position: relative;
   width: 100%;
@@ -82,11 +135,13 @@ export const BannerCtn = styled.div`
 export const Edges = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 4rem;
+  margin: 0 4rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin: 0 2rem;
   }
 `;
 
@@ -94,6 +149,7 @@ export const Edge = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.62rem;
+  font-family: "Inter", sans-serif;
 
   p {
     max-width: 26rem;
@@ -108,10 +164,11 @@ export const Title = styled.div`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  font-family: "Inter", sans-serif;
 
   h3 {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 `;
 
@@ -119,6 +176,7 @@ export const BriefNote = styled.div`
   max-height: 54.75rem;
   padding: 8.25rem 4.5rem;
   background: var(--emerald);
+  font-family: "Inter", sans-serif;
 
   p {
     color: var(--Background, #070606);

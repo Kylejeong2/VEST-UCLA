@@ -4,6 +4,8 @@ import card_grid from "../../../../public/images/card_grid.png";
 
 export const Wrapper = styled.section`
   padding-top: 7.75rem;
+  position: relative;
+  z-index: 2;
 `;
 
 export const Inner = styled.div`

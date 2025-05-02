@@ -4,7 +4,9 @@ import { styled } from 'styled-components';
 
 export const Wrapper = styled.section`
   padding: 4rem 0;
-  background: var(--Background);
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  z-index: 3; /* Higher than Building's z-index of 2 */
 `;
 
 export const Inner = styled.div`

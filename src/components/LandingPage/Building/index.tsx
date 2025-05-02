@@ -4,6 +4,7 @@ import {
   Wrapper,
   Inner,
   Header,
+  HeaderContainer,
   // BannerCtn,
   Edges,
   Edge,
@@ -28,19 +29,24 @@ const Building = () => {
   return (
     <Wrapper>
       <Inner>
-        <Header>
-          {isMobile ? (
-            <>
-              <MaskText phrases={mobileHeaderPhrase} tag="h1" />
-              <MaskText phrases={mobileParagraphPhrase} tag="p" />
-            </>
-          ) : (
-            <>
-              <MaskText phrases={desktopHeaderPhrase} tag="h1" />
-              <MaskText phrases={desktopParagraphPhrase} tag="p" />
-            </>
-          )}
-        </Header>
+        <HeaderContainer>
+          <Header>
+            <div className="left-content">
+              {isMobile ? (
+                <MaskText phrases={mobileHeaderPhrase} tag="h1" />
+              ) : (
+                <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+              )}
+            </div>
+            <div className="right-content">
+              {isMobile ? (
+                <MaskText phrases={mobileParagraphPhrase} tag="p" />
+              ) : (
+                <MaskText phrases={desktopParagraphPhrase} tag="p" />
+              )}
+            </div>
+          </Header>
+        </HeaderContainer>
         {/* <BannerCtn> // change this later
           <RevealCover />
           <Div
