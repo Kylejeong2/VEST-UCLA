@@ -14,7 +14,8 @@ import {
   BoardSection,
   ClassSection,
   MembersGrid,
-  BlurCircle
+  BlurCircle,
+  BoardCard
 } from "./styles";
 
 // Sample board members data
@@ -63,13 +64,15 @@ const Team = () => {
           </GroupPhotoContainer>
 
           <TeamDescription>
+            <h2>
+              Talent that drives impact.
+            </h2>
             <p>
-              <strong className="text-blue-400 text-xl block mb-4">Talent that drives impact.</strong>
               VEST brings together 40 of UCLA's most talented students, carefully
               selected through a competitive process where fewer than 1 in 10
               applicants are accepted into our club.
             </p>
-            <p className="mt-4">
+            <p>
               Our members have worked at industry leaders such as Google, Snap,
               Paramount, Amazon, Jane Street, Cursor, Etched, Northrop, Deloitte,
               Mercor, Anduril, Stripe, CAT, and Leidos.
@@ -80,13 +83,14 @@ const Team = () => {
             <SectionTitle className="text-left">Board</SectionTitle>
             <MembersGrid>
               {boardMembers.map((member) => (
-                <Board
-                  key={member.id}
-                  firstName={member.firstName}
-                  lastName={member.lastName}
-                  role={member.role}
-                  imageSrc={member.imageSrc}
-                />
+                <BoardCard key={member.id}>
+                  <Board
+                    firstName={member.firstName}
+                    lastName={member.lastName}
+                    role={member.role}
+                    imageSrc={member.imageSrc}
+                  />
+                </BoardCard>
               ))}
             </MembersGrid>
           </BoardSection>
@@ -95,12 +99,13 @@ const Team = () => {
             <SectionTitle className="text-left">2024-2025 Class</SectionTitle>
             <MembersGrid>
               {classMembers.map((member) => (
-                <Builder
-                  key={member.id}
-                  firstName={member.firstName}
-                  lastName={member.lastName}
-                  imageSrc={member.imageSrc}
-                />
+                <BoardCard key={member.id}>
+                  <Builder
+                    firstName={member.firstName}
+                    lastName={member.lastName}
+                    imageSrc={member.imageSrc}
+                  />
+                </BoardCard>
               ))}
             </MembersGrid>
           </ClassSection>

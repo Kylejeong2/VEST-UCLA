@@ -43,6 +43,10 @@ export const Header = styled.header`
       font-size: 2.25rem;
     }
 
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
     p {
       font-size: 1rem;
       line-height: 1.5rem;

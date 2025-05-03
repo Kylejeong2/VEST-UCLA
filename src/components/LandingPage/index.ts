@@ -13,3 +13,4 @@ export { default as Footer } from "./Footer";
 export { default as Preloader } from "./Preloader";
 export { default as MaskText } from "../Common/MaskText";
 export { default as TrustedBy } from "./TrustedBy";
+export { default as Recent } from "./Recent";

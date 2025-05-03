@@ -50,8 +50,12 @@ const Events = () => {
         <ContentContainer>
           <EventsHeader>
             <h1>Events</h1>
+            <h2>Bringing founders, ideas, and members together.</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Sodalis interdum pellentesque lorem ipsum dolor.
+            At VEST, our events are designed to fuel inspiration, spark connection, and deepen your understanding of the startup world. From founder talks and VC panels to startup office visits, VEST gives members direct access to the people and places shaping tech. 
+            </p>
+            <p>
+            Our events are where insight meets connection, and big ideas begin.
             </p>
           </EventsHeader>
           

@@ -20,7 +20,7 @@ export const Inner = styled.div`
   background-position: top center;
   background-size: cover;
   width: 100%;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   
   @media (max-width: 768px) {
     padding: 2rem 0;
@@ -38,28 +38,47 @@ export const EventsHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   margin-bottom: 4rem;
   
   h1 {
-    font-size: 4rem;
+    font-size: 7rem;
+    font-weight: 600;
+    padding: 0 8rem;
+    line-height: 1;
+    color: #4299e1;
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  h2 {
+    width: 100%;
+    font-size: 1.75rem;
     font-weight: 600;
     color: #4299e1;
-    margin-bottom: 1.5rem;
+    margin: 0 auto;
+    margin-bottom: 0.75rem;
+    text-align: left;
   }
   
   p {
-    max-width: 600px;
+    width: 100%;
     color: #efefef;
-    font-size: 1.25rem;
-    line-height: 1.6;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin: 0 auto;
+    text-align: left;
   }
   
   @media (max-width: 768px) {
     margin-bottom: 2.5rem;
     
     h1 {
-      font-size: 2.5rem;
+      font-size: 7rem;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
     }
     
     p {
