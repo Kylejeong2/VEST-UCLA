@@ -5,6 +5,19 @@ import { useAuth } from "@clerk/nextjs";
 import React from "react";
 import Link from "next/link";
 
+type InternalLink = {
+  text: string;
+  type: "internal";
+};
+
+type ExternalLink = {
+  text: string;
+  type: "external";
+  url: string;
+};
+
+type LinkItem = InternalLink | ExternalLink;
+
 const linksArr = [
   {
     title: "Navigation",
@@ -14,7 +27,7 @@ const linksArr = [
       { text: "Events", type: "internal" },
       { text: "About", type: "internal" },
       { text: "Join Us", type: "internal" },
-    ],
+    ] as LinkItem[],
   },
 ];
 
@@ -73,7 +86,7 @@ const Footer = () => {
                           </Link>
                         ) : (
                           <a
-                            href={link.url}
+                            href={link.type === "external" ? link.url : "#"}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer hover:text-brand-100"
