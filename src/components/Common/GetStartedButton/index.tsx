@@ -16,7 +16,7 @@ const GetStartedButton = ({ padding }: { padding: string }) => {
         fontSize: "1.75rem",
         fontWeight: "400",
       }}
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdq-_RVgDjN3ePFlqIbCoAJEy6Msy7YZ2MTPIItZgR5oji3Tw/viewform"
+      href="/about"
     >
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         What We Do

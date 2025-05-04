@@ -56,7 +56,7 @@ export const BlurCircle = styled.div`
   border-radius: 50%;
   filter: blur(250px);
   z-index: -1;
-  pointer-events: none; /* Ensures it doesn't interfere with clicks */
+  pointer-events: none;
 `;
 
 export const HeroTextContainer = styled.div`

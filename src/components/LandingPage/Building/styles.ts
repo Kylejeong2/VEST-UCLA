@@ -2,27 +2,29 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-  margin-top: 3rem;
+  margin-top: 6rem;
   background: rgba(0, 0, 0, 0);
-  padding: 4rem 0;
+  padding: 1rem 0;
   position: relative;
   z-index: 2;
+  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 `;
 
 export const Inner = styled.div`
   width: 90%;
   max-width: 1440px;
-  margin: 0 auto 3rem;
+  margin: 0 4rem 3rem;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
 
   @media (max-width: 768px) {
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -31,13 +33,13 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 1rem;
   width: 100%;
-  min-height: calc(100vh - 14.5rem);
-  padding: 0 4rem;
+  padding: 0 0rem;
+  margin-bottom: 3.5rem;
 
   .left-content{
-    width: 50%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,7 +47,7 @@ export const HeaderContainer = styled.div`
   }
 
   .right-content {
-    width: 50%;
+    width: 55%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -85,7 +87,6 @@ export const Header = styled.header`
     color: var(--green);
   }
 
-  /* This is important for MaskText to render horizontally */
   div[class*="Body"] {
     display: flex;
     flex-direction: row;
