@@ -8,6 +8,8 @@ const TimelineContainer = styled.div`
   width: 100%;
   padding: 40px 0;
   color: white;
+  position: relative;
+  z-index: 3;
 `;
 
 const TimelineTitle = styled.h2`
@@ -16,8 +18,10 @@ const TimelineTitle = styled.h2`
   text-align: center;
   position: relative;
   display: block;
-  color: #67b7ff;
+  color: #4299e1;
   width: 100%;
+  font-weight: 600;
+  z-index: 3;
   
   &:after {
     content: '';
@@ -36,6 +40,7 @@ const TimelineWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 0;
+  z-index: 3;
 `;
 
 const TimelineLine = styled.div`
@@ -46,6 +51,7 @@ const TimelineLine = styled.div`
   width: 2px;
   background-color: rgba(255, 255, 255, 0.3);
   transform: translateX(-50%);
+  z-index: 2;
 `;
 
 const TimelineItem = styled.div`
@@ -54,6 +60,7 @@ const TimelineItem = styled.div`
   padding-bottom: 90px;
   width: 100%;
   position: relative;
+  z-index: 3;
 
   &:last-child {
     padding-bottom: 0;
@@ -68,7 +75,7 @@ const TimelineNode = styled.div`
   background-color: #4285f4;
   border-radius: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
   margin-top: 10px;
 `;
 
@@ -78,6 +85,7 @@ const TimelineContentLeft = styled.div`
   position: relative;
   text-align: right;
   margin-right: 30px;
+  z-index: 3;
 `;
 
 const TimelineContentRight = styled.div`
@@ -86,6 +94,7 @@ const TimelineContentRight = styled.div`
   position: relative;
   text-align: left;
   margin-left: 30px;
+  z-index: 3;
 `;
 
 const MonthYearBox = styled.div`
@@ -97,17 +106,23 @@ const MonthYearBox = styled.div`
   font-weight: bold;
   margin: 10px 0;
   font-size: 1.1rem;
+  position: relative;
+  z-index: 3;
 `;
 
 const TimelineEventTitle = styled.h3`
   margin-bottom: 10px;
   font-size: 1.3rem;
   color: white;
+  position: relative;
+  z-index: 3;
 `;
 
 const TimelineDescription = styled.p`
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
+  position: relative;
+  z-index: 3;
 `;
 
 interface TimelineEvent {

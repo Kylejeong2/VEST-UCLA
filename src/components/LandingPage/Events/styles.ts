@@ -18,7 +18,7 @@ export const Wrapper = styled.section`
 export const Inner = styled.div`
   background: url(${grid_background.src}) no-repeat;
   background-position: top center;
-  background-size: cover;
+  background-size: 100% auto;
   width: 100%;
   padding: 4rem 1rem;
   

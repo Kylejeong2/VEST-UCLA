@@ -1,18 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Footer from "@/components/LandingPage/Footer";
 import { styled } from "styled-components";
 
 const About = dynamic(() => import("@/components/LandingPage/About"), { ssr: false });
 
 export default function AboutPage() {
   return (
-    <Wrapper>
-      <Inner>
-        <About />
-      </Inner>
-    </Wrapper>
+    <main>
+      <About />
+    </main>
   );
 }
 

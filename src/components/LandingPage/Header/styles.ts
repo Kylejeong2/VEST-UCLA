@@ -161,19 +161,20 @@ export const Nav = styled.div`
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--blue);
+      background: #4299e1;
       transition: width 0.3s ease;
     }
     
     &.active {
-      color: var(--blue) !important;
-      font-weight: 500;
+      color: #4299e1 !important;
+      font-weight: 400;
       &:after {
         width: 100%;
       }
     }
     
     &:hover:after {
+      color: #4299e1;
       width: 100%;
     }
   }
@@ -207,12 +208,17 @@ export const Nav = styled.div`
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--blue);
+        background: #4299e1;
         transition: width 0.3s ease;
       }
 
+      &.active {
+        color: #4299e1 !important;
+        font-weight: 500;
+      }
+
       &:hover {
-        color: var(--blue);
+        color: #4299e1;
         &:after {
           width: 2rem;
         }

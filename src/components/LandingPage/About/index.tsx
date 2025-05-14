@@ -12,11 +12,14 @@ import {
   StatNumber,
   StatLabel,
   ImagesGrid,
-  GridImage
+  GridImage,
+  Inner,
+  BlurCircle
 } from "./styles";
 
 const About = () => (
   <AboutWrapper>
+    <Inner>
       <AboutTitle>About</AboutTitle>
       <TopRow>
         <AboutImage>picture here</AboutImage>
@@ -49,7 +52,9 @@ const About = () => (
         <GridImage>picture here</GridImage>
         <GridImage>picture here</GridImage>
       </ImagesGrid>
-    </AboutWrapper>
+    </Inner>
+    <BlurCircle />
+  </AboutWrapper>
 );
 
 export default About;

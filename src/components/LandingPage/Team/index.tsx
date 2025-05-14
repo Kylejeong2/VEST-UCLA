@@ -49,7 +49,6 @@ const classMembers = [
 const Team = () => {
   return (
     <Wrapper>
-      <BlurCircle />
       <Inner>
         <ContentContainer>
           <TeamHeader>
@@ -111,6 +110,7 @@ const Team = () => {
           </ClassSection>
         </ContentContainer>
       </Inner>
+      <BlurCircle />
     </Wrapper>
   );
 };

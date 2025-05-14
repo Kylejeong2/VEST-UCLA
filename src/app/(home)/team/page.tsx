@@ -3,5 +3,9 @@
 import Team from "@/components/LandingPage/Team";
 
 export default function TeamPage() {
-  return <Team />;
+  return (
+    <main>
+      <Team />
+    </main>
+  );
 }

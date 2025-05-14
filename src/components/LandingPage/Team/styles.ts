@@ -1,6 +1,6 @@
 "use client";
 import { styled } from "styled-components";
-import grid_background from "../../../../public/images/grid_background.png";
+import hero_background from "../../../../public/images/grid_background.png";
 
 export const Wrapper = styled.section`
   margin-top: 0;
@@ -16,10 +16,10 @@ export const Wrapper = styled.section`
 `;
 
 export const Inner = styled.div`
-  background: url(${grid_background.src}) no-repeat;
-  background-position: top center;
-  background-size: cover;
+  background: url(${hero_background.src}) no-repeat;
   width: 100%;
+  background-position: top center;
+  background-size: 100% auto;
   padding: 4rem 0;
   
   @media (max-width: 768px) {

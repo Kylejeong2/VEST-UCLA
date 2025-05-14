@@ -1,37 +1,65 @@
 "use client";
 import styled from "styled-components";
+import hero_background from "../../../../public/images/grid_background.png";
 
-export const GridBackground = styled.div`
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(ellipse at center, rgba(10,25,47,0.97) 0%, #050e1a 100%);
-  &:before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 100px), repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 100px);
-    pointer-events: none;
-    z-index: 1;
+// Removing the CSS-grid background and replacing with image-based grid
+// export const GridBackground = styled.div`
+//   position: fixed;
+//   inset: 0;
+//   z-index: -1;
+//   background: radial-gradient(ellipse at center, rgba(10,25,47,0.97) 0%, #050e1a 100%);
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 100px), repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 100px);
+//     pointer-events: none;
+//     z-index: 1;
+//   }
+// `;
+
+export const AboutWrapper = styled.div`
+  margin-top: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  min-height: calc(100vh - 6.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+`;
+
+export const Inner = styled.div`
+  background: url(${hero_background.src}) no-repeat;
+  width: 100%;
+  background-position: top center;
+  background-size: 100% auto;
+  padding: 4rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 0;
   }
 `;
 
-export const AboutWrapper = styled.div`
-  min-height: 100vh;
-  padding-top: 110px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  max-width: 1400px;
-  margin: 0 auto;
+export const BlurCircle = styled.div`
+  position: fixed;
+  top: -800px;
+  left: -400px;
+  width: 1270px;
+  height: 1270px;
+  background-color: #1e3a8a;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: -1;
+  pointer-events: none;
 `;
 
 export const AboutTitle = styled.h1`
   font-size: 7rem;
   font-weight: 600;
-  color: #67b7ff;
+  color: #4299e1;
   margin: 4rem 0 3.5rem 0;
   text-align: center;
   line-height: 1;
@@ -70,7 +98,7 @@ export const AboutText = styled.div`
 `;
 
 export const WelcomeTitle = styled.span`
-  color: #67b7ff;
+  color: #4299e1;
   font-weight: 700;
   font-size: 1.4rem;
   margin-bottom: 0.5rem;

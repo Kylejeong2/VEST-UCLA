@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const images = [
   "/images/VEST-Logo-transbg.png",
   "/images/VEST-logo-white.svg",
-  "/images/VEST-Logo-transbg.png",
-  "/images/VEST-Logo-transbg.png",
-  "/images/VEST-Logo-transbg.png",
+  "/images/VEST-a16zOfficeVisit.jpg",
 ];
 
 const CarouselWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin: 40px 0 40px 190px;
+  margin: 40px auto;
   position: relative;
-  min-height: 350px;
+  min-height: 400px;
   overflow: visible;
-  max-width: 1100px;
+  max-width: 800px;
+  z-index: 3;
 `;
 
-const CarouselImage = styled.img<{ position: "left" | "center" | "right" }>`
+interface CarouselImageProps {
+  position: "left" | "center" | "right";
+  isAnimating: boolean;
+}
+
+const CarouselImage = styled.img<CarouselImageProps>`
   border-radius: 16px;
   background: #e7eaf1;
   color: #222;
@@ -30,59 +34,99 @@ const CarouselImage = styled.img<{ position: "left" | "center" | "right" }>`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: ${({ position }) => {
-    switch (position) {
-      case "left":
-        return "translate(-180%, -50%) scale(0.75)";
-      case "center":
-        return "translate(-50%, -50%) scale(1.07)";
-      case "right":
-        return "translate(80%, -50%) scale(0.75)";
-      default:
-        return "translate(-50%, -50%) scale(1)";
-    }
-  }};
-  width: ${({ position }) => (position === "center" ? "480px" : "370px")};
-  height: ${({ position }) => (position === "center" ? "350px" : "270px")};
-  opacity: ${({ position }) => (position === "center" ? 1 : 0.8)};
-  filter: ${({ position }) => (position === "center" ? "none" : "brightness(0.93)")};
+  transition: all 0.5s ease-in-out;
+  
+  transform: translate(
+    ${({ position }) => {
+      if (position === "left") return "-140%";
+      if (position === "center") return "-50%";
+      if (position === "right") return "40%";
+      return "0";
+    }},
+    -50%
+  ) scale(
+    ${({ position }) => {
+      if (position === "center") return "1.07";
+      return "0.75";
+    }}
+  );
+  
+  width: ${({ position }) => position === "center" ? "480px" : "370px"};
+  height: ${({ position }) => position === "center" ? "350px" : "270px"};
+  opacity: ${({ position }) => position === "center" ? 1 : 0.8};
+  filter: ${({ position }) => position === "center" ? "none" : "brightness(0.93)"};
   z-index: ${({ position }) => (position === "center" ? 2 : 1)};
-  transition: transform 0.85s cubic-bezier(0.4,0,0.2,1), width 0.85s, height 0.85s, opacity 0.85s, filter 0.85s;
+  cursor: ${({ position }) => (position !== "center" ? "pointer" : "default")};
 `;
 
 const ImageCarousel: React.FC = () => {
-  const [centerIdx, setCenterIdx] = useState(0);
+  const [activeIndices, setActiveIndices] = useState({
+    left: 2,
+    center: 0,
+    right: 1
+  });
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCenterIdx((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Only render left, center, right
-  const leftIdx = (centerIdx - 1 + images.length) % images.length;
-  const rightIdx = (centerIdx + 1) % images.length;
+  const rotateRight = () => {
+    if (isAnimating) return;
+    
+    setIsAnimating(true);
+    
+    // Update positions immediately, animation will be handled by CSS
+    setActiveIndices(prev => ({
+      left: prev.center,
+      center: prev.right,
+      right: (prev.right + 1) % images.length
+    }));
+    
+    // Reset animation flag after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 500);
+  };
+  
+  const rotateLeft = () => {
+    if (isAnimating) return;
+    
+    setIsAnimating(true);
+    
+    // Update positions immediately, animation will be handled by CSS
+    setActiveIndices(prev => ({
+      left: (prev.left - 1 + images.length) % images.length,
+      center: prev.left,
+      right: prev.center
+    }));
+    
+    // Reset animation flag after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 500);
+  };
 
   return (
     <CarouselWrapper>
       <CarouselImage
-        src={images[leftIdx]}
+        src={images[activeIndices.left]}
         alt="carousel-left"
         position="left"
         style={{ zIndex: 1 }}
+        onClick={rotateLeft}
+        isAnimating={isAnimating}
       />
       <CarouselImage
-        src={images[centerIdx]}
+        src={images[activeIndices.center]}
         alt="carousel-center"
         position="center"
         style={{ zIndex: 2 }}
+        isAnimating={isAnimating}
       />
       <CarouselImage
-        src={images[rightIdx]}
+        src={images[activeIndices.right]}
         alt="carousel-right"
         position="right"
         style={{ zIndex: 1 }}
+        onClick={rotateRight}
+        isAnimating={isAnimating}
       />
     </CarouselWrapper>
   );

@@ -19,7 +19,7 @@ export const Inner = styled.div`
   background: url(${hero_background.src}) no-repeat;
   width: 100%;
   background-position: top center;
-  background-size: cover;
+  background-size: 100% auto;
   padding: 4rem 0;
 
   @media (max-width: 768px) {
