@@ -1,16 +1,32 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export interface EventProps {
   imageSrc?: string;
   title: string;
   date: string;
   description: string;
+  id?: number;
 }
 
-const Event: React.FC<EventProps> = ({ imageSrc, title, date, description }) => {
+const Event: React.FC<EventProps> = ({ imageSrc, title, date, description, id }) => {
+  // Create a URL-friendly event name from the title
+  const eventNameSlug = title?.toLowerCase().replace(/\s+/g, '-') || 'event';
+  const queryParams = new URLSearchParams({
+    title,
+    date,
+    description,
+    imageSrc: imageSrc || '',
+    id: id?.toString() || ''
+  }).toString();
+
   return (
-    <div className="w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-blue-500 bg-[#1A1A1A] p-5">
+    <Link 
+      href={`/events/${eventNameSlug}?${queryParams}`}
+      className="block cursor-pointer transition-transform hover:scale-[1.02]"
+    >
+      <div className="w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-blue-500 bg-[#1A1A1A] p-5">
       <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-300">
         {imageSrc ? (
           <Image
@@ -32,7 +48,8 @@ const Event: React.FC<EventProps> = ({ imageSrc, title, date, description }) => 
           {description}
         </p>
       </div>
-    </div>
+      </div>
+    </Link>
   );
 };
 

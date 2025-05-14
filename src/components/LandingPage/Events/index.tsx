@@ -1,44 +1,47 @@
 "use client";
 
 import Event from "@/components/ui/Event";
+import Footer from "@/components/LandingPage/Footer";
 import {
   Wrapper,
   Inner,
   ContentContainer,
   EventsHeader,
   EventsGrid,
-  BlurCircle
+  BlurCircle,
+  FooterWrapper
 } from "./styles";
 
 // Sample events data
+// Sample events data with ids for routing
 const events = [
   {
     id: 1,
-    title: "Event Name",
+    title: "Event 1",
     date: "01/02/2025",
-    description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-    imageSrc: ""
+    description: "Event 1 Stuff",
+    imageSrc: "/vest-logo.png"
   },
   {
     id: 2,
-    title: "Event Name",
-    date: "01/02/2025",
-    description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-    imageSrc: ""
+    title: "Event 2",
+    date: "02/15/2025",
+    description: "Event 2 Stuff",
+    imageSrc: "/vest-logo.png"
   },
   {
     id: 3,
-    title: "Event Name",
-    date: "01/02/2025",
-    description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-    imageSrc: ""
+    title: "Event 3",
+    date: "03/21/2025",
+    description: "Event 3 Stuff",
+    imageSrc: "/vest-logo.png"
   },
   {
     id: 4,
-    title: "Event Name",
-    date: "01/02/2025",
-    description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-    imageSrc: ""
+    title: "Event 5",
+    date: "04/10/2025",
+    description: "Event 4 Stuff",
+    imageSrc: "/vest-logo.png"
   }
 ];
 
@@ -63,6 +66,7 @@ const Events = () => {
             {events.map((event) => (
               <Event
                 key={event.id}
+                id={event.id}
                 title={event.title}
                 date={event.date}
                 description={event.description}

@@ -59,7 +59,7 @@ const Header = () => {
                 key={i} 
                 href={link.url}
                 className={`text-white hover:text-blue-500 transition-colors ${
-                  pathname === link.url ? 'text-blue-500 font-medium' : ''
+                  pathname === link.url ? 'active' : ''
                 }`}
                 onClick={closeMenu}
               >
@@ -75,7 +75,7 @@ const Header = () => {
               key={i} 
               href={link.url}
               className={`text-white hover:text-blue-500 transition-colors ${
-                pathname === link.url ? 'text-blue-500 font-medium' : ''
+                pathname === link.url ? 'active text-blue-500' : ''
               }`}
             >
               {link.linkTo}

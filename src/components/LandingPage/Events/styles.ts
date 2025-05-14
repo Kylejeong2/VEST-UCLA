@@ -112,3 +112,7 @@ export const BlurCircle = styled.div`
   z-index: -1;
   pointer-events: none;
 `;
+
+export const FooterWrapper = styled.div`
+  margin-top: 80px;
+`

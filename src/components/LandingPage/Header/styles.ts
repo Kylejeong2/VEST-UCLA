@@ -149,7 +149,7 @@ export const Nav = styled.div`
   margin-right: 0;
 
   a {
-    color: var(--link-color);
+    color: var(--link-color) !important;
     font-size: 1rem;
     font-weight: 400;
     position: relative;
@@ -163,6 +163,14 @@ export const Nav = styled.div`
       height: 2px;
       background: var(--blue);
       transition: width 0.3s ease;
+    }
+    
+    &.active {
+      color: var(--blue) !important;
+      font-weight: 500;
+      &:after {
+        width: 100%;
+      }
     }
     
     &:hover:after {
