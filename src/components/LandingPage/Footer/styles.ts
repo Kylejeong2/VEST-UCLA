@@ -152,6 +152,7 @@ export const LinksContainer = styled.ul`
 
     &:hover {
       transform: translateY(-2px);
+      color: #4299e1;
     }
 
     &::after {
@@ -159,7 +160,7 @@ export const LinksContainer = styled.ul`
       content: "";
       width: 100%;
       height: 1px;
-      background-color: #efefef;
+      background-color: #4299e1;
       left: 0;
       bottom: -5px;
       transform: scaleX(0);
@@ -169,6 +170,7 @@ export const LinksContainer = styled.ul`
 
     &:hover::after {
       transform: scaleX(1);
+      color: #4299e1;
     }
 
     @media (max-width: 768px) {

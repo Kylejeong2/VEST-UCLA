@@ -27,9 +27,9 @@ const JoinUsComponent = () => {
         <JoinUsText>
           Ready to build, learn, and grow alongside UCLA's startup community? At VEST, we're looking for curious, driven students who are excited to explore entrepreneurship—whether you're a first-time founder, a product thinker, or just startup-curious.
         </JoinUsText>
-        <WhatWeDoTitle>What We Do</WhatWeDoTitle>
+        {/* <WhatWeDoTitle>What We Do</WhatWeDoTitle> */}
         <ImageCarousel />
-        <QuarterlySection>
+        {/* <QuarterlySection>
           <QuarterlyIcon>🛠️</QuarterlyIcon>
           <QuarterlyTitle>Quarterly<br/>Projects</QuarterlyTitle>
           <QuarterlyVerticalLine />
@@ -38,7 +38,7 @@ const JoinUsComponent = () => {
               Every quarter, members team up to tackle real-world problems by building MVPs, mock startups, or internal tools. These projects are a space to experiment, learn, and push your creativity.
             </QuarterlyDesc>
           </QuarterlyText>
-        </QuarterlySection>
+        </QuarterlySection> */}
       </Inner>
       <BlurCircle />
     </JoinUsWrapper>

@@ -20,18 +20,18 @@ import {
 
 // Sample board members data
 const boardMembers = [
-  { id: 1, firstName: "Kyle", lastName: "Jeong", role: "President", imageSrc: "" },
+  { id: 1, firstName: "Kyle", lastName: "Jeong", role: "President", imageSrc: "/images/Headshots/Kyle-Jeong.jpg" },
   { id: 2, firstName: "Shloak", lastName: "Rathod", role: "Vice President", imageSrc: "" },
-  { id: 3, firstName: "Colin", lastName: "Zhao", role: "Tech Lead", imageSrc: "" },
+  { id: 3, firstName: "Colin", lastName: "Zhao", role: "Tech Lead", imageSrc: "/images/Headshots/Colin-Zhao.png" },
   { id: 4, firstName: "Jake", lastName: "Padilla", role: "Director of Legal", imageSrc: "" },
   { id: 5, firstName: "Seif", lastName: "Abdelaziz", role: "Head of Internal", imageSrc: "" },
   { id: 6, firstName: "Angelina", lastName: "Lue", role: "Head of External", imageSrc: "" },
   { id: 7, firstName: "Kyle", lastName: "Kan", role: "Director of Finance", imageSrc: "" },
-  { id: 8, firstName: "George", lastName: "Zhou", role: "Head of Recruiting", imageSrc: "" },
+  { id: 8, firstName: "George", lastName: "Zhou", role: "Head of Recruiting", imageSrc: "/images/Headshots/George-Zhou.png" },
   { id: 9, firstName: "Kiersten", lastName: "Roth", role: "Head of Content", imageSrc: "" },
-  { id: 10, firstName: "Angelina", lastName: "Wu", role: "Head of Design", imageSrc: "" },
+  { id: 10, firstName: "Angelina", lastName: "Wu", role: "Head of Design", imageSrc: "/images/Headshots/Angelina-Wu.PNG" },
   { id: 11, firstName: "Neo", lastName: "Puchane", role: "Head of Social Events", imageSrc: "" },
-  { id: 12, firstName: "Theo", lastName: "Luu", role: "Head of Industry Events", imageSrc: "" }
+  { id: 12, firstName: "Theo", lastName: "Luu", role: "Head of Industry Events", imageSrc: "/images/Headshots/Theo-Luu.jpg" }
 ];
 
 // Sample class members data
@@ -58,10 +58,18 @@ const Team = () => {
           <GroupPhotoContainer>
             {/* Placeholder for group photo */}
             <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500">
-              <img 
+              <Image 
                 src="/images/Board-headshot.jpg" 
                 alt="VEST Board" 
-                className="w-full h-auto" 
+                width={1200}
+                height={800}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: '12px'
+                }}
+                priority
               />
             </div>
           </GroupPhotoContainer>

@@ -29,7 +29,7 @@ const CarouselImage = styled.img<CarouselImageProps>`
   border-radius: 16px;
   background: #e7eaf1;
   color: #222;
-  object-fit: contain;
+  object-fit: cover;
   box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
   position: absolute;
   left: 50%;

@@ -80,7 +80,7 @@ const Footer = () => {
                             href={link.text === "Home" ? "/" : 
                                   link.text === "Join Us" ? "/join" : 
                                   `/${link.text.toLowerCase()}`}
-                            className="cursor-pointer hover:text-brand-100"
+                            className="cursor-pointer hover:text-[#4299e1]"
                           >
                             {link.text}
                           </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
                             href={link.type === "external" ? link.url : "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="cursor-pointer hover:text-brand-100"
+                            className="cursor-pointer hover:text-[#4299e1]"
                           >
                             {link.text}
                           </a>

@@ -84,7 +84,7 @@ export const JoinUsTitle = styled.h1`
 
 export const Subheading = styled.h2`
   width: 100%;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: #4299e1;
   margin: 0 auto;
@@ -97,8 +97,8 @@ export const Subheading = styled.h2`
 `;
 
 export const JoinUsText = styled.p`
-  color: #fff;
-  font-size: 1.1rem;
+  color: #efefef;
+  font-size: 1.75rem;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto 60px;
@@ -119,7 +119,7 @@ export const PictureGrid = styled.div`
 `;
 
 export const PictureCard = styled.div`
-  background: #e7eaf1;
+  background: #efefef;
   color: #222;
   display: flex;
   align-items: center;
@@ -170,7 +170,7 @@ export const QuarterlyText = styled.div`
 `;
 
 export const QuarterlyTitle = styled.h3`
-  color: #fff;
+  color: #efefef;
   font-size: 1.6rem;
   font-weight: 600;
   text-align: left;
@@ -178,7 +178,7 @@ export const QuarterlyTitle = styled.h3`
 `;
 
 export const QuarterlyDesc = styled.p`
-  color: #e6e6e6;
+  color: #efefef;
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;

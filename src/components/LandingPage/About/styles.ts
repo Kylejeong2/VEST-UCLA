@@ -140,7 +140,7 @@ export const StatBox = styled.div`
   justify-content: center;
   padding: 32px 0 24px 0;
   background: transparent;
-  color: #fff;
+  color: #efefef;
   border-right: 1.5px solid #3a4c66;
   &:last-child {
     border-right: none;
@@ -173,7 +173,7 @@ export const ImagesGrid = styled.div`
 `;
 
 export const GridImage = styled.div`
-  background: #d8dbe2;
+  background: #efefef;
   color: #222;
   border-radius: 16px;
   width: 100%;
