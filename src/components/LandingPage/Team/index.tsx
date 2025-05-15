@@ -20,18 +20,18 @@ import {
 
 // Sample board members data
 const boardMembers = [
-  { id: 1, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 2, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 3, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 4, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 5, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 6, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 7, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 8, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 9, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 10, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 11, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" },
-  { id: 12, firstName: "First", lastName: "Last", role: "Role", imageSrc: "" }
+  { id: 1, firstName: "Kyle", lastName: "Jeong", role: "President", imageSrc: "" },
+  { id: 2, firstName: "Shloak", lastName: "Rathod", role: "Vice President", imageSrc: "" },
+  { id: 3, firstName: "Colin", lastName: "Zhao", role: "Tech Lead", imageSrc: "" },
+  { id: 4, firstName: "Jake", lastName: "Padilla", role: "Director of Legal", imageSrc: "" },
+  { id: 5, firstName: "Seif", lastName: "Abdelaziz", role: "Head of Internal", imageSrc: "" },
+  { id: 6, firstName: "Angelina", lastName: "Lue", role: "Head of External", imageSrc: "" },
+  { id: 7, firstName: "Kyle", lastName: "Kan", role: "Director of Finance", imageSrc: "" },
+  { id: 8, firstName: "George", lastName: "Zhou", role: "Head of Recruiting", imageSrc: "" },
+  { id: 9, firstName: "Kiersten", lastName: "Roth", role: "Head of Content", imageSrc: "" },
+  { id: 10, firstName: "Angelina", lastName: "Wu", role: "Head of Design", imageSrc: "" },
+  { id: 11, firstName: "Neo", lastName: "Puchane", role: "Head of Social Events", imageSrc: "" },
+  { id: 12, firstName: "Theo", lastName: "Luu", role: "Head of Industry Events", imageSrc: "" }
 ];
 
 // Sample class members data
@@ -58,7 +58,11 @@ const Team = () => {
           <GroupPhotoContainer>
             {/* Placeholder for group photo */}
             <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500">
-              group photo
+              <img 
+                src="/images/Board-headshot.jpg" 
+                alt="VEST Board" 
+                className="w-full h-auto" 
+              />
             </div>
           </GroupPhotoContainer>
 
@@ -94,7 +98,7 @@ const Team = () => {
             </MembersGrid>
           </BoardSection>
           
-          <ClassSection>
+          {/* <ClassSection>
             <SectionTitle className="text-left">2024-2025 Class</SectionTitle>
             <MembersGrid>
               {classMembers.map((member) => (
@@ -107,7 +111,7 @@ const Team = () => {
                 </BoardCard>
               ))}
             </MembersGrid>
-          </ClassSection>
+          </ClassSection> */}
         </ContentContainer>
       </Inner>
       <BlurCircle />

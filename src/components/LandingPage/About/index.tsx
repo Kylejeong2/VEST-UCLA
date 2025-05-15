@@ -14,15 +14,17 @@ import {
   ImagesGrid,
   GridImage,
   Inner,
-  BlurCircle
+  BlurCircle,
+  ContentContainer
 } from "./styles";
 
 const About = () => (
   <AboutWrapper>
     <Inner>
-      <AboutTitle>About</AboutTitle>
-      <TopRow>
-        <AboutImage>picture here</AboutImage>
+      <ContentContainer>
+        <AboutTitle>About</AboutTitle>
+        <TopRow>
+          <AboutImage>picture here</AboutImage>
         <AboutText>
           <WelcomeTitle>Welcome to VEST at UCLA.</WelcomeTitle>
           One of UCLA's pioneering startup clubs—a student-led community for builders, founders, and curious minds. We bring together driven individuals to explore entrepreneurship through hands-on projects and a tight-knit support network.
@@ -51,7 +53,8 @@ const About = () => (
         <GridImage>picture here</GridImage>
         <GridImage>picture here</GridImage>
         <GridImage>picture here</GridImage>
-      </ImagesGrid>
+        </ImagesGrid>
+      </ContentContainer>
     </Inner>
     <BlurCircle />
   </AboutWrapper>

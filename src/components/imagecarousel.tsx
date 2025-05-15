@@ -34,7 +34,7 @@ const CarouselImage = styled.img<CarouselImageProps>`
   position: absolute;
   left: 50%;
   top: 50%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
   transform: translate(
     ${({ position }) => {
@@ -46,17 +46,40 @@ const CarouselImage = styled.img<CarouselImageProps>`
     -50%
   ) scale(
     ${({ position }) => {
-      if (position === "center") return "1.07";
-      return "0.75";
+      if (position === "center") return "1.1";
+      return "0.8";
     }}
   );
   
   width: ${({ position }) => position === "center" ? "480px" : "370px"};
   height: ${({ position }) => position === "center" ? "350px" : "270px"};
-  opacity: ${({ position }) => position === "center" ? 1 : 0.8};
-  filter: ${({ position }) => position === "center" ? "none" : "brightness(0.93)"};
+  opacity: ${({ position }) => position === "center" ? 1 : 0.7};
+  filter: ${({ position }) => 
+    position === "center" 
+      ? "none" 
+      : "brightness(0.9) contrast(0.95)"};
   z-index: ${({ position }) => (position === "center" ? 2 : 1)};
   cursor: ${({ position }) => (position !== "center" ? "pointer" : "default")};
+  
+  &:hover {
+    ${({ position, isAnimating }) => 
+      position !== "center" && !isAnimating && `
+        opacity: 0.85;
+        filter: brightness(0.95) contrast(1);
+      `
+    }
+  }
+  
+  &:active {
+    ${({ position, isAnimating }) => 
+      position !== "center" && !isAnimating && `
+        transform: translate(
+          ${position === "left" ? "-142%" : "38%"}, 
+          -50%
+        ) scale(0.78);
+      `
+    }
+  }
 `;
 
 const ImageCarousel: React.FC = () => {
@@ -72,17 +95,15 @@ const ImageCarousel: React.FC = () => {
     
     setIsAnimating(true);
     
-    // Update positions immediately, animation will be handled by CSS
     setActiveIndices(prev => ({
       left: prev.center,
       center: prev.right,
       right: (prev.right + 1) % images.length
     }));
     
-    // Reset animation flag after transition completes
     setTimeout(() => {
       setIsAnimating(false);
-    }, 500);
+    }, 400); // Match this with CSS transition duration
   };
   
   const rotateLeft = () => {
@@ -90,17 +111,15 @@ const ImageCarousel: React.FC = () => {
     
     setIsAnimating(true);
     
-    // Update positions immediately, animation will be handled by CSS
     setActiveIndices(prev => ({
       left: (prev.left - 1 + images.length) % images.length,
       center: prev.left,
       right: prev.center
     }));
     
-    // Reset animation flag after transition completes
     setTimeout(() => {
       setIsAnimating(false);
-    }, 500);
+    }, 400); // Match this with CSS transition duration
   };
 
   return (
@@ -109,7 +128,6 @@ const ImageCarousel: React.FC = () => {
         src={images[activeIndices.left]}
         alt="carousel-left"
         position="left"
-        style={{ zIndex: 1 }}
         onClick={rotateLeft}
         isAnimating={isAnimating}
       />
@@ -117,14 +135,12 @@ const ImageCarousel: React.FC = () => {
         src={images[activeIndices.center]}
         alt="carousel-center"
         position="center"
-        style={{ zIndex: 2 }}
         isAnimating={isAnimating}
       />
       <CarouselImage
         src={images[activeIndices.right]}
         alt="carousel-right"
         position="right"
-        style={{ zIndex: 1 }}
         onClick={rotateRight}
         isAnimating={isAnimating}
       />

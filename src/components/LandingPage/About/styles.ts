@@ -43,6 +43,12 @@ export const Inner = styled.div`
   }
 `;
 
+export const ContentContainer = styled.div`
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+`;
+
 export const BlurCircle = styled.div`
   position: fixed;
   top: -800px;
@@ -70,7 +76,7 @@ export const TopRow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 3rem;
   margin-bottom: 60px;
   width: 100%;
   padding: 0 20px;
@@ -80,8 +86,8 @@ export const AboutImage = styled.div`
   background: #d8dbe2;
   color: #222;
   border-radius: 16px;
-  width: 380px;
-  height: 280px;
+  height: 400px;
+  aspect-ratio: 5/4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,18 +96,23 @@ export const AboutImage = styled.div`
 `;
 
 export const AboutText = styled.div`
-  color: #fff;
-  max-width: 500px;
-  font-size: 1.15rem;
-  line-height: 1.6;
+  // max-width: 500px;
+  width: 100%;
+  color: #efefef;
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0 auto;
   text-align: left;
 `;
 
 export const WelcomeTitle = styled.span`
-  color: #4299e1;
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  width: 100%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #4299e1;
+    margin: 0 auto;
+    margin-bottom: 0.75rem;
+    text-align: left;
   display: block;
 `;
 
@@ -113,8 +124,9 @@ export const StatsRow = styled.div`
   background: rgba(0,0,0,0.22);
   border-radius: 20px;
   margin: 0 auto 70px auto;
-  max-width: 900px;
-  width: 90%;
+  max-width: 1000px;
+  width: 100%;
+  aspect-ratio: 5/1;
   overflow: hidden;
   border: 1.5px solid #3a4c66;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -143,19 +155,20 @@ export const StatNumber = styled.div`
 `;
 
 export const StatLabel = styled.div`
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: #b9d4f6;
-  font-weight: 500;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
 `;
 
 export const ImagesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 45px;
+  gap: 2rem;
   /* Spacing above and below pictures */
   margin: 60px auto 80px auto;
-  max-width: 1000px;
-  width: 90%;
+  width: 100%;
   padding: 0 20px;
 `;
 
@@ -164,7 +177,7 @@ export const GridImage = styled.div`
   color: #222;
   border-radius: 16px;
   width: 100%;
-  height: 260px;
+  aspect-ratio: 5/4;
   display: flex;
   align-items: center;
   justify-content: center;

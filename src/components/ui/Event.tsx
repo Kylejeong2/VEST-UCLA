@@ -6,24 +6,18 @@ export interface EventProps {
   imageSrc?: string;
   title: string;
   date: string;
-  description: string;
+  subtitle?: string;
+  description?: string;
   id?: number;
 }
 
-const Event: React.FC<EventProps> = ({ imageSrc, title, date, description, id }) => {
-  // Create a URL-friendly event name from the title
-  const eventNameSlug = title?.toLowerCase().replace(/\s+/g, '-') || 'event';
-  const queryParams = new URLSearchParams({
-    title,
-    date,
-    description,
-    imageSrc: imageSrc || '',
-    id: id?.toString() || ''
-  }).toString();
-
+const Event: React.FC<EventProps> = ({ imageSrc, title, date, subtitle, description, id }) => {
+  // Create a URL-friendly event slug from the title
+  const slug = title?.toLowerCase().replace(/\s+/g, '-') || 'event';
+  
   return (
     <Link 
-      href={`/events/${eventNameSlug}?${queryParams}`}
+      href={`/events/${slug}`}
       className="block cursor-pointer transition-transform hover:scale-[1.02]"
     >
       <div className="w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-blue-500 bg-[#1A1A1A] p-5">
@@ -45,7 +39,7 @@ const Event: React.FC<EventProps> = ({ imageSrc, title, date, description, id })
         <p className="text-sm text-gray-300">{date}</p>
         
         <p className="mt-4 text-sm">
-          {description}
+          {subtitle || description || ""}
         </p>
       </div>
       </div>
