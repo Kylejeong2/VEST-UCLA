@@ -184,8 +184,17 @@ export const GridImage = styled.div`
   font-size: 1.1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
   
-  &:hover {
-    transform: translateY(-5px);
-  }
+  // &:hover {
+  //   transform: translateY(-5px);
+  // }
 `;
+
+export const AboutParagraph = styled.p`
+  margin-bottom: 1.25rem;
+  color: #efefef;
+  font-weight: 400;
+  text-align: left;
+  `;

@@ -185,3 +185,11 @@ export const BlurCircle = styled.div`
   z-index: -1;
   pointer-events: none;
 `;
+
+export const TeamParagraph = styled.p`
+  margin-bottom: 1.25rem;
+  color: #efefef;
+  font-weight: 400;
+  text-align: left;
+  
+  `;

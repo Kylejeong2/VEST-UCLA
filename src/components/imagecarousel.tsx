@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const images = [
-  "/images/VEST-Logo-transbg.png",
-  "/images/VEST-logo-white.svg",
-  "/images/VEST-a16zOfficeVisit.jpg",
+  "/images/JoinUs/PokerNight.jpg",
+  "/images/JoinUs/MatchaGroupPic.jpg",
+  "/images/JoinUs/a16zOfficeVisit.jpg",
+  "/images/JoinUs/a16zOutside.jpg",
+  "/images/JoinUs/TacoNight.jpg",
+  "/images/JoinUs/Pickleball.jpg",
 ];
 
 const CarouselWrapper = styled.div`

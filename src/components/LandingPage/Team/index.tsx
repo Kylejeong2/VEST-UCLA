@@ -21,12 +21,12 @@ import {
 // Sample board members data
 const boardMembers = [
   { id: 1, firstName: "Kyle", lastName: "Jeong", role: "President", imageSrc: "/images/Headshots/Kyle-Jeong.jpg" },
-  { id: 2, firstName: "Shloak", lastName: "Rathod", role: "Vice President", imageSrc: "" },
+  { id: 2, firstName: "Shloak", lastName: "Rathod", role: "Vice President", imageSrc: "/images/Headshots/Shloak-Rathod.jpg" },
   { id: 3, firstName: "Colin", lastName: "Zhao", role: "Tech Lead", imageSrc: "/images/Headshots/Colin-Zhao.png" },
   { id: 4, firstName: "Jake", lastName: "Padilla", role: "Director of Legal", imageSrc: "" },
-  { id: 5, firstName: "Seif", lastName: "Abdelaziz", role: "Head of Internal", imageSrc: "" },
+  { id: 5, firstName: "Seif", lastName: "Abdelaziz", role: "Head of Internal", imageSrc: "/images/Headshots/Seif-Abdelaziz.png" },
   { id: 6, firstName: "Angelina", lastName: "Lue", role: "Head of External", imageSrc: "" },
-  { id: 7, firstName: "Kyle", lastName: "Kan", role: "Director of Finance", imageSrc: "" },
+  { id: 7, firstName: "Kyle", lastName: "Kan", role: "Director of Finance", imageSrc: "/images/Headshots/Kyle-Kan.png" },
   { id: 8, firstName: "George", lastName: "Zhou", role: "Head of Recruiting", imageSrc: "/images/Headshots/George-Zhou.png" },
   { id: 9, firstName: "Kiersten", lastName: "Roth", role: "Head of Content", imageSrc: "" },
   { id: 10, firstName: "Angelina", lastName: "Wu", role: "Head of Design", imageSrc: "/images/Headshots/Angelina-Wu.PNG" },
