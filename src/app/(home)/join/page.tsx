@@ -23,5 +23,5 @@ const TimelineContent = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  z-index: 5; /* Higher z-index to ensure it's above the BlurCircle */
+  z-index: 5; 
 `;
