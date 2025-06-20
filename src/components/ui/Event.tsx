@@ -35,7 +35,7 @@ const Event: React.FC<EventProps> = ({ imageSrc, title, date, subtitle, descript
       </div>
       
       <div className="mt-4 text-white">
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <h3 className="text-2xl font-bold leading-none mb-2">{title}</h3>
         <p className="text-sm text-gray-300">{date}</p>
         
         <p className="mt-4 text-sm">

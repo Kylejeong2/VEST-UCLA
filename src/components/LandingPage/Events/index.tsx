@@ -2,6 +2,7 @@
 
 import Event from "@/components/ui/Event";
 import Footer from "@/components/LandingPage/Footer";
+import { events } from "@/data/events";
 import {
   Wrapper,
   Inner,
@@ -11,43 +12,6 @@ import {
   BlurCircle,
   FooterWrapper
 } from "./styles";
-
-// Sample events data
-// Sample events data with ids for routing
-const events = [
-  {
-    id: 1,
-    title: "Event 1",
-    date: "01/02/2025",
-    subtitle: "Event 1 Subtitle",
-    description: "Event 1 Description",
-    imageSrc: "/vest-logo.png"
-  },
-  {
-    id: 2,
-    title: "Event 2",
-    date: "02/15/2025",
-    subtitle: "Event 2 Subtitle",
-    description: "Event 2 Description",
-    imageSrc: "/vest-logo.png"
-  },
-  {
-    id: 3,
-    title: "Event 3",
-    date: "03/21/2025",
-    subtitle: "Event 3 Subtitle",
-    description: "Event 3 Description",
-    imageSrc: "/vest-logo.png"
-  },
-  {
-    id: 4,
-    title: "Event 4",
-    date: "04/10/2025",
-    subtitle: "Event 4 Subtitle",
-    description: "Event 4 Description",
-    imageSrc: "/vest-logo.png"
-  }
-];
 
 const Events = () => {
   return (

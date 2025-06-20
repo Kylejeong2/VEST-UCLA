@@ -10,34 +10,15 @@ import MaskText from "@/components/Common/MaskText";
 import { useIsMobile } from "../../../../libs/useIsMobile";
 import { headerPhrase, mobileHeaderPhrase } from "./constants";
 import RecentEvent from "@/components/ui/RecentEvent";
-
-// Sample events data
-const recentEvents = [
-    {
-      id: 1,
-      title: "Event Name",
-      date: "01/02/2025",
-      description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-      imageSrc: ""
-    },
-    {
-      id: 2,
-      title: "Event Name",
-      date: "01/02/2025",
-      description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-      imageSrc: ""
-    },
-    {
-      id: 3,
-      title: "Event Name",
-      date: "01/02/2025",
-      description: "Lorem ipsum dolor sit amet consectetur. Aenean a aliquam tortor non tempor justo quis viverra. Nulla sit augue facilisi posuere.",
-      imageSrc: ""
-    },
-];
+import { events } from "@/data/events";
 
 const Recent = () => {
     const isMobile = useIsMobile();
+    
+    // Sort events by date (most recent first) and take only the first 3
+    const recentEvents = events
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, 3);
   
     return (
         <Wrapper>
@@ -58,6 +39,7 @@ const Recent = () => {
                             date={recentEvent.date}
                             description={recentEvent.description}
                             imageSrc={recentEvent.imageSrc}
+                            slug={recentEvent.slug}
                         />
                     ))}
             </Inner>

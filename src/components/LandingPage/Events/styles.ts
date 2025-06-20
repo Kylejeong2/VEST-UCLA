@@ -44,7 +44,7 @@ export const EventsHeader = styled.div`
     font-size: 7rem;
     font-weight: 600;
     padding: 0 8rem;
-    line-height: 1;
+    line-height: 0.5;
     color: #4299e1;
     margin: 4rem 0;
     text-align: center;
