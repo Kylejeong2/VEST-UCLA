@@ -24,6 +24,11 @@ export const Inner = styled.div`
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    width: 95%;
+    padding: 0 1rem;
+  }
 `;
 
 export const LogoContainer = styled.div`

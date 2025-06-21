@@ -23,7 +23,8 @@ export const Inner = styled.div`
   padding: 4rem 0;
 
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 1rem 0;
+    background-size: 120% auto;
   }
 `;
 
@@ -103,20 +104,23 @@ export const HeroTextContainer = styled.div`
     gap: 1rem;
     padding-bottom: 1.5rem;
     h1 {
-      font-size: 7rem;
+      font-size: 3rem;
       font-weight: 600;
-      padding: 0 4rem;
-      line-height: 1;
+      padding: 0 1rem;
+      line-height: 1.1;
       white-space: pre-line;
+      margin-top: 4rem;
     } 
 
     h2 {
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       margin-bottom: 1rem;
+      padding: 0 1rem;
     }
 
     p {
-      font-size: 1.75rem;
+      font-size: 1rem;
+      padding: 0 1rem;
     }
   }
 `;
@@ -173,27 +177,31 @@ export const ContentContainer = styled.div`
 
     .top-content {
       width: 100%;
-      margin-bottom: 3rem;
+      padding: 0 1rem;
+      margin-bottom: 2rem;
     }
 
     .bottom-content {
       width: 100%;
-      padding: 3rem 2rem;
+      padding: 1rem;
+      flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: 1.5rem;
     }
 
     .left-content {
-      width: 60%;
-      text-align: left;
-      justify-content: left;
-      margin-top: 2rem;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0;
     }
 
     .right-content {
+      width: 100%;
       justify-content: center;
-      width: 40%;
-      margin-top: 2rem;
+      margin-top: 0;
     }
   }
 `;

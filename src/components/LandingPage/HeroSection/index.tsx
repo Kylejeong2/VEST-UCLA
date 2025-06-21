@@ -53,7 +53,7 @@ const HeroSection = () => {
               )}
             </div>
             <div className="right-content">
-              <GetStartedButton padding="1rem 2rem" />
+              <GetStartedButton padding={isMobile ? "0.75rem 1.5rem" : "1rem 2rem"} />
             </div>
           </div>
           </HeroTextContainer>
