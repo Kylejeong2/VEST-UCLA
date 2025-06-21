@@ -6,6 +6,7 @@ import {
   WhatYouDo,
   Learn,
   TrustedBy,
+  Recent,
 } from "@/components/LandingPage";
 
 export default function Home() {
@@ -15,13 +16,14 @@ export default function Home() {
         <HeroSection />
       </div>
       <Featured />
-      <WhatYouDo />
+      {/* <WhatYouDo /> */}
       <Building />
-      <TrustedBy />
-      <Learn />
-      <div id="intro">
+      <Recent />
+      {/* <TrustedBy /> */}
+      {/* <Learn /> */}
+      {/* <div id="intro">
         <IntroSection />
-      </div>
+      </div> */}
     </main>
   );
 }

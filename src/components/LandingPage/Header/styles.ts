@@ -4,7 +4,13 @@ import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   padding: 1rem 0;
-  border-bottom: 0.5px solid #3d3d3d;
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
 
   @media (max-width: 768px) {
     padding: 0.75rem 0;
@@ -45,7 +51,7 @@ export const BurgerMenu = styled.div`
       position: absolute;
       height: 2px;
       width: 100%;
-      background: var(--emerald);
+      background: var(--blue);
       border-radius: 2px;
       opacity: 1;
       left: 0;
@@ -138,14 +144,39 @@ export const MobileMenu = styled.div`
 export const Nav = styled.div`
   display: flex;
   align-items: center;
-  gap: 3.75rem;
+  gap: 2.5rem;
   position: relative;
-  margin-right: -6.3rem;
+  margin-right: 0;
 
   a {
-    color: var(--link-color);
+    color: var(--link-color) !important;
     font-size: 1rem;
     font-weight: 400;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #4299e1;
+      transition: width 0.3s ease;
+    }
+    
+    &.active {
+      color: #4299e1 !important;
+      font-weight: 400;
+      &:after {
+        width: 100%;
+      }
+    }
+    
+    &:hover:after {
+      color: #4299e1;
+      width: 100%;
+    }
   }
 
   @media (max-width: 768px) {
@@ -177,12 +208,17 @@ export const Nav = styled.div`
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--emerald);
+        background: #4299e1;
         transition: width 0.3s ease;
       }
 
+      &.active {
+        color: #4299e1 !important;
+        font-weight: 500;
+      }
+
       &:hover {
-        color: var(--emerald);
+        color: #4299e1;
         &:after {
           width: 2rem;
         }
@@ -200,6 +236,11 @@ export const AbsoluteLinks = styled(Link)`
   color: var(--link-color);
   font-size: 1rem;
   font-weight: 400;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--blue);
+  }
 `;
 
 export const CallToActions = styled.div`
@@ -207,60 +248,10 @@ export const CallToActions = styled.div`
   align-items: center;
   gap: 1rem;
 
-  .discord-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6.25rem;
-    background: #5865f2;
-    color: var(--white);
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background: #4752c4;
-    }
-  }
-
   @media (max-width: 768px) {
-    &.desktop {
-      display: none;
-    }
-
-    position: static;
-    margin-top: 3rem;
     flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-
-    .discord-btn, button {
-      width: 100%;
-      text-align: center;
-      padding: 1rem;
-      font-size: 1rem;
-      color: white;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      border-radius: 6.25rem;
-      transition: all 0.2s ease;
-      
-      &:hover {
-        transform: translateY(-1px);
-      }
-    }
-
-    .discord-btn {
-      background: rgba(88, 101, 242, 0.9);
-      
-      &:hover {
-        background: #5865f2;
-      }
-    }
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 `;

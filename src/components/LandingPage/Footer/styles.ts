@@ -2,8 +2,12 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.footer`
-  padding-bottom: 3.5rem;
-  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+  padding-top: 3rem;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
 `;
 
 export const Inner = styled.main`
@@ -12,17 +16,17 @@ export const Inner = styled.main`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3.75rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 `;
 
 export const FooterLogo = styled.div`
   @media (max-width: 768px) {
-    width: 13.2rem;
-    height: 5.6rem;
+    width: 10rem;
+    height: 10rem;
     img {
       width: 100%;
       height: 100%;
@@ -34,9 +38,8 @@ export const FooterLogo = styled.div`
 export const FooterMainContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3.75rem 0 3.25rem;
-  border-top: 0.0625rem solid #3d3d3d;
-  gap: 3.25rem;
+  padding: 2rem 0 2rem;
+  gap: 1rem;
 `;
 
 export const FooterMiddle = styled.div`
@@ -45,10 +48,11 @@ export const FooterMiddle = styled.div`
   width: 100%;
   gap: 2rem;
   align-items: flex-start;
+  font-family: "Inter", sans-serif;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 2rem;
   }
 `;
 
@@ -93,7 +97,7 @@ export const FooterNavigation = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
-    gap: 3rem 3.75rem;
+    gap: 2rem;
   }
 `;
 
@@ -105,8 +109,21 @@ export const GridColumn = styled.div`
   align-items: flex-start;
   gap: 1rem;
 
+  h2 {
+    width: 100%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #4299e1;
+    margin: 0 auto;
+    text-align: left;
+  }
+
   @media (max-width: 768px) {
     min-width: auto;
+    
+    h2 {
+      font-size: 1.75rem;
+    }
   }
 `;
 
@@ -115,6 +132,15 @@ export const LinksContainer = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  h2 {
+    width: 100%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #4299e1;
+    margin: 0 auto;
+    text-align: left;
+  }
 
   li.clickable {
     cursor: pointer;
@@ -126,6 +152,7 @@ export const LinksContainer = styled.ul`
 
     &:hover {
       transform: translateY(-2px);
+      color: #4299e1;
     }
 
     &::after {
@@ -133,7 +160,7 @@ export const LinksContainer = styled.ul`
       content: "";
       width: 100%;
       height: 1px;
-      background-color: #efefef;
+      background-color: #4299e1;
       left: 0;
       bottom: -5px;
       transform: scaleX(0);
@@ -143,6 +170,36 @@ export const LinksContainer = styled.ul`
 
     &:hover::after {
       transform: scaleX(1);
+      color: #4299e1;
+    }
+
+    @media (max-width: 768px) {
+      gap: 0.5rem;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+  }
+`;
+
+export const FooterTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #efefef;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
     }
   }
 `;
@@ -150,7 +207,8 @@ export const LinksContainer = styled.ul`
 export const FooterBottom = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  font-family: "Inter", sans-serif;
 `;
 
 export const Translator = styled.div`
@@ -159,16 +217,20 @@ export const Translator = styled.div`
   gap: 1.12rem;
   cursor: pointer;
 
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
+  h2 {
+    width: 100%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #4299e1;
+    margin: 0 auto;
+    text-align: left;
   }
 
   @media (max-width: 768px) {
     gap: 0.5rem;
 
-    h3 {
-      font-size: 0.875rem;
+    h2 {
+      font-size: 1.75rem;
     }
   }
 `;
@@ -178,6 +240,13 @@ export const CopyRight = styled.div`
   font-weight: 400;
   display: flex;
   align-items: center;
+  font-family: "Inter", sans-serif;
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #efefef;
+  }
 
   @media (max-width: 768px) {
     font-size: 0.875rem;
@@ -187,38 +256,60 @@ export const CopyRight = styled.div`
 
 export const ManifestoLinkContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  justify-content: flex-end;
-  margin-top: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6.25rem;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem !important;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
 `;
 
 export const ManifestoLink = styled.a`
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.75rem;
   font-weight: 400;
+  font-family: "Inter", sans-serif;
   text-decoration: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 5px;
-  border: 1px solid #ffffff;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, #2165C8, #0A2040);
+  border-radius: 76px;
+  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.10), 0px 0px 36px 6px rgba(55,125,226,1.00);
+  border: 0.2px solid #efefef;
+  backdrop-filter: blur(3px);
+  mix-blend-mode: screen;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   
   &:hover {
-    background-color: #ffffff;
-    color: #000000;
+    transform: translateY(-1px);
   }
 `;
 
 export const SignInButton = styled.button`
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.75rem;
   font-weight: 400;
+  font-family: "Inter", sans-serif;
   text-decoration: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: transparent;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, #2165C8, #0A2040);
+  border-radius: 76px;
+  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.10), 0px 0px 36px 6px rgba(55,125,226,1.00);
+  border: 0.2px solid #efefef;
+  backdrop-filter: blur(3px);
+  mix-blend-mode: screen;
   cursor: pointer;
   transition: all 0.3s ease;
   

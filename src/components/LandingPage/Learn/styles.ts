@@ -4,6 +4,8 @@ import card_grid from "../../../../public/images/card_grid.png";
 
 export const Wrapper = styled.section`
   padding-top: 7.75rem;
+  position: relative;
+  z-index: 2;
 `;
 
 export const Inner = styled.div`
@@ -41,6 +43,10 @@ export const Header = styled.header`
       font-size: 2.25rem;
     }
 
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
     p {
       font-size: 1rem;
       line-height: 1.5rem;

@@ -1,9 +1,12 @@
 'use client';
 import { styled } from 'styled-components';
 
+
 export const Wrapper = styled.section`
   padding: 4rem 0;
-  background: var(--Background);
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  z-index: 3; /* Higher than Building's z-index of 2 */
 `;
 
 export const Inner = styled.div`
@@ -13,19 +16,19 @@ export const Inner = styled.div`
   max-width: 1440px;
   width: 90%;
   margin: 0 auto;
+  font-family: "Inter", sans-serif;
 
   h2 {
     color: var(--link-color);
-    font-size: 1.25rem;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-size: 1.75rem;
+    font-weight: 400;
     margin-bottom: 2rem;
     text-align: center;
   }
 
   @media (max-width: 768px) {
     h2 {
-      font-size: 1rem;
+      font-size: 1.75rem;
     }
   }
 `;

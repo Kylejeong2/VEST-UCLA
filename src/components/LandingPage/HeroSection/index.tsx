@@ -3,21 +3,20 @@ import Image from "next/image";
 import {
   Wrapper,
   Inner,
-  Pill,
   HeroTextContainer,
   ContentContainer,
-  Divider,
-  ImageContainer,
+  BlurCircle,
 } from "./styles";
-import ic_chevron_right from "../../../../public/svgs/ic_chevron_right.svg";
 import { GetStartedButton } from "@/components/LandingPage";
 import MaskText from "@/components/Common/MaskText";
 import { useIsMobile } from "../../../../libs/useIsMobile";
 import {
   mobileParagraphPhrases,
   mobilePhrases,
+  mobileSubPhrases,
   paragraphPhrases,
   phrases,
+  subPhrases,
 } from "./constants";
 import Spline from "@splinetool/react-spline";
 
@@ -27,32 +26,44 @@ const HeroSection = () => {
     <Wrapper>
       <Inner>
         <ContentContainer>
-          <div className="left-content">
-            <Pill>
-              <span>Introducing UCLA&apos;s Premier VC/Startup Club</span>
-              <Image src={ic_chevron_right} alt="chevron-right" />
-            </Pill>
-            <HeroTextContainer>
+          <HeroTextContainer>
+            <div className="top-content">
               {isMobile ? (
                 <>
                   <MaskText phrases={mobilePhrases} tag="h1" />
+                </>
+            ) : (
+              <>
+                <MaskText phrases={phrases} tag="h1" />
+              </>
+            )}
+          </div>
+          <div className="bottom-content">
+            <div className="left-content">
+              {isMobile ? (
+                <>
+                  <MaskText phrases={mobileSubPhrases} tag="h2" />
                   <MaskText phrases={mobileParagraphPhrases} tag="p" />
                 </>
               ) : (
                 <>
-                  <MaskText phrases={phrases} tag="h1" />
+                  <MaskText phrases={subPhrases} tag="h2" />
                   <MaskText phrases={paragraphPhrases} tag="p" />
                 </>
               )}
-            </HeroTextContainer>
-            <GetStartedButton padding="1rem 2rem" />
+            </div>
+            <div className="right-content">
+              <GetStartedButton padding="1rem 2rem" />
+            </div>
           </div>
-          <Divider />
-          <ImageContainer>
-            <Spline scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" />
-          </ImageContainer>
+          </HeroTextContainer>
         </ContentContainer>
+          {/* <Divider /> */}
+          {/* <ImageContainer>
+            <Spline scene="https://prod.spline.design/84fjfvzP2Mn0uFeQ/scene.splinecode" />
+          </ImageContainer> */}
       </Inner>
+      <BlurCircle />
     </Wrapper>
   );
 };
