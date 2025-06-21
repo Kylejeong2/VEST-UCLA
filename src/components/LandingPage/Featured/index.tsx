@@ -74,6 +74,7 @@ const Featured = () => {
                     height: 'auto',
                     objectFit: 'contain'
                   }}
+                  className="carousel-image"
                   priority
                 />
               ))}

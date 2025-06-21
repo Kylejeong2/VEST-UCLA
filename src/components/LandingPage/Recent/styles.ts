@@ -23,7 +23,8 @@ export const Inner = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    margin-bottom: 1rem;
+    margin: 0 1rem 1rem;
+    width: calc(100% - 2rem);
   }
 `;
 
@@ -36,6 +37,11 @@ export const HeaderContainer = styled.div`
   width: 100%;
   padding: 0 0rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
 `;
 
 export const Header = styled.header`

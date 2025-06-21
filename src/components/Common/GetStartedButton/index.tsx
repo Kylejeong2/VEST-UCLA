@@ -1,7 +1,10 @@
 import { LinkTo } from "./styles";
 import { ChevronRight } from "lucide-react";
+import { useIsMobile } from "../../../../libs/useIsMobile";
 
 const GetStartedButton = ({ padding }: { padding: string }) => {
+  const isMobile = useIsMobile();
+  
   return (
     <LinkTo
       style={{
@@ -13,14 +16,14 @@ const GetStartedButton = ({ padding }: { padding: string }) => {
         backdropFilter: "blur(3px)",
         mixBlendMode: "screen",
         fontFamily: "Inter, sans-serif",
-        fontSize: "1.75rem",
+        fontSize: isMobile ? "1rem" : "1.75rem",
         fontWeight: "400",
       }}
       href="/about"
     >
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: isMobile ? "0.5rem" : "1rem" }}>
         What We Do
-        <ChevronRight />
+        <ChevronRight size={isMobile ? 16 : 24} />
       </div>
     </LinkTo>
   );

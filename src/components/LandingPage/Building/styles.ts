@@ -24,7 +24,8 @@ export const Inner = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    margin-bottom: 1rem;
+    margin: 0 1rem 1rem;
+    width: calc(100% - 2rem);
   }
 `;
 
@@ -56,6 +57,8 @@ export const HeaderContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     min-height: auto;
+    gap: 1rem;
+    margin-bottom: 2rem;
 
     .left-content {
       width: 100%;
@@ -142,7 +145,8 @@ export const Edges = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin: 0 2rem;
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
   }
 `;
 
@@ -159,6 +163,14 @@ export const Edge = styled.div`
     font-weight: 400;
     line-height: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    p {
+      max-width: 100%;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -170,6 +182,12 @@ export const Title = styled.div`
   h3 {
     font-size: 1.5rem;
     font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1.25rem;
+    }
   }
 `;
 
