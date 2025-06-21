@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "VEST @ UCLA",
+  title: "VEST at UCLA",
   description: "Scaling builders at UCLA",
   icons: {
     icon: "/images/VEST-logo-white.svg",
