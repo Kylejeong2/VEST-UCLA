@@ -110,7 +110,7 @@ export const HeroTextContainer = styled.div`
       line-height: 1.1;
       white-space: pre-line;
       margin-top: 4rem;
-    } 
+    }
 
     h2 {
       font-size: 1.25rem;
@@ -143,6 +143,23 @@ export const ContentContainer = styled.div`
     margin-bottom: 3rem;
   }
 
+  .applications-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0 2rem 0; /* add more space above CTA */
+    padding: 0 1rem;
+  }
+
+  .applications-cta .applications-text {
+    color: #efefef;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
   .bottom-content {
     width: 80%;
     padding: 0 4rem;
@@ -152,8 +169,8 @@ export const ContentContainer = styled.div`
     justify-content: center;
     gap: 2rem;
   }
-  
-  .left-content{
+
+  .left-content {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -179,6 +196,18 @@ export const ContentContainer = styled.div`
       width: 100%;
       padding: 0 1rem;
       margin-bottom: 2rem;
+    }
+
+    .applications-cta {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+      margin: 2rem 0 1.5rem 0; /* more space above CTA on mobile */
+      padding: 0;
+    }
+
+    .applications-cta .applications-text {
+      font-size: 1.25rem;
     }
 
     .bottom-content {
@@ -238,7 +267,7 @@ export const ImageContainer = styled.div`
   @media (max-width: 768px) {
     width: 100vw;
     height: 100vw;
-    
+
     > div {
       transform: scale(1.2);
     }

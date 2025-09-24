@@ -2,17 +2,28 @@
 
 import dynamic from "next/dynamic";
 import { styled } from "styled-components";
+import { GetStartedButton } from "@/components/LandingPage";
 
-const JoinUs = dynamic(() => import("@/components/LandingPage/JoinUs"), { ssr: false });
+const JoinUs = dynamic(() => import("@/components/LandingPage/JoinUs"), {
+  ssr: false,
+});
 // const TimelineComponent = dynamic(() => import("@/components/timeline"), { ssr: false });
 
 export default function JoinUsPage() {
   return (
     <main>
       <JoinUs />
-      <ClosedApplicationsMessage>
-        <p>Applications for VEST are currently closed. Check back later for our Fall 2025 recruitment cycle!</p>
-      </ClosedApplicationsMessage>
+      <OpenApplicationsRow>
+        <p className="applications-text">
+          Applications for Fall quarter are now open.
+        </p>
+        <GetStartedButton
+          padding="0.9rem 1.75rem"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfmxpRSWgqeIeBbObdA_T4oWLiFXqqcGv_cGFvM85PUbySx9g/viewform"
+          label="Apply Now"
+          target="_blank"
+        />
+      </OpenApplicationsRow>
       {/* <TimelineContent>
         <TimelineComponent />
       </TimelineContent> */}
@@ -20,26 +31,31 @@ export default function JoinUsPage() {
   );
 }
 
-// Styled component for the closed applications message
-const ClosedApplicationsMessage = styled.div`
+// Styled component for the open applications row CTA
+const OpenApplicationsRow = styled.div`
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 4rem 2rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
   position: relative;
   z-index: 5;
-  
-  p {
-    color: #4299e1;
+
+  .applications-text {
+    color: #efefef;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
   }
-  
+
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-    
-    p {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    .applications-text {
       font-size: 1.25rem;
     }
   }
@@ -51,5 +67,5 @@ const TimelineContent = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  z-index: 5; 
+  z-index: 5;
 `;
