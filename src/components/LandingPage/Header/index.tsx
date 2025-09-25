@@ -23,10 +23,16 @@ const Header = () => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      // Add class to body instead of directly manipulating style
+      document.body.classList.add('mobile-menu-open');
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.classList.remove('mobile-menu-open');
     }
+    
+    // Cleanup function to ensure class is removed
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
   }, [isOpen]);
 
   const closeMenu = () => setIsOpen(false);

@@ -26,7 +26,6 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-family: "Inter", sans-serif;
     background-color: var(--Background);
     color: var(--white);
-    scroll-snap-type: y mandatory;
 
     &::-webkit-scrollbar {
       width: 0.5rem;
@@ -45,6 +44,16 @@ export const GlobalStyles = styled.createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  /* Only prevent scrolling when mobile menu is open */
+  body.mobile-menu-open {
+    overflow: hidden;
+    
+    @media (min-width: 769px) {
+      /* Don't prevent scrolling on desktop even if class is present */
+      overflow: unset;
+    }
   }
 
   .parallax {
