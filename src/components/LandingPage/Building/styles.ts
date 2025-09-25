@@ -17,7 +17,7 @@ export const Wrapper = styled.section`
 export const Inner = styled.div`
   width: 90%;
   max-width: 1440px;
-  margin: 0 4rem 3rem;
+  margin: 0 auto 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -39,7 +39,7 @@ export const HeaderContainer = styled.div`
   padding: 0 0rem;
   margin-bottom: 3.5rem;
 
-  .left-content{
+  .left-content {
     width: 45%;
     display: flex;
     flex-direction: column;
@@ -140,7 +140,8 @@ export const Edges = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
-  margin: 0 4rem;
+  margin: 0 auto;
+  width: 100%;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
