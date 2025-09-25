@@ -120,7 +120,7 @@ export const GridColumn = styled.div`
 
   @media (max-width: 768px) {
     min-width: auto;
-    
+
     h2 {
       font-size: 1.75rem;
     }
@@ -207,8 +207,13 @@ export const FooterTop = styled.div`
 export const FooterBottom = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   font-family: "Inter", sans-serif;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const Translator = styled.div`
@@ -281,9 +286,11 @@ export const ManifestoLink = styled.a`
   font-family: "Inter", sans-serif;
   text-decoration: none;
   padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, #2165C8, #0A2040);
+  background: linear-gradient(90deg, #2165c8, #0a2040);
   border-radius: 76px;
-  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.10), 0px 0px 36px 6px rgba(55,125,226,1.00);
+  box-shadow:
+    0px 4px 12px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 36px 6px rgba(55, 125, 226, 1);
   border: 0.2px solid #efefef;
   backdrop-filter: blur(3px);
   mix-blend-mode: screen;
@@ -291,7 +298,7 @@ export const ManifestoLink = styled.a`
   display: flex;
   align-items: center;
   gap: 1rem;
-  
+
   &:hover {
     transform: translateY(-1px);
   }
@@ -304,16 +311,38 @@ export const SignInButton = styled.button`
   font-family: "Inter", sans-serif;
   text-decoration: none;
   padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, #2165C8, #0A2040);
+  background: linear-gradient(90deg, #2165c8, #0a2040);
   border-radius: 76px;
-  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.10), 0px 0px 36px 6px rgba(55,125,226,1.00);
+  box-shadow:
+    0px 4px 12px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 36px 6px rgba(55, 125, 226, 1);
   border: 0.2px solid #efefef;
   backdrop-filter: blur(3px);
   mix-blend-mode: screen;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+export const SocialIcons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: #efefef;
   }
 `;
