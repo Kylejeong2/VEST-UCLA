@@ -14,3 +14,4 @@ export { default as Preloader } from "./Preloader";
 export { default as MaskText } from "../Common/MaskText";
 export { default as TrustedBy } from "./TrustedBy";
 export { default as Recent } from "./Recent";
+export { default as WhereWeWork } from "./WhereWeWork";
