@@ -49,7 +49,7 @@ export const GlobalStyles = styled.createGlobalStyle`
   /* Only prevent scrolling when mobile menu is open */
   body.mobile-menu-open {
     overflow: hidden;
-    
+
     @media (min-width: 769px) {
       /* Don't prevent scrolling on desktop even if class is present */
       overflow: unset;
