@@ -110,6 +110,7 @@ export const Header = styled.header`
 
     h1 {
       font-size: 2.25rem;
+      align-self: center;
     }
 
     p {

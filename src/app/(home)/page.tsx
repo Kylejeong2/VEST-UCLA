@@ -7,6 +7,7 @@ import {
   Learn,
   TrustedBy,
   Recent,
+  WhereWeWork,
 } from "@/components/LandingPage";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Featured />
       {/* <WhatYouDo /> */}
       <Building />
+      <WhereWeWork />
       <Recent />
       {/* <TrustedBy /> */}
       {/* <Learn /> */}

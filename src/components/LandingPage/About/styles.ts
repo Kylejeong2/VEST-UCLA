@@ -66,7 +66,7 @@ export const AboutTitle = styled.h1`
   font-size: 7rem;
   font-weight: 600;
   color: #4299e1;
-  margin: 4rem 0 3.5rem 0;
+  margin: 4rem 0;
   text-align: center;
   line-height: 1;
   width: 100%;
