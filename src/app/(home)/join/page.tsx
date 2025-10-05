@@ -13,7 +13,7 @@ export default function JoinUsPage() {
   return (
     <main>
       <JoinUs />
-      <OpenApplicationsRow>
+      {/* <OpenApplicationsRow>
         <p className="applications-text">
           Applications for Fall quarter are now open.
         </p>
@@ -23,7 +23,7 @@ export default function JoinUsPage() {
           label="Apply Now"
           target="_blank"
         />
-      </OpenApplicationsRow>
+      </OpenApplicationsRow> */}
       {/* <TimelineContent>
         <TimelineComponent />
       </TimelineContent> */}

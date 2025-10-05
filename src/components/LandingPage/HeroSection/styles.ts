@@ -3,16 +3,20 @@ import { styled } from "styled-components";
 import hero_background from "../../../../public/images/grid_background.png";
 
 export const Wrapper = styled.section`
-  margin-top: 0;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  min-height: calc(100vh - 6.25rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   z-index: 1;
+  @media (max-width: 768px) {
+    min-height: auto;
+    margin: 4rem 0;
+  }
 `;
 
 export const Inner = styled.div`
@@ -132,6 +136,10 @@ export const ContentContainer = styled.div`
   gap: 4rem;
   width: 100%;
   min-height: calc(100vh - 14.5rem);
+  @media (max-width: 768px) {
+    flex-direction: column;
+    min-height: auto;
+  }
 
   .top-content {
     width: 100%;
@@ -151,6 +159,10 @@ export const ContentContainer = styled.div`
     gap: 1rem;
     margin: 3rem 0 2rem 0; /* add more space above CTA */
     padding: 0 1rem;
+
+    @media (max-width: 768px) {
+      margin: 1rem 0 1rem 0;
+    }
   }
 
   .applications-cta .applications-text {

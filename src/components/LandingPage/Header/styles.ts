@@ -56,7 +56,7 @@ export const BurgerMenu = styled.div`
       position: absolute;
       height: 2px;
       width: 100%;
-      background: var(--blue);
+      background: var(--green);
       border-radius: 2px;
       opacity: 1;
       left: 0;

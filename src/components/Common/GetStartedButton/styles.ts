@@ -14,7 +14,6 @@ export const LinkTo = styled(Link)`
   transition: all 0.3s ease;
 
   @media (max-width: 768px) {
-    width: 100%;
     padding: 1rem !important;
   }
 

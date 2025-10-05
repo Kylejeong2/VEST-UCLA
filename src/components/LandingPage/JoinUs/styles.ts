@@ -19,15 +19,21 @@ import hero_background from "../../../../public/images/grid_background.png";
 
 export const JoinUsWrapper = styled.div`
   margin-top: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
   min-height: calc(100vh - 6.25rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   z-index: 1;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+
+  @media (max-width: 768px) {
+    padding-top: 4rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
 `;
 
 export const Inner = styled.div`
@@ -38,6 +44,8 @@ export const Inner = styled.div`
   padding: 4rem 0;
   position: relative;
   z-index: 2;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal overflow */
   
   @media (max-width: 768px) {
     padding: 2rem 0;
@@ -55,6 +63,11 @@ export const WhatWeDoTitle = styled.h2`
   padding-left: 190px;
   position: relative;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    font-size: 2.5rem;
+  }
 `;
 
 export const BlurCircle = styled.div`
@@ -80,6 +93,11 @@ export const JoinUsTitle = styled.h1`
   width: 100%;
   position: relative;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
 `;
 
 export const Subheading = styled.h2`
@@ -94,6 +112,12 @@ export const Subheading = styled.h2`
   padding-left: 20px;
   position: relative;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 20px;
+  }
 `;
 
 export const JoinUsText = styled.p`
@@ -107,6 +131,12 @@ export const JoinUsText = styled.p`
   padding-left: 20px;
   position: relative;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 20px;
+  }
 `;
 
 export const PictureGrid = styled.div`
@@ -145,12 +175,24 @@ export const QuarterlySection = styled.div`
   gap: 48px;
   position: relative;
   z-index: 3;
+
+  @media (max-width: 768px) {
+    padding: 24px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
 `;
 
 export const QuarterlyVerticalLine = styled.div`
   width: 2px;
   height: 100px;
   background-color: rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 2px;
+  }
 `;
 
 export const QuarterlyIcon = styled.div`
@@ -175,6 +217,10 @@ export const QuarterlyTitle = styled.h3`
   font-weight: 600;
   text-align: left;
   line-height: 1.3;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const QuarterlyDesc = styled.p`

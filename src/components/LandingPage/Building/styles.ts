@@ -58,7 +58,7 @@ export const HeaderContainer = styled.div`
     flex-direction: column;
     min-height: auto;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
     .left-content {
       width: 100%;
@@ -106,6 +106,7 @@ export const Header = styled.header`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 1rem;
 
     h1 {
       font-size: 2.25rem;

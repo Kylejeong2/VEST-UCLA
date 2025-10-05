@@ -73,16 +73,17 @@ export const EventsHeader = styled.div`
     margin-bottom: 2.5rem;
     
     h1 {
-      font-size: 7rem;
+      font-size: 3rem;
+      padding: 0 1rem;
     }
     
     h2 {
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       margin-bottom: 1rem;
     }
     
     p {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
   }
 `;

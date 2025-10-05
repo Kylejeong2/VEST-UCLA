@@ -37,7 +37,7 @@ const HeroSection = () => {
                   <MaskText phrases={phrases} tag="h1" />
                 </>
               )}
-              {/* Applications CTA */}
+              {/* Applications CTA
               <div className="applications-cta">
                 <p className="applications-text">
                   Applications for Fall 2025 are now open.
@@ -48,7 +48,7 @@ const HeroSection = () => {
                   label="Apply Now"
                   target="_blank"
                 />
-              </div>
+              </div> */}
             </div>
             <div className="bottom-content">
               <div className="left-content">

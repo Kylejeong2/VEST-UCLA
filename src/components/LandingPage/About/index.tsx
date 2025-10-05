@@ -79,15 +79,24 @@ const About = () => (
           />
         </GridImage>
       </ImagesGrid>
-      <AboutParagraph>
-      VEST at UCLA is a club that accelerates builders that want to start or join the next Unicorn company. We're hands on and love to do things rather than just plan things.
-      </AboutParagraph>
-      <AboutParagraph>
-        In our first quarter we hosted the founder of Zillow, a Thiel Fellow, and the founder of Manus, got a private tour of the new a16z office, got a Windsurf sponsorship, got dinner with the Head of Dorm at Pear VC, and worked with companies backed by YC and Neo.
-      </AboutParagraph>
-      <AboutParagraph>
-        Some of our members raised over 2M+ in venture funding and scaled projects to tens of thousands of users. We also have engineers that were early at Cursor, Mercor, Etched, Browserbase, Interaction, Polymarket, Vercel, Mercury and more!
-      </AboutParagraph>
+      <AboutText>
+      VEST at UCLA is a club that accelerates builders that want 
+      to start or join the next Unicorn company. We're hands on and 
+      love to do things rather than just plan things.
+      </AboutText>
+      <AboutText>
+        In our first quarter we hosted the founder of Zillow, a Thiel 
+        Fellow, and the founder of Manus, got a private tour of the 
+        new a16z office, got a Windsurf sponsorship, got dinner with 
+        the Head of Dorm at Pear VC, and worked with companies backed 
+        by YC and Neo.
+      </AboutText>
+      <AboutText>
+        Some of our members raised over 2M+ in venture funding and 
+        scaled projects to tens of thousands of users. We also have 
+        engineers that were early at Cursor, Mercor, Etched, Browserbase, 
+        Interaction, Polymarket, Vercel, Mercury and more!
+      </AboutText>
       <ImagesGrid>
         <GridImage>
           <Image 

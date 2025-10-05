@@ -70,6 +70,11 @@ export const AboutTitle = styled.h1`
   text-align: center;
   line-height: 1;
   width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
 `;
 
 export const TopRow = styled.div`
@@ -77,9 +82,7 @@ export const TopRow = styled.div`
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  margin-bottom: 60px;
   width: 100%;
-  padding: 0 20px;
 `;
 
 export const AboutImage = styled.div`
@@ -103,6 +106,10 @@ export const AboutText = styled.div`
   font-weight: 400;
   margin: 0 auto;
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
 export const WelcomeTitle = styled.span`
@@ -167,9 +174,14 @@ export const ImagesGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   /* Spacing above and below pictures */
-  margin: 60px auto 80px auto;
+  margin: 6rem auto;
   width: 100%;
-  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 3rem auto;
+  }
 `;
 
 export const GridImage = styled.div`

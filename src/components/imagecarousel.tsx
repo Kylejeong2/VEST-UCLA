@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useIsMobile } from "../../libs/useIsMobile";
 
 const images = [
   "/images/JoinUs/PokerNight.jpg",
@@ -10,22 +11,24 @@ const images = [
   "/images/JoinUs/Pickleball.jpg",
 ];
 
-const CarouselWrapper = styled.div`
+const CarouselWrapper = styled.div<{ $isMobile: boolean }>`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 40px auto;
   position: relative;
-  min-height: 400px;
+  min-height: ${({ $isMobile }) => $isMobile ? '300px' : '400px'};
   overflow: visible;
-  max-width: 800px;
+  max-width: ${({ $isMobile }) => $isMobile ? 'calc(100vw - 32px)' : '800px'};
   z-index: 3;
+  padding: ${({ $isMobile }) => $isMobile ? '0 16px' : '0'};
 `;
 
 interface CarouselImageProps {
-  position: "left" | "center" | "right";
-  isAnimating: boolean;
+  $position: "left" | "center" | "right";
+  $isAnimating: boolean;
+  $isMobile: boolean;
 }
 
 const CarouselImage = styled.img<CarouselImageProps>`
@@ -40,33 +43,49 @@ const CarouselImage = styled.img<CarouselImageProps>`
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
   transform: translate(
-    ${({ position }) => {
-      if (position === "left") return "-140%";
-      if (position === "center") return "-50%";
-      if (position === "right") return "40%";
+    ${({ $position, $isMobile }) => {
+      if ($isMobile) {
+        if ($position === "left") return "-120%";
+        if ($position === "center") return "-50%";
+        if ($position === "right") return "20%";
+      } else {
+        if ($position === "left") return "-140%";
+        if ($position === "center") return "-50%";
+        if ($position === "right") return "40%";
+      }
       return "0";
     }},
     -50%
   ) scale(
-    ${({ position }) => {
-      if (position === "center") return "1.1";
+    ${({ $position }) => {
+      if ($position === "center") return "1.1";
       return "0.8";
     }}
   );
   
-  width: ${({ position }) => position === "center" ? "480px" : "370px"};
-  height: ${({ position }) => position === "center" ? "350px" : "270px"};
-  opacity: ${({ position }) => position === "center" ? 1 : 0.7};
-  filter: ${({ position }) => 
-    position === "center" 
+  width: ${({ $position, $isMobile }) => {
+    if ($isMobile) {
+      return $position === "center" ? "280px" : "200px";
+    }
+    return $position === "center" ? "480px" : "370px";
+  }};
+  height: ${({ $position, $isMobile }) => {
+    if ($isMobile) {
+      return $position === "center" ? "200px" : "150px";
+    }
+    return $position === "center" ? "350px" : "270px";
+  }};
+  opacity: ${({ $position }) => $position === "center" ? 1 : 0.7};
+  filter: ${({ $position }) => 
+    $position === "center" 
       ? "none" 
       : "brightness(0.9) contrast(0.95)"};
-  z-index: ${({ position }) => (position === "center" ? 2 : 1)};
-  cursor: ${({ position }) => (position !== "center" ? "pointer" : "default")};
+  z-index: ${({ $position }) => ($position === "center" ? 2 : 1)};
+  cursor: ${({ $position }) => ($position !== "center" ? "pointer" : "default")};
   
   &:hover {
-    ${({ position, isAnimating }) => 
-      position !== "center" && !isAnimating && `
+    ${({ $position, $isAnimating }) => 
+      $position !== "center" && !$isAnimating && `
         opacity: 0.85;
         filter: brightness(0.95) contrast(1);
       `
@@ -74,10 +93,10 @@ const CarouselImage = styled.img<CarouselImageProps>`
   }
   
   &:active {
-    ${({ position, isAnimating }) => 
-      position !== "center" && !isAnimating && `
+    ${({ $position, $isAnimating }) => 
+      $position !== "center" && !$isAnimating && `
         transform: translate(
-          ${position === "left" ? "-142%" : "38%"}, 
+          ${$position === "left" ? "-122%" : "18%"}, 
           -50%
         ) scale(0.78);
       `
@@ -92,6 +111,7 @@ const ImageCarousel: React.FC = () => {
     right: 1
   });
   const [isAnimating, setIsAnimating] = useState(false);
+  const isMobile = useIsMobile();
 
   const rotateRight = () => {
     if (isAnimating) return;
@@ -126,26 +146,29 @@ const ImageCarousel: React.FC = () => {
   };
 
   return (
-    <CarouselWrapper>
+    <CarouselWrapper $isMobile={isMobile}>
       <CarouselImage
         src={images[activeIndices.left]}
         alt="carousel-left"
-        position="left"
+        $position="left"
         onClick={rotateLeft}
-        isAnimating={isAnimating}
+        $isAnimating={isAnimating}
+        $isMobile={isMobile}
       />
       <CarouselImage
         src={images[activeIndices.center]}
         alt="carousel-center"
-        position="center"
-        isAnimating={isAnimating}
+        $position="center"
+        $isAnimating={isAnimating}
+        $isMobile={isMobile}
       />
       <CarouselImage
         src={images[activeIndices.right]}
         alt="carousel-right"
-        position="right"
+        $position="right"
         onClick={rotateRight}
-        isAnimating={isAnimating}
+        $isAnimating={isAnimating}
+        $isMobile={isMobile}
       />
     </CarouselWrapper>
   );
