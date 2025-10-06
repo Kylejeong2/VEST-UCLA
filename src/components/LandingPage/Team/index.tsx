@@ -29,7 +29,7 @@ const boardMembers = [
   { id: 7, firstName: "Kiersten", lastName: "Roth", role: "Head of Content", imageSrc: "/images/Headshots/Kiersten-Roth.jpg" },
   { id: 8, firstName: "Angelina", lastName: "Wu", role: "Head of Design", imageSrc: "/images/Headshots/Angelina-Wu.PNG" },
   { id: 9, firstName: "Seif", lastName: "Abdelaziz", role: "Head of Internal", imageSrc: "/images/Headshots/Seif-Abdelaziz.png" },
-  { id: 10, firstName: "Angelina", lastName: "Lue", role: "Head of External", imageSrc: "/images/Headshots/Angelina-Lue.png" },
+  { id: 10, firstName: "Danny", lastName: "Chmaytelli", role: "Head of Operations", imageSrc: "/images/Headshots/Danny-Chmaytelli.jpeg" },
   { id: 11, firstName: "Neo", lastName: "Phuchane", role: "Head of Social Events", imageSrc: "/images/Headshots/Neo-Phuchane.jpg" },
   { id: 12, firstName: "Theo", lastName: "Luu", role: "Head of Industry Events", imageSrc: "/images/Headshots/Theo-Luu.jpg" }
 ];
