@@ -24,6 +24,7 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@splinetool/react-spline": "^2.2.6",
     "@studio-freight/react-lenis": "^0.0.38",
+    "@supabase/supabase-js": "^2.81.1",
     "@tanstack/react-table": "^8.11.2",
     "@uploadthing/react": "^7.1.5",
     "class-variance-authority": "^0.7.0",
