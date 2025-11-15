@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import { unstable_noStore as noStore } from "next/cache";
 import {
   Card,
   CardContent,
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/table";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 type LeaderboardEntry = {
   username: string;
@@ -23,6 +25,7 @@ type LeaderboardEntry = {
 };
 
 async function getLeaderboard(): Promise<LeaderboardEntry[]> {
+  noStore();
   const { data, error } = await supabase
     .from("leaderboard")
     .select("username, points")
