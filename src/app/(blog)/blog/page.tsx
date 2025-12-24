@@ -46,7 +46,7 @@ const BlogPage = () => {
       <Inner>
         <Header>
           <h1>VEST Blog</h1>
-          <p>Insights from UCLA's premier VC/Startup community</p>
+          <p>Insights from UCLA's premier Startup community</p>
         </Header>
 
         <SearchBar>
@@ -227,11 +227,6 @@ const Category = styled.span`
   color: var(--emerald);
   font-size: 0.875rem;
   font-weight: 500;
-`;
-
-const Date = styled.span`
-  color: var(--link-color);
-  font-size: 0.875rem;
 `;
 
 export default BlogPage;

@@ -1,7 +1,5 @@
 import Image from "next/image";
 import ic_copyright from "../../../../public/svgs/ic_copyright.svg";
-import { SignInButton } from "@clerk/nextjs";
-import { useAuth } from "@clerk/nextjs";
 import React from "react";
 import Link from "next/link";
 
@@ -45,13 +43,9 @@ import {
   CopyRight,
   ManifestoLinkContainer,
   ManifestoLink,
-  SignInButton as StyledSignInButton,
 } from "./styles";
-import { padding } from "tailwindcss/defaultTheme";
 
 const Footer = () => {
-  const { isSignedIn } = useAuth();
-
   return (
     <Wrapper>
       <Inner>
@@ -105,15 +99,6 @@ const Footer = () => {
             <ManifestoLink href="https://substack.com/@vestucla">
                 Join Our Newsletter
               </ManifestoLink>
-              {/* {isSignedIn ? (
-                <Link href="/admin" passHref>
-                  <StyledSignInButton as="a">Admin Panel</StyledSignInButton>
-                </Link>
-              ) : (
-                <Link href="/sign-in" className="text-white hover:text-gray-300 transition-colors">
-                  <StyledSignInButton as="a">Member Sign In</StyledSignInButton>
-                </Link>
-              )} */}
             </ManifestoLinkContainer>
 
           </FooterMiddle>

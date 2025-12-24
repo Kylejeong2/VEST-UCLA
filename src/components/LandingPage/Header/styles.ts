@@ -247,16 +247,3 @@ export const AbsoluteLinks = styled(Link)`
     color: var(--blue);
   }
 `;
-
-export const CallToActions = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-`;

@@ -23,7 +23,7 @@ const JoinUsComponent = () => {
     <JoinUsWrapper>
       <Inner>
         <JoinUsTitle>Join Us</JoinUsTitle>
-        <Subheading>Join UCLA's Premier Startup & VC Organization.</Subheading>
+        <Subheading>Join UCLA's Premier Startup Organization.</Subheading>
         <JoinUsText>
           Ready to build, learn, and grow alongside UCLA's startup community? At VEST, we're looking for curious, driven students who are excited to explore entrepreneurship—whether you're a first-time founder, a product thinker, or just startup-curious.
         </JoinUsText>

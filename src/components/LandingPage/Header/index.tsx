@@ -6,12 +6,10 @@ import {
   Inner,
   LogoContainer,
   Nav,
-  CallToActions,
   BurgerMenu,
   MobileOverlay,
   MobileMenu,
 } from "./styles";
-import AnimatedLink from "@/components/Common/AnimatedLink";
 import { useState, useEffect } from "react";
 import { links } from "./constants";
 import Link from "next/link";

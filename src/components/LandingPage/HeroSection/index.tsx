@@ -18,7 +18,6 @@ import {
   phrases,
   subPhrases,
 } from "./constants";
-import Spline from "@splinetool/react-spline";
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
