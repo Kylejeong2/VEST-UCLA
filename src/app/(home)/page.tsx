@@ -1,21 +1,21 @@
+"use client";
+
 import {
+  HeroSection,
   Featured,
   Building,
-  HeroSection,
-  Recent,
   WhereWeWork,
+  Recent,
 } from "@/components/LandingPage";
 
 export default function Home() {
   return (
-    <main>
-      <div id="hero">
-        <HeroSection />
-      </div>
+    <>
+      <HeroSection />
       <Featured />
       <Building />
       <WhereWeWork />
       <Recent />
-    </main>
+    </>
   );
 }

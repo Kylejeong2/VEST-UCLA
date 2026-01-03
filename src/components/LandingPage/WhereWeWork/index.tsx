@@ -6,33 +6,33 @@ import {
   Wrapper,
   Inner,
   Title,
-  Subtitle,
-  ImageContainer,
+  ImageCard,
 } from "./styles";
 
 const WhereWeWork = () => {
   return (
     <Wrapper>
       <Inner>
-        <Title>Where We Work</Title>
-        <Subtitle>
-          Our members have worked at top companies, from big tech to high-growth startups.
-        </Subtitle>
-        <ImageContainer>
+        <Title>
+          <span className="white">Where Our Members </span>
+          <span className="gradient">Work</span>
+        </Title>
+        <ImageCard>
           <Image
             src="/images/VEST-Companies-White-091725.png"
             alt="Companies where VEST members work"
-            width={1200}
-            height={600}
+            width={2880}
+            height={1652}
             priority={false}
-            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 70vw"
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1196px"
             style={{
               width: "100%",
               height: "auto",
               objectFit: "contain",
+              borderRadius: "24px",
             }}
           />
-        </ImageContainer>
+        </ImageCard>
       </Inner>
     </Wrapper>
   );

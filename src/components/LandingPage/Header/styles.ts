@@ -2,41 +2,78 @@
 import Link from "next/link";
 import { styled } from "styled-components";
 
-export const Wrapper = styled.section`
-  padding: 1rem 0;
-  z-index: 200;
+export const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 200;
+  padding: 24px 0;
   background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-
-  @media (max-width: 768px) {
-    padding: 0.75rem 0;
-  }
+  backdrop-filter: blur(6px);
 `;
 
 export const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 24px;
   
   @media (max-width: 768px) {
-    width: 95%;
-    padding: 0 1rem;
+    padding: 0 16px;
   }
 `;
 
 export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  
+  a {
+    display: flex;
+    align-items: center;
+  }
+  
   @media (max-width: 768px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+`;
+
+export const NavMenu = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 24px 48px;
+  border-radius: 53px;
+  border: 2px solid #1f00ff;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  
+  @media (max-width: 768px) {
+    &.desktop {
+      display: none;
+    }
+  }
+`;
+
+export const NavLink = styled(Link)`
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(239, 239, 239, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  
+  &:hover, &.active {
+    color: #efefef;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 18px;
   }
 `;
 
@@ -56,12 +93,12 @@ export const BurgerMenu = styled.div`
       position: absolute;
       height: 2px;
       width: 100%;
-      background: var(--green);
+      background: #12fbbd;
       border-radius: 2px;
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
-      transition: .25s ease-in-out;
+      transition: 0.25s ease-out;
 
       &:nth-child(1) {
         top: 4px;
@@ -109,7 +146,7 @@ export const MobileOverlay = styled.div`
     backdrop-filter: blur(4px);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
     z-index: 100;
 
     &.active {
@@ -129,10 +166,10 @@ export const MobileMenu = styled.div`
     right: -320px;
     width: 320px;
     height: 100vh;
-    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
-    padding: 7rem 2.5rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(31, 0, 255, 0.15) 100%);
+    backdrop-filter: blur(20px);
+    padding: 100px 32px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 101;
     overflow-y: auto;
 
@@ -140,110 +177,26 @@ export const MobileMenu = styled.div`
       right: 0;
     }
 
-    &::-webkit-scrollbar {
-      width: 0px;
-    }
-  }
-`;
-
-export const Nav = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  position: relative;
-  margin-right: 0;
-
-  a {
-    color: var(--link-color) !important;
-    font-size: 1rem;
-    font-weight: 400;
-    position: relative;
-    
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #4299e1;
-      transition: width 0.3s ease;
-    }
-    
-    &.active {
-      color: #4299e1 !important;
-      font-weight: 400;
-      &:after {
-        width: 100%;
-      }
-    }
-    
-    &:hover:after {
-      color: #4299e1;
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    &.desktop {
-      display: none;
-    }
-
-    position: static;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
-    margin: 0;
-    color: white;
-
-    a {
-      color: white;
-      font-weight: 500;
-      font-size: 1.125rem;
-      position: relative;
-      padding: 0.5rem 0;
-      width: 100%;
-      letter-spacing: 0.02em;
-      transition: color 0.2s ease;
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #4299e1;
-        transition: width 0.3s ease;
-      }
-
-      &.active {
-        color: #4299e1 !important;
-        font-weight: 500;
-      }
-
-      &:hover {
-        color: #4299e1;
-        &:after {
-          width: 2rem;
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      
+      a {
+        color: rgba(239, 239, 239, 0.7);
+        font-size: 20px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover, &.active {
+          color: #efefef;
         }
       }
     }
-    span, p, div {
-      color: white;
-    }
   }
 `;
 
-export const AbsoluteLinks = styled(Link)`
-  position: absolute;
-  top: 40px;
-  color: var(--link-color);
-  font-size: 1rem;
-  font-weight: 400;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: var(--blue);
-  }
-`;
+// Legacy exports
+export const Nav = styled.div``;
+export const AbsoluteLinks = styled(Link)``;

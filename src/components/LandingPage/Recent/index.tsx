@@ -1,50 +1,67 @@
 "use client";
-import Image from "next/image";
+
 import {
   Wrapper,
   Inner,
   Header,
-  HeaderContainer,
+  Title,
+  ViewAllLink,
+  EventsGrid,
+  EventCard,
+  EventImage,
+  EventContent,
+  EventTitle,
+  EventDescription,
+  EventDate,
 } from "./styles";
-import MaskText from "@/components/Common/MaskText";
-import { useIsMobile } from "../../../../libs/useIsMobile";
-import { headerPhrase, mobileHeaderPhrase } from "./constants";
-import RecentEvent from "@/components/ui/RecentEvent";
 import { events } from "@/data/events";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react";
 
 const Recent = () => {
-    const isMobile = useIsMobile();
-    
-    // Sort events by date (most recent first) and take only the first 3
-    const recentEvents = events
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .slice(0, 3);
-  
-    return (
-        <Wrapper>
-            <Inner>
-                <HeaderContainer>
-                    <Header>
-                        {isMobile ? (
-                            <MaskText phrases={mobileHeaderPhrase} tag="h1" />
-                        ) : (
-                            <MaskText phrases={headerPhrase} tag="h1" />
-                        )}
-                    </Header>
-                </HeaderContainer>
-                    {recentEvents.map((recentEvent) => (
-                        <RecentEvent
-                            key={recentEvent.id}
-                            title={recentEvent.title}
-                            date={recentEvent.date}
-                            description={recentEvent.description}
-                            imageSrc={recentEvent.imageSrc}
-                            slug={recentEvent.slug}
-                        />
-                    ))}
-            </Inner>
-        </Wrapper>
-    );
+  // Take only the first 3 events for the landing page
+  const displayEvents = events.slice(0, 3);
+
+  return (
+    <Wrapper>
+      <Inner>
+        <Header>
+          <Title>
+            <span className="white">Recent </span>
+            <span className="gradient">Events</span>
+          </Title>
+          <ViewAllLink href="/events">
+            <span>View All</span>
+            <ArrowRight size={20} weight="bold" />
+          </ViewAllLink>
+        </Header>
+
+        <EventsGrid>
+          {displayEvents.map((event, index) => (
+            <EventCard key={index}>
+              <EventImage>
+                <Image
+                  src={event.imageSrc}
+                  alt={event.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </EventImage>
+              <EventContent>
+                <div>
+                  <EventTitle>{event.title}</EventTitle>
+                  <EventDescription>{event.description}</EventDescription>
+                </div>
+                <EventDate>{event.date}</EventDate>
+              </EventContent>
+            </EventCard>
+          ))}
+        </EventsGrid>
+      </Inner>
+    </Wrapper>
+  );
 };
 
 export default Recent;
