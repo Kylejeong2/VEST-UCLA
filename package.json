@@ -19,6 +19,7 @@
     "@radix-ui/react-select": "^2.1.4",
     "@radix-ui/react-slot": "^1.1.1",
     "@studio-freight/react-lenis": "^0.0.38",
+    "@supabase/supabase-js": "^2.81.1",
     "@tanstack/react-table": "^8.11.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
