@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: "VEST at UCLA",
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={GeistSans.className}>
       <body>
         <Layout>{children}</Layout>
         <Toaster position="top-right" theme="dark" />

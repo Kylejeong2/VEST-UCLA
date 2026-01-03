@@ -5,7 +5,8 @@ import {
   Wrapper,
   Inner,
   LogoContainer,
-  Nav,
+  NavMenu,
+  NavLink,
   BurgerMenu,
   MobileOverlay,
   MobileMenu,
@@ -36,8 +37,8 @@ const Header = () => {
           <Link href="/">
             <Image
               src="/images/VEST-logo-white.svg"
-              width={70}
-              height={70}
+              width={72}
+              height={72}
               alt="VEST logo"
               priority
             />
@@ -51,35 +52,31 @@ const Header = () => {
 
         <MobileOverlay className={isOpen ? 'active' : ''} onClick={closeMenu} />
         <MobileMenu className={isOpen ? 'active' : ''}>
-          <Nav>
+          <nav>
             {links.map((link, i) => (
               <Link 
                 key={i} 
                 href={link.url}
-                className={`text-white hover:text-blue-500 transition-colors ${
-                  pathname === link.url ? 'active' : ''
-                }`}
+                className={pathname === link.url ? 'active' : ''}
                 onClick={closeMenu}
               >
                 {link.linkTo}
               </Link>
             ))}
-          </Nav>
+          </nav>
         </MobileMenu>
 
-        <Nav className="desktop">
+        <NavMenu className="desktop">
           {links.map((link, i) => (
-            <Link 
+            <NavLink 
               key={i} 
               href={link.url}
-              className={`text-white hover:text-blue-500 transition-colors ${
-                pathname === link.url ? 'active text-blue-500' : ''
-              }`}
+              className={pathname === link.url ? 'active' : ''}
             >
               {link.linkTo}
-            </Link>
+            </NavLink>
           ))}
-        </Nav>
+        </NavMenu>
       </Inner>
     </Wrapper>
   );

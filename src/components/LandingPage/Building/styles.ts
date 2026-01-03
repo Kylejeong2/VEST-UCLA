@@ -2,214 +2,148 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-  margin-top: 6rem;
-  background: rgba(0, 0, 0, 0);
-  padding: 1rem 0;
+  width: 100%;
+  padding: 100px 0;
   position: relative;
-  z-index: 2;
-  margin-bottom: 2rem;
-
+  
   @media (max-width: 768px) {
-    margin-top: 1rem;
+    padding: 60px 0;
   }
 `;
 
 export const Inner = styled.div`
   width: 90%;
-  max-width: 1440px;
-  margin: 0 4rem 3rem;
+  max-width: 1236px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-
+  gap: 60px;
+  
   @media (max-width: 768px) {
-    margin: 0 1rem 1rem;
-    width: calc(100% - 2rem);
+    gap: 40px;
   }
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderSection = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  padding: 0 0rem;
-  margin-bottom: 3.5rem;
-
-  .left-content{
-    width: 45%;
-    display: flex;
+  gap: 60px;
+  
+  @media (max-width: 1024px) {
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .right-content {
-    width: 55%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    min-height: auto;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-
-    .left-content {
-      width: 100%;
-      text-align: left;
-      justify-content: flex-start;
-    }
-
-    .right-content {
-      width: 100%;
-      justify-content: flex-start;
-      text-align: left;
-    }
+    gap: 24px;
   }
 `;
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  width: 100%;
-  font-family: "Inter", sans-serif;
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--green);
+export const HeaderTitle = styled.h2`
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 80px;
+  max-width: 594px;
+  flex-shrink: 0;
+  
+  .white {
+    background: linear-gradient(180deg, #ffffff 0%, #adceff 44.231%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-
-  div[class*="Body"] {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  
+  .gradient {
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-
-  p {
-    max-width: 41.75rem;
-    color: var(--light-gray);
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.75rem;
+  
+  @media (max-width: 1024px) {
+    font-size: 48px;
+    line-height: 56px;
+    max-width: 100%;
   }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 1rem;
-
-    h1 {
-      font-size: 2.25rem;
-      align-self: center;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
+  
+  @media (max-width: 640px) {
+    font-size: 36px;
+    line-height: 44px;
   }
 `;
 
-export const BannerCtn = styled.div`
-  width: 100%;
-  position: relative;
-  width: 100%;
-  height: 38.4375rem;
-  overflow: hidden;
-  border-radius: 0.75rem;
-
-  img {
-    border-radius: 0.75rem;
-    object-fit: cover;
+export const HeaderDescription = styled.p`
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #efefef;
+  max-width: 594px;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
   }
-
+  
   @media (max-width: 768px) {
-    height: auto;
+    font-size: 18px;
+    line-height: 26px;
   }
 `;
 
-export const Edges = styled.div`
+export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  margin: 0 4rem;
-
-  @media (max-width: 768px) {
+  gap: 32px;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 0 1rem;
-    width: calc(100% - 2rem);
   }
 `;
 
-export const Edge = styled.div`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.62rem;
-  font-family: "Inter", sans-serif;
+  gap: 24px;
+  padding: 28px 30px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  position: relative;
+`;
 
-  p {
-    max-width: 26rem;
-    color: var(--link-color);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-  }
+export const CardIcon = styled.div`
+  color: #12fbbd;
+`;
 
+export const CardTitle = styled.h3`
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #efefef;
+  
   @media (max-width: 768px) {
-    p {
-      max-width: 100%;
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
+    font-size: 28px;
+    line-height: 32px;
   }
 `;
 
-export const Title = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-family: "Inter", sans-serif;
-
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
+export const CardDescription = styled.p`
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #efefef;
+  
   @media (max-width: 768px) {
-    h3 {
-      font-size: 1.25rem;
-    }
+    font-size: 18px;
+    line-height: 26px;
   }
 `;
 
-export const BriefNote = styled.div`
-  max-height: 54.75rem;
-  padding: 8.25rem 4.5rem;
-  background: var(--emerald);
-  font-family: "Inter", sans-serif;
-
-  p {
-    color: var(--Background, #070606);
-    font-size: 8rem;
-    font-weight: 400;
-    max-width: 1440px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-    p {
-      font-size: 3.75rem;
-    }
-  }
-`;
+// Legacy exports for backwards compatibility
+export const Header = styled.div``;
+export const HeaderContainer = styled.div``;
+export const Edges = styled.div``;
+export const Edge = styled.div``;
+export const Title = styled.div``;
+export const BriefNote = styled.div``;
+export const BannerCtn = styled.div``;
