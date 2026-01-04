@@ -21,7 +21,7 @@ const HeroSection = () => {
       <Inner>
         <HeroContent>
           <HeroBadge>
-            <Rocket size={16} weight="fill" />
+            <Rocket size={16}/>
             <span>UCLA&apos;s Premier VC/Startup Club</span>
           </HeroBadge>
           

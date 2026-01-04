@@ -72,5 +72,5 @@ export const Answer = styled(motion.div)`
   color: var(--link-color);
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 1.5;
 `;

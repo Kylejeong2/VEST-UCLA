@@ -71,7 +71,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <LinkedinLogo size={32} weight="fill" />
+                <LinkedinLogo size={32}/>
               </a>
               <a
                 href="https://www.instagram.com/vestucla/"
@@ -79,7 +79,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <InstagramLogo size={32} weight="fill" />
+                <InstagramLogo size={32}/>
               </a>
               <a
                 href="https://twitter.com/vestucla"
@@ -87,13 +87,13 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="X/Twitter"
               >
-                <XLogo size={32} weight="fill" />
+                <XLogo size={32}/>
               </a>
               <a
                 href="mailto:vestucla@gmail.com"
                 aria-label="Email"
               >
-                <EnvelopeSimple size={32} weight="fill" />
+                <EnvelopeSimple size={32}/>
               </a>
             </SocialLinks>
 

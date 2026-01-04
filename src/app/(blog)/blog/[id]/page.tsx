@@ -199,7 +199,7 @@ const CoverImage = styled.div`
 const Content = styled.div`
   color: var(--white);
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.5;
 
   h2 {
     font-size: 2rem;

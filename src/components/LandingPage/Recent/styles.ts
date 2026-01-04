@@ -31,7 +31,7 @@ export const Header = styled.div`
   justify-content: space-between;
   gap: 24px;
   
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -40,7 +40,7 @@ export const Header = styled.div`
 export const Title = styled.h2`
   font-size: 72px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
   
   .white {
     background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
@@ -50,17 +50,13 @@ export const Title = styled.h2`
   }
   
   .gradient {
-    background: linear-gradient(90deg, #12fbbd 0%, #50b8f5 28.846%, #2b75ff 50.962%, #9114ff 100%);
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  @media (max-width: 1024px) {
-    font-size: 48px;
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     font-size: 36px;
   }
 `;
@@ -105,11 +101,7 @@ export const EventsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -141,21 +133,24 @@ export const EventContent = styled.div`
 export const EventTitle = styled.h3`
   font-size: 24px;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 1.5;
   color: #efefef;
   margin-bottom: 8px;
   
   @media (max-width: 768px) {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 18px;
   }
 `;
 
 export const EventDescription = styled.p`
   font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 1.5;
   color: rgba(239, 239, 239, 0.7);
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const EventDate = styled.span`

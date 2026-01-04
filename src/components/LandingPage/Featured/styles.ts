@@ -27,14 +27,13 @@ export const Inner = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 36px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
   color: #efefef;
-  text-align: center;
-  padding: 0 24px;
   
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: 16px;
   }
 `;
 

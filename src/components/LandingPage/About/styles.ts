@@ -68,7 +68,7 @@ export const AboutTitle = styled.h1`
   color: #4299e1;
   margin: 4rem 0;
   text-align: center;
-  line-height: 1;
+  line-height: 1.5;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -166,7 +166,7 @@ export const StatLabel = styled.div`
   color: #b9d4f6;
   font-weight: 400;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.5;
 `;
 
 export const ImagesGrid = styled.div`

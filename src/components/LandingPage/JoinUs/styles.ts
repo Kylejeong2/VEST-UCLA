@@ -89,7 +89,7 @@ export const JoinUsTitle = styled.h1`
   color: #4299e1;
   margin: 4rem 0;
   text-align: center;
-  line-height: 1;
+  line-height: 1.5;
   width: 100%;
   position: relative;
   z-index: 3;
@@ -127,7 +127,7 @@ export const JoinUsText = styled.p`
   max-width: 1100px;
   margin: 0 auto 60px;
   text-align: left;
-  line-height: 1.6;
+  line-height: 1.5;
   padding-left: 20px;
   position: relative;
   z-index: 3;
@@ -216,7 +216,7 @@ export const QuarterlyTitle = styled.h3`
   font-size: 1.6rem;
   font-weight: 600;
   text-align: left;
-  line-height: 1.3;
+  line-height: 1.5;
 
   @media (max-width: 768px) {
     text-align: center;
@@ -226,6 +226,6 @@ export const QuarterlyTitle = styled.h3`
 export const QuarterlyDesc = styled.p`
   color: #efefef;
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
 `;

@@ -51,7 +51,7 @@ export const HeroContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
-  max-width: 600px;
+  max-width: 650px;
   
   @media (max-width: 768px) {
     align-items: center;
@@ -75,31 +75,27 @@ export const HeroBadge = styled.div`
   }
   
   svg {
-    color: #efefef;
+    color: #12fbbd;
   }
 `;
 
 export const HeroTitle = styled.h1`
   font-size: 80px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
   background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   
   .gradient-text {
-    background: linear-gradient(90deg, #12fbbd 27.885%, #50b8f5 33.654%, #2b75ff 44.231%, #9114ff 50.962%);
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  @media (max-width: 1024px) {
-    font-size: 56px;
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     font-size: 42px;
   }
 `;
@@ -107,12 +103,11 @@ export const HeroTitle = styled.h1`
 export const HeroDescription = styled.p`
   font-size: 24px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.5;
   color: #efefef;
   
   @media (max-width: 768px) {
     font-size: 18px;
-    line-height: 26px;
   }
 `;
 
@@ -158,17 +153,9 @@ export const HeroImageContainer = styled.div`
   width: 500px;
   transform: rotate(4deg);
   
-  @media (max-width: 1200px) {
-    width: 400px;
-  }
-  
-  @media (max-width: 1024px) {
-    width: 350px;
-    transform: rotate(0deg);
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     width: 280px;
+    transform: rotate(0deg);
   }
 `;
 

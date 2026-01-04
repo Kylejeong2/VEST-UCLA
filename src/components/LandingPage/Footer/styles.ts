@@ -30,10 +30,6 @@ export const TopSection = styled.div`
   justify-content: space-between;
   gap: 60px;
   
-  @media (max-width: 1024px) {
-    flex-wrap: wrap;
-  }
-  
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 40px;
@@ -57,7 +53,7 @@ export const NavSection = styled.div`
   display: flex;
   gap: 80px;
   
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     gap: 48px;
   }
 `;

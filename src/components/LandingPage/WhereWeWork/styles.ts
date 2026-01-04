@@ -27,7 +27,7 @@ export const Inner = styled.div`
 export const Title = styled.h2`
   font-size: 72px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
   
   .white {
     background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
@@ -37,17 +37,13 @@ export const Title = styled.h2`
   }
   
   .gradient {
-    background: linear-gradient(90deg, #12fbbd 79%, #50b8f5 83.654%, #2b75ff 96.154%, #9114ff 100%);
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  @media (max-width: 1024px) {
-    font-size: 48px;
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     font-size: 36px;
   }
 `;

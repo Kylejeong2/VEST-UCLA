@@ -46,7 +46,7 @@ export const TeamHeader = styled.div`
     font-size: 7rem;
     font-weight: 600;
     padding: 0 8rem;
-    line-height: 1;
+    line-height: 1.5;
     color: #4299e1;
     margin-top: 8rem;
   }
@@ -116,7 +116,7 @@ export const TeamDescription = styled.div`
 export const SectionTitle = styled.h2`
   font-size: 4rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.5;
   color: var(--green);
   margin-inline: 0.5rem;
   margin-bottom: 2rem;
@@ -161,15 +161,7 @@ export const MembersGrid = styled.div`
   margin: 0 auto;
   justify-items: center;
   
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
 `;

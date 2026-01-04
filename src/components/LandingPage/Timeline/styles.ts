@@ -37,7 +37,7 @@ export const Header = styled.header`
     color: var(--link-color);
     font-size: 1.25rem;
     font-weight: 400;
-    line-height: 1.75rem;
+    line-height: 1.5;
   }
 
   @media (max-width: 768px) {
@@ -49,7 +49,7 @@ export const Header = styled.header`
 
     p {
       font-size: 1rem;
-      line-height: 1.5rem;
+      line-height: 1.5;
     }
   }
 `;

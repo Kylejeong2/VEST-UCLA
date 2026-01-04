@@ -9,8 +9,32 @@ export const Wrapper = styled.header`
   width: 100%;
   z-index: 200;
   padding: 24px 0;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(6px);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    backdrop-filter: blur(12px);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
 `;
 
 export const Inner = styled.div`
@@ -48,8 +72,8 @@ export const NavMenu = styled.nav`
   display: flex;
   align-items: center;
   gap: 48px;
-  padding: 24px 48px;
-  border-radius: 53px;
+  padding: 16px 32px;
+  border-radius: 32px;
   border: 2px solid #1f00ff;
   background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
   
@@ -61,7 +85,7 @@ export const NavMenu = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: rgba(239, 239, 239, 0.5);
   text-decoration: none;
@@ -72,8 +96,8 @@ export const NavLink = styled(Link)`
     color: #efefef;
   }
   
-  @media (max-width: 1024px) {
-    font-size: 18px;
+  @media (max-width: 768px) {
+    font-size: 12px;
   }
 `;
 

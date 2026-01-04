@@ -26,11 +26,11 @@ export const Inner = styled.div`
 
 export const HeaderSection = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 60px;
   
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     gap: 24px;
   }
@@ -39,7 +39,7 @@ export const HeaderSection = styled.div`
 export const HeaderTitle = styled.h2`
   font-size: 72px;
   font-weight: 600;
-  line-height: 80px;
+  line-height: 1.1;
   max-width: 594px;
   flex-shrink: 0;
   
@@ -57,32 +57,23 @@ export const HeaderTitle = styled.h2`
     background-clip: text;
   }
   
-  @media (max-width: 1024px) {
-    font-size: 48px;
-    line-height: 56px;
-    max-width: 100%;
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     font-size: 36px;
-    line-height: 44px;
+    line-height: 1.5;
+    max-width: 100%;
   }
 `;
 
 export const HeaderDescription = styled.p`
   font-size: 24px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.5;
   color: #efefef;
   max-width: 594px;
   
-  @media (max-width: 1024px) {
-    max-width: 100%;
-  }
-  
   @media (max-width: 768px) {
+    max-width: 100%;
     font-size: 18px;
-    line-height: 26px;
   }
 `;
 
@@ -91,11 +82,7 @@ export const CardsContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -116,26 +103,24 @@ export const CardIcon = styled.div`
 `;
 
 export const CardTitle = styled.h3`
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 36px;
+  line-height: 1.5;
   color: #efefef;
   
   @media (max-width: 768px) {
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 16px;
   }
 `;
 
 export const CardDescription = styled.p`
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 30px;
-  color: #efefef;
+  line-height: 1.5;
+  color: rgba(239, 239, 239, 0.7);
   
   @media (max-width: 768px) {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 12px;
   }
 `;
 
