@@ -40,7 +40,7 @@ export const Inner = styled.div`
   position: relative;
   z-index: 1;
   
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
   }
@@ -53,7 +53,7 @@ export const HeroContent = styled.div`
   gap: 32px;
   max-width: 600px;
   
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     align-items: center;
     max-width: 100%;
   }
