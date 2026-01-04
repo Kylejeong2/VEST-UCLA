@@ -59,7 +59,6 @@ export const HeaderTitle = styled.h2`
   
   @media (max-width: 768px) {
     font-size: 36px;
-    line-height: 1.5;
     max-width: 100%;
   }
 `;
@@ -84,6 +83,7 @@ export const CardsContainer = styled.div`
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 `;
 
@@ -92,10 +92,15 @@ export const Card = styled.div`
   flex-direction: column;
   gap: 24px;
   padding: 28px 30px;
-  border-radius: 30px;
+  border-radius: 24px;
   background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
   box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    gap: 16px;
+  }
 `;
 
 export const CardIcon = styled.div`
@@ -120,7 +125,7 @@ export const CardDescription = styled.p`
   color: rgba(239, 239, 239, 0.7);
   
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 

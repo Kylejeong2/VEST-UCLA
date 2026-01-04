@@ -9,11 +9,11 @@ export const Wrapper = styled.section`
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: 120px;
+  padding-top: 60px;
   
   @media (max-width: 768px) {
     min-height: auto;
-    padding: 120px 0 60px;
+    padding: 60px 0 60px;
   }
 `;
 
@@ -114,18 +114,17 @@ export const HeroDescription = styled.p`
 export const HeroButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   padding: 16px 30px;
   border-radius: 24px;
   background: linear-gradient(180deg, #0074e1 0%, #1f00ff 100%);
   box-shadow: 0px 0px 30px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   
   span {
     color: #efefef;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
   }
   
@@ -139,11 +138,11 @@ export const HeroButton = styled.button`
   }
   
   @media (max-width: 768px) {
-    padding: 12px 24px;
-    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 16px;
     
     span {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 `;

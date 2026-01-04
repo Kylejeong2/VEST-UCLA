@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 export interface EventProps {
   imageSrc?: string;
@@ -10,33 +11,107 @@ export interface EventProps {
   slug: string;
 }
 
+const RecentEventWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 24px;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  overflow: hidden;
+  padding: 20px;
+  gap: 24px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+`;
+
+const EventImageWrapper = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(239, 239, 239, 0.1);
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+`;
+
+const EventContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+`;
+
+const EventTitle = styled.h3`
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #efefef;
+  
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+`;
+
+const EventDate = styled.span`
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(239, 239, 239, 0.5);
+  margin-top: 8px;
+`;
+
+const EventDescription = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(239, 239, 239, 0.7);
+  margin-top: 16px;
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+`;
+
 const RecentEvent: React.FC<EventProps> = ({ imageSrc, title, date, description, slug }) => {
   return (
-    <Link href={`/events/${slug}`} className="block cursor-pointer">
-      <div className="w-full flex flex-col md:flex-row overflow-hidden rounded-2xl border-2 border-blue-500 bg-[#1A1A1A] p-4 md:p-5 gap-4 md:gap-5 mb-5 transition-transform hover:scale-[1.02]">
-        <div className="relative aspect-square w-full md:w-[200px] h-[200px] overflow-hidden rounded-lg bg-gray-300 flex-shrink-0">
+    <Link href={`/events/${slug}`} style={{ textDecoration: 'none' }}>
+      <RecentEventWrapper>
+        <EventImageWrapper>
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt={title}
               fill
-              className="object-cover"
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 200px"
             />
           ) : (
-            <div className="h-full w-full bg-gray-300" />
+            <div style={{ width: '100%', height: '100%', background: 'rgba(239, 239, 239, 0.1)' }} />
           )}
-        </div>
-        <div className="flex flex-col h-full justify-center">
-          <div className="text-white">
-              <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
-              <p className="text-sm text-gray-300 mt-1">{date}</p>
-              
-              <p className="mt-3 md:mt-4 text-sm leading-relaxed">
-              {description}
-              </p>
-          </div>
-        </div>
-      </div>
+        </EventImageWrapper>
+        <EventContent>
+          <EventTitle>{title}</EventTitle>
+          <EventDate>{date}</EventDate>
+          <EventDescription>{description}</EventDescription>
+        </EventContent>
+      </RecentEventWrapper>
     </Link>
   );
 };

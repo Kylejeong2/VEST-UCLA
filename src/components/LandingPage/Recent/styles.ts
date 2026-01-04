@@ -88,7 +88,8 @@ export const ViewAllLink = styled(Link)`
   }
   
   @media (max-width: 768px) {
-    padding: 12px 24px;
+    padding: 12px 20px;
+    border-radius: 16px;
     
     span {
       font-size: 16px;
@@ -103,6 +104,7 @@ export const EventsGrid = styled.div`
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 `;
 
@@ -149,7 +151,7 @@ export const EventDescription = styled.p`
   color: rgba(239, 239, 239, 0.7);
   
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 

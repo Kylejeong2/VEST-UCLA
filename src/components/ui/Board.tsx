@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import styled from 'styled-components';
 
 export interface BoardProps {
   imageSrc?: string;
@@ -8,29 +9,85 @@ export interface BoardProps {
   role: string;
 }
 
+const BoardCardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 24px;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  overflow: hidden;
+  padding: 20px;
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+`;
+
+const BoardImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(239, 239, 239, 0.1);
+`;
+
+const BoardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: left;
+`;
+
+const BoardName = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #efefef;
+  
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
+const BoardRole = styled.p`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(239, 239, 239, 0.7);
+  margin-top: 4px;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
 const Board: React.FC<BoardProps> = ({ imageSrc, firstName, lastName, role }) => {
   return (
-    <div className="w-full overflow-hidden rounded-2xl border-2 border-blue-500 bg-[#1A1A1A] p-5">
-      <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-300">
+    <BoardCardWrapper>
+      <BoardImageWrapper>
         {imageSrc ? (
           <Image
             src={imageSrc}
             alt={`${firstName} ${lastName}`}
             fill
-            className="object-cover"
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
         ) : (
-          <div className="h-full w-full bg-gray-300" />
+          <div style={{ width: '100%', height: '100%', background: 'rgba(239, 239, 239, 0.1)' }} />
         )}
-      </div>
+      </BoardImageWrapper>
       
-      <div className="mt-4 text-left text-white">
-        <h3 className="text-xl font-bold">
+      <BoardContent>
+        <BoardName>
           {firstName} {lastName}
-        </h3>
-        <p className="text-sm text-gray-300">{role}</p>
-      </div>
-    </div>
+        </BoardName>
+        <BoardRole>{role}</BoardRole>
+      </BoardContent>
+    </BoardCardWrapper>
   );
 };
 

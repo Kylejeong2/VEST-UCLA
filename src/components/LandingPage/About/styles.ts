@@ -1,79 +1,79 @@
 "use client";
 import styled from "styled-components";
-import hero_background from "../../../../public/images/grid_background.png";
-
-// Removing the CSS-grid background and replacing with image-based grid
-// export const GridBackground = styled.div`
-//   position: fixed;
-//   inset: 0;
-//   z-index: -1;
-//   background: radial-gradient(ellipse at center, rgba(10,25,47,0.97) 0%, #050e1a 100%);
-//   &:before {
-//     content: '';
-//     position: absolute;
-//     inset: 0;
-//     background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 100px), repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 100px);
-//     pointer-events: none;
-//     z-index: 1;
-//   }
-// `;
 
 export const AboutWrapper = styled.div`
-  margin-top: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  min-height: calc(100vh - 6.25rem);
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   z-index: 1;
+  padding-top: 120px;
 `;
 
 export const Inner = styled.div`
-  background: url(${hero_background.src}) no-repeat;
-  width: 100%;
-  background-position: top center;
-  background-size: 100% auto;
-  padding: 4rem 0;
+  width: 90%;
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 60px 0;
   
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 40px 0;
   }
 `;
 
 export const ContentContainer = styled.div`
-  width: 90%;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
+`;
+
+export const BackgroundGlow = styled.div`
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 1600px;
+  height: 800px;
+  background: radial-gradient(ellipse at center, rgba(31, 0, 255, 0.15) 0%, rgba(0, 116, 225, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 `;
 
 export const BlurCircle = styled.div`
   position: fixed;
-  top: -800px;
-  left: -400px;
-  width: 1270px;
-  height: 1270px;
-  background-color: #1e3a8a;
+  top: -400px;
+  left: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(31, 0, 255, 0.3) 0%, rgba(120, 67, 255, 0.1) 50%, transparent 70%);
   border-radius: 50%;
-  filter: blur(250px);
+  filter: blur(100px);
   z-index: -1;
   pointer-events: none;
 `;
 
 export const AboutTitle = styled.h1`
-  font-size: 7rem;
+  font-size: 72px;
   font-weight: 600;
-  color: #4299e1;
-  margin: 4rem 0;
+  line-height: 1.1;
   text-align: center;
-  line-height: 1.5;
-  width: 100%;
+  margin-bottom: 60px;
+  
+  .white {
+    background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient {
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
   @media (max-width: 768px) {
-    font-size: 3rem;
-    margin: 2rem 0;
+    font-size: 36px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -81,46 +81,105 @@ export const TopRow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 48px;
   width: 100%;
+  margin-bottom: 60px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 32px;
+  }
 `;
 
 export const AboutImage = styled.div`
-  background: #d8dbe2;
-  color: #222;
-  border-radius: 16px;
+  border-radius: 24px;
   height: 400px;
   aspect-ratio: 5/4;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-`;
-
-export const AboutText = styled.div`
-  // max-width: 500px;
-  width: 100%;
-  color: #efefef;
-  font-size: 1.75rem;
-  font-weight: 400;
-  margin: 0 auto;
-  text-align: left;
-
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  
   @media (max-width: 768px) {
-    font-size: 1.25rem;
+    height: 280px;
+    width: 100%;
   }
 `;
 
-export const WelcomeTitle = styled.span`
+export const AboutText = styled.div`
   width: 100%;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    margin-bottom: 0.75rem;
-    text-align: left;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 60px 0;
+
+  p {
+    color: #efefef;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 768px) {
+    p {
+      font-size: 14px;
+    }
+  }
+`;
+
+export const TextContainer = styled.div`
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  text-align: left;
+`;
+
+export const WelcomeTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  width: 500px;
+  line-height: 1.2;
+  
+  @media (max-width: 768px) {
+    font-size: 20px;
+    width: 100%;
+  }
+`;
+
+export const AboutDescription = styled.div`
+  margin: 6px 0 60px;
+  text-align: left;
+  width: 100%;
+  max-width: 750px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  p {
+    color: #efefef;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+    
+    p {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const StatsRow = styled.div`
@@ -128,15 +187,18 @@ export const StatsRow = styled.div`
   justify-content: center;
   align-items: stretch;
   gap: 0;
-  background: rgba(0,0,0,0.22);
-  border-radius: 20px;
-  margin: 0 auto 70px auto;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  border-radius: 24px;
+  margin: 60px auto;
   max-width: 1000px;
   width: 100%;
-  aspect-ratio: 5/1;
   overflow: hidden;
-  border: 1.5px solid #3a4c66;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 40px auto;
+  }
 `;
 
 export const StatBox = styled.div`
@@ -145,25 +207,43 @@ export const StatBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 32px 0 24px 0;
+  padding: 40px 24px;
   background: transparent;
   color: #efefef;
-  border-right: 1.5px solid #3a4c66;
+  border-right: 1px solid rgba(239, 239, 239, 0.1);
+  
   &:last-child {
     border-right: none;
+  }
+  
+  @media (max-width: 768px) {
+    border-right: none;
+    border-bottom: 1px solid rgba(239, 239, 239, 0.1);
+    padding: 32px 24px;
+    
+    &:last-child {
+      border-bottom: none;
+    }
   }
 `;
 
 export const StatNumber = styled.div`
-  font-size: 3.4rem;
+  font-size: 48px;
   font-weight: 700;
   margin-bottom: 8px;
-  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #12fbbd 0%, #508af5 50%, #2b75ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 export const StatLabel = styled.div`
-  font-size: 1rem;
-  color: #b9d4f6;
+  font-size: 16px;
+  color: rgba(239, 239, 239, 0.7);
   font-weight: 400;
   text-align: center;
   line-height: 1.5;
@@ -172,41 +252,38 @@ export const StatLabel = styled.div`
 export const ImagesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  /* Spacing above and below pictures */
-  margin: 6rem auto;
+  gap: 32px;
+  margin: 60px auto;
   width: 100%;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 3rem auto;
+    gap: 16px;
+    margin: 40px auto;
   }
 `;
 
 export const GridImage = styled.div`
-  background: #efefef;
-  color: #222;
-  border-radius: 16px;
+  border-radius: 24px;
   width: 100%;
   aspect-ratio: 5/4;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease-in-out;
-  position: relative;
   overflow: hidden;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  position: relative;
+  transition: transform 0.3s ease;
   
-  // &:hover {
-  //   transform: translateY(-5px);
-  // }
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 export const AboutParagraph = styled.p`
-  margin-bottom: 1.25rem;
-  color: #efefef;
+  margin-bottom: 24px;
+  color: rgba(239, 239, 239, 0.8);
   font-weight: 400;
-  text-align: left;
-  `;
+  line-height: 1.5;
+`;

@@ -15,7 +15,10 @@ import {
   ClassSection,
   MembersGrid,
   BlurCircle,
-  BoardCard
+  BoardCard,
+  BackgroundGlow,
+  TextContainer,
+  TeamTitle
 } from "./styles";
 
 // Sample board members data
@@ -49,11 +52,31 @@ const classMembers = [
 const Team = () => {
   return (
     <Wrapper>
+      <BackgroundGlow />
       <Inner>
         <ContentContainer>
           <TeamHeader>
-            <h1>Meet the Team</h1>
+            <span className="white">Meet the</span>{" "}
+            <span className="gradient">Team</span>
           </TeamHeader>
+
+          <TextContainer>
+            <TeamTitle>
+              Talent that drives impact.
+            </TeamTitle>
+            <TeamDescription>
+            <p>
+              VEST brings together 40 of UCLA's most talented students, carefully
+              selected through a competitive process where fewer than 1 in 10
+              applicants are accepted into our club.
+            </p>
+            <p>
+              Our members have worked at industry leaders such as Google, Snap,
+              Paramount, Amazon, Jane Street, Cursor, Etched, Northrop, Deloitte,
+              Mercor, Anduril, Stripe, CAT, and Leidos.
+            </p>
+            </TeamDescription>
+          </TextContainer>
        
           <GroupPhotoContainer>
             {/* Placeholder for group photo */}
@@ -74,24 +97,10 @@ const Team = () => {
             </div>
           </GroupPhotoContainer>
 
-          <TeamDescription>
-            <h2>
-              Talent that drives impact.
-            </h2>
-            <p>
-              VEST brings together 40 of UCLA's most talented students, carefully
-              selected through a competitive process where fewer than 1 in 10
-              applicants are accepted into our club.
-            </p>
-            <p>
-              Our members have worked at industry leaders such as Google, Snap,
-              Paramount, Amazon, Jane Street, Cursor, Etched, Northrop, Deloitte,
-              Mercor, Anduril, Stripe, CAT, and Leidos.
-            </p>
-          </TeamDescription>
+          
           
           <BoardSection>
-            <SectionTitle className="text-left">Board</SectionTitle>
+            <SectionTitle className="text-left">Meet Our Board</SectionTitle>
             <MembersGrid>
               {boardMembers.map((member) => (
                 <BoardCard key={member.id}>

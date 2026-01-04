@@ -128,7 +128,7 @@ export const NewsletterButton = styled.a`
   
   span {
     color: #efefef;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
   }
   
@@ -139,6 +139,15 @@ export const NewsletterButton = styled.a`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0px 0px 40px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 12px 20px;
+    border-radius: 16px;
+    
+    span {
+      font-size: 16px;
+    }
   }
 `;
 

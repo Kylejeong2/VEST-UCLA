@@ -17,7 +17,7 @@ export const Wrapper = styled.header`
     left: 0;
     right: 0;
     height: 100%;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(24px);
     mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
     pointer-events: none;
@@ -71,11 +71,12 @@ export const LogoContainer = styled.div`
 export const NavMenu = styled.nav`
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 32px;
   padding: 16px 32px;
-  border-radius: 32px;
+  border-radius: 24px;
   border: 2px solid #1f00ff;
   background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  backdrop-filter: blur(2px);
   
   @media (max-width: 768px) {
     &.desktop {

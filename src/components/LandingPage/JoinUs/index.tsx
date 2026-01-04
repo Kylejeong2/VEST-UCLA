@@ -14,19 +14,27 @@ import {
   QuarterlyDesc,
   QuarterlyVerticalLine,
   BlurCircle,
-  Inner
+  Inner,
+  BackgroundGlow,
+  TextContainer
 } from "./styles";
 import ImageCarousel from "../../imagecarousel";
 
 const JoinUsComponent = () => {
   return (
     <JoinUsWrapper>
+      <BackgroundGlow />
       <Inner>
-        <JoinUsTitle>Join Us</JoinUsTitle>
-        <Subheading>Join UCLA's Premier Startup Organization.</Subheading>
-        <JoinUsText>
-          Ready to build, learn, and grow alongside UCLA's startup community? At VEST, we're looking for curious, driven students who are excited to explore entrepreneurship—whether you're a first-time founder, a product thinker, or just startup-curious.
-        </JoinUsText>
+        <JoinUsTitle>
+          <span className="white">Join</span>{" "}
+          <span className="gradient">Us</span>
+        </JoinUsTitle>
+        <TextContainer>
+          <Subheading>Join UCLA's Premier Startup Organization.</Subheading>
+          <JoinUsText>
+            <p>Ready to build, learn, and grow alongside UCLA's startup community? At VEST, we're looking for curious, driven students who are excited to explore entrepreneurship—whether you're a first-time founder, a product thinker, or just startup-curious.</p>
+          </JoinUsText>
+        </TextContainer>
         {/* <WhatWeDoTitle>What We Do</WhatWeDoTitle> */}
         <ImageCarousel />
         {/* <QuarterlySection>

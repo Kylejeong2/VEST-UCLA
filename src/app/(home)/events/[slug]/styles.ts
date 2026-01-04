@@ -1,14 +1,14 @@
 "use client";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-export const Wrapper = styled.section`
+export const EventDetailWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
-  padding-top: 120px;
+  padding-top: 60px;
 `;
 
 export const Inner = styled.div`
@@ -50,44 +50,33 @@ export const BlurCircle = styled.div`
   pointer-events: none;
 `;
 
-export const EventsHeader = styled.h1`
-  font-size: 72px;
+export const EventHeader = styled.h1`
+  font-size: 56px;
   font-weight: 600;
   line-height: 1.1;
+  margin: 0 auto 4px;
   text-align: center;
-  margin-bottom: 60px;
-  
-  .white {
-    background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .gradient {
     background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 
   @media (max-width: 768px) {
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 32px;
   }
 `;
 
-export const TopRow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  width: 100%;
-  margin-bottom: 60px;
+export const EventDate = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(239, 239, 239, 0.5);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
   
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 32px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -101,7 +90,7 @@ export const TextContainer = styled.div`
   text-align: left;
 `;
 
-export const EventsTitle = styled.h2`
+export const EventSubtitle = styled.h2`
   font-size: 32px;
   font-weight: 600;
   background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
@@ -118,7 +107,7 @@ export const EventsTitle = styled.h2`
   }
 `;
 
-export const EventsText = styled.div`
+export const EventDescription = styled.p`
   margin: 6px 0 60px;
   text-align: left;
   width: 100%;
@@ -144,73 +133,60 @@ export const EventsText = styled.div`
   }
 `;
 
-export const EventsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+export const ImageContainer = styled.div`
   width: 100%;
-  margin-bottom: 60px;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-`;
-
-export const EventCard = styled.div`
-  display: flex;
-  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto 60px;
   border-radius: 24px;
+  overflow: hidden;
   background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
   box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-4px);
-  }
-`;
-
-export const EventImage = styled.div`
   position: relative;
-  width: 100%;
   aspect-ratio: 16 / 10;
-  overflow: hidden;
-`;
-
-export const EventContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  flex: 1;
-  gap: 16px;
-`;
-
-export const EventTitle = styled.h3`
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.5;
-  color: #efefef;
   
   @media (max-width: 768px) {
-    font-size: 20px;
+    margin-bottom: 40px;
+    border-radius: 16px;
   }
 `;
 
-export const EventDescription = styled.p`
+export const BackLink = styled.a`
+  display: inline-flex;
+  position: relative;
+  left: 0;
+  top: 0;
+  align-items: center;
+  margin-top: 40px;
+  gap: 8px;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-weight: 500;
   color: rgba(239, 239, 239, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 40px;
+  
+  &:hover {
+    color: #4299e1;
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover svg {
+    transform: translateX(-4px);
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 `;
 
-export const EventDate = styled.span`
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(239, 239, 239, 0.5);
+export const NavigationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 `;
 
-
-export const FooterWrapper = styled.div`
-  margin-top: 80px;
-`;

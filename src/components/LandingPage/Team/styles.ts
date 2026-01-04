@@ -1,147 +1,163 @@
 "use client";
 import { styled } from "styled-components";
-import hero_background from "../../../../public/images/grid_background.png";
 
 export const Wrapper = styled.section`
-  margin-top: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  min-height: calc(100vh - 6.25rem);
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   z-index: 1;
+  padding-top: 120px;
 `;
 
 export const Inner = styled.div`
-  background: url(${hero_background.src}) no-repeat;
-  width: 100%;
-  background-position: top center;
-  background-size: 100% auto;
-  padding: 4rem 0;
+  width: 90%;
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 60px 0;
   
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 40px 0;
   }
 `;
 
 export const ContentContainer = styled.div`
-  width: 90%;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
 `;
 
-export const TeamHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const BackgroundGlow = styled.div`
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 1600px;
+  height: 800px;
+  background: radial-gradient(ellipse at center, rgba(31, 0, 255, 0.15) 0%, rgba(0, 116, 225, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+`;
+
+export const TeamHeader = styled.h1`
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.1;
   text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 60px;
   
-  h1 {
-    font-size: 7rem;
-    font-weight: 600;
-    padding: 0 8rem;
-    line-height: 1.5;
-    color: #4299e1;
-    margin-top: 8rem;
+  .white {
+    background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient {
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   @media (max-width: 768px) {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    
-    h1 {
-      font-size: 3rem;
-      padding: 0 1rem;
-    }
+    font-size: 36px;
+    margin-bottom: 40px;
   }
 `;
 
 export const GroupPhotoContainer = styled.div`
-  // max-width: calc(100% - 8rem);
-  margin: 0 auto 4rem;
+  margin: 0 auto 100px;
   aspect-ratio: 16 / 9;
-  background-color: #f0f0f0;
-  border-radius: 0.5rem;
+  border-radius: 24px;
   overflow: hidden;
   position: relative;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
   
   @media (max-width: 768px) {
-    margin-bottom: 2rem;
+    margin-bottom: 40px;
+    border-radius: 16px;
+  }
+`;
+
+export const TextContainer = styled.div`
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  text-align: left;
+`;
+
+export const TeamTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  width: 500px;
+  line-height: 1.2;
+  @media (max-width: 768px) {
+    font-size: 20px;
+    width: 100%;
   }
 `;
 
 export const TeamDescription = styled.div`
-  // max-width: calc(100% - 8rem);
-  margin: 0 auto 4rem;
+  margin: 6px 0 60px;
   text-align: left;
-  
-  h2 {
-    width: 100%;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    margin-bottom: 0.75rem;
-    text-align: left;
-  }
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   p {
-    width: 100%;
     color: #efefef;
-    font-size: 1.75rem;
+    font-size: 16px;
     font-weight: 400;
-    margin: 0 auto;
-    text-align: left;
+    line-height: 1.5;
   }
   
   @media (max-width: 768px) {
-    margin-bottom: 3rem;
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-    }
+    margin-bottom: 40px;
     
     p {
-      font-size: 1.25rem;
+      font-size: 14px;
     }
   }
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 4rem;
+  font-size: 32px;
   font-weight: 600;
-  line-height: 1.5;
-  color: var(--green);
-  margin-inline: 0.5rem;
-  margin-bottom: 2rem;
-  
+  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  width: 500px;
+  line-height: 1.2;
   @media (max-width: 768px) {
-    font-size: 2.25rem;
-    margin-bottom: 1.5rem;
+    font-size: 20px;
+    width: 100%;
   }
 `;
 
 export const BoardSection = styled.div`
-  margin-bottom: 6rem;
-  justify-content: center;
+  margin-bottom: 80px;
   
   @media (max-width: 768px) {
-    margin-bottom: 3rem;
+    margin-bottom: 48px;
   }
 `;
 
 export const ClassSection = styled.div`
-  margin-bottom: 4rem;
-  justify-content: center;
+  margin-bottom: 60px;
   
   @media (max-width: 768px) {
-    margin-bottom: 3rem;
+    margin-bottom: 40px;
   }
 `;
 
@@ -156,26 +172,27 @@ export const BoardCard = styled.div`
 export const MembersGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem 2rem; 
+  gap: 32px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 0;
   justify-items: center;
+  align-items: center;
   
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 `;
 
 export const BlurCircle = styled.div`
   position: fixed;
-  top: -800px;
-  left: -400px;
-  width: 1270px;
-  height: 1270px;
-  background-color: #1e3a8a;
+  top: -400px;
+  left: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(31, 0, 255, 0.3) 0%, rgba(120, 67, 255, 0.1) 50%, transparent 70%);
   border-radius: 50%;
-  filter: blur(250px);
+  filter: blur(100px);
   z-index: -1;
   pointer-events: none;
 `;
-
