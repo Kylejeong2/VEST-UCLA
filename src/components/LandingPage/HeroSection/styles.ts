@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
   
   @media (max-width: 768px) {
     min-height: auto;
-    padding: 60px 0 60px;
+    padding: 100px 0 20px;
   }
 `;
 
@@ -56,6 +56,7 @@ export const HeroContent = styled.div`
   @media (max-width: 768px) {
     align-items: center;
     max-width: 100%;
+    gap: 20px;
   }
 `;
 
@@ -76,6 +77,16 @@ export const HeroBadge = styled.div`
   
   svg {
     color: #12fbbd;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    border-radius: 32px;
+    gap: 8px;
+    
+    span {
+      font-size: 14px;
+    }
   }
 `;
 

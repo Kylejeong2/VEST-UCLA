@@ -37,7 +37,12 @@ export const TopSection = styled.div`
 `;
 
 export const LogoSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex-shrink: 0;
+  width: 100%;
+  gap: 12px;
   
   a {
     display: block;
@@ -46,6 +51,20 @@ export const LogoSection = styled.div`
     &:hover {
       opacity: 0.8;
     }
+  }
+`;
+
+export const LogoTitle = styled.h1`
+  font-size: 32px;
+  font-weight: 600;
+  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `;
 
@@ -78,15 +97,28 @@ export const NavLinks = styled.div`
   gap: 12px;
   
   a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    color: #efefef;
+    color: rgba(239, 239, 239, 0.5);
     text-decoration: none;
     transition: color 0.2s ease;
+      
+    &.active {
+      color: #efefef;
+    }
     
-    &:hover {
+    &:hover,
+    &.active:hover {
       color: #12fbbd;
     }
+    
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    gap: 8px;
   }
 `;
 

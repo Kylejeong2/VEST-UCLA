@@ -183,7 +183,7 @@ const SearchBar = styled.div`
     padding: 16px 24px;
     border-radius: 16px;
     border: 1px solid rgba(239, 239, 239, 0.1);
-    background: linear-gradient(90deg, rgba(0, 76, 255, 0.2) 0%, rgba(39, 0, 147, 0.2) 100%);
+    background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
     color: #efefef;
     font-size: 18px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -238,8 +238,8 @@ const BlogGrid = styled.div`
 const BlogCard = styled.article`
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
-  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
   transition: transform 0.3s ease;
 
   &:hover {

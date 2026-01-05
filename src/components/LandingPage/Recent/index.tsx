@@ -7,16 +7,9 @@ import {
   Title,
   ViewAllLink,
   EventsGrid,
-  EventCard,
-  EventImage,
-  EventContent,
-  EventTitle,
-  EventDescription,
-  EventDate,
 } from "./styles";
 import { events } from "@/data/events";
-import Image from "next/image";
-import Link from "next/link";
+import Event from "@/components/ui/Event";
 import { ArrowRight } from "@phosphor-icons/react";
 
 const Recent = () => {
@@ -38,25 +31,16 @@ const Recent = () => {
         </Header>
 
         <EventsGrid>
-          {displayEvents.map((event, index) => (
-            <EventCard key={index}>
-              <EventImage>
-                <Image
-                  src={event.imageSrc}
-                  alt={event.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </EventImage>
-              <EventContent>
-                <div>
-                  <EventTitle>{event.title}</EventTitle>
-                  <EventDescription>{event.description}</EventDescription>
-                </div>
-                <EventDate>{event.date}</EventDate>
-              </EventContent>
-            </EventCard>
+          {displayEvents.map((event) => (
+            <Event
+              key={event.id}
+              id={event.id}
+              title={event.title}
+              date={event.date}
+              subtitle={event.subtitle}
+              description={event.description}
+              imageSrc={event.imageSrc}
+            />
           ))}
         </EventsGrid>
       </Inner>

@@ -234,8 +234,8 @@ const CoverImage = styled.div`
   margin-bottom: 48px;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
-  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
 
   @media (max-width: 768px) {
     border-radius: 16px;

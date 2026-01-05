@@ -34,11 +34,11 @@ const Header = () => {
     <Wrapper>
       <Inner>
         <LogoContainer>
-          <Link href="/">
+          <Link href="/" className="mobile-logo">
             <Image
               src="/images/VEST-logo-white.svg"
-              width={72}
-              height={72}
+              width={48}
+              height={48}
               alt="VEST logo"
               priority
             />
@@ -76,6 +76,7 @@ const Header = () => {
               {link.linkTo}
             </NavLink>
           ))}
+          
         </NavMenu>
       </Inner>
     </Wrapper>

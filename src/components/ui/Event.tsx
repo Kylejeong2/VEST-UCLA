@@ -16,8 +16,8 @@ const EventCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 24px;
-  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
-  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
   overflow: hidden;
   transition: transform 0.2s ease;
   
@@ -44,7 +44,7 @@ const EventContent = styled.div`
 const EventTitle = styled.h3`
   font-size: 24px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #efefef;
   margin-bottom: 8px;
   
@@ -74,6 +74,13 @@ const Event: React.FC<EventProps> = ({ imageSrc, title, date, subtitle, descript
   // Create a URL-friendly event slug from the title
   const slug = title?.toLowerCase().replace(/\s+/g, '-') || 'event';
   
+  // Truncate description to 70 characters with ellipses
+  const truncatedDescription = description 
+    ? description.length > 70 
+      ? description.substring(0, 70) + '...'
+      : description
+    : "";
+  
   return (
     <Link 
       href={`/events/${slug}`}
@@ -98,7 +105,7 @@ const Event: React.FC<EventProps> = ({ imageSrc, title, date, subtitle, descript
           <div>
             <EventTitle>{title}</EventTitle>
             <EventDescription>
-              {subtitle || description || ""}
+              {truncatedDescription}
             </EventDescription>
           </div>
           <EventDate>{date}</EventDate>

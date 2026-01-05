@@ -70,8 +70,8 @@ export const GroupPhotoContainer = styled.div`
   border-radius: 24px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
-  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.25);
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
   
   @media (max-width: 768px) {
     margin-bottom: 40px;
@@ -172,7 +172,7 @@ export const BoardCard = styled.div`
 export const MembersGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 24px;
   max-width: 1200px;
   margin: 0 0;
   justify-items: center;

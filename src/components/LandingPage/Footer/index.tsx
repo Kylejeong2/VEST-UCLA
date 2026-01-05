@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   LinkedinLogo,
   InstagramLogo,
@@ -14,6 +15,7 @@ import {
   Inner,
   TopSection,
   LogoSection,
+  LogoTitle,
   NavSection,
   NavColumn,
   NavTitle,
@@ -27,38 +29,34 @@ import {
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
 
   return (
     <Wrapper>
       <Inner>
-        <TopSection>
-          <LogoSection>
+      <LogoSection>
             <Link href="/">
               <Image
                 src="/images/VEST-logo-white.svg"
                 alt="VEST Logo"
-                width={72}
-                height={72}
+                width={48}
+                height={48}
               />
             </Link>
+            <LogoTitle>VEST at UCLA</LogoTitle>
           </LogoSection>
+        <TopSection>
+
 
           <NavSection>
             <NavColumn>
               <NavTitle>Navigate</NavTitle>
               <NavLinks>
-                <Link href="/">Home</Link>
-                <Link href="/team">Team</Link>
-                <Link href="/events">Events</Link>
-                <Link href="/about">About</Link>
-              </NavLinks>
-            </NavColumn>
-
-            <NavColumn>
-              <NavTitle>Resources</NavTitle>
-              <NavLinks>
-                <Link href="/join">Join Us</Link>
-                <Link href="/about">What We Do</Link>
+                <Link href="/" className={pathname === "/" ? "active" : ""}>Home</Link>
+                <Link href="/team" className={pathname === "/team" ? "active" : ""}>Team</Link>
+                <Link href="/events" className={pathname === "/events" || pathname?.startsWith("/events/") ? "active" : ""}>Events</Link>
+                <Link href="/about" className={pathname === "/about" ? "active" : ""}>About</Link>
+                <Link href="/join" className={pathname === "/join" ? "active" : ""}>Join Us</Link>
               </NavLinks>
             </NavColumn>
           </NavSection>
