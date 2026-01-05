@@ -8,7 +8,11 @@ export const EventDetailWrapper = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 1;
-  padding-top: 60px;
+  padding-top: 40px;
+  @media (max-width: 768px) {
+    padding-top: 20px;
+    min-height: auto;
+  }
 `;
 
 export const Inner = styled.div`
@@ -63,6 +67,7 @@ export const EventHeader = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 32px;
+    margin-top: 20px;
   }
 `;
 
@@ -88,6 +93,12 @@ export const TextContainer = styled.div`
   justify-content: flex-start;
   gap: 32px;
   text-align: left;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const EventSubtitle = styled.h2`
@@ -103,6 +114,7 @@ export const EventSubtitle = styled.h2`
   
   @media (max-width: 768px) {
     font-size: 20px;
+    margin-bottom: 0;
     width: 100%;
   }
 `;
@@ -164,6 +176,10 @@ export const BackLink = styled.a`
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+  }
   
   &:hover {
     color: #4299e1;

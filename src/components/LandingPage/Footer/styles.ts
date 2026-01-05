@@ -31,7 +31,6 @@ export const TopSection = styled.div`
   gap: 60px;
   
   @media (max-width: 768px) {
-    flex-direction: column;
     gap: 40px;
   }
 `;
@@ -129,7 +128,8 @@ export const SocialSection = styled.div`
   gap: 24px;
   
   @media (max-width: 768px) {
-    align-items: flex-start;
+    align-items: flex-end;
+    gap: 20px;
   }
 `;
 
@@ -140,10 +140,27 @@ export const SocialLinks = styled.div`
   a {
     color: #efefef;
     transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     &:hover {
       color: #12fbbd;
     }
+    
+    svg {
+      width: 32px;
+      height: 32px;
+      
+      @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 12px;
   }
 `;
 

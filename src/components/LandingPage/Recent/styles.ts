@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
   position: relative;
   
   @media (max-width: 768px) {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 `;
 

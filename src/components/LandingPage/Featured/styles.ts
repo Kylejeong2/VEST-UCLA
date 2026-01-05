@@ -45,6 +45,20 @@ export const LogoTrack = styled.div`
     display: flex;
     gap: 84px;
     align-items: center;
+    
+    @media (max-width: 768px) {
+      gap: 42px;
+    }
+  }
+  
+  .logo-banner {
+    height: 84px;
+    width: auto;
+    object-fit: contain;
+    
+    @media (max-width: 768px) {
+      height: 48px;
+    }
   }
 `;
 

@@ -9,6 +9,10 @@ export const Wrapper = styled.section`
   position: relative;
   z-index: 1;
   padding-top: 120px;
+  
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
 `;
 
 export const Inner = styled.div`
@@ -99,6 +103,12 @@ export const TextContainer = styled.div`
   justify-content: flex-start;
   gap: 32px;
   text-align: left;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const EventsTitle = styled.h2`
@@ -115,6 +125,7 @@ export const EventsTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 20px;
     width: 100%;
+    margin-bottom: 0;
   }
 `;
 

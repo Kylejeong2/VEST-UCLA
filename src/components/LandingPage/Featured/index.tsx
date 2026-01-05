@@ -4,15 +4,24 @@ import { animate, motion, useMotionValue } from 'framer-motion';
 import { Wrapper, Inner, LogoTrack, Title } from './styles';
 import { useEffect, useState } from 'react';
 import useMeasure from 'react-use-measure';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 
 const Featured = () => {
-  const FAST_DURATION = 25;
-  const SLOW_DURATION = 75;
+  const isMobile = useIsMobile();
+  const FAST_DURATION = isMobile ? 15 : 25;
+  const SLOW_DURATION = isMobile ? 45 : 75;
   const [duration, setDuration] = useState(FAST_DURATION);
   const [ref, bounds] = useMeasure();
   const xTranslation = useMotionValue(0);
   const [mustFinish, setMustFinish] = useState(false);
   const [rerender, setRerender] = useState(false);
+
+  // Update duration when mobile state changes
+  useEffect(() => {
+    if (!mustFinish) {
+      setDuration(FAST_DURATION);
+    }
+  }, [isMobile, mustFinish, FAST_DURATION]);
 
   useEffect(() => {
     if (!bounds.width) return;
@@ -67,11 +76,7 @@ const Featured = () => {
                 alt="Companies we're trusted by"
                 width={1800}
                 height={100}
-                style={{
-                  height: '84px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                }}
+                className="logo-banner"
                 priority
               />
             ))}

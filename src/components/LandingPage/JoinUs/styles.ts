@@ -9,6 +9,11 @@ export const JoinUsWrapper = styled.div`
   position: relative;
   z-index: 1;
   padding-top: 120px;
+  
+  @media (max-width: 768px) {
+    padding-top: 60px;
+    min-height: auto;
+  }
 `;
 
 export const Inner = styled.div`
@@ -99,7 +104,9 @@ export const TextContainer = styled.div`
   text-align: left;
   
   @media (max-width: 768px) {
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -117,6 +124,7 @@ export const Subheading = styled.h2`
   @media (max-width: 768px) {
     font-size: 20px;
     width: 100%;
+    margin-bottom: 0;
   }
 `;
 
@@ -154,7 +162,7 @@ export const PictureGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin: 40px 0;
+    margin: 40px 0 0;
   }
 `;
 
