@@ -72,30 +72,30 @@ export const Question = styled(motion.div)`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  font-size: 20px;
+  font-size: var(--text-xl);
   font-weight: 500;
   color: #efefef;
   gap: 16px;
 
   svg {
-    color: #12fbbd;
+    color: rgb(0, 140, 255);
     flex-shrink: 0;
   }
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--text-base);
   }
 `;
 
 export const Answer = styled(motion.div)`
   color: rgba(239, 239, 239, 0.7);
-  font-size: 18px;
+  font-size: var(--text-lg);
   font-weight: 400;
   line-height: 1.5;
   padding-top: 16px;
   
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--text-base);
   }
 `;
 

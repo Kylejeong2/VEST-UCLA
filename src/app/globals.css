@@ -40,14 +40,27 @@ body {
     --header-font-italic: var(--font-playfair-display), 'Playfair Display', serif;
     
     /* Header text sizes */
-    --header-size-hero: 90px;
-    --header-size-hero-mobile: 48px;
-    --header-size-page: 72px;
-    --header-size-page-mobile: 36px;
-    --header-size-section: 48px;
-    --header-size-section-mobile: 28px;
-    --header-size-subsection: 32px;
-    --header-size-subsection-mobile: 20px;
+    --header-size-hero: 5.625rem;
+    --header-size-hero-mobile: 3rem;
+    --header-size-page: 4.5rem;
+    --header-size-page-mobile: 2.25rem;
+    --header-size-section: 3rem;
+    --header-size-section-mobile: 1.75rem;
+    --header-size-subsection: 2rem;
+    --header-size-subsection-mobile: 1.25rem;
+    
+    /* Body text sizes */
+    --text-xxl: 1.5rem;
+    --text-xxl-mobile: 1.25rem;
+    --text-xl: 1.25rem;
+    --text-xl-mobile: 1rem;
+    --text-lg: 1.125rem;
+    --text-lg-mobile: 1rem;
+    --text-base: 1rem;
+    --text-base-mobile: 0.875rem;
+    --text-sm: 0.875rem;
+    --text-sm-mobile: 0.75rem;
+    --text-xs: 0.75rem;
   }
   .dark {
     --background: 222.2 84% 4.9%;

@@ -90,7 +90,7 @@ export const NavColumn = styled.div`
 `;
 
 export const NavTitle = styled.h4`
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 600;
   color: rgba(239, 239, 239, 0.5);
   text-transform: uppercase;
@@ -103,11 +103,10 @@ export const NavLinks = styled.div`
   gap: 12px;
   
   a {
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     color: rgba(239, 239, 239, 0.5);
     text-decoration: none;
-    transition: color 0.2s ease;
       
     &.active {
       color: #efefef;
@@ -115,11 +114,11 @@ export const NavLinks = styled.div`
     
     &:hover,
     &.active:hover {
-      color: #12fbbd;
+      color: #efefef;
     }
     
     @media (max-width: 768px) {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
   
@@ -152,7 +151,7 @@ export const SocialLinks = styled.div`
     justify-content: center;
     
     &:hover {
-      color: #12fbbd;
+      color: rgb(0, 140, 255);
     }
     
     svg {
@@ -184,7 +183,7 @@ export const NewsletterButton = styled.a`
   
   span {
     color: #efefef;
-    font-size: 20px;
+    font-size: var(--text-xl);
     font-weight: 400;
   }
   
@@ -202,7 +201,7 @@ export const NewsletterButton = styled.a`
     border-radius: 16px;
     
     span {
-      font-size: 16px;
+      font-size: var(--text-base);
     }
   }
 `;
@@ -215,7 +214,7 @@ export const BottomSection = styled.div`
 `;
 
 export const Copyright = styled.p`
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 400;
   color: rgba(239, 239, 239, 0.5);
 `;

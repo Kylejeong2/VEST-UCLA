@@ -49,7 +49,7 @@ export const Header = styled.header`
 
   p {
     color: rgba(239, 239, 239, 0.8);
-    font-size: 24px;
+    font-size: var(--text-xxl);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -63,7 +63,7 @@ export const Header = styled.header`
     }
 
     p {
-      font-size: 18px;
+      font-size: var(--text-lg);
     }
   }
 `;

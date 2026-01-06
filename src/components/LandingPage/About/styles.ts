@@ -118,14 +118,14 @@ export const AboutText = styled.div`
 
   p {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 16px;
   }
   @media (max-width: 768px) {
     p {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;
@@ -183,7 +183,7 @@ export const AboutDescription = styled.div`
   
   p {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -192,7 +192,7 @@ export const AboutDescription = styled.div`
     margin-bottom: 40px;
     
     p {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;
@@ -259,7 +259,7 @@ export const StatNumber = styled.div`
 `;
 
 export const StatLabel = styled.div`
-  font-size: 16px;
+  font-size: var(--text-base);
   color: rgba(239, 239, 239, 0.7);
   font-weight: 400;
   text-align: center;

@@ -145,7 +145,7 @@ export const EventsText = styled.div`
   
   p {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -154,7 +154,7 @@ export const EventsText = styled.div`
     margin-bottom: 40px;
     
     p {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;
@@ -202,25 +202,25 @@ export const EventContent = styled.div`
 `;
 
 export const EventTitle = styled.h3`
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 600;
   line-height: 1.5;
   color: #efefef;
   
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: var(--text-xl);
   }
 `;
 
 export const EventDescription = styled.p`
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.5;
   color: rgba(239, 239, 239, 0.7);
 `;
 
 export const EventDate = styled.span`
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 400;
   color: rgba(239, 239, 239, 0.5);
 `;

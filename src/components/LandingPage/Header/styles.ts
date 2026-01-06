@@ -86,11 +86,10 @@ export const NavMenu = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
   color: rgba(239, 239, 239, 0.5);
   text-decoration: none;
-  transition: color 0.2s ease;
   white-space: nowrap;
   
   &:hover, &.active {
@@ -98,7 +97,7 @@ export const NavLink = styled(Link)`
   }
   
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
 `;
 
@@ -118,7 +117,7 @@ export const BurgerMenu = styled.div`
       position: absolute;
       height: 2px;
       width: 100%;
-      background: #12fbbd;
+      background: rgb(0, 140, 255);
       border-radius: 2px;
       opacity: 1;
       left: 0;
@@ -209,7 +208,7 @@ export const MobileMenu = styled.div`
       
       a {
         color: rgba(239, 239, 239, 0.7);
-        font-size: 20px;
+        font-size: var(--text-xl);
         font-weight: 400;
         text-decoration: none;
         transition: color 0.2s ease;

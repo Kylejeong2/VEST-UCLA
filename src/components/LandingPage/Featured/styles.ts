@@ -27,13 +27,28 @@ export const Inner = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.5;
-  color: #efefef;
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-subsection);
+  font-weight: 400;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  width: 500px;
+  line-height: 1;
+  text-align: center;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
+  }
   
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--header-size-subsection-mobile);
+    width: 100%;
+    margin-bottom: 0;
   }
 `;
 
@@ -43,18 +58,15 @@ export const LogoTrack = styled.div`
   
   .logo-slider {
     display: flex;
-    gap: 84px;
+    gap: 0;
     align-items: center;
-    
-    @media (max-width: 768px) {
-      gap: 42px;
-    }
   }
   
   .logo-banner {
     height: 84px;
     width: auto;
     object-fit: contain;
+    flex-shrink: 0;
     
     @media (max-width: 768px) {
       height: 48px;

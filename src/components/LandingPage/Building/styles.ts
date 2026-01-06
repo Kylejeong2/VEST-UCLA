@@ -61,7 +61,7 @@ export const HeaderTitle = styled.h2`
 `;
 
 export const HeaderDescription = styled.p`
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 400;
   line-height: 1.5;
   color: #efefef;
@@ -69,7 +69,7 @@ export const HeaderDescription = styled.p`
   
   @media (max-width: 768px) {
     max-width: 100%;
-    font-size: 18px;
+    font-size: var(--text-lg);
   }
 `;
 
@@ -101,28 +101,28 @@ export const Card = styled.div`
 `;
 
 export const CardIcon = styled.div`
-  color: #12fbbd;
+  color: rgb(0, 140, 255);
 `;
 
 export const CardTitle = styled.h3`
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 600;
   line-height: 1.5;
   color: #efefef;
   
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--text-base);
   }
 `;
 
 export const CardDescription = styled.p`
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.5;
   color: rgba(239, 239, 239, 0.7);
   
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: var(--text-sm);
   }
 `;
 

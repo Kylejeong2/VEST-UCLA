@@ -71,7 +71,7 @@ export const HeroBadge = styled.div`
   
   span {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
   }
   
@@ -85,7 +85,7 @@ export const HeroBadge = styled.div`
     gap: 8px;
     
     span {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;
@@ -112,13 +112,13 @@ export const HeroTitle = styled.h1`
 `;
 
 export const HeroDescription = styled.p`
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 400;
   line-height: 1.5;
   color: #efefef;
   
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: var(--text-lg);
   }
 `;
 
@@ -135,7 +135,7 @@ export const HeroButton = styled.button`
   
   span {
     color: #efefef;
-    font-size: 20px;
+    font-size: var(--text-xl);
     font-weight: 400;
   }
   
@@ -153,7 +153,7 @@ export const HeroButton = styled.button`
     border-radius: 16px;
     
     span {
-      font-size: 16px;
+      font-size: var(--text-base);
     }
   }
 `;

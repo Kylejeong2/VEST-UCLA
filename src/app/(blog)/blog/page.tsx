@@ -155,7 +155,7 @@ const Header = styled.header`
 
   p {
     color: rgba(239, 239, 239, 0.8);
-    font-size: 24px;
+    font-size: var(--text-xxl);
     line-height: 1.5;
   }
 
@@ -166,7 +166,7 @@ const Header = styled.header`
       font-size: var(--header-size-page-mobile);
     }
     p {
-      font-size: 18px;
+      font-size: var(--text-lg);
     }
   }
 `;
@@ -181,7 +181,7 @@ const SearchBar = styled.div`
     border: 1px solid rgba(239, 239, 239, 0.1);
     background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
     color: #efefef;
-    font-size: 18px;
+    font-size: var(--text-lg);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
     &::placeholder {
@@ -190,8 +190,8 @@ const SearchBar = styled.div`
 
     &:focus {
       outline: none;
-      border-color: #12fbbd;
-      box-shadow: 0 0 20px rgba(18, 251, 189, 0.2);
+      border-color: rgb(0, 140, 255);
+      box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
     }
   }
 `;
@@ -206,16 +206,16 @@ const Categories = styled.div`
 const CategoryButton = styled.button<{ $active: boolean }>`
   padding: 12px 24px;
   border-radius: 24px;
-  border: 1px solid ${(props) => (props.$active ? "#12fbbd" : "rgba(239, 239, 239, 0.2)")};
+  border: 1px solid ${(props) => (props.$active ? "rgb(0, 140, 255)" : "rgba(239, 239, 239, 0.2)")};
   background: ${(props) => (props.$active ? "linear-gradient(180deg, #0074e1 0%, #1f00ff 100%)" : "transparent")};
   color: #efefef;
-  font-size: 16px;
+  font-size: var(--text-base);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: ${(props) => (props.$active ? "0px 0px 20px 0px rgba(120, 67, 255, 0.5)" : "none")};
 
   &:hover {
-    border-color: #12fbbd;
+    border-color: rgb(0, 140, 255);
     transform: translateY(-2px);
   }
 `;
@@ -259,7 +259,7 @@ const CardContent = styled.div`
   padding: 24px;
 
   h2 {
-    font-size: 24px;
+    font-size: var(--text-xxl);
     font-weight: 600;
     line-height: 1.5;
     margin: 8px 0 16px;
@@ -268,14 +268,14 @@ const CardContent = styled.div`
 
   p {
     color: rgba(239, 239, 239, 0.7);
-    font-size: 16px;
+    font-size: var(--text-base);
     line-height: 1.5;
   }
 `;
 
 const Category = styled.span`
-  color: #12fbbd;
-  font-size: 14px;
+  color: rgb(0, 140, 255);
+  font-size: var(--text-sm);
   font-weight: 500;
 `;
 

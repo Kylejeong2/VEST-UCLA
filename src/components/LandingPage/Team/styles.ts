@@ -131,7 +131,7 @@ export const TeamDescription = styled.div`
   gap: 16px;
   p {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -140,7 +140,7 @@ export const TeamDescription = styled.div`
     margin-bottom: 40px;
     
     p {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;

@@ -42,30 +42,30 @@ const EventContent = styled.div`
 `;
 
 const EventTitle = styled.h3`
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 600;
   line-height: 1.2;
   color: #efefef;
   margin-bottom: 8px;
   
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: var(--text-lg);
   }
 `;
 
 const EventDescription = styled.p`
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.5;
   color: rgba(239, 239, 239, 0.7);
   
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: var(--text-sm);
   }
 `;
 
 const EventDate = styled.span`
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 400;
   color: rgba(239, 239, 239, 0.5);
 `;

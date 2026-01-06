@@ -79,7 +79,7 @@ export const EventHeader = styled.h1`
 `;
 
 export const EventDate = styled.div`
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 500;
   color: rgba(239, 239, 239, 0.5);
   margin-bottom: 40px;
@@ -145,7 +145,7 @@ export const EventDescription = styled.p`
   
   p {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -154,7 +154,7 @@ export const EventDescription = styled.p`
     margin-bottom: 40px;
     
     p {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;
@@ -184,7 +184,7 @@ export const BackLink = styled.a`
   align-items: center;
   margin-top: 40px;
   gap: 8px;
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 500;
   color: rgba(239, 239, 239, 0.7);
   text-decoration: none;

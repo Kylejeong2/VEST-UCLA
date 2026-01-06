@@ -142,10 +142,10 @@ const BackLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #12fbbd;
+  color: rgb(0, 140, 255);
   margin-bottom: 32px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 500;
   transition: opacity 0.2s ease;
 
@@ -179,8 +179,8 @@ const Header = styled.header`
 `;
 
 const Category = styled.span`
-  color: #12fbbd;
-  font-size: 14px;
+  color: rgb(0, 140, 255);
+  font-size: var(--text-sm);
   font-weight: 500;
 `;
 
@@ -213,7 +213,7 @@ const AuthorName = styled.div`
 
 const AuthorRole = styled.div`
   color: rgba(239, 239, 239, 0.7);
-  font-size: 14px;
+  font-size: var(--text-sm);
 `;
 
 const PostInfo = styled.div`
@@ -221,7 +221,7 @@ const PostInfo = styled.div`
   align-items: center;
   gap: 8px;
   color: rgba(239, 239, 239, 0.7);
-  font-size: 14px;
+  font-size: var(--text-sm);
 `;
 
 const Dot = styled.span`
@@ -246,11 +246,11 @@ const CoverImage = styled.div`
 
 const Content = styled.div`
   color: #efefef;
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.5;
 
   h2 {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
     line-height: 1.5;
     margin: 48px 0 24px;
@@ -272,10 +272,10 @@ const Content = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--text-base);
 
     h2 {
-      font-size: 22px;
+      font-size: 1.375rem;
       margin: 32px 0 16px;
     }
   }

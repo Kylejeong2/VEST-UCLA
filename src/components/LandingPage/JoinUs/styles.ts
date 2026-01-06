@@ -150,7 +150,7 @@ export const JoinUsText = styled.div`
   
   p {
     color: #efefef;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 400;
     line-height: 1.5;
   }
@@ -159,7 +159,7 @@ export const JoinUsText = styled.div`
     margin-bottom: 40px;
     
     p {
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
   }
 `;
@@ -215,17 +215,17 @@ export const QuarterlySection = styled.div`
 export const QuarterlyVerticalLine = styled.div`
   width: 2px;
   height: 100px;
-  background: linear-gradient(180deg, #12fbbd 0%, #2b75ff 100%);
+  background: linear-gradient(180deg, rgb(0, 140, 255) 0%, #2b75ff 100%);
 
   @media (max-width: 768px) {
     width: 100px;
     height: 2px;
-    background: linear-gradient(90deg, #12fbbd 0%, #2b75ff 100%);
+    background: linear-gradient(90deg, rgb(0, 140, 255) 0%, #2b75ff 100%);
   }
 `;
 
 export const QuarterlyIcon = styled.div`
-  font-size: 48px;
+  font-size: var(--header-size-section);
   color: #efefef;
   display: flex;
   flex-direction: column;
@@ -242,24 +242,64 @@ export const QuarterlyText = styled.div`
 
 export const QuarterlyTitle = styled.h3`
   color: #efefef;
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 8px;
 
   @media (max-width: 768px) {
     text-align: center;
-    font-size: 20px;
+    font-size: var(--text-xl);
   }
 `;
 
 export const QuarterlyDesc = styled.p`
   color: rgba(239, 239, 239, 0.7);
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.5;
   margin: 0;
   
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: var(--text-base);
+  }
+`;
+
+export const ApplicationButton = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #0074e1 0%, #1f00ff 100%);
+  box-shadow: 0px 0px 30px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+  text-decoration: none;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  cursor: pointer;
+  width: fit-content;
+  
+  span {
+    color: #efefef;
+    font-size: var(--text-xl);
+    font-weight: 400;
+  }
+  
+  svg {
+    color: #efefef;
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 0px 40px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 12px 20px;
+    border-radius: 16px;
+    
+    span {
+      font-size: var(--text-base);
+    }
   }
 `;

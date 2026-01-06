@@ -71,7 +71,7 @@ export const ViewAllLink = styled(Link)`
   
   span {
     color: #efefef;
-    font-size: 20px;
+    font-size: var(--text-xl);
     font-weight: 400;
   }
   
@@ -89,7 +89,7 @@ export const ViewAllLink = styled(Link)`
     border-radius: 16px;
     
     span {
-      font-size: 16px;
+      font-size: var(--text-base);
     }
   }
 `;
@@ -130,30 +130,30 @@ export const EventContent = styled.div`
 `;
 
 export const EventTitle = styled.h3`
-  font-size: 24px;
+  font-size: var(--text-xxl);
   font-weight: 600;
   line-height: 1.5;
   color: #efefef;
   margin-bottom: 8px;
   
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: var(--text-lg);
   }
 `;
 
 export const EventDescription = styled.p`
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.5;
   color: rgba(239, 239, 239, 0.7);
   
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: var(--text-sm);
   }
 `;
 
 export const EventDate = styled.span`
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 400;
   color: rgba(239, 239, 239, 0.5);
 `;
