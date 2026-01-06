@@ -37,28 +37,25 @@ export const HeaderSection = styled.div`
 `;
 
 export const HeaderTitle = styled.h2`
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 1.1;
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-page);
+  font-weight: 400;
+  line-height: 1;
   max-width: 594px;
   flex-shrink: 0;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   
-  .white {
-    background: linear-gradient(180deg, #ffffff 0%, #adceff 44.231%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .gradient {
-    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
   }
   
   @media (max-width: 768px) {
-    font-size: 36px;
+    font-size: var(--header-size-page-mobile);
     max-width: 100%;
   }
 `;

@@ -26,8 +26,7 @@ const JoinUsComponent = () => {
       <BackgroundGlow />
       <Inner>
         <JoinUsTitle>
-          <span className="white">Join</span>{" "}
-          <span className="gradient">Us</span>
+          Join <span className="italic">Us</span>
         </JoinUsTitle>
         <TextContainer>
           <Subheading>Join UCLA's Premier Startup Organization.</Subheading>

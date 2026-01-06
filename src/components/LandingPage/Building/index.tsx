@@ -37,8 +37,7 @@ const Building = () => {
       <Inner>
         <HeaderSection>
           <HeaderTitle>
-            <span className="white">Building Future</span>{" "}
-            <span className="gradient">VCs &amp; Founders</span>
+            Building Future<span className="italic"> Founders</span>
           </HeaderTitle>
           <HeaderDescription>
             We connect ambitious UCLA students with venture capital firms and startups, providing hands-on experience and real-world learning.

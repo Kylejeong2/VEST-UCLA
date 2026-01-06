@@ -25,8 +25,7 @@ const Events = () => {
       <Inner>
         <ContentContainer>
           <EventsHeader>
-            <span className="white">Our</span>{" "}
-            <span className="gradient">Events</span>
+            Our <span className="italic">Events</span>
           </EventsHeader>
           <TextContainer>
             <EventsTitle>Bringing founders, ideas, and members together.</EventsTitle>

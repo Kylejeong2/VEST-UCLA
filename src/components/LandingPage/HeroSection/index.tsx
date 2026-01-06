@@ -22,15 +22,15 @@ const HeroSection = () => {
         <HeroContent>
           <HeroBadge>
             <Rocket size={16}/>
-            <span>UCLA&apos;s Premier VC/Startup Club</span>
+            <span>UCLA&apos;s Builder/Startup Community</span>
           </HeroBadge>
           
           <HeroTitle>
-            Build the <span className="gradient-text">Future.</span>
+            Build the<span className="italic"> Future.</span>
           </HeroTitle>
           
           <HeroDescription>
-            Scaling UCLA&apos;s startup/builder ecosystem.
+            Cultivating a startup ecosystem at UCLA.
             <br />
             A community of builders.
           </HeroDescription>

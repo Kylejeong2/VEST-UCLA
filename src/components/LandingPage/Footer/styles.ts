@@ -54,16 +54,23 @@ export const LogoSection = styled.div`
 `;
 
 export const LogoTitle = styled.h1`
-  font-size: 32px;
-  font-weight: 600;
-  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-subsection);
+  font-weight: 400;
+  background: var(--header-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.2;
+  line-height: 1;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
+  }
   
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: var(--header-size-subsection-mobile);
   }
 `;
 

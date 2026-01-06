@@ -30,8 +30,7 @@ const About = () => (
     <Inner>
       <ContentContainer>
         <AboutTitle>
-          <span className="white">About</span>{" "}
-          <span className="gradient">VEST</span>
+          About <span className="italic">VEST</span>
         </AboutTitle>
         <TextContainer>
           <WelcomeTitle>Welcome to VEST at UCLA.</WelcomeTitle>

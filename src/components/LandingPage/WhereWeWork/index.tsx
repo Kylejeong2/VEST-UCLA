@@ -14,8 +14,7 @@ const WhereWeWork = () => {
     <Wrapper>
       <Inner>
         <Title>
-          <span className="white">Where Our Members </span>
-          <span className="gradient">Work</span>
+          Where Our Members <span className="italic">Work</span>
         </Title>
         <ImageCard>
           <Image

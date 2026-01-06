@@ -55,28 +55,25 @@ export const BlurCircle = styled.div`
 `;
 
 export const AboutTitle = styled.h1`
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 1.1;
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-page);
+  font-weight: 400;
+  line-height: 1;
   text-align: center;
   margin-bottom: 60px;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   
-  .white {
-    background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .gradient {
-    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
   }
 
   @media (max-width: 768px) {
-    font-size: 36px;
+    font-size: var(--header-size-page-mobile);
     margin-bottom: 40px;
   }
 `;
@@ -150,18 +147,25 @@ export const TextContainer = styled.div`
 `;
 
 export const WelcomeTitle = styled.h2`
-  font-size: 32px;
-  font-weight: 600;
-  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-subsection);
+  font-weight: 400;
+  background: var(--header-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 16px;
   width: 500px;
-  line-height: 1.2;
+  line-height: 1;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
+  }
   
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: var(--header-size-subsection-mobile);
     width: 100%;
     margin-bottom: 0;
   }
@@ -239,16 +243,18 @@ export const StatBox = styled.div`
 `;
 
 export const StatNumber = styled.div`
-  font-size: 48px;
-  font-weight: 700;
+  font-family: var(--header-font-italic);
+  font-size: var(--header-size-section);
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: 8px;
-  background: linear-gradient(90deg, #12fbbd 0%, #508af5 50%, #2b75ff 100%);
+  background: var(--header-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   
   @media (max-width: 768px) {
-    font-size: 36px;
+    font-size: var(--header-size-section-mobile);
   }
 `;
 

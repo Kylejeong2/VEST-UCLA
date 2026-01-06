@@ -51,7 +51,7 @@ export const HeroContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
-  max-width: 650px;
+  max-width: 700px;
   
   @media (max-width: 768px) {
     align-items: center;
@@ -76,7 +76,7 @@ export const HeroBadge = styled.div`
   }
   
   svg {
-    color: #12fbbd;
+    color:rgb(0, 140, 255);
   }
 
   @media (max-width: 768px) {
@@ -91,23 +91,23 @@ export const HeroBadge = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
-  font-size: 80px;
-  font-weight: 600;
-  line-height: 1.1;
-  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-hero);
+  font-weight: 400;
+  line-height: 1;
+  background: var(--header-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   
-  .gradient-text {
-    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
   }
   
   @media (max-width: 768px) {
-    font-size: 42px;
+    font-size: var(--header-size-hero-mobile);
   }
 `;
 

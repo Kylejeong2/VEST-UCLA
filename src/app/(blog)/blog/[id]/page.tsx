@@ -158,11 +158,12 @@ const Header = styled.header`
   margin-bottom: 48px;
 
   h1 {
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 1.1;
+    font-family: var(--header-font-regular);
+    font-size: var(--header-size-section);
+    font-weight: 400;
+    line-height: 1;
     margin: 16px 0 24px;
-    background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+    background: var(--header-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -172,7 +173,7 @@ const Header = styled.header`
     margin-bottom: 32px;
     
     h1 {
-      font-size: 28px;
+      font-size: var(--header-size-section-mobile);
     }
   }
 `;

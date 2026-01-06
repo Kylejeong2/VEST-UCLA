@@ -33,6 +33,21 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    
+    /* Header text variables */
+    --header-gradient: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+    --header-font-regular: var(--font-bit-apple), 'Bit Apple', monospace;
+    --header-font-italic: var(--font-playfair-display), 'Playfair Display', serif;
+    
+    /* Header text sizes */
+    --header-size-hero: 90px;
+    --header-size-hero-mobile: 48px;
+    --header-size-page: 72px;
+    --header-size-page-mobile: 36px;
+    --header-size-section: 48px;
+    --header-size-section-mobile: 28px;
+    --header-size-subsection: 32px;
+    --header-size-subsection-mobile: 20px;
   }
   .dark {
     --background: 222.2 84% 4.9%;

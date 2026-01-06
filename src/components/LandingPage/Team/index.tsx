@@ -56,8 +56,7 @@ const Team = () => {
       <Inner>
         <ContentContainer>
           <TeamHeader>
-            <span className="white">Meet the</span>{" "}
-            <span className="gradient">Team</span>
+            Meet the <span className="italic">Team</span>
           </TeamHeader>
 
           <TextContainer>

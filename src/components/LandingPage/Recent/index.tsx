@@ -21,8 +21,7 @@ const Recent = () => {
       <Inner>
         <Header>
           <Title>
-            <span className="white">Recent </span>
-            <span className="gradient">Events</span>
+            Recent <span className="italic">Events</span>
           </Title>
           <ViewAllLink href="/events">
             <span>View All</span>
