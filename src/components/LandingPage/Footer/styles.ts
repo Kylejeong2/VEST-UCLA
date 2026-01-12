@@ -2,318 +2,230 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.footer`
-  padding-bottom: 1rem;
-  padding-top: 3rem;
+  width: 100%;
+  padding: 80px 0 40px;
   position: relative;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(239, 239, 239, 0.1);
+  
+  @media (max-width: 768px) {
+    padding: 60px 0 32px;
+  }
 `;
 
-export const Inner = styled.main`
+export const Inner = styled.div`
   width: 90%;
-  max-width: 1440px;
+  max-width: 1236px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-
+  gap: 60px;
+  
   @media (max-width: 768px) {
-    gap: 2rem;
+    gap: 40px;
   }
 `;
 
-export const FooterLogo = styled.div`
-  @media (max-width: 768px) {
-    width: 10rem;
-    height: 10rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-`;
-
-export const FooterMainContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 0 2rem;
-  gap: 1rem;
-`;
-
-export const FooterMiddle = styled.div`
+export const TopSection = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  gap: 2rem;
-  align-items: flex-start;
-  font-family: "Inter", sans-serif;
-
+  gap: 60px;
+  
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 2rem;
+    gap: 40px;
   }
 `;
 
-export const QRContainer = styled.div`
-  display: flex;
-  gap: 0.75rem;
-  padding: 1.25rem 1rem;
-  gap: 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px dashed var(--White, #fff);
-`;
-
-export const QRImageCtn = styled.div``;
-
-export const TextCtn = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  p {
-    max-width: 19.5625rem;
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-
-  @media (max-width: 768px) {
-    p {
-      font-size: 1rem;
-    }
-  }
-`;
-
-export const IconCtn = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-`;
-
-export const FooterNavigation = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-`;
-
-export const GridColumn = styled.div`
-  display: flex;
-  min-width: 12.5rem;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-
-  h2 {
-    width: 100%;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  @media (max-width: 768px) {
-    min-width: auto;
-    
-    h2 {
-      font-size: 1.75rem;
-    }
-  }
-`;
-
-export const LinksContainer = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
-  h2 {
-    width: 100%;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  li.clickable {
-    cursor: pointer;
-    color: #efefef;
-    font-size: 1rem;
-    font-weight: 400;
-    position: relative;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      color: #4299e1;
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: #4299e1;
-      left: 0;
-      bottom: -5px;
-      transform: scaleX(0);
-      transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transform-origin: center;
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-      color: #4299e1;
-    }
-
-    @media (max-width: 768px) {
-      gap: 0.5rem;
-
-      h2 {
-        font-size: 1.75rem;
-      }
-    }
-  }
-`;
-
-export const FooterTop = styled.div`
+export const LogoSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1.2;
-    color: #efefef;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.25rem;
+  flex-shrink: 0;
+  width: 100%;
+  gap: 12px;
+  
+  a {
+    display: block;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+      opacity: 0.8;
     }
   }
 `;
 
-export const FooterBottom = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-family: "Inter", sans-serif;
-`;
-
-export const Translator = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.12rem;
-  cursor: pointer;
-
-  h2 {
-    width: 100%;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  @media (max-width: 768px) {
-    gap: 0.5rem;
-
-    h2 {
-      font-size: 1.75rem;
-    }
-  }
-`;
-
-export const CopyRight = styled.div`
-  font-size: 1rem;
+export const LogoTitle = styled.h1`
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-subsection);
   font-weight: 400;
-  display: flex;
-  align-items: center;
-  font-family: "Inter", sans-serif;
-
-  p {
-    font-size: 1rem;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
     font-weight: 400;
-    color: #efefef;
   }
-
+  
   @media (max-width: 768px) {
-    font-size: 0.875rem;
-    gap: 0.25rem;
+    font-size: var(--header-size-subsection-mobile);
   }
 `;
 
-export const ManifestoLinkContainer = styled.div`
+export const NavSection = styled.div`
+  display: flex;
+  gap: 80px;
+  
+  @media (max-width: 768px) {
+    gap: 48px;
+  }
+`;
+
+export const NavColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const NavTitle = styled.h4`
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: rgba(239, 239, 239, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+`;
+
+export const NavLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+  a {
+    font-size: var(--text-base);
+    font-weight: 400;
+    color: rgba(239, 239, 239, 0.5);
+    text-decoration: none;
+      
+    &.active {
+      color: #efefef;
+    }
+    
+    &:hover,
+    &.active:hover {
+      color: #efefef;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: var(--text-sm);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+`;
+
+export const SocialSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  
+  @media (max-width: 768px) {
+    align-items: flex-end;
+    gap: 20px;
+  }
+`;
+
+export const SocialLinks = styled.div`
+  display: flex;
+  gap: 20px;
+  
+  a {
+    color: #efefef;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      color: rgb(0, 140, 255);
+    }
+    
+    svg {
+      width: 32px;
+      height: 32px;
+      
+      @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+`;
+
+export const NewsletterButton = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #0074e1 0%, #1f00ff 100%);
+  box-shadow: 0px 0px 30px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  span {
+    color: #efefef;
+    font-size: var(--text-xl);
+    font-weight: 400;
+  }
+  
+  svg {
+    color: #efefef;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 40px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 12px 20px;
+    border-radius: 16px;
+    
+    span {
+      font-size: var(--text-base);
+    }
+  }
+`;
+
+export const BottomSection = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 6.25rem;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 1rem !important;
-  }
-
-  &:hover {
-    transform: translateY(-1px);
-  }
+  padding-top: 32px;
+  border-top: 1px solid rgba(239, 239, 239, 0.1);
 `;
 
-export const ManifestoLink = styled.a`
-  color: #ffffff;
-  font-size: 1.75rem;
+export const Copyright = styled.p`
+  font-size: var(--text-sm);
   font-weight: 400;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, #2165C8, #0A2040);
-  border-radius: 76px;
-  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.10), 0px 0px 36px 6px rgba(55,125,226,1.00);
-  border: 0.2px solid #efefef;
-  backdrop-filter: blur(3px);
-  mix-blend-mode: screen;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  
-  &:hover {
-    transform: translateY(-1px);
-  }
+  color: rgba(239, 239, 239, 0.5);
 `;
 
-export const SignInButton = styled.button`
-  color: #ffffff;
-  font-size: 1.75rem;
-  font-weight: 400;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, #2165C8, #0A2040);
-  border-radius: 76px;
-  box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.10), 0px 0px 36px 6px rgba(55,125,226,1.00);
-  border: 0.2px solid #efefef;
-  backdrop-filter: blur(3px);
-  mix-blend-mode: screen;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-`;
+// Legacy exports
+export const Wrapper2 = styled.footer``;
+export const Inner2 = styled.div``;
+export const ItemContainer = styled.div``;
+export const LeftDiv = styled.div``;
+export const CenterDiv = styled.div``;
+export const RightDiv = styled.div``;
+export const Column = styled.div``;
+export const ColumnTitle = styled.div``;
+export const ColumnItem = styled.div``;

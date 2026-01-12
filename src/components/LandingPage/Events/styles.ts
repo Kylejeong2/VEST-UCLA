@@ -1,119 +1,231 @@
 "use client";
 import { styled } from "styled-components";
-import grid_background from "../../../../public/images/grid_background.png";
 
 export const Wrapper = styled.section`
-  margin-top: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  min-height: calc(100vh - 6.25rem);
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   z-index: 1;
+  padding-top: 120px;
+  
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
 `;
 
 export const Inner = styled.div`
-  background: url(${grid_background.src}) no-repeat;
-  background-position: top center;
-  background-size: 100% auto;
-  width: 100%;
-  padding: 4rem 1rem;
+  width: 90%;
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 60px 0;
   
   @media (max-width: 768px) {
-    padding: 2rem 0;
+    padding: 40px 0;
   }
 `;
 
 export const ContentContainer = styled.div`
-  width: 90%;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
 `;
 
-export const EventsHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4rem;
+export const BackgroundGlow = styled.div`
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 1600px;
+  height: 800px;
+  background: radial-gradient(ellipse at center, rgba(31, 0, 255, 0.15) 0%, rgba(0, 116, 225, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+`;
+
+export const BlurCircle = styled.div`
+  position: fixed;
+  top: -400px;
+  left: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(31, 0, 255, 0.3) 0%, rgba(120, 67, 255, 0.1) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+`;
+
+export const EventsHeader = styled.h1`
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-page);
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 60px;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   
-  h1 {
-    font-size: 7rem;
-    font-weight: 600;
-    padding: 0 8rem;
-    line-height: 0.5;
-    color: #4299e1;
-    margin: 4rem 0;
-    text-align: center;
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
   }
 
-  h2 {
-    width: 100%;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    margin-bottom: 0.75rem;
-    text-align: left;
+  @media (max-width: 768px) {
+    font-size: var(--header-size-page-mobile);
+    margin-bottom: 40px;
   }
+`;
+
+export const TopRow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  margin-bottom: 60px;
   
-  p {
-    width: 100%;
-    color: #efefef;
-    font-size: 1.75rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 32px;
+  }
+`;
+
+export const TextContainer = styled.div`
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+`;
+
+export const EventsTitle = styled.h2`
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-subsection);
+  font-weight: 400;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  width: 500px;
+  line-height: 1;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
     font-weight: 400;
-    margin: 0 auto;
-    text-align: left;
   }
   
   @media (max-width: 768px) {
-    margin-bottom: 2.5rem;
-    
-    h1 {
-      font-size: 3rem;
-      padding: 0 1rem;
-    }
-    
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-    }
+    font-size: var(--header-size-subsection-mobile);
+    width: 100%;
+    margin-bottom: 0;
+  }
+`;
+
+export const EventsText = styled.div`
+  margin: 6px 0 60px;
+  text-align: left;
+  width: 100%;
+  max-width: 750px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  p {
+    color: #efefef;
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
     
     p {
-      font-size: 1.25rem;
+      font-size: var(--text-sm);
     }
   }
 `;
 
 export const EventsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 60px;
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 16px;
   }
 `;
 
-export const BlurCircle = styled.div`
-  position: fixed;
-  top: -800px;
-  left: -400px;
-  width: 1270px;
-  height: 1270px;
-  background-color: #1e3a8a;
-  border-radius: 50%;
-  filter: blur(250px);
-  z-index: -1;
-  pointer-events: none;
+export const EventCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
+
+export const EventImage = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+`;
+
+export const EventContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  flex: 1;
+  gap: 16px;
+`;
+
+export const EventTitle = styled.h3`
+  font-size: var(--text-xxl);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #efefef;
+  
+  @media (max-width: 768px) {
+    font-size: var(--text-xl);
+  }
+`;
+
+export const EventDescription = styled.p`
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(239, 239, 239, 0.7);
+`;
+
+export const EventDate = styled.span`
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: rgba(239, 239, 239, 0.5);
+`;
+
 
 export const FooterWrapper = styled.div`
   margin-top: 80px;
-`
+`;

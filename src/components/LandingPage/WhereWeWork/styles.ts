@@ -1,70 +1,62 @@
-import styled from "styled-components";
+"use client";
+import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
   width: 100%;
-  padding: 6rem 0;
+  padding: 100px 0;
   position: relative;
-  overflow: hidden;
-
+  
   @media (max-width: 768px) {
-    padding: 4rem 0;
+    padding: 40px 0;
   }
 `;
 
 export const Inner = styled.div`
   width: 90%;
-  max-width: 1440px;
+  max-width: 1236px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-
+  gap: 36px;
+  
   @media (max-width: 768px) {
-    width: 95%;
+    gap: 24px;
   }
 `;
 
 export const Title = styled.h2`
-  font-size: 4rem;
-  font-weight: 600;
-  color: #4299e1;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-page);
+  font-weight: 400;
+  line-height: 1;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
+  }
+  
   @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: var(--header-size-page-mobile);
   }
 `;
 
-export const Subtitle = styled.p`
-  font-size: 1.5rem;
-  color: #efefef;
-  margin-bottom: 3rem;
-  max-width: 800px;
-  line-height: 1.6;
-
+export const ImageCard = styled.div`
+  padding: 20px 24px;
+  border-radius: 36px;
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
+  
   @media (max-width: 768px) {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
+    padding: 16px;
+    border-radius: 24px;
   }
 `;
 
-export const ImageContainer = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-  }
-`;
+// Legacy exports
+export const Subtitle = styled.p``;
+export const ImageContainer = styled.div``;

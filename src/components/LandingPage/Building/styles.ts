@@ -2,214 +2,135 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.section`
-  margin-top: 6rem;
-  background: rgba(0, 0, 0, 0);
-  padding: 1rem 0;
+  width: 100%;
+  padding: 100px 0;
   position: relative;
-  z-index: 2;
-  margin-bottom: 2rem;
-
+  
   @media (max-width: 768px) {
-    margin-top: 1rem;
+    padding: 40px 0;
   }
 `;
 
 export const Inner = styled.div`
   width: 90%;
-  max-width: 1440px;
-  margin: 0 4rem 3rem;
+  max-width: 1236px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-
+  gap: 60px;
+  
   @media (max-width: 768px) {
-    margin: 0 1rem 1rem;
-    width: calc(100% - 2rem);
+    gap: 40px;
   }
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderSection = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  padding: 0 0rem;
-  margin-bottom: 3.5rem;
-
-  .left-content{
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .right-content {
-    width: 55%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
+  gap: 60px;
+  
   @media (max-width: 768px) {
     flex-direction: column;
-    min-height: auto;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-
-    .left-content {
-      width: 100%;
-      text-align: left;
-      justify-content: flex-start;
-    }
-
-    .right-content {
-      width: 100%;
-      justify-content: flex-start;
-      text-align: left;
-    }
+    gap: 24px;
   }
 `;
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  width: 100%;
-  font-family: "Inter", sans-serif;
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--green);
-  }
-
-  div[class*="Body"] {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-
-  p {
-    max-width: 41.75rem;
-    color: var(--light-gray);
-    font-size: 1.25rem;
+export const HeaderTitle = styled.h2`
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-page);
+  font-weight: 400;
+  line-height: 1;
+  max-width: 594px;
+  flex-shrink: 0;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
     font-weight: 400;
-    line-height: 1.75rem;
   }
-
+  
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 1rem;
-
-    h1 {
-      font-size: 2.25rem;
-      align-self: center;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
+    font-size: var(--header-size-page-mobile);
+    max-width: 100%;
   }
 `;
 
-export const BannerCtn = styled.div`
-  width: 100%;
-  position: relative;
-  width: 100%;
-  height: 38.4375rem;
-  overflow: hidden;
-  border-radius: 0.75rem;
-
-  img {
-    border-radius: 0.75rem;
-    object-fit: cover;
-  }
-
+export const HeaderDescription = styled.p`
+  font-size: var(--text-xxl);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #efefef;
+  max-width: 594px;
+  
   @media (max-width: 768px) {
-    height: auto;
+    max-width: 100%;
+    font-size: var(--text-lg);
   }
 `;
 
-export const Edges = styled.div`
+export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  margin: 0 4rem;
-
+  gap: 32px;
+  
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 0 1rem;
-    width: calc(100% - 2rem);
+    gap: 16px;
   }
 `;
 
-export const Edge = styled.div`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.62rem;
-  font-family: "Inter", sans-serif;
-
-  p {
-    max-width: 26rem;
-    color: var(--link-color);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-  }
+  gap: 24px;
+  padding: 28px 30px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, rgba(30, 70, 200, 0.2) 0%, rgba(50, 30, 110, 0.2) 100%);
+  box-shadow: inset 0px 0px 30px 0px rgba(239, 239, 239, 0.15);
+  position: relative;
 
   @media (max-width: 768px) {
-    p {
-      max-width: 100%;
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
+    padding: 20px;
+    gap: 16px;
   }
 `;
 
-export const Title = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-family: "Inter", sans-serif;
+export const CardIcon = styled.div`
+  color: rgb(0, 140, 255);
+`;
 
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
+export const CardTitle = styled.h3`
+  font-size: var(--text-xxl);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #efefef;
+  
   @media (max-width: 768px) {
-    h3 {
-      font-size: 1.25rem;
-    }
+    font-size: var(--text-base);
   }
 `;
 
-export const BriefNote = styled.div`
-  max-height: 54.75rem;
-  padding: 8.25rem 4.5rem;
-  background: var(--emerald);
-  font-family: "Inter", sans-serif;
-
-  p {
-    color: var(--Background, #070606);
-    font-size: 8rem;
-    font-weight: 400;
-    max-width: 1440px;
-  }
-
+export const CardDescription = styled.p`
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(239, 239, 239, 0.7);
+  
   @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-    p {
-      font-size: 3.75rem;
-    }
+    font-size: var(--text-sm);
   }
 `;
+
+// Legacy exports for backwards compatibility
+export const Header = styled.div``;
+export const HeaderContainer = styled.div``;
+export const Edges = styled.div``;
+export const Edge = styled.div``;
+export const Title = styled.div``;
+export const BriefNote = styled.div``;
+export const BannerCtn = styled.div``;

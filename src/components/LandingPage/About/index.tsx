@@ -17,22 +17,44 @@ import {
   Inner,
   BlurCircle,
   ContentContainer,
-  AboutParagraph
+  AboutParagraph,
+  BackgroundGlow,
+  TextContainer,
+  AboutDescription
 } from "./styles";
 
 
 const About = () => (
   <AboutWrapper>
+    <BackgroundGlow />
     <Inner>
       <ContentContainer>
-        <AboutTitle>About</AboutTitle>
-        <TopRow>
-          {/* <AboutImage>picture here</AboutImage> */}
-        <AboutText>
+        <AboutTitle>
+          About <span className="italic">VEST</span>
+        </AboutTitle>
+        <TextContainer>
           <WelcomeTitle>Welcome to VEST at UCLA.</WelcomeTitle>
-          One of UCLA's pioneering startup clubs—a student-led community for builders, founders, and curious minds. We bring together driven individuals to explore entrepreneurship through hands-on projects and a tight-knit support network.
-        </AboutText>
-      </TopRow>
+          <AboutDescription>
+            <p>
+              VEST at UCLA is a club that accelerates builders that want 
+              to start or join the next Unicorn company. We're hands on and 
+              love to do things rather than just plan things.
+            </p>
+            <p>
+              In our first quarter we hosted the founder of Zillow, a Thiel 
+              Fellow, and the founder of Manus, got a private tour of the 
+              new a16z office, got a Windsurf sponsorship, got dinner with 
+              the Head of Dorm at Pear VC, and worked with companies backed 
+              by YC and Neo.
+            </p>
+            <p>
+              Some of our members raised over 2M+ in venture funding and 
+              scaled projects to tens of thousands of users. We also have 
+              engineers that were early at Cursor, Mercor, Etched, Browserbase, 
+              Interaction, Polymarket, Vercel, Mercury, and more!
+            </p>
+          </AboutDescription>
+        </TextContainer>
       {/* Commented out stats row for now because of the lack of data + looks too much like Bruin AI*/}
       {/* <StatsRow>
         <StatBox>
@@ -78,26 +100,7 @@ const About = () => (
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </GridImage>
-      </ImagesGrid>
-      <AboutText>
-      VEST at UCLA is a club that accelerates builders that want 
-      to start or join the next Unicorn company. We're hands on and 
-      love to do things rather than just plan things.
-      </AboutText>
-      <AboutText>
-        In our first quarter we hosted the founder of Zillow, a Thiel 
-        Fellow, and the founder of Manus, got a private tour of the 
-        new a16z office, got a Windsurf sponsorship, got dinner with 
-        the Head of Dorm at Pear VC, and worked with companies backed 
-        by YC and Neo.
-      </AboutText>
-      <AboutText>
-        Some of our members raised over 2M+ in venture funding and 
-        scaled projects to tens of thousands of users. We also have 
-        engineers that were early at Cursor, Mercor, Etched, Browserbase, 
-        Interaction, Polymarket, Vercel, Mercury and more!
-      </AboutText>
-      <ImagesGrid>
+    
         <GridImage>
           <Image 
             src="/images/About/DrinkRobot.jpg" 

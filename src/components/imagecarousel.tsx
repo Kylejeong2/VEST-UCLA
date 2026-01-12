@@ -23,6 +23,9 @@ const CarouselWrapper = styled.div<{ $isMobile: boolean }>`
   max-width: ${({ $isMobile }) => $isMobile ? 'calc(100vw - 32px)' : '800px'};
   z-index: 3;
   padding: ${({ $isMobile }) => $isMobile ? '0 16px' : '0'};
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
 interface CarouselImageProps {

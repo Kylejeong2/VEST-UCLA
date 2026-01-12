@@ -1,287 +1,175 @@
 "use client";
 import { styled } from "styled-components";
-import hero_background from "../../../../public/images/grid_background.png";
 
 export const Wrapper = styled.section`
-  margin-top: 4rem;
-  margin-bottom: 8rem;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  min-height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  overflow: hidden;
+  padding-top: 60px;
+  
   @media (max-width: 768px) {
     min-height: auto;
-    margin: 4rem 0;
+    padding: 100px 0 20px;
   }
+`;
+
+export const BackgroundGlow = styled.div`
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 1600px;
+  height: 800px;
+  background: radial-gradient(ellipse at center, rgba(31, 0, 255, 0.15) 0%, rgba(0, 116, 225, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 `;
 
 export const Inner = styled.div`
-  background: url(${hero_background.src}) no-repeat;
-  width: 100%;
-  background-position: top center;
-  background-size: 100% auto;
-  padding: 4rem 0;
-
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-    background-size: 120% auto;
-  }
-`;
-
-export const Pill = styled.div`
-  display: flex;
-  padding: 0.375rem 0.75rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  border-radius: 6.25rem;
-  border: 0.2px solid #989898;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  margin-bottom: 1rem;
-
-  span {
-    color: var(--light-gray);
-    font-size: 1rem;
-    font-weight: 400;
-  }
-`;
-
-export const BlurCircle = styled.div`
-  position: fixed;
-  top: -800px;
-  left: -400px;
-  width: 1270px;
-  height: 1270px;
-  background-color: #1e3a8a;
-  border-radius: 50%;
-  filter: blur(250px);
-  z-index: -1;
-  pointer-events: none;
-`;
-
-export const HeroTextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-bottom: 2rem;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 100;
-  font-family: "Inter", sans-serif;
-  line-height: 1.25;
-  white-space: pre-line;
-
-  h1 {
-    font-size: 7rem;
-    font-weight: 600;
-    padding: 0 8rem;
-    line-height: 1;
-    color: #4299e1;
-    margin-top: 8rem;
-  }
-
-  h2 {
-    max-width: 41.75rem;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #4299e1;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    max-width: 41.75rem;
-    color: #efefef;
-    font-size: 1.75rem;
-    font-weight: 400;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 768px) {
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      padding: 0 1rem;
-      line-height: 1.1;
-      white-space: pre-line;
-      margin-top: 4rem;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      padding: 0 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      padding: 0 1rem;
-    }
-  }
-`;
-
-export const ContentContainer = styled.div`
+  width: 90%;
+  max-width: 1236px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4rem;
-  width: 100%;
-  min-height: calc(100vh - 14.5rem);
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+  
   @media (max-width: 768px) {
     flex-direction: column;
-    min-height: auto;
-  }
-
-  .top-content {
-    width: 100%;
-    padding: 0 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3rem;
-  }
-
-  .applications-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 3rem 0 2rem 0; /* add more space above CTA */
-    padding: 0 1rem;
-
-    @media (max-width: 768px) {
-      margin: 1rem 0 1rem 0;
-    }
-  }
-
-  .applications-cta .applications-text {
-    color: #efefef;
-    font-size: 1.5rem;
-    font-weight: 600;
     text-align: center;
   }
+`;
 
-  .bottom-content {
-    width: 80%;
-    padding: 0 4rem;
-    display: flex;
-    flex-direction: row;
+export const HeroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 700px;
+  
+  @media (max-width: 768px) {
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    max-width: 100%;
+    gap: 20px;
   }
+`;
 
-  .left-content {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex: 0 0 auto;
-    text-align: left;
+export const HeroBadge = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 44px;
+  border: 2px solid #1f00ff;
+  background: linear-gradient(90deg, rgba(0, 76, 255, 0.3) 0%, rgba(39, 0, 147, 0.3) 100%);
+  
+  span {
+    color: #efefef;
+    font-size: var(--text-base);
+    font-weight: 400;
   }
-
-  .right-content {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 0 0 auto;
+  
+  svg {
+    color:rgb(0, 140, 255);
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    min-height: auto;
-
-    .top-content {
-      width: 100%;
-      padding: 0 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .applications-cta {
-      flex-direction: column;
-      text-align: center;
-      gap: 0.75rem;
-      margin: 2rem 0 1.5rem 0; /* more space above CTA on mobile */
-      padding: 0;
-    }
-
-    .applications-cta .applications-text {
-      font-size: 1.25rem;
-    }
-
-    .bottom-content {
-      width: 100%;
-      padding: 1rem;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1.5rem;
-    }
-
-    .left-content {
-      width: 100%;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0;
-    }
-
-    .right-content {
-      width: 100%;
-      justify-content: center;
-      margin-top: 0;
+    padding: 8px 16px;
+    border-radius: 32px;
+    gap: 8px;
+    
+    span {
+      font-size: var(--text-sm);
     }
   }
 `;
 
-export const Divider = styled.div`
-  width: 1px;
-  height: 80vh;
-  background-color: rgba(255, 255, 255, 0.2);
+export const HeroTitle = styled.h1`
+  font-family: var(--header-font-regular);
+  font-size: var(--header-size-hero);
+  font-weight: 400;
+  line-height: 1;
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  .italic {
+    font-family: var(--header-font-italic);
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: var(--header-size-hero-mobile);
+  }
+`;
+
+export const HeroDescription = styled.p`
+  font-size: var(--text-xxl);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #efefef;
+  
+  @media (max-width: 768px) {
+    font-size: var(--text-lg);
+  }
+`;
+
+export const HeroButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #0074e1 0%, #1f00ff 100%);
+  box-shadow: 0px 0px 30px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  span {
+    color: #efefef;
+    font-size: var(--text-xl);
+    font-weight: 400;
+  }
+  
+  svg {
+    color: #efefef;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 40px 0px #7843ff, inset 0px 0px 8px 0px #efefef;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 12px 20px;
+    border-radius: 16px;
+    
+    span {
+      font-size: var(--text-base);
+    }
+  }
+`;
+
+export const HeroImageContainer = styled.div`
   flex-shrink: 0;
-
+  width: 500px;
+  transform: rotate(4deg);
+  
   @media (max-width: 768px) {
-    width: 100%;
-    height: 1px;
-    margin: 1rem 0;
+    width: 280px;
+    transform: rotate(0deg);
   }
 `;
 
-export const ImageContainer = styled.div`
-  width: 100%;
-  position: relative;
-  height: calc(100vh - 14.5rem);
-  border-radius: 50%;
-  overflow: hidden;
-  aspect-ratio: 1;
-  margin: auto;
-
-  // Make container smaller but keep spline large
-  > div {
-    transform: scale(1.5);
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  @media (max-width: 768px) {
-    width: 100vw;
-    height: 100vw;
-
-    > div {
-      transform: scale(1.2);
-    }
-  }
-`;
+// Legacy exports for backwards compatibility
+export const ContentContainer = styled.div``;
+export const HeroTextContainer = styled.div``;
+export const BlurCircle = styled.div``;

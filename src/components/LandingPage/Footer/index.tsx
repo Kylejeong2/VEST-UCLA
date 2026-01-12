@@ -1,114 +1,114 @@
+"use client";
+
 import Image from "next/image";
-import ic_copyright from "../../../../public/svgs/ic_copyright.svg";
-import React from "react";
 import Link from "next/link";
-
-type InternalLink = {
-  text: string;
-  type: "internal";
-};
-
-type ExternalLink = {
-  text: string;
-  type: "external";
-  url: string;
-};
-
-type LinkItem = InternalLink | ExternalLink;
-
-const linksArr = [
-  {
-    title: "Navigation",
-    links: [
-      { text: "Home", type: "internal" },
-      { text: "Team", type: "internal" },
-      { text: "Events", type: "internal" },
-      { text: "About", type: "internal" },
-      { text: "Join Us", type: "internal" },
-    ] as LinkItem[],
-  },
-];
-
+import { usePathname } from "next/navigation";
+import {
+  LinkedinLogo,
+  InstagramLogo,
+  XLogo,
+  EnvelopeSimple,
+  ArrowRight,
+} from "@phosphor-icons/react";
 import {
   Wrapper,
   Inner,
-  FooterLogo,
-  FooterMainContent,
-  FooterMiddle,
-  FooterNavigation,
-  GridColumn,
-  LinksContainer,
-  FooterBottom,
-  FooterTop,
-  CopyRight,
-  ManifestoLinkContainer,
-  ManifestoLink,
+  TopSection,
+  LogoSection,
+  LogoTitle,
+  NavSection,
+  NavColumn,
+  NavTitle,
+  NavLinks,
+  SocialSection,
+  SocialLinks,
+  NewsletterButton,
+  BottomSection,
+  Copyright,
 } from "./styles";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+
   return (
     <Wrapper>
       <Inner>
-        <FooterTop>
-          <FooterLogo>
-            <Image
-              src="/images/VEST-logo-white.svg"
-              width={100}
-              height={100}
-              alt="VEST_footer_logo"
-            />
-          </FooterLogo>
-          <h1>VEST at UCLA</h1>
-        </FooterTop>
-        <FooterMainContent>
-          <FooterMiddle>
-            <FooterNavigation>
-              {linksArr.map((l, i) => (
-                <GridColumn key={i}>
-                  <h2>{l.title}</h2>
-                  <LinksContainer>
-                    {l.links.map((link, i) => (
-                      <li key={i}>
-                        {link.type === "internal" ? (
-                          <Link
-                            href={link.text === "Home" ? "/" : 
-                                  link.text === "Join Us" ? "/join" : 
-                                  `/${link.text.toLowerCase()}`}
-                            className="cursor-pointer hover:text-[#4299e1]"
-                          >
-                            {link.text}
-                          </Link>
-                        ) : (
-                          <a
-                            href={link.type === "external" ? link.url : "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="cursor-pointer hover:text-[#4299e1]"
-                          >
-                            {link.text}
-                          </a>
-                        )}
-                      </li>
-                    ))}
-                  </LinksContainer>
-                </GridColumn>
-              ))}
-            </FooterNavigation>
+      <LogoSection>
+            <Link href="/">
+              <Image
+                src="/images/VEST-logo-white.svg"
+                alt="VEST Logo"
+                width={48}
+                height={48}
+              />
+            </Link>
+            <LogoTitle>VEST at UCLA</LogoTitle>
+          </LogoSection>
+        <TopSection>
 
-            <ManifestoLinkContainer>
-            <ManifestoLink href="https://substack.com/@vestucla">
-                Join Our Newsletter
-              </ManifestoLink>
-            </ManifestoLinkContainer>
 
-          </FooterMiddle>
-          <FooterBottom>
-            <CopyRight>
-              <Image src={ic_copyright} alt="copyright svg" />
-              <p>VEST at UCLA.</p>
-            </CopyRight>
-          </FooterBottom>
-        </FooterMainContent>
+          <NavSection>
+            <NavColumn>
+              <NavTitle>Navigate</NavTitle>
+              <NavLinks>
+                <Link href="/" className={pathname === "/" ? "active" : ""}>Home</Link>
+                <Link href="/team" className={pathname === "/team" ? "active" : ""}>Team</Link>
+                <Link href="/events" className={pathname === "/events" || pathname?.startsWith("/events/") ? "active" : ""}>Events</Link>
+                <Link href="/about" className={pathname === "/about" ? "active" : ""}>About</Link>
+                <Link href="/join" className={pathname === "/join" ? "active" : ""}>Join Us</Link>
+              </NavLinks>
+            </NavColumn>
+          </NavSection>
+
+          <SocialSection>
+            <SocialLinks>
+              <a
+                href="https://www.linkedin.com/company/vest-ucla/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <LinkedinLogo size={32}/>
+              </a>
+              <a
+                href="https://www.instagram.com/vestucla/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <InstagramLogo size={32}/>
+              </a>
+              <a
+                href="https://twitter.com/vestucla"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X/Twitter"
+              >
+                <XLogo size={32}/>
+              </a>
+              <a
+                href="mailto:vestucla@gmail.com"
+                aria-label="Email"
+              >
+                <EnvelopeSimple size={32}/>
+              </a>
+            </SocialLinks>
+
+            <NewsletterButton
+              href="https://vestucla.us13.list-manage.com/subscribe/post?u=65d6dbbacd1e7ab2cebe3bc5c&id=aa4fd52c38"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Newsletter</span>
+              <ArrowRight size={20} weight="bold" />
+            </NewsletterButton>
+          </SocialSection>
+        </TopSection>
+
+        <BottomSection>
+          <Copyright>© {currentYear} VEST at UCLA. All rights reserved.</Copyright>
+        </BottomSection>
       </Inner>
     </Wrapper>
   );

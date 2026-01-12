@@ -9,27 +9,31 @@ import {
   ContentContainer,
   EventsHeader,
   EventsGrid,
+  FooterWrapper,
+  BackgroundGlow,
+  EventsText,
+  EventsTitle,
+  TopRow,
   BlurCircle,
-  FooterWrapper
+  TextContainer
 } from "./styles";
 
 const Events = () => {
   return (
     <Wrapper>
-      <BlurCircle />
+      <BackgroundGlow />
       <Inner>
         <ContentContainer>
           <EventsHeader>
-            <h1>Events</h1>
-            <h2>Bringing founders, ideas, and members together.</h2>
-            <p>
-            At VEST, our events are designed to fuel inspiration, spark connection, and deepen your understanding of the startup world. From founder talks and VC panels to startup office visits, VEST gives members direct access to the people and places shaping tech. 
-            </p>
-            <p>
-            Our events are where insight meets connection, and big ideas begin.
-            </p>
+            Our <span className="italic">Events</span>
           </EventsHeader>
-          
+          <TextContainer>
+            <EventsTitle>Bringing founders, ideas, and members together.</EventsTitle>
+            <EventsText>
+              <p>At VEST, our events are designed to fuel inspiration, spark connection, and deepen your understanding of the startup world. From founder talks and VC panels to startup office visits, VEST gives members direct access to the people and places shaping tech.</p>
+              <p>Our events are where insight meets connection, and big ideas begin.</p>
+            </EventsText>
+          </TextContainer>
           <EventsGrid>
             {events.map((event) => (
               <Event
@@ -45,6 +49,7 @@ const Events = () => {
           </EventsGrid>
         </ContentContainer>
       </Inner>
+      <BlurCircle />
     </Wrapper>
   );
 };
