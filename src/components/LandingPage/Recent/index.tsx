@@ -14,7 +14,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 const Recent = () => {
   // Take only the first 3 events for the landing page
-  const displayEvents = events.slice(0, 3);
+  const displayEvents = events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
 
   return (
     <Wrapper>
