@@ -9,10 +9,6 @@ export const AboutWrapper = styled.div`
   position: relative;
   z-index: 1;
   padding-top: 120px;
-  
-  @media (max-width: 768px) {
-    padding-top: 60px;
-  }
 `;
 
 export const Inner = styled.div`
@@ -55,25 +51,28 @@ export const BlurCircle = styled.div`
 `;
 
 export const AboutTitle = styled.h1`
-  font-family: var(--header-font-regular);
-  font-size: var(--header-size-page);
-  font-weight: 400;
-  line-height: 1;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.1;
   text-align: center;
   margin-bottom: 60px;
-  background: var(--header-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   
-  .italic {
-    font-family: var(--header-font-italic);
-    font-style: italic;
-    font-weight: 400;
+  .white {
+    background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient {
+    background: linear-gradient(90deg, #12fbbd 0%, #508af5 17.308%, #2b75ff 50.962%, #9114ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   @media (max-width: 768px) {
-    font-size: var(--header-size-page-mobile);
+    font-size: 36px;
     margin-bottom: 40px;
   }
 `;
@@ -118,14 +117,14 @@ export const AboutText = styled.div`
 
   p {
     color: #efefef;
-    font-size: var(--text-base);
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 16px;
   }
   @media (max-width: 768px) {
     p {
-      font-size: var(--text-sm);
+      font-size: 14px;
     }
   }
 `;
@@ -138,36 +137,22 @@ export const TextContainer = styled.div`
   justify-content: flex-start;
   gap: 32px;
   text-align: left;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
 `;
 
 export const WelcomeTitle = styled.h2`
-  font-family: var(--header-font-regular);
-  font-size: var(--header-size-subsection);
-  font-weight: 400;
-  background: var(--header-gradient);
+  font-size: 32px;
+  font-weight: 600;
+  background: linear-gradient(180deg, #ffffff 0%, #adceff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 16px;
   width: 500px;
-  line-height: 1;
-  
-  .italic {
-    font-family: var(--header-font-italic);
-    font-style: italic;
-    font-weight: 400;
-  }
+  line-height: 1.2;
   
   @media (max-width: 768px) {
-    font-size: var(--header-size-subsection-mobile);
+    font-size: 20px;
     width: 100%;
-    margin-bottom: 0;
   }
 `;
 
@@ -183,7 +168,7 @@ export const AboutDescription = styled.div`
   
   p {
     color: #efefef;
-    font-size: var(--text-base);
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
   }
@@ -192,7 +177,7 @@ export const AboutDescription = styled.div`
     margin-bottom: 40px;
     
     p {
-      font-size: var(--text-sm);
+      font-size: 14px;
     }
   }
 `;
@@ -243,23 +228,21 @@ export const StatBox = styled.div`
 `;
 
 export const StatNumber = styled.div`
-  font-family: var(--header-font-italic);
-  font-size: var(--header-size-section);
-  font-weight: 400;
-  font-style: italic;
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 8px;
-  background: var(--header-gradient);
+  background: linear-gradient(90deg, #12fbbd 0%, #508af5 50%, #2b75ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   
   @media (max-width: 768px) {
-    font-size: var(--header-size-section-mobile);
+    font-size: 36px;
   }
 `;
 
 export const StatLabel = styled.div`
-  font-size: var(--text-base);
+  font-size: 16px;
   color: rgba(239, 239, 239, 0.7);
   font-weight: 400;
   text-align: center;
@@ -276,7 +259,7 @@ export const ImagesGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin: 40px auto 0;
+    margin: 40px auto;
   }
 `;
 

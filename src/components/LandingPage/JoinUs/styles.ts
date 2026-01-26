@@ -254,7 +254,7 @@ export const QuarterlyTitle = styled.h3`
 `;
 
 export const QuarterlyDesc = styled.p`
-  color: rgba(239, 239, 239, 0.7);
+  color: #efefef;
   font-size: var(--text-lg);
   line-height: 1.5;
   margin: 0;
@@ -264,6 +264,17 @@ export const QuarterlyDesc = styled.p`
   }
 `;
 
+export const ApplicationsClosed = styled.p`
+  color: #efefef;
+  font-size: var(--text-xl);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: var(--text-lg);
+  }
+`;
 export const ApplicationButton = styled.a`
   display: flex;
   align-items: center;
